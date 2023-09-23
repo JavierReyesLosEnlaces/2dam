@@ -52,11 +52,6 @@ fun main(){
      */
     //Programa que dados tres datos numéricos  los muestre ordenados de menor a mayor.
 
-    fun ordenar(a: Int, b: Int, c: Int){
-        var lista =
-    }
-    ordenar(8,5,7)
-
 
 
 }
