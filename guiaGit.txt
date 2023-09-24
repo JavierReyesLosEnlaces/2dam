@@ -14,8 +14,7 @@ ADDEAS Y COMMITEAS LOS CAMBIOS
 git add . 	git commit -m "loquesea"
 o	git commit -am "loquesea"
 
-
-4. 
+5. 
 PUSHEAS LOS CAMBIOS
 git push origin main
 
