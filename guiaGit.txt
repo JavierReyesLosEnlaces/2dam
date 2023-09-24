@@ -18,3 +18,5 @@ o	git commit -am "loquesea"
 PUSHEAS LOS CAMBIOS
 git push origin main
 
+*Importante: abrir los proyectos directamente al proyecto de Android Studio, no desde su directorio padre
+
