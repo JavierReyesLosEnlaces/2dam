@@ -1,6 +1,6 @@
 package com.example.evaluacion_inicial
 
-//Ej1:Hacer una programa que compruebe si el contenido de una variable entera es par o impar
+//Hacer una programa que compruebe si el contenido de una variable entera es par o impar
 
 fun main(){
     var num: Int = 4;
