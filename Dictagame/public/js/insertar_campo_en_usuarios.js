@@ -1,38 +1,47 @@
-const readline = require('readline');
-const sqlite3 = require('sqlite3').verbose();
-//-------------------------------------------------------//
+// Función para abrir la base de datos y realizar la inserción
+function insertarUsuario(nombre, edad) {
+  var request = window.indexedDB.open('mi_base_de_datos', 1);
 
-// Crear una interfaz para leer desde la consola
-const teclado = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+  request.onerror = function (event) {
+    console.log("Error al abrir la base de datos: " + event.target.errorCode);
+  };
 
-// Abre la conexión a la base de datos
-const db = new sqlite3.Database('mi_base_de_datos.db');
+  request.onsuccess = function (event) {
+    var db = event.target.result;
 
-// Pedimos campos por consola: nombre y edad
-teclado.question('Ingrese el nombre: ', (nombre) => {
-teclado.question('Ingrese la edad: ', (edad) => {
+    // Iniciar una transacción de escritura en la tabla 'usuarios'
+    var transaction = db.transaction(['usuarios'], 'readwrite');
 
-// Sentencia SQL INSERT para insertar el nombre y la edad en la tabla
-const sql = 'INSERT INTO usuarios(nombre, edad) VALUES (?, ?)';
-    
-// Ejecuta la sentencia INSERT con los valores proporcionados
-db.run(sql, [nombre, edad], (err) => {
-  if (err) {
-    return console.error(err.message);
-  }
-  console.log(`Se ha insertado el registro: Nombre: ${nombre}, Edad: ${edad}`);
-      
-      // Cierra la conexión con la base de datos
-      db.close((err) => {
-        if (err) {
-          return console.error(err.message);
-        }
-        //console.log('Conexión cerrada');
-        teclado.close(); // Cierra la interfaz de consola
-      });
-    });
-  });
-});
+    // Obtener el almacén de objetos de la transacción
+    var objectStore = transaction.objectStore('usuarios');
+
+    // Crear un objeto que represente el nuevo usuario
+    var nuevoUsuario = {
+      nombre: nombre,
+      edad: edad
+    };
+
+    // Agregar el nuevo usuario al almacén de objetos
+    var agregarRequest = objectStore.add(nuevoUsuario);
+
+    agregarRequest.onsuccess = function () {
+      console.log("Usuario insertado con éxito.");
+    };
+
+    agregarRequest.onerror = function () {
+      console.log("Error al insertar usuario: " + agregarRequest.error);
+    };
+
+    // Completar la transacción
+    transaction.oncomplete = function () {
+      db.close();
+    };
+  };
+
+  request.onblocked = function (event) {
+    console.log("La base de datos está bloqueada debido a otra conexión abierta.");
+  };
+}
+
+// Ejemplo de uso
+insertarUsuario("Javier Reyes", 28);

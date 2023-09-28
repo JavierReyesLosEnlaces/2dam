@@ -7,7 +7,7 @@
     <!--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> 
     -->
-    <link type="text/css" rel="stylesheet" href="../styles.css"/>
+    <link type="text/css" rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -42,23 +42,14 @@
         </ul>
     </header>
 
-            <!--
-            <script src="js/jquery-3.3.1.min.js"></script>
-            <script src='js/Tone.js'></script>
-            <script src="js/index.js"></script>
-            -->
-
     <footer>
         <button type="button" id="btnIniciar" class="button boton">Jugar</button>
         <button type="button" id="btnReiniciar" class="button boton">Reiniciar</button>
     </footer>
 
-    <script type="module">
-        import { crearTablaUsuarios } from '/js/crear_tabla_usuarios.js';
-      
-        // Llama a la función exportada
-        crearTablaUsuarios();
-      </script>
+    <script src="js/crear_tabla_usuarios.js"></script>
+    <script src="js/insertar_campo_en_usuarios.js"></script>
+    <script src="js/borrar_tabla_usuarios.js"></script>
 
 </body>
 
