@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <TextView
+        android:id="@+id/introduce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Introduce tu nombre: "
@@ -14,21 +15,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="130dp"
-        app:layout_constraintBottom_toTopOf="@+id/introduceInput"
+        app:layout_constraintBottom_toTopOf="@+id/etName"
         />
     <EditText
-        android:id="@+id/introduceInput"
+        android:id="@+id/etName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="200dp"
-        app:layout_constraintBottom_toTopOf="@id/send"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSend"
+        android:maxLines="2"
+        android:hint="Introduce tu nombre"
+        android:textAlignment="center"
         />
+        <!--
+        android:maxLines="2" es constreñir el número de líneas a 2-
+        android:hint="Introduce tu nombre"  es el texto fantasma
+        -->
 
     <Button
-        android:id="@+id/send"
+        android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEND"
@@ -36,6 +45,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:onClick="clickar"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
