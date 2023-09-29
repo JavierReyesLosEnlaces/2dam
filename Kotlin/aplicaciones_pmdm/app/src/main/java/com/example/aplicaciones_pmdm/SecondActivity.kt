@@ -10,6 +10,7 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         var textoHola = findViewById<TextView>(R.id.helloText)
-
+        var nombre: String = intent.extras?.getString("extra_name").orEmpty()
+        textoHola.text = "Hola $nombre"
     }
 }
