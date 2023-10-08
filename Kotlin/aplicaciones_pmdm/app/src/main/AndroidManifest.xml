@@ -35,7 +35,8 @@
             android:exported="false" />
         <activity
             android:name=".HelloApp.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
