@@ -1,0 +1,14 @@
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\bin\Debug\net7.0\Hamburguesería.exe
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\bin\Debug\net7.0\Hamburguesería.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\bin\Debug\net7.0\Hamburguesería.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\bin\Debug\net7.0\Hamburguesería.dll
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\bin\Debug\net7.0\Hamburguesería.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.dll
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\refint\Hamburguesería.dll
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\Hamburguesería.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería\obj\Debug\net7.0\ref\Hamburguesería.dll
