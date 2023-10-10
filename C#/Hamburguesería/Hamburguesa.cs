@@ -4,17 +4,23 @@ public class Hamburguesa
 {
     private bool panCenteno;
     private bool carneVacuno;
-    private float precioBase;
+    private readonly float precioBase = 4.0f; //readonly = final
+    private float precioExtras = 0;
     private float precioFinal;
 
-    public Hamburguesa()
+
+    public Hamburguesa(bool panCenteno, bool carneVacuno)
     {
-        panCenteno = false;
-        carneVacuno = false;
-        precioBase = 5.0f;
+        this.panCenteno = panCenteno;   
+        this.carneVacuno = carneVacuno;
+
+        if (panCenteno) precioExtras += 0.5f;
+        if (carneVacuno) precioExtras += 1.0f;
+
+        precioFinal = precioBase + precioExtras;
     }
 
-    // Properties (getters and setters)
+    //GETTERS Y SETTERS 
     public bool PanCenteno
     {
         get { return panCenteno; }
@@ -27,9 +33,9 @@ public class Hamburguesa
         set { carneVacuno = value; }
     }
 
-    public float PrecioBase
+    public float PrecioFinal
     {
-        get { return precioBase; }
-        set { precioBase = value; }
+        get { return precioFinal; }
+        set { precioFinal = value; }
     }
 }
