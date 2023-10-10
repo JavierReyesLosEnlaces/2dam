@@ -17,6 +17,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"
         >
+
+        <!-- LA ANCHURA A 0 PORQUE LE VOY A ESTIRAR HACIA LOS LADOS CON LOS CONSTRAINTS-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -302,7 +304,7 @@
         android:layout_marginRight="13dp"
         android:layout_marginLeft="13dp"
         android:text="calcular"
-        android:backgroundTint="#6200ed"
+        android:backgroundTint="@color/burple"
         android:textAllCaps="true"
         android:textStyle="bold"
         app:cornerRadius="15dp"
@@ -310,19 +312,32 @@
         app:layout_constraintTop_toBottomOf="@id/viewPeso"
         tools:layout_editor_absoluteX="16dp">
     </Button>
-    <Button
-        android:id="@+id/btnVolverAlMenu"
-        android:layout_width="wrap_content"
+
+
+    <!-- OTRA FORMA DE HACER EL BOTÓN
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/background_fab"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="volver al menú"
-        android:layout_marginBottom="5dp"
-        android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCalcular"
-        android:backgroundTint="#6200ed"
-        app:cornerRadius="15dp"
-        android:layout_marginRight="13dp"
+        app:layout_constraintStart_toStartOf="parent"
         >
-    </Button>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/calculate"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:backgroundTint=""
+            >
+        </TextView>
+    </androidx.cardview.widget.CardView>
+    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
