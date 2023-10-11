@@ -10,16 +10,17 @@ class Program
     static void Main(string[] args)
     {
         float precioTotal = 0.0f;
-
-        Console.WriteLine("SELECCIONA EL NÚMERO CON LA OPCIÓN DESEADA: ");
-        Console.WriteLine("1. Comprar hamburguesa ");
-        Console.WriteLine("2. Comprar bebida");
-        Console.WriteLine("0. Finzalizar compra y pagar");
-
-        int opc = Int32.Parse(Console.ReadLine());
+        int opc;
 
         do
         {
+            Console.WriteLine("SELECCIONA EL NÚMERO CON LA OPCIÓN DESEADA: ");
+            Console.WriteLine("1. Comprar hamburguesa ");
+            Console.WriteLine("2. Comprar bebida");
+            Console.WriteLine("0. Finalizar compra y pagar\n");
+
+            opc = Int32.Parse(Console.ReadLine());
+
             switch (opc)
             {
                 case 1:
@@ -32,23 +33,18 @@ class Program
                     Console.WriteLine("Hasta luego!");
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
+                    Console.WriteLine("Opción no válida, vuelve a intentarlo\n");
                     break;
             }
         } while (opc != 0);
-        Console.WriteLine("PRECIO TOTAL = " + precioTotal + " EUROS");
+        Console.WriteLine("PRECIO TOTAL = " + precioTotal + " $");
     }
-
-    private static void FinCompra()
-    {
-    }
-
     private static float ComprarBebida()
     {
         bool conAlcohol = false;
         int x;
 
-        // TIENE ALCOHOL
+        // TIENE ALCOHOL?
 
         do
         {
@@ -73,6 +69,7 @@ class Program
 
         } while (x != 1 && x != 2);
         Bebida b = new Bebida(conAlcohol);
+        Console.WriteLine("(+" + b.Precio + " $)\n");
         return b.Precio;
 
     }
@@ -82,7 +79,8 @@ class Program
         bool panCenteno = false, carneVacuno = false;
         int x;
 
-        // PAN DE CENTENO
+        // PAN DE CENTENO?
+
         do
         {
             Console.WriteLine("¿Pan de centeno?");
@@ -105,7 +103,8 @@ class Program
             }
         } while (x != 1 && x != 2);
 
-        // CARNE DE VACUNO
+        // CARNE DE VACUNO?
+
         do
         {
             Console.WriteLine("¿Carne de vacuno?");
@@ -129,6 +128,7 @@ class Program
         } while (x != 1 && x != 2);
 
         Hamburguesa h = new Hamburguesa(panCenteno, carneVacuno);
+        Console.WriteLine("(+" + h.PrecioFinal + " $)\n");
         return h.PrecioFinal;
 
     }
