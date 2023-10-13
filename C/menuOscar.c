@@ -1,55 +1,61 @@
-#include <stdio.h>                                  holamundo.c                                                   #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-void opcion1() {
+void opcion1()
+{
     // Código para la opción 1
-    printf("Has seleccionado la opción 1.\n");
+    printf("Has seleccionado la opcion 1.\n");
 }
 
-void opcion2() {
+void opcion2()
+{
     // Código para la opción 2
-    printf("Has seleccionado la opción 2.\n");
+    printf("Has seleccionado la opcion 2.\n");
 }
 
-void opcion3() {
+void opcion3()
+{
     // Código para la opción 3
-    printf("Has seleccionado la opción 3.\n");
+    printf("Has seleccionado la opcion 3.\n");
 }
 
-int main() {
+int main()
+{
     int opcion;
 
-    do {
+    do
+    {
         // Mostrar el menú
-        printf("Menú:\n");
-        printf("1. Opción 1\n");
-        printf("2. Opción 2\n");
-        printf("3. Opción 3\n");
+        printf("\nMenu:\n");
+        printf("1. Opcion 1\n");
+        printf("2. Opcion 2\n");
+        printf("3. Opcion 3\n");
         printf("0. Salir\n");
-        printf("Selecciona una opción: ");
+        printf("Selecciona una opcion: \n");
         scanf("%d", &opcion);
 
         //%d -> lee y recoge: lo mete en %opcion
 
         // Procesar la selección del usuario
-        switch(opcion) {
-            case 1:
-                opcion1();
-                break;
-            case 2:
-                opcion2();
-                break;
-            case 3:
-                opcion3();
-                break;
-            case 0:
-                printf("Saliendo del programa. ¡Hasta luego!\n");
-                break;
-            default:
-                printf("Opción inválida. Por favor, selecciona una opción válida.\n");
-                break;
+        switch (opcion)
+        {
+        case 1:
+            opcion1();
+            break;
+        case 2:
+            opcion2();
+            break;
+        case 3:
+            opcion3();
+            break;
+        case 0:
+            printf("Saliendo del programa. Hasta luego!\n\n");
+            break;
+        default:
+            printf("Opcion invalida. Por favor, selecciona una opcion valida.\n\n");
+            break;
         }
-    } while(opcion != 0);
+    } while (opcion != 0);
 
     return 0;
 }
