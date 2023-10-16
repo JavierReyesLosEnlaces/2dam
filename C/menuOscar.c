@@ -1,22 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+void sumaDe1y1() 
+{
+    int a = 1;
+    int b = 1;
+    int resultado = a+b;
+    printf("Resultado=%d", resultado);
+}
+
 void opcion1()
 {
-    // Código para la opción 1
     printf("Has seleccionado la opcion 1.\n");
 }
 
 void opcion2()
 {
-    // Código para la opción 2
     printf("Has seleccionado la opcion 2.\n");
+        //añadir una subrutina (no funcion) -> subrutina no devuelve nada / función devuelve algo
+    sumaDe1y1();
 }
-
 void opcion3()
 {
-    // Código para la opción 3
+    
+    const int numeroFijo = 3;
+    const int resultado = (numeroFijo*numeroFijo);
     printf("Has seleccionado la opcion 3.\n");
+        //usar una constante
+    printf("Valor de la constante al cuadrado = %d"+);
 }
 
 int main()
