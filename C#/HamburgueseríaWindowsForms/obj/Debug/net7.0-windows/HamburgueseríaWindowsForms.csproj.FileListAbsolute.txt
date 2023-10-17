@@ -1,0 +1,17 @@
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\bin\Debug\net7.0-windows\HamburgueseríaWindowsForms.exe
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\bin\Debug\net7.0-windows\HamburgueseríaWindowsForms.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\bin\Debug\net7.0-windows\HamburgueseríaWindowsForms.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\bin\Debug\net7.0-windows\HamburgueseríaWindowsForms.dll
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\bin\Debug\net7.0-windows\HamburgueseríaWindowsForms.pdb
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.Form1.resources
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.Properties.Resources.resources
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.csproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.dll
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\refint\HamburgueseríaWindowsForms.dll
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.pdb
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\HamburgueseríaWindowsForms.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\HamburgueseríaWindowsForms\obj\Debug\net7.0-windows\ref\HamburgueseríaWindowsForms.dll

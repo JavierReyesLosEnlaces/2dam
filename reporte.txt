@@ -1,0 +1,20 @@
+Javier Reyes / Reporte diario
+FECHA:
+17/10/2023
+
+DIA DEDICADO A: 
+- Estudiar DataX por medio de los videos de "Training material" de BBVA
+- Revisar la documentación oficial de BBVA sobre DataX
+- Tomar notas y recopilar dudas
+- Videollamada con Álvaro (DataX) y Fernando (Argos)
+
+PLAN PARA MAÑANA: 
+- Estudiar de forma extensiva la documentación de DataX, Dataproc, Control-M y Argos para asentar bien la teoría, tomar notas y recopilar dudas
+- Tomar notas, recopilar dudas
+
+EXPECTATIVAS:
+- Empezar casos prácticos pronto
+
+IMPRESIONES:
+- Contento, me gusta lo que estoy viendo y poco a poco siento que mi entendimiento general del tema va mejorando
+- Tengo ganas de empezar con casos prácticos reales y ayudar al equipo 
