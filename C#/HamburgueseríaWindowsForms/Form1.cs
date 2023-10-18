@@ -9,10 +9,6 @@ namespace HamburgueseríaWindowsForms
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
 
         //HAMBURGUESA
@@ -102,17 +98,43 @@ namespace HamburgueseríaWindowsForms
             contador += 1;
         }
 
+        //BOTÓN DE TERMINAR
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Text += "=============================================" + Environment.NewLine;
             richTextBox1.Text += "TOTAL: " + factura + " $";
+            factura = 0.0f;
             control = true;
+            button1.Visible = false;
+            panel1.Visible = false;
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            richTextBox1.Text += "=============================================" + Environment.NewLine;
+            richTextBox1.Text += "TOTAL: " + factura + " $";
+            factura = 0.0f;
+            control = true;
+            button1.Visible = false;
+            panel1.Visible = false;
         }
 
+        //BOTÓN DE RESETEO
         private void button2_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+            factura = 0.0f;
+            button1.Visible = true;
+            panel1.Visible = true;
         }
 
+
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            richTextBox1.Clear();
+            factura = 0.0f;
+            button1.Visible = true;
+            panel1.Visible = true;
+        }
     }
 }

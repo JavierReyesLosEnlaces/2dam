@@ -56,7 +56,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { comprarHamburguesaToolStripMenuItem, tienesSedToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 45);
+            menuStrip1.Size = new Size(827, 45);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -163,21 +163,25 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Center;
             panel1.Controls.Add(button1);
             panel1.Location = new Point(700, 120);
             panel1.Name = "panel1";
-            panel1.Size = new Size(100, 100);
+            panel1.Size = new Size(97, 98);
             panel1.TabIndex = 5;
+            panel1.Click += button1_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Center;
             panel2.Controls.Add(button2);
-            panel2.Location = new Point(703, 226);
+            panel2.Location = new Point(696, 224);
             panel2.Name = "panel2";
-            panel2.Size = new Size(100, 100);
+            panel2.Size = new Size(101, 101);
             panel2.TabIndex = 6;
+            panel2.Click += button2_Click;
             // 
             // button2
             // 
@@ -191,21 +195,22 @@
             button2.TabIndex = 2;
             button2.Text = "RESETEAR?";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(827, 483);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(richTextBox1);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
