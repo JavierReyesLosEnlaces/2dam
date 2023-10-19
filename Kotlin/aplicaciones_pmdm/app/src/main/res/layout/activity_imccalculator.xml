@@ -178,7 +178,6 @@
                 android:layout_gravity="center"
                 >
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btnAddWeight"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     app:cardCornerRadius="30dp"
@@ -187,6 +186,7 @@
                     android:clickable="true"
                     >
                     <ImageView
+                        android:id="@+id/btnAddWeight"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_add"
@@ -197,7 +197,6 @@
                     </ImageView>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btnSubstractWeight"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     app:cardCornerRadius="30dp"
@@ -205,6 +204,7 @@
                     android:layout_marginLeft="5dp"
                     >
                     <ImageView
+                        android:id="@+id/btnSubstractWeight"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/ic_substract"
@@ -274,6 +274,7 @@
                 android:clickable="true"
                 >
                 <ImageView
+                    android:id="@+id/btnAddAge"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_add"
@@ -291,6 +292,7 @@
                 android:layout_marginLeft="5dp"
                 >
                 <ImageView
+                    android:id="@+id/btnSubstractAge"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#6200ed"

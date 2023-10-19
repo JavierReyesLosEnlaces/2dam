@@ -17,8 +17,8 @@ class IMCCalculatorActivity : AppCompatActivity() {
 
     private var isMaleSelected: Boolean = false
     private var isFemaleSelected: Boolean = false
-    private var currentWeight: Int = 70;
-    private var currentAge: Int = 40;
+    private var currentWeight: Int = 70
+    private var currentAge: Int = 40
     private var currentHeight: Int = 120
 
 
@@ -27,19 +27,24 @@ class IMCCalculatorActivity : AppCompatActivity() {
 
     private lateinit var  viewMale: CardView
     private lateinit var  viewFemale: CardView
+
     private lateinit var tvHeight: TextView
     private lateinit var rsHeight: RangeSlider
+
     private lateinit var tvWeight: TextView
-    private lateinit var btnSubstractWeight: CardView
     private lateinit var btnAddWeight: CardView
+    private lateinit var btnSubstractWeight: CardView
+
     private lateinit var tvAge: TextView
-    private lateinit var btnSubstractAge: CardView
     private lateinit var btnAddAge: CardView
+    private lateinit var btnSubstractAge: CardView
+
     private lateinit var btnCalcular: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imccalculator)
+
         initComponents()
         initListeners()
         setWeight()
@@ -61,6 +66,8 @@ class IMCCalculatorActivity : AppCompatActivity() {
             val currentHeight = df.format(value).toInt()
             tvHeight.text = "$currentHeight cm"
         }
+
+    // BOTONES DE PESO
         btnSubstractWeight.setOnClickListener {
             currentWeight -= 1
             setWeight()
@@ -69,20 +76,24 @@ class IMCCalculatorActivity : AppCompatActivity() {
             currentWeight += 1
             setWeight()
         }
+
+    // BOTONES DE EDAD
         btnSubstractAge.setOnClickListener {
             currentAge -= 1
             setAge()
         }
-        btnAddWeight.setOnClickListener {
+        btnAddAge.setOnClickListener {
             currentAge += 1
+            Log.i("edad","done")
             setAge()
         }
+
+
+        //BOTÓN DE CÁLCULO
         btnCalcular.setOnClickListener {
             val result = calculateIMC()
             Log.i("IMC", "El IMC es $result")
         }
-
-
     }
 
     private fun setComponentColorMale() {
@@ -111,18 +122,33 @@ class IMCCalculatorActivity : AppCompatActivity() {
     private fun initComponents(){
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
+
+        // HEIGHT
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
+
+        // WEIGHT
         tvWeight = findViewById(R.id.tvWeight)
-        btnSubstractWeight = findViewById(R.id.btnSubstractWeight)
         btnAddWeight = findViewById(R.id.btnAddWeight)
-        btnCalcular = findViewById(R.id.btnCalcular)
-        btnSubstractAge = findViewById(R.id.btnSubstractWeight)
+        btnSubstractWeight = findViewById(R.id.btnSubstractWeight)
+
+        // AGE
         tvAge = findViewById(R.id.tvAge)
+        btnAddAge = findViewById(R.id.btnAddAge)
+        btnSubstractAge = findViewById(R.id.btnSubstractAge)
+
+        //BOTÓN DE CÁLCULO DEL IMC
+        btnCalcular = findViewById(R.id.btnCalcular)
     }
 
-    private fun setWeight() { tvWeight.text = currentWeight.toString() }
-    private fun setAge() { tvAge.text = currentAge.toString() }
+    private fun setWeight() {
+        tvWeight.text = currentWeight.toString()
+    }
+
+    private fun setAge() {
+        tvAge.text = currentAge.toString()
+    }
+
 
     private fun calculateIMC():Double {
         val df = DecimalFormat("#.##")
