@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.example.aplicaciones_pmdm.HelloApp.SecondActivity
 import com.example.aplicaciones_pmdm.MenuActivity
 import com.example.aplicaciones_pmdm.R
 import com.google.android.material.slider.RangeSlider
@@ -63,7 +64,7 @@ class IMCCalculatorActivity : AppCompatActivity() {
         }
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#")
-            val currentHeight = df.format(value).toInt()
+            currentHeight = df.format(value).toInt()
             tvHeight.text = "$currentHeight cm"
         }
 
@@ -92,8 +93,15 @@ class IMCCalculatorActivity : AppCompatActivity() {
         //BOTÓN DE CÁLCULO
         btnCalcular.setOnClickListener {
             val result = calculateIMC()
-            Log.i("IMC", "El IMC es $result")
+            Log.i("IMC", "$result")
+            navigateToResult(result)
         }
+    }
+
+    private fun navigateToResult(result: Double){
+        val intent = Intent(this, ResultActivity::class.java)
+        intent.putExtra("extra_name", result)
+        startActivity(intent)
     }
 
     private fun setComponentColorMale() {
@@ -152,7 +160,7 @@ class IMCCalculatorActivity : AppCompatActivity() {
 
     private fun calculateIMC():Double {
         val df = DecimalFormat("#.##")
-        val imc = currentWeight / pow(currentHeight.toDouble() /100, 2.0)
+        val imc = currentWeight / pow(currentHeight.toDouble()/100, 2.0)
 
         return df.format(imc).toDouble()
     }
