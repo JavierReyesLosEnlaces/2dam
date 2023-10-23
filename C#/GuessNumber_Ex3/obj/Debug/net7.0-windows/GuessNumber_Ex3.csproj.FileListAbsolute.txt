@@ -1,0 +1,16 @@
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\bin\Debug\net7.0-windows\GuessNumber_Ex3.exe
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\bin\Debug\net7.0-windows\GuessNumber_Ex3.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\bin\Debug\net7.0-windows\GuessNumber_Ex3.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\bin\Debug\net7.0-windows\GuessNumber_Ex3.dll
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\bin\Debug\net7.0-windows\GuessNumber_Ex3.pdb
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.NuevoJuegoDeAdivinar.resources
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.csproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.dll
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\refint\GuessNumber_Ex3.dll
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.pdb
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\GuessNumber_Ex3.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\GuessNumber_Ex3\obj\Debug\net7.0-windows\ref\GuessNumber_Ex3.dll
