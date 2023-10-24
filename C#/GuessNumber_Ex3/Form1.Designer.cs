@@ -1,6 +1,6 @@
 ﻿namespace GuessNumber_Ex3
 {
-    partial class NuevoJuegoDeAdivinar
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,21 +31,23 @@
             lbl_info = new Label();
             lbl_intentos = new Label();
             txt_bx_usuario = new TextBox();
-            button1 = new Button();
-            lbl_debug = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
-            lbl_debug.SuspendLayout();
+            btn_Boton = new Button();
+            status_strip = new StatusStrip();
+            lbl_debug = new ToolStripStatusLabel();
+            btn_newForm = new Button();
+            status_strip.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_info
             // 
-            lbl_info.AutoSize = true;
             lbl_info.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_info.Location = new Point(112, 65);
+            lbl_info.Location = new Point(80, 51);
             lbl_info.Name = "lbl_info";
-            lbl_info.Size = new Size(338, 37);
+            lbl_info.Size = new Size(398, 40);
             lbl_info.TabIndex = 0;
             lbl_info.Text = "Información por pantalla";
+            lbl_info.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_info.UseCompatibleTextRendering = true;
             // 
             // lbl_intentos
             // 
@@ -65,45 +67,56 @@
             txt_bx_usuario.Size = new Size(256, 23);
             txt_bx_usuario.TabIndex = 2;
             // 
-            // button1
+            // btn_Boton
             // 
-            button1.Location = new Point(217, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 60);
-            button1.TabIndex = 3;
-            button1.Text = "PULSAR";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_Boton.Location = new Point(217, 271);
+            btn_Boton.Name = "btn_Boton";
+            btn_Boton.Size = new Size(120, 60);
+            btn_Boton.TabIndex = 3;
+            btn_Boton.Text = "PULSAR";
+            btn_Boton.UseVisualStyleBackColor = true;
+            btn_Boton.Click += button1_Click;
+            // 
+            // status_strip
+            // 
+            status_strip.Items.AddRange(new ToolStripItem[] { lbl_debug });
+            status_strip.Location = new Point(0, 416);
+            status_strip.Name = "status_strip";
+            status_strip.Size = new Size(559, 22);
+            status_strip.TabIndex = 4;
+            status_strip.Text = "statusStrip1";
             // 
             // lbl_debug
             // 
-            lbl_debug.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            lbl_debug.Location = new Point(0, 416);
             lbl_debug.Name = "lbl_debug";
-            lbl_debug.Size = new Size(559, 22);
-            lbl_debug.TabIndex = 4;
-            lbl_debug.Text = "statusStrip1";
+            lbl_debug.Size = new Size(118, 17);
+            lbl_debug.Text = "toolStripStatusLabel1";
             // 
-            // toolStripStatusLabel1
+            // btn_newForm
             // 
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(85, 17);
-            toolStripStatusLabel1.Text = "numeroOculto";
+            btn_newForm.Location = new Point(472, 373);
+            btn_newForm.Name = "btn_newForm";
+            btn_newForm.Size = new Size(75, 23);
+            btn_newForm.TabIndex = 5;
+            btn_newForm.Text = "button1";
+            btn_newForm.UseVisualStyleBackColor = true;
+            btn_newForm.Click += btn_newForm_Click;
             // 
-            // NuevoJuegoDeAdivinar
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(559, 438);
-            Controls.Add(lbl_debug);
-            Controls.Add(button1);
+            Controls.Add(btn_newForm);
+            Controls.Add(status_strip);
+            Controls.Add(btn_Boton);
             Controls.Add(txt_bx_usuario);
             Controls.Add(lbl_intentos);
             Controls.Add(lbl_info);
-            Name = "NuevoJuegoDeAdivinar";
+            Name = "Form1";
             Text = "Form1";
-            lbl_debug.ResumeLayout(false);
-            lbl_debug.PerformLayout();
+            status_strip.ResumeLayout(false);
+            status_strip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,8 +126,9 @@
         private Label lbl_info;
         private Label lbl_intentos;
         private TextBox txt_bx_usuario;
-        private Button button1;
-        private StatusStrip lbl_debug;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private Button btn_Boton;
+        private StatusStrip status_strip;
+        private ToolStripStatusLabel lbl_debug;
+        private Button btn_newForm;
     }
 }
