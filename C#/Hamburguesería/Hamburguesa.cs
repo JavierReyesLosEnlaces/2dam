@@ -2,9 +2,8 @@
 {
     private bool conPanCenteno;
     private bool conQueso;
-    private readonly float precioBase = 4.0f; //readonly = final
-    private float precioExtras = 0;
-
+    private readonly float precioBase = 4.0f;
+    private float precioExtras = 0.0f;
 
     public Hamburguesa(bool conPanCenteno, bool conQueso)
     {
@@ -15,10 +14,10 @@
         if (conQueso) precioExtras += 1.0f;
 
         precio = precioBase + precioExtras;
+
     }
 
-    //GETTERS Y SETTERS 
-    public bool PanCenteno
+    public bool ConPanCenteno
     {
         get { return conPanCenteno; }
         set { conPanCenteno = value; }
@@ -28,11 +27,5 @@
     {
         get { return conQueso; }
         set { conQueso = value; }
-    }
-
-    public float Precio
-    {
-        get { return precio; }
-        set { precio = value; }
     }
 }

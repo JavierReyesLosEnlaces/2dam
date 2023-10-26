@@ -1,9 +1,7 @@
 ﻿public class Producto
 {
     public float precio;
-    public Producto()
-    {
-    }
+    public Producto(){}
     public float Precio
     {
         get { return precio; }

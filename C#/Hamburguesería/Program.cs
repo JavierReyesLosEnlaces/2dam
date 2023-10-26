@@ -4,23 +4,26 @@
     static void Main(string[] args)
     {
         float precioTotal = 0.0f;
-        int opc;
+        int opcion;
+
         insertarBienvenida();
+
         do
         {
-            if (comanda.Count == 0) { Console.WriteLine("\nBienvenid@, ¿en qué puedo ayudarle?"); }
+            if (comanda.Count == 0) { Console.WriteLine("\nBienvenid@ a McJavis, ¿en qué puedo ayudarle?"); }
             else { Console.WriteLine("¿Desea algo más?"); }
 
-            Console.WriteLine(" _____________________________________________ ");
-            Console.WriteLine("| 1. Comprar hamburguesa (4$)                 |");
-            Console.WriteLine("| 2. Comprar bebida (3$)                      |");
-            Console.WriteLine("| 0. Finalizar compra y pagar                 |");
-            Console.WriteLine("|_____________________________________________|\n");
+            Console.WriteLine("             ______             ");
+            Console.WriteLine(" ___________| MENÚ |___________ ");
+            Console.WriteLine("| 1. Comprar hamburguesa... 4$ |");
+            Console.WriteLine("| 2. Comprar bebida........ 3$ |");
+            Console.WriteLine("| 0. Finalizar compra y pagar  |");
+            Console.WriteLine("|______________________________|\n");
 
-            opc = Int32.Parse(Console.ReadLine());
-
-            switch (opc)
+            if (int.TryParse(Console.ReadLine(), out opcion)) //se intenta convertir la cadena de texto en un numero entero
             {
+                switch (opcion)
+                {
                 case 1:
                     precioTotal += nuevaHamburguesa().Precio;
                     break;
@@ -33,8 +36,13 @@
                 default:
                     Console.WriteLine("Opción no válida, vuelve a intentarlo");
                     break;
+                }
+            } 
+            else
+            {
+                Console.WriteLine("Debes introducir un número válido.");
             }
-        } while (opc != 0);
+        } while (opcion != 0);
     }
 
     private static void mostrarComanda(float precioTotal)
@@ -51,8 +59,8 @@
                 {
                     Console.WriteLine(s);
                 }
-                Console.WriteLine("-------------------------------------------------------\"\nTOTAL A PAGAR:" + precioTotal + "$");
-                Console.WriteLine("Gracias y hasta luego!");
+                Console.WriteLine("-------------------------------------------------------\nTOTAL A PAGAR = " + precioTotal + "$");
+                Console.WriteLine("¡Gracias y hasta luego!");
             }
         }
     }
@@ -152,9 +160,9 @@
     private static void statusHamburguesa(Hamburguesa h)
     {
         String status;
-        if (h.PanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y pan de centeno"; }
-        else if (h.PanCenteno && !h.ConQueso) { status = "(+) Hamburguesa sin queso y con pan de centeno"; }
-        else if (!h.PanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y sin pan de centeno"; }
+        if (h.ConPanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y pan de centeno"; }
+        else if (h.ConPanCenteno && !h.ConQueso) { status = "(+) Hamburguesa sin queso y con pan de centeno"; }
+        else if (!h.ConPanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y sin pan de centeno"; }
         else { status = "(+) Hamburguesa sin queso y sin pan de centeno"; }
         insertarHamburguesa();
         status += " --> " + h.Precio + "$";
@@ -210,39 +218,39 @@
     private static void insertarBebidaConAlcohol()
     {
         Console.WriteLine("");
-        Console.WriteLine("  \\             / ");
-        Console.WriteLine("   \\`\\-------'`/ ");
-        Console.WriteLine("    \\ \\__ o . /  ");
-        Console.WriteLine("     \\/  \\  o/   ");
-        Console.WriteLine("      \\__/. /     ");
-        Console.WriteLine("       \\_ _/      ");
-        Console.WriteLine("         YY        ");
-        Console.WriteLine("         ||        ");
-        Console.WriteLine("         ||        ");
-        Console.WriteLine("    __.-' '-.__    ");
-        Console.WriteLine("    `----------`   MARCHANDO!");
+        Console.WriteLine("       \\             / ");
+        Console.WriteLine("        \\`\\-------'`/ ");
+        Console.WriteLine("         \\ \\__ o . /  ");
+        Console.WriteLine("          \\/  \\  o/   ");
+        Console.WriteLine("           \\__/. /      ");
+        Console.WriteLine("            \\_ _/      ");
+        Console.WriteLine("             YY         ");
+        Console.WriteLine("             ||         ");
+        Console.WriteLine("             ||         ");
+        Console.WriteLine("         __.-' '-.__    ");
+        Console.WriteLine("         `----------`   MARCHANDO!");
         Console.WriteLine("");
     }
 
     private static void insertarBebidaSinAlcohol()
     {
         Console.WriteLine("");
-        Console.WriteLine("                    //     ");
-        Console.WriteLine("                   //      ");
-        Console.WriteLine("                  //       ");
-        Console.WriteLine("              ____||       ");
-        Console.WriteLine("         ,-'''    ||`-.    ");
-        Console.WriteLine("        (         ||   )   ");
-        Console.WriteLine("        |`-...____'|___|   ");
-        Console.WriteLine("        |         ||   |   ");
-        Console.WriteLine("        |     ____||   |   ");
-        Console.WriteLine("        |,-'''_ _ ||`-.|   ");
-        Console.WriteLine("        |  ~ / `-\\ ,- |   ");
-        Console.WriteLine("        |`-...___/___,'|   ");
-        Console.WriteLine("        |    `-./-'_ | |   ");
-        Console.WriteLine("        | -'  ~~     |||   ");
-        Console.WriteLine("        (   ~      ~   )   ");
-        Console.WriteLine("         `-..._______,`    MARCHANDO!");
+        Console.WriteLine("                   //     ");
+        Console.WriteLine("                  //      ");
+        Console.WriteLine("                 //       ");
+        Console.WriteLine("             ____||       ");
+        Console.WriteLine("        ,-'''    ||`-.    ");
+        Console.WriteLine("       (         ||   )   ");
+        Console.WriteLine("       |`-...____'|___|   ");
+        Console.WriteLine("       |         ||   |   ");
+        Console.WriteLine("       |     ____||   |   ");
+        Console.WriteLine("       |,-'''_ _ ||`-.|   ");
+        Console.WriteLine("       |  ~ / `-\\ ,- |   ");
+        Console.WriteLine("       |`-...___/___,'|   ");
+        Console.WriteLine("       |    `-./-'_ | |   ");
+        Console.WriteLine("       | -'  ~~     |||   ");
+        Console.WriteLine("       (   ~      ~   )   ");
+        Console.WriteLine("        `-..._______,-    MARCHANDO!");
         Console.WriteLine("");
 
     }
