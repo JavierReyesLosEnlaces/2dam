@@ -1,41 +1,38 @@
-﻿using System;
-
-public class Hamburguesa
+﻿public class Hamburguesa : Producto
 {
-    private bool panCenteno;
+    private bool conPanCenteno;
     private bool conQueso;
     private readonly float precioBase = 4.0f; //readonly = final
     private float precioExtras = 0;
-    private float precioFinal;
 
 
-    public Hamburguesa(bool panCenteno, bool carneVacuno)
+    public Hamburguesa(bool conPanCenteno, bool conQueso)
     {
-        this.panCenteno = panCenteno;   
-        this.conQueso = carneVacuno;
+        this.conPanCenteno = conPanCenteno;
+        this.conQueso = conQueso;
 
-        if (panCenteno) precioExtras += 0.5f;
-        if (carneVacuno) precioExtras += 1.0f;
+        if (conPanCenteno) precioExtras += 0.5f;
+        if (conQueso) precioExtras += 1.0f;
 
-        precioFinal = precioBase + precioExtras;
+        precio = precioBase + precioExtras;
     }
 
     //GETTERS Y SETTERS 
     public bool PanCenteno
     {
-        get { return panCenteno; }
-        set { panCenteno = value; }
+        get { return conPanCenteno; }
+        set { conPanCenteno = value; }
     }
 
-    public bool Queso
+    public bool ConQueso
     {
         get { return conQueso; }
         set { conQueso = value; }
     }
 
-    public float PrecioFinal
+    public float Precio
     {
-        get { return precioFinal; }
-        set { precioFinal = value; }
+        get { return precio; }
+        set { precio = value; }
     }
 }

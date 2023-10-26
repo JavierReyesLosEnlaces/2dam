@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\javir\\.nuget\\packages\\": {}
+    "C:\\Users\\Alumno\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería\\Hamburguesería.csproj",
-      "projectName": "Hamburguesería",
-      "projectPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería\\Hamburguesería.csproj",
-      "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería\\obj\\",
+      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería\\McJavis.csproj",
+      "projectName": "McJavis",
+      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería\\McJavis.csproj",
+      "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,47 +1,62 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-class Program
+﻿class Program
 {
+    static List<string> comanda = new List<string>();
     static void Main(string[] args)
     {
         float precioTotal = 0.0f;
         int opc;
-
+        insertarBienvenida();
         do
         {
-            Console.WriteLine("-------------------------------------------");
-            Console.WriteLine("SELECCIONA EL NÚMERO CON LA OPCIÓN DESEADA: ");
-            Console.WriteLine("1. Comprar hamburguesa (4$) ");
-            Console.WriteLine("2. Comprar bebida (3$)");
-            Console.WriteLine("0. Finalizar compra y pagar");
-            Console.WriteLine("-------------------------------------------\n");
+            if (comanda.Count == 0) { Console.WriteLine("\nBienvenid@, ¿en qué puedo ayudarle?"); }
+            else { Console.WriteLine("¿Desea algo más?"); }
+
+            Console.WriteLine(" _____________________________________________ ");
+            Console.WriteLine("| 1. Comprar hamburguesa (4$)                 |");
+            Console.WriteLine("| 2. Comprar bebida (3$)                      |");
+            Console.WriteLine("| 0. Finalizar compra y pagar                 |");
+            Console.WriteLine("|_____________________________________________|\n");
 
             opc = Int32.Parse(Console.ReadLine());
 
             switch (opc)
             {
                 case 1:
-                    precioTotal += ComprarHamburguesa();
+                    precioTotal += nuevaHamburguesa().Precio;
                     break;
                 case 2:
-                    precioTotal += ComprarBebida();
+                    precioTotal += nuevaBebida().Precio;
                     break;
                 case 0:
-                    Console.WriteLine("Hasta luego!");
+                    mostrarComanda(precioTotal);
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo\n");
+                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
                     break;
             }
         } while (opc != 0);
-        Console.WriteLine("PRECIO TOTAL = " + precioTotal + " $");
     }
-    private static float ComprarBebida()
+
+    private static void mostrarComanda(float precioTotal)
+    {
+        if (comanda.Count == 0)
+        {
+            Console.WriteLine("¿Te vas? ¡Pero si no has pedido nada! :(");
+        }
+        else
+        {
+            {
+                Console.WriteLine("----------------------| FACTURA |----------------------");
+                foreach (String s in comanda)
+                {
+                    Console.WriteLine(s);
+                }
+                Console.WriteLine("-------------------------------------------------------\"\nTOTAL A PAGAR:" + precioTotal + "$");
+                Console.WriteLine("Gracias y hasta luego!");
+            }
+        }
+    }
+    private static Bebida nuevaBebida()
     {
         bool conAlcohol = false;
         int x;
@@ -73,21 +88,13 @@ class Program
         } while (x != 1 && x != 2);
         Bebida b = new Bebida(conAlcohol);
         statusBebida(b);
-
-
-
-        Console.WriteLine("(+" + b.Precio + " $)\n");
-        return b.Precio;
-
+        return b;
     }
-
-
-
-    private static float ComprarHamburguesa()
+    private static Hamburguesa nuevaHamburguesa()
     {
         bool panCenteno = false, conQueso = false;
         int x;
-        
+
         // PAN DE CENTENO
 
         do
@@ -99,7 +106,7 @@ class Program
 
             x = Int32.Parse(Console.ReadLine());
 
-            switch(x)
+            switch (x)
             {
                 case 1:
                     panCenteno = true;
@@ -139,78 +146,104 @@ class Program
 
         Hamburguesa h = new Hamburguesa(panCenteno, conQueso);
         statusHamburguesa(h);
-        Console.WriteLine("\n");
-        return h.PrecioFinal;
+        return h;
+
+    }
+    private static void statusHamburguesa(Hamburguesa h)
+    {
+        String status;
+        if (h.PanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y pan de centeno"; }
+        else if (h.PanCenteno && !h.ConQueso) { status = "(+) Hamburguesa sin queso y con pan de centeno"; }
+        else if (!h.PanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y sin pan de centeno"; }
+        else { status = "(+) Hamburguesa sin queso y sin pan de centeno"; }
+        insertarHamburguesa();
+        status += " --> " + h.Precio + "$";
+        Console.WriteLine(status);
+        comanda.Add(status);
+    }
+
+    private static void statusBebida(Bebida b)
+    {
+        String status;
+        if (b.ConAlcohol)
+        {
+            insertarBebidaConAlcohol();
+            status = "(+) Bebida con alcohol";
+        }
+        else
+        {
+            insertarBebidaSinAlcohol();
+            status = "(+) Bebida sin alcohol";
+        }
+        status += " --> " + b.Precio + "$";
+        Console.WriteLine(status);
+        comanda.Add(status);
 
     }
 
+    // IMÁGENES
+
+    private static void insertarBienvenida()
+    {
+        Console.WriteLine("  __  __             _             _             ");
+        Console.WriteLine(" |  \\/  |           | |           (_)           ");
+        Console.WriteLine(" | \\  / | ___       | | __ ___   ___ ___        ");
+        Console.WriteLine(" | |\\/| |/ __|  _   | |/ _` \\ \\ / / / __|     ");
+        Console.WriteLine(" | |  | | (__  | |__| | (_| |\\ V /| \\__ \\     ");
+        Console.WriteLine(" |_|  |_|\\___|  \\____/ \\__,_| \\_/ |_|___/    ");
+    }
     private static void insertarHamburguesa()
     {
-       Console.WriteLine("          _..----.._        ");
-       Console.WriteLine("        .'     o    '.      ");
-       Console.WriteLine("       /   o       o  \\    ");
-       Console.WriteLine("      |o        o     o|    ");
-       Console.WriteLine("      /'-.._o     __.-'\\   ");
-       Console.WriteLine("      \\      `````     /   ");
-       Console.WriteLine("      |``--........--'`|    ");
-       Console.WriteLine("       \\              /    ");
-       Console.WriteLine("        `'----------'`      ");
+        Console.WriteLine("");
+        Console.WriteLine("          _..----.._       ");
+        Console.WriteLine("        .'     o    '.     ");
+        Console.WriteLine("       /   o       o  \\   ");
+        Console.WriteLine("      |o        o     o|   ");
+        Console.WriteLine("      /'-.._o     __.-'\\  ");
+        Console.WriteLine("      \\      `````     /  ");
+        Console.WriteLine("      |``--........--'`|   ");
+        Console.WriteLine("       \\              /   ");
+        Console.WriteLine("        `'----------'`     MARCHANDO!");
+        Console.WriteLine("");
     }
 
     private static void insertarBebidaConAlcohol()
     {
-        Console.WriteLine("  \"\"\"\"\"\"\"\"/.       ");
-        Console.WriteLine("   \\`\\-------'`/         ");
-        Console.WriteLine("    \\ \\__ o . /          ");
-        Console.WriteLine("     \\/  \\  o/           ");
-        Console.WriteLine("      \\__/. /             ");
-        Console.WriteLine("       \\_ _/              ");
-        Console.WriteLine("         YY                ");
-        Console.WriteLine("         ||                ");
-        Console.WriteLine("         ||                ");
-        Console.WriteLine("    __.-' '-.__            ");
-        Console.WriteLine("    `----------`           ");
+        Console.WriteLine("");
+        Console.WriteLine("  \\             / ");
+        Console.WriteLine("   \\`\\-------'`/ ");
+        Console.WriteLine("    \\ \\__ o . /  ");
+        Console.WriteLine("     \\/  \\  o/   ");
+        Console.WriteLine("      \\__/. /     ");
+        Console.WriteLine("       \\_ _/      ");
+        Console.WriteLine("         YY        ");
+        Console.WriteLine("         ||        ");
+        Console.WriteLine("         ||        ");
+        Console.WriteLine("    __.-' '-.__    ");
+        Console.WriteLine("    `----------`   MARCHANDO!");
+        Console.WriteLine("");
     }
 
     private static void insertarBebidaSinAlcohol()
     {
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠓⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿ SODA ⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡤⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        Console.WriteLine("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-    }
+        Console.WriteLine("");
+        Console.WriteLine("                    //     ");
+        Console.WriteLine("                   //      ");
+        Console.WriteLine("                  //       ");
+        Console.WriteLine("              ____||       ");
+        Console.WriteLine("         ,-'''    ||`-.    ");
+        Console.WriteLine("        (         ||   )   ");
+        Console.WriteLine("        |`-...____'|___|   ");
+        Console.WriteLine("        |         ||   |   ");
+        Console.WriteLine("        |     ____||   |   ");
+        Console.WriteLine("        |,-'''_ _ ||`-.|   ");
+        Console.WriteLine("        |  ~ / `-\\ ,- |   ");
+        Console.WriteLine("        |`-...___/___,'|   ");
+        Console.WriteLine("        |    `-./-'_ | |   ");
+        Console.WriteLine("        | -'  ~~     |||   ");
+        Console.WriteLine("        (   ~      ~   )   ");
+        Console.WriteLine("         `-..._______,`    MARCHANDO!");
+        Console.WriteLine("");
 
-    private static void statusHamburguesa(Hamburguesa h)
-    {
-        String status;
-        if (h.PanCenteno && h.Queso) { status = "(+) Hamburguesa con queso y pan de centeno"; }
-        else if (h.PanCenteno && !h.Queso) { status = "(+) Hamburguesa sin queso y con pan de centeno"; }
-        else if (!h.PanCenteno && h.Queso) { status = "(+) Hamburguesa con queso y sin pan de centeno"; }
-        else { status = "(+) Hamburguesa sin queso y sin pan de centeno"; }
-        insertarHamburguesa();
-        Console.WriteLine(status);
     }
-    private static void statusBebida(Bebida b)
-    {
-        String status;
-        if (b.ConAlcohol) {
-            status = "(+) Bebida con alcohol";
-            insertarBebidaConAlcohol();
-        }
-        else {
-            status = "(+) Bebida sin alcohol";
-            insertarBebidaSinAlcohol();
-        }
-    }
-
-
 }

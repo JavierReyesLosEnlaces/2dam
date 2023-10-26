@@ -1,8 +1,6 @@
-﻿
-public class Bebida
+﻿public class Bebida : Producto
 {
     private bool conAlcohol;
-    private float precio;
 
     public Bebida(bool conAlcohol)
     {
@@ -17,10 +15,4 @@ public class Bebida
         get { return conAlcohol; }
         set { conAlcohol = value; }
     }
-    public float Precio
-    {     
-        get { return precio; }
-        set { precio  = value; }
-    }
-    
 }
