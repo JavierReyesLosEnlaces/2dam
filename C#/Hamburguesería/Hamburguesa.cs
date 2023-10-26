@@ -3,7 +3,7 @@
 public class Hamburguesa
 {
     private bool panCenteno;
-    private bool carneVacuno;
+    private bool conQueso;
     private readonly float precioBase = 4.0f; //readonly = final
     private float precioExtras = 0;
     private float precioFinal;
@@ -12,7 +12,7 @@ public class Hamburguesa
     public Hamburguesa(bool panCenteno, bool carneVacuno)
     {
         this.panCenteno = panCenteno;   
-        this.carneVacuno = carneVacuno;
+        this.conQueso = carneVacuno;
 
         if (panCenteno) precioExtras += 0.5f;
         if (carneVacuno) precioExtras += 1.0f;
@@ -27,10 +27,10 @@ public class Hamburguesa
         set { panCenteno = value; }
     }
 
-    public bool CarneVacuno
+    public bool Queso
     {
-        get { return carneVacuno; }
-        set { carneVacuno = value; }
+        get { return conQueso; }
+        set { conQueso = value; }
     }
 
     public float PrecioFinal
