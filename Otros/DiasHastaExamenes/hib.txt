@@ -1,0 +1,23 @@
+Abre el Programador de tareas de Windows. Puedes buscarlo en el menú Inicio o usar la combinación de teclas Win + R y luego escribir taskschd.msc.
+
+En el Panel de navegación del Programador de tareas, haz clic con el botón derecho en "Biblioteca del Programador de tareas" y selecciona "Crear tarea" para iniciar el asistente de creación de tareas.
+
+En el asistente, proporciona un nombre y una descripción para tu tarea. Luego, haz clic en "Siguiente".
+
+En la sección "Elegir una acción", selecciona "Iniciar un programa" y haz clic en "Siguiente".
+
+En la ventana "Especificar un programa para ejecutar", busca y selecciona el archivo por lotes (.bat) que contiene el script modificado que verifique la hibernación y ejecute el código Java.
+
+Haz clic en "Siguiente" y revisa la configuración de la tarea.
+
+En la pantalla "Finalizar creación de tarea", asegúrate de que la opción "Abra las propiedades avanzadas de esta tarea cuando haga clic en Finalizar" esté seleccionada. Luego, haz clic en "Finalizar".
+
+En las propiedades avanzadas de la tarea, ve a la pestaña "Condiciones".
+
+En la sección "Comienza el trabajo solo si el equipo se encuentra en inactivo durante", asegúrate de que esté desactivada (sin marca de verificación) para que la tarea se ejecute sin importar si el equipo está inactivo.
+
+En la sección "Desencadenadores", no es necesario agregar ningún desencadenador específico para este caso, ya que el script verificará la hibernación por sí mismo.
+
+Asegúrate de que en la pestaña "Configuración" esté seleccionada la opción "Ejecutar la tarea lo antes posible después de un inicio programado si se ha perdido".
+
+Haz clic en "Aceptar" para guardar la configuración de la tarea.
