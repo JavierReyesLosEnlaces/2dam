@@ -1,13 +1,12 @@
 ﻿public class Bebida : Producto
 {
     private bool conAlcohol;
-    private readonly float precioBase = 3.0f;
-    private float precioExtras = 0.0f;
 
     public Bebida(bool conAlcohol)
     {
         this.conAlcohol = conAlcohol;
 
+        precioBase = 3.0f;
         if (conAlcohol) precioExtras += 0.5f;
 
         precio = precioBase + precioExtras;

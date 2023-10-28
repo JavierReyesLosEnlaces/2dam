@@ -160,7 +160,7 @@
     private static void statusHamburguesa(Hamburguesa h)
     {
         String status;
-        if (h.ConPanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y pan de centeno"; }
+        if (h.ConPanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y con pan de centeno"; }
         else if (h.ConPanCenteno && !h.ConQueso) { status = "(+) Hamburguesa sin queso y con pan de centeno"; }
         else if (!h.ConPanCenteno && h.ConQueso) { status = "(+) Hamburguesa con queso y sin pan de centeno"; }
         else { status = "(+) Hamburguesa sin queso y sin pan de centeno"; }

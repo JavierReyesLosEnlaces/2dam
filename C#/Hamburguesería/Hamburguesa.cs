@@ -2,19 +2,17 @@
 {
     private bool conPanCenteno;
     private bool conQueso;
-    private readonly float precioBase = 4.0f;
-    private float precioExtras = 0.0f;
 
     public Hamburguesa(bool conPanCenteno, bool conQueso)
     {
         this.conPanCenteno = conPanCenteno;
         this.conQueso = conQueso;
 
+        precioBase = 4.0f; 
         if (conPanCenteno) precioExtras += 0.5f;
         if (conQueso) precioExtras += 1.0f;
 
         precio = precioBase + precioExtras;
-
     }
 
     public bool ConPanCenteno
