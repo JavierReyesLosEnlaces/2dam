@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvInsertYourName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enter your name:"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/etEditText"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Write here pls"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInsertYourName">
+    </EditText>
+
+    <Button
+        android:id="@+id/btSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEditText"
+        android:layout_marginRight="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="50dp"
+        >
+    </Button>
+
+    <TextView
+        android:id="@+id/tvHolaMundo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#e69dfc"
+        android:text="Hey library! :3 "
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toTopOf="@id/vBottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+    </TextView>
+
+    <View
+        android:id="@+id/vBottom"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="#42f5b3"
+        >
+    </View>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
