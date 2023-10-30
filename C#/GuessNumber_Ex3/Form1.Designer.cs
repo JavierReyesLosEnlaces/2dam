@@ -34,6 +34,8 @@
             btn_Boton = new Button();
             status_strip = new StatusStrip();
             lbl_debug = new ToolStripStatusLabel();
+            lbl_rnd_mes = new ToolStripStatusLabel();
+            status = new ToolStripStatusLabel();
             btn_newForm = new Button();
             status_strip.SuspendLayout();
             SuspendLayout();
@@ -41,9 +43,9 @@
             // lbl_info
             // 
             lbl_info.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_info.Location = new Point(80, 51);
+            lbl_info.Location = new Point(89, 9);
             lbl_info.Name = "lbl_info";
-            lbl_info.Size = new Size(398, 40);
+            lbl_info.Size = new Size(372, 127);
             lbl_info.TabIndex = 0;
             lbl_info.Text = "Información por pantalla";
             lbl_info.TextAlign = ContentAlignment.MiddleCenter;
@@ -79,7 +81,7 @@
             // 
             // status_strip
             // 
-            status_strip.Items.AddRange(new ToolStripItem[] { lbl_debug });
+            status_strip.Items.AddRange(new ToolStripItem[] { lbl_debug, lbl_rnd_mes, status });
             status_strip.Location = new Point(0, 416);
             status_strip.Name = "status_strip";
             status_strip.Size = new Size(559, 22);
@@ -89,8 +91,20 @@
             // lbl_debug
             // 
             lbl_debug.Name = "lbl_debug";
-            lbl_debug.Size = new Size(118, 17);
-            lbl_debug.Text = "toolStripStatusLabel1";
+            lbl_debug.Size = new Size(12, 17);
+            lbl_debug.Text = "-";
+            // 
+            // lbl_rnd_mes
+            // 
+            lbl_rnd_mes.Name = "lbl_rnd_mes";
+            lbl_rnd_mes.Size = new Size(12, 17);
+            lbl_rnd_mes.Text = "-";
+            // 
+            // status
+            // 
+            status.Name = "status";
+            status.Size = new Size(12, 17);
+            status.Text = "-";
             // 
             // btn_newForm
             // 
@@ -98,7 +112,7 @@
             btn_newForm.Name = "btn_newForm";
             btn_newForm.Size = new Size(75, 23);
             btn_newForm.TabIndex = 5;
-            btn_newForm.Text = "button1";
+            btn_newForm.Text = "Ver imagen";
             btn_newForm.UseVisualStyleBackColor = true;
             btn_newForm.Click += btn_newForm_Click;
             // 
@@ -130,5 +144,7 @@
         private StatusStrip status_strip;
         private ToolStripStatusLabel lbl_debug;
         private Button btn_newForm;
+        private ToolStripStatusLabel lbl_rnd_mes;
+        private ToolStripStatusLabel status;
     }
 }
