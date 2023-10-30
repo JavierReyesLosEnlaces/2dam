@@ -12,6 +12,22 @@ class MainActivity : AppCompatActivity() {
 
         var btnHelloApp = findViewById<Button>(R.id.btnHelloApp)
         btnHelloApp.setOnClickListener { navigateToHelloApp() }
+
+        var btnMessageApp = findViewById<Button>(R.id.btnMessageApp)
+        btnHelloApp.setOnClickListener { navigateToMessageApp() }
+
+        var btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
+        btnHelloApp.setOnClickListener { navigateToIMCApp() }
+    }
+
+    private fun navigateToIMCApp() {
+        var textIntent = Intent(this, IMCactivity::class.java )
+        startActivity(textIntent)
+    }
+
+    private fun navigateToMessageApp() {
+        var textIntent = Intent(this, MessageActivity::class.java )
+        startActivity(textIntent)
     }
 
     private fun navigateToHelloApp() {
