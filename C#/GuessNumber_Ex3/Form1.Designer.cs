@@ -35,7 +35,6 @@
             status_strip = new StatusStrip();
             lbl_debug = new ToolStripStatusLabel();
             lbl_rnd_mes = new ToolStripStatusLabel();
-            status = new ToolStripStatusLabel();
             btn_newForm = new Button();
             status_strip.SuspendLayout();
             SuspendLayout();
@@ -43,9 +42,9 @@
             // lbl_info
             // 
             lbl_info.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_info.Location = new Point(89, 9);
+            lbl_info.Location = new Point(102, 12);
             lbl_info.Name = "lbl_info";
-            lbl_info.Size = new Size(372, 127);
+            lbl_info.Size = new Size(425, 169);
             lbl_info.TabIndex = 0;
             lbl_info.Text = "Información por pantalla";
             lbl_info.TextAlign = ContentAlignment.MiddleCenter;
@@ -55,25 +54,27 @@
             // 
             lbl_intentos.AutoSize = true;
             lbl_intentos.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_intentos.Location = new Point(232, 226);
+            lbl_intentos.Location = new Point(265, 301);
             lbl_intentos.Name = "lbl_intentos";
-            lbl_intentos.Size = new Size(87, 28);
+            lbl_intentos.Size = new Size(110, 35);
             lbl_intentos.TabIndex = 1;
             lbl_intentos.Text = "Intentos:";
             // 
             // txt_bx_usuario
             // 
-            txt_bx_usuario.Location = new Point(148, 158);
+            txt_bx_usuario.Location = new Point(169, 211);
+            txt_bx_usuario.Margin = new Padding(3, 4, 3, 4);
             txt_bx_usuario.Name = "txt_bx_usuario";
             txt_bx_usuario.PlaceholderText = "Introduce un número";
-            txt_bx_usuario.Size = new Size(256, 23);
+            txt_bx_usuario.Size = new Size(292, 27);
             txt_bx_usuario.TabIndex = 2;
             // 
             // btn_Boton
             // 
-            btn_Boton.Location = new Point(217, 271);
+            btn_Boton.Location = new Point(248, 361);
+            btn_Boton.Margin = new Padding(3, 4, 3, 4);
             btn_Boton.Name = "btn_Boton";
-            btn_Boton.Size = new Size(120, 60);
+            btn_Boton.Size = new Size(137, 80);
             btn_Boton.TabIndex = 3;
             btn_Boton.Text = "PULSAR";
             btn_Boton.UseVisualStyleBackColor = true;
@@ -81,36 +82,33 @@
             // 
             // status_strip
             // 
-            status_strip.Items.AddRange(new ToolStripItem[] { lbl_debug, lbl_rnd_mes, status });
-            status_strip.Location = new Point(0, 416);
+            status_strip.ImageScalingSize = new Size(20, 20);
+            status_strip.Items.AddRange(new ToolStripItem[] { lbl_debug, lbl_rnd_mes });
+            status_strip.Location = new Point(0, 558);
             status_strip.Name = "status_strip";
-            status_strip.Size = new Size(559, 22);
+            status_strip.Padding = new Padding(1, 0, 16, 0);
+            status_strip.Size = new Size(639, 26);
             status_strip.TabIndex = 4;
             status_strip.Text = "statusStrip1";
             // 
             // lbl_debug
             // 
             lbl_debug.Name = "lbl_debug";
-            lbl_debug.Size = new Size(12, 17);
+            lbl_debug.Size = new Size(15, 20);
             lbl_debug.Text = "-";
             // 
             // lbl_rnd_mes
             // 
             lbl_rnd_mes.Name = "lbl_rnd_mes";
-            lbl_rnd_mes.Size = new Size(12, 17);
+            lbl_rnd_mes.Size = new Size(15, 20);
             lbl_rnd_mes.Text = "-";
-            // 
-            // status
-            // 
-            status.Name = "status";
-            status.Size = new Size(12, 17);
-            status.Text = "-";
             // 
             // btn_newForm
             // 
-            btn_newForm.Location = new Point(472, 373);
+            btn_newForm.Location = new Point(539, 497);
+            btn_newForm.Margin = new Padding(3, 4, 3, 4);
             btn_newForm.Name = "btn_newForm";
-            btn_newForm.Size = new Size(75, 23);
+            btn_newForm.Size = new Size(86, 31);
             btn_newForm.TabIndex = 5;
             btn_newForm.Text = "Ver imagen";
             btn_newForm.UseVisualStyleBackColor = true;
@@ -118,15 +116,16 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 438);
+            ClientSize = new Size(639, 584);
             Controls.Add(btn_newForm);
             Controls.Add(status_strip);
             Controls.Add(btn_Boton);
             Controls.Add(txt_bx_usuario);
             Controls.Add(lbl_intentos);
             Controls.Add(lbl_info);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             status_strip.ResumeLayout(false);
@@ -145,6 +144,5 @@
         private ToolStripStatusLabel lbl_debug;
         private Button btn_newForm;
         private ToolStripStatusLabel lbl_rnd_mes;
-        private ToolStripStatusLabel status;
     }
 }

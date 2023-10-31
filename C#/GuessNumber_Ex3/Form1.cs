@@ -18,6 +18,7 @@ namespace GuessNumber_Ex3
 
             lbl_info.Text = "Introduce un número entre " + min + " y " + max;
             lbl_intentos.Text = "Intentos: " + tries;
+            btn_Boton.Text = "PULSAR";
 
             randomNum = rndom_Calc(min, max);
             lbl_debug.Text = Convert.ToString(randomNum);
@@ -32,39 +33,40 @@ namespace GuessNumber_Ex3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            auxiliar = txt_bx_usuario.Text;
-            //auxiliar es el texto que ha introducido el usuario
-            txt_bx_usuario.PlaceholderText = "Intentalo de nuevo";
+            auxiliar = txt_bx_usuario.Text; //auxiliar es el texto que ha introducido el usuario
 
             try
             {
                 answer = Convert.ToInt32(auxiliar);
-                if (tries > 0)
+                btn_Boton.Text = "PULSAR";
+                if (tries > 1)
                 {
                     if (auxiliar != "")
                     {
                         if (answer == randomNum)
                         {
-                            lbl_info.Text = "¡" + auxiliar + " es correcto!";
+                            //lbl_info.Text = "¡" + auxiliar + " es correcto!";
                             isGameWon = true;
-                            lbl_rnd_mes.Text = animos[5];
+                            lbl_rnd_mes.Text = mensajesParaUsuario[8];
                             ResetGame();
                         }
                         else if (answer > randomNum)
                         {
+                            txt_bx_usuario.PlaceholderText = "Intentalo de nuevo";
                             lbl_info.Text = auxiliar + " es mayor, prueba más bajo...";
                             txt_bx_usuario.Clear();
                             tries--;
                             lbl_intentos.Text = "Intentos " + tries.ToString();
-                            lbl_rnd_mes.Text = animos[rndom_Calc(0, animos.Count - 2)];
+                            lbl_rnd_mes.Text = mensajesParaUsuario[rndom_Calc(0, mensajesParaUsuario.Count - 2)];
                         }
                         else
                         {
+                            txt_bx_usuario.PlaceholderText = "Intentalo de nuevo";
                             lbl_info.Text = auxiliar + " es menor, prueba más alto...";
                             txt_bx_usuario.Clear();
                             tries--;
                             lbl_intentos.Text = "Intentos " + tries.ToString();
-                            lbl_rnd_mes.Text = animos[rndom_Calc(0, animos.Count - 2)];
+                            lbl_rnd_mes.Text = mensajesParaUsuario[rndom_Calc(0, mensajesParaUsuario.Count - 2)];
                         }
                     }
                 }
@@ -75,14 +77,13 @@ namespace GuessNumber_Ex3
             }
             catch (Exception ex)
             {
-                status.Text = "Texto erroneo, excepcion";
                 lbl_info.Text = "Texto erroneo, excepcion";
             }
         }
 
         private void ResetGame()
         {
-            btn_Boton.Text = "¿Nuevo juego?";
+            btn_Boton.Text = "¿Nuevo intento?";
             txt_bx_usuario.Clear();
 
             randomNum = rndom_Calc(min, max);
@@ -91,15 +92,15 @@ namespace GuessNumber_Ex3
 
             if (isGameWon)
             {
-                lbl_info.Text = "Ganaste, adivina el numero entre " + max + " y " + min;
+                lbl_info.Text = "Ganaste, ¿volver a jugar?";
                 isGameWon = false;
                 lbl_intentos.Text = "Intentos: " + tries.ToString();
             }
             else
             {
-                lbl_info.Text = "Perdiste, adivina el numero entre " + max + " y " + min;
+                lbl_info.Text = "Perdiste, ¿volver a jugar?";
                 isGameWon = false;
-                lbl_rnd_mes.Text = animos[6];
+                lbl_rnd_mes.Text = mensajesParaUsuario[9];
                 lbl_intentos.Text = "Intentos: " + tries.ToString();
             }
         }
@@ -110,19 +111,22 @@ namespace GuessNumber_Ex3
             vista.Show();
         }
 
-        private List<String> animos = new List<String>
+        private List<String> mensajesParaUsuario = new List<String>
         {
-            //0-4: animos
+            //0-7: mensajesParaUsuario
             "Animo",
             "Casi lo tienes",
             "Vamos",
-            "Vamos, pringao",
+            "Vuelve a intentarlo",
+            "Tu puedes",
+            "Dale, que casi lo tienes",
+            "Estás cerca",
             "Casi",
 
-            //5: frase de exito
+            //8: frase de exito
             "Has ganado",
 
-            //6: frase de fallo
+            //9: frase de fallo
             "Has perdido"
         };
     }

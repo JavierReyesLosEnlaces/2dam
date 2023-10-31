@@ -8,19 +8,19 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Alumno\\.nuget\\packages\\": {}
+    "C:\\Users\\javir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\GuessNumber_Ex3\\GuessNumber_Ex3.csproj",
+      "projectUniqueName": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\GuessNumber_Ex3\\GuessNumber_Ex3.csproj",
       "projectName": "GuessNumber_Ex3",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\GuessNumber_Ex3\\GuessNumber_Ex3.csproj",
-      "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\GuessNumber_Ex3\\obj\\",
+      "projectPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\GuessNumber_Ex3\\GuessNumber_Ex3.csproj",
+      "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\GuessNumber_Ex3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

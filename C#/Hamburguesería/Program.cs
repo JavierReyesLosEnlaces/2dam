@@ -10,7 +10,7 @@
 
         do
         {
-            if (comanda.Count == 0) { Console.WriteLine("\nBienvenid@ a McJavis, ¿en qué puedo ayudarle?"); }
+            if (comanda.Count == 0) { Console.WriteLine("Bienvenid@ a McJavis, ¿en qué puedo ayudarle?"); }
             else { Console.WriteLine("¿Desea algo más?"); }
 
             Console.WriteLine("             ______             ");
@@ -34,7 +34,7 @@
                     mostrarComanda(precioTotal);
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
+                    Console.WriteLine("Opción no válida, vuelva a intentarlo\n");
                     break;
                 }
             } 
@@ -73,8 +73,8 @@
 
         do
         {
-            Console.WriteLine("¿Cómo quieres tu bebida?");
-            Console.WriteLine("¿La quieres con alcohol? (+0.5$)");
+            Console.WriteLine("¿Cómo quiere su bebida?");
+            Console.WriteLine("¿La quiere con alcohol? (+0.5$)");
             Console.WriteLine("1. Si ");
             Console.WriteLine("2. No");
 
@@ -89,7 +89,7 @@
                     conAlcohol = false;
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
+                    Console.WriteLine("Opción no válida, vuelva a intentarlo");
                     break;
             }
 
@@ -107,8 +107,8 @@
 
         do
         {
-            Console.WriteLine("¿Cómo quieres tu hamburguesa?");
-            Console.WriteLine("¿La quieres con pan de centeno? (+0.5$)");
+            Console.WriteLine("¿Cómo quiere su hamburguesa?");
+            Console.WriteLine("¿La quiere con pan de centeno? (+0.5$)");
             Console.WriteLine("1. Si ");
             Console.WriteLine("2. No");
 
@@ -123,7 +123,7 @@
                     panCenteno = false;
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
+                    Console.WriteLine("Opción no válida, vuelva a intentarlo\n");
                     break;
             }
         } while (x != 1 && x != 2);
@@ -132,7 +132,7 @@
 
         do
         {
-            Console.WriteLine("¿La quieres con queso? (+1.0$)");
+            Console.WriteLine("¿La quiere con queso? (+1.0$)");
             Console.WriteLine("1. Si ");
             Console.WriteLine("2. No");
 
@@ -147,7 +147,7 @@
                     conQueso = false;
                     break;
                 default:
-                    Console.WriteLine("Opción no válida, vuelve a intentarlo");
+                    Console.WriteLine("Opción no válida, vuelva a intentarlo\n");
                     break;
             }
         } while (x != 1 && x != 2);
@@ -198,7 +198,7 @@
         Console.WriteLine(" | \\  / | ___       | | __ ___   ___ ___        ");
         Console.WriteLine(" | |\\/| |/ __|  _   | |/ _` \\ \\ / / / __|     ");
         Console.WriteLine(" | |  | | (__  | |__| | (_| |\\ V /| \\__ \\     ");
-        Console.WriteLine(" |_|  |_|\\___|  \\____/ \\__,_| \\_/ |_|___/    ");
+        Console.WriteLine(" |_|  |_|\\___|  \\____/ \\__,_| \\_/ |_|___/  \n");
     }
     private static void insertarHamburguesa()
     {
