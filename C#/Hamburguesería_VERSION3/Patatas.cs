@@ -11,10 +11,12 @@
         this.tipoPatata = tipoPatata;
         this.tipoDeCorte = tipoDeCorte;
         this.dressing = dressing;
-
+            
         precioBase = 3.0f;
+        if (!conSal) precioExtras -= 0.1f;
         if (tipoPatata == "batata") precioExtras += 0.3f;
         if (tipoDeCorte == "deluxe") precioExtras += 0.5f;
+        if (dressing == "queso fundido") precioExtras += 1.0f;
 
         precio = precioBase + precioExtras;
     }
@@ -46,7 +48,7 @@
     public string ListarIngredientes()
     {
         List<string> ingredientes = new List<string>();
-
+         
         if (conSal)
         {
             ingredientes.Add("Con sal");

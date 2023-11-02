@@ -27,7 +27,10 @@
         {
             precioBase = 3.0f;
         }
-        else if (tipoFilete == 'v') 
+        else if (tipoFilete == 'v')
+        {
+            precioBase = 4.5f;
+        }
 
         if (conTomate) precioExtras += 0.25f;
         if (conQueso) precioExtras += 0.5f;

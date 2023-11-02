@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION2\\McJavis.csproj",
+      "projectUniqueName": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
       "projectName": "McJavis",
-      "projectPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION2\\McJavis.csproj",
+      "projectPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
       "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION2\\obj\\",
+      "outputPath": "C:\\Users\\javir\\Documents\\GitHub\\2dam\\C#\\Hamburguesería_VERSION3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",

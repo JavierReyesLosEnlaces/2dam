@@ -12,7 +12,7 @@
 
         precioBase = 3.0f;
         if (conAlcohol) precioExtras += 0.5f;
-        if (!conBurbujas) precioExtras += 0.25f;
+        if (conBurbujas) precioExtras -= 0.25f;
 
         precio = precioBase + precioExtras;
     }

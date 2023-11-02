@@ -1,7 +1,7 @@
 ﻿public class Producto
 {
 
-    private string nombreProducto;
+    public string nombreProducto;
     public float precio;
     public float precioBase;
     public float precioExtras = 0.0f;
