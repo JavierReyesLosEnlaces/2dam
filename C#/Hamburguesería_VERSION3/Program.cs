@@ -85,8 +85,6 @@
             return listaDePatatas;
         }
         else return null;
-
-
     }
     private static void ListarProductos(string x)
     {
@@ -167,14 +165,14 @@
         else
         {
             {
-                Console.WriteLine("//////////////////| FACTURA |//////////////////\n");
+                Console.WriteLine("//////////////| TICKET DE COMPRA |//////////////\n");
                 foreach (Producto p in comanda)
                 {
                     if (p is Hamburguesa) Console.WriteLine("(+) Hamburguesa '" + p.NombreProducto + "' (" + p.Precio + "$)\n");
                     else Console.WriteLine("(+) " + p.NombreProducto + " (" + p.Precio + "$)\n");
                     precioTotal += p.Precio;
                 }
-                Console.WriteLine("/////////////////////////////////////////////\nTOTAL A PAGAR = " + precioTotal.ToString("0.00") + "$");
+                Console.WriteLine("////////////////////////////////////////////////\nTOTAL A PAGAR = " + precioTotal.ToString("0.00") + "$");
                 // precioTotal.ToString("0.00") MUESTRA EL PRECIO TOTAL CON UN FORMATO DE DOS DECIMALES
                 Console.WriteLine("\n          ¡Gracias y hasta luego!");
             }
