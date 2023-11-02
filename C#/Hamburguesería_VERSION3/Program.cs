@@ -96,8 +96,6 @@
     }
     private static void ListarProductos(string x)
     {
-        List<Producto> listarProductos = new List<Producto>();
-
         if (x == "hamburguesa")
         {
             int index = 1;
