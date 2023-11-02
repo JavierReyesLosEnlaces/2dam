@@ -37,7 +37,7 @@
                         MostrarComanda(comanda);
                         break;
                     default:
-                        Console.WriteLine("Opción no válida, vuelva a intentarlo");
+                        Console.WriteLine("La opción no es válida, debes introducir un número entre 0 y 3.");
                         break;
                 }
             }
@@ -96,9 +96,9 @@
     }
     private static void ListarProductos(string x)
     {
+        int index = 1;
         if (x == "hamburguesa")
         {
-            int index = 1;
             Console.WriteLine("----------------| CARTA DE HAMBURGUESAS |----------------");
             foreach (Hamburguesa h in GenerarProductos("hamburguesa"))
             {
@@ -110,7 +110,6 @@
         }
         else if (x == "bebida")
         {
-            int index = 1;
             Console.WriteLine("--| CARTA DE BEBIDAS |--");
             foreach (Bebida b in GenerarProductos("bebida"))
             {
@@ -122,7 +121,6 @@
         }
         else if ((x == "patatas"))
         {
-            int index = 1;
             Console.WriteLine("--------------------------| CARTA DE PATATAS |--------------------------");
             foreach (Patatas p in GenerarProductos("patatas"))
             {
@@ -173,7 +171,7 @@
             }
             else
             {
-                Console.WriteLine("La opción no es válida. Debe ser un número entre 0 y " + listaDeProductos.Count);
+                Console.WriteLine("La opción no es válida, debes introducir un número entre 0 y " + listaDeProductos.Count);
             }
         }
     }
