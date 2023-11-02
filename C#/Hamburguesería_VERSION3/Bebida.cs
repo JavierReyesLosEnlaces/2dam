@@ -16,17 +16,13 @@
 
         precio = precioBase + precioExtras;
     }
+
     public string ListarIngredientes()
     {
-        if (conAlcohol)
-        {
-            return "Bebida con alcohol";
-        }
-        else
-        {
-            return "Bebida sin alcohol";
-        }
+        if (conAlcohol) return "Bebida con alcohol";
+        else return "Bebida sin alcohol";
     }
+
     public bool ConAlcohol
     {
         get { return conAlcohol; }

@@ -6,7 +6,6 @@
         int opcion;
 
         InsertarImagen("bienvenida");
-
         do
         {
             if (comanda.Count == 0) { Console.WriteLine("\nBienvenid@ a McJavis, ¿en qué puedo ayudarle?"); }
@@ -20,7 +19,7 @@
             Console.WriteLine("| 0. Finalizar compra y pagar   |  ");
             Console.WriteLine("|_______________________________|\n");
 
-            if (int.TryParse(Console.ReadLine(), out opcion)) //se intenta convertir la cadena de texto en un numero entero
+            if (int.TryParse(Console.ReadLine(), out opcion)) // SE INTENTA CONVERTIR LA CADENA DE TEXTO EN UN NÚMERO ENTERO Y ALMACENARLA EN LA VARIABLE "OPCIÓN"
             {
                 switch (opcion)
                 {
@@ -41,10 +40,7 @@
                         break;
                 }
             }
-            else
-            {
-                Console.WriteLine("Debes introducir un número válido.");
-            }
+            else Console.WriteLine("Debes introducir un número.");
         } while (opcion != 0);
     }
     private static List<Producto> GenerarProductos(string x)
@@ -88,10 +84,8 @@
 
             return listaDePatatas;
         }
-        else
-        {
-            return null;
-        }
+        else return null;
+
 
     }
     private static void ListarProductos(string x)
@@ -130,10 +124,8 @@
             }
             Console.WriteLine("\n------------------------------------------------------------------------");
         }
-        else
-        {
-            Console.WriteLine("Error en el parámetro introducido. ");
-        }
+        else Console.WriteLine("Error en el parámetro introducido. ");
+
     }
     private static void NuevoProducto(string x, List<Producto> comanda)
     {
@@ -145,62 +137,45 @@
         {
             Console.WriteLine("\nEscoge " + x + " o presiona 0 para volver: ");
             int opcion;
-
             if (int.TryParse(Console.ReadLine(), out opcion) && opcion >= 0 && opcion <= listaDeProductos.Count)
             {
                 if (opcion != 0)
                 {
                     comanda.Add(listaDeProductos[opcion - 1]);
-
                     if (x == "bebida")
                     {
                         string y = listaDeProductos[opcion - 1].NombreProducto;
                         InsertarImagen(y);
                     }
-                    else
-                    {
-                        InsertarImagen(x);
-                    }
-                    Console.WriteLine("(+) " + (x.First().ToString().ToUpper() + x.Substring(1)) + " '" + listaDeProductos[opcion - 1].NombreProducto + "'("+ listaDeProductos[opcion - 1].Precio+ "$)");
+                    else InsertarImagen(x);
+
+                    Console.WriteLine("(+) " + (x.First().ToString().ToUpper() + x.Substring(1)) + " '" + listaDeProductos[opcion - 1].NombreProducto + "'(" + listaDeProductos[opcion - 1].Precio + "$)");
 
                     // (x.First().ToString().ToUpper() + x.Substring(1))
                     // Aquí estamos tomando la primera letra del string en minúsculas, convirtiéndola a mayúsculas usando ToUpper, y luego concatenándola con el resto del string utilizando Substring(1)
-                    // para mantener el resto del texto sin cambios.
                 }
                 control = true;
             }
-            else
-            {
-                Console.WriteLine("La opción no es válida, debes introducir un número entre 0 y " + listaDeProductos.Count);
-            }
+            else Console.WriteLine("La opción no es válida, debes introducir un número entre 0 y " + listaDeProductos.Count);
         }
     }
     private static void MostrarComanda(List<Producto> comanda)
     {
         float precioTotal = 0.0f;
 
-        if (comanda.Count == 0)
-        {
-            Console.WriteLine("¿Te vas? ¡Pero si no has pedido nada! :(");
-        }
+        if (comanda.Count == 0) Console.WriteLine("¿Te vas? ¡Pero si no has pedido nada! :(");
         else
         {
             {
                 Console.WriteLine("//////////////////| FACTURA |//////////////////\n");
                 foreach (Producto p in comanda)
                 {
-                    if (p is Hamburguesa)
-                    {
-
-                        Console.WriteLine("(+) Hamburguesa '" + p.NombreProducto + "' (" + p.Precio + "$)\n");
-                    }
-                    else
-                    {
-                        Console.WriteLine("(+) " + p.NombreProducto + " (" + p.Precio + "$)\n");
-                    }
+                    if (p is Hamburguesa) Console.WriteLine("(+) Hamburguesa '" + p.NombreProducto + "' (" + p.Precio + "$)\n");
+                    else Console.WriteLine("(+) " + p.NombreProducto + " (" + p.Precio + "$)\n");
                     precioTotal += p.Precio;
                 }
                 Console.WriteLine("/////////////////////////////////////////////\nTOTAL A PAGAR = " + precioTotal.ToString("0.00") + "$");
+                // precioTotal.ToString("0.00") MUESTRA EL PRECIO TOTAL CON UN FORMATO DE DOS DECIMALES
                 Console.WriteLine("\n          ¡Gracias y hasta luego!");
             }
         }

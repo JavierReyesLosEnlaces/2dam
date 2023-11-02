@@ -1,15 +1,12 @@
 ﻿public class Producto
 {
-
     public string nombreProducto;
     public float precio;
     public float precioBase;
     public float precioExtras = 0.0f;
 
-    public Producto(string nombreProducto)
-    {
-        this.nombreProducto = nombreProducto;
-    }
+    public Producto(string nombreProducto) { this.nombreProducto = nombreProducto; }
+
     public float Precio
     {
         get { return precio; }
