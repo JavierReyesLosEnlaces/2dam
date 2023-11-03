@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         var btnIMCApp = findViewById<Button>(R.id.btnIMCApp)
         btnHelloApp.setOnClickListener { navigateToIMCApp() }
+
+        var btnBoardgamesApp = findViewById<Button>(R.id.btnBoardgamesApp)
+        btnBoardgamesApp.setOnClickListener{ navigateToBoardgamesApp() }
     }
 
     private fun navigateToIMCApp() {
@@ -34,4 +37,9 @@ class MainActivity : AppCompatActivity() {
         var textIntent = Intent(this, NameActivity::class.java )
         startActivity(textIntent)
     }
+    private fun navigateToBoardgamesApp(){
+        var intent = Intent(this, BoardgamesActivity::class.java)
+        startActivity(intent)
+    }
+
 }
