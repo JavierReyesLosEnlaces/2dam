@@ -71,3 +71,7 @@ C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\refint
 C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\McJavis.pdb
 C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\McJavis.genruntimeconfig.cache
 C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\ref\McJavis.dll
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\bin\Debug\net7.0\MyBurguerLib_Ex2.dll
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\bin\Debug\net7.0\MyBurguerLib_Ex2.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\McJavis.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\2dam\C#\Hamburguesería_VERSION3\obj\Debug\net7.0\McJavis.csproj.CopyComplete

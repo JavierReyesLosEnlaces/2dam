@@ -8,4 +8,8 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyBurguerLib_Ex2\MyBurguerLib_Ex2.csproj" />
+  </ItemGroup>
+
 </Project>
