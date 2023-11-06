@@ -1,0 +1,14 @@
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\bin\Debug\net7.0\Pruebas_xml.exe
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\bin\Debug\net7.0\Pruebas_xml.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\bin\Debug\net7.0\Pruebas_xml.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\bin\Debug\net7.0\Pruebas_xml.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\bin\Debug\net7.0\Pruebas_xml.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\refint\Pruebas_xml.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\Pruebas_xml.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_xml\obj\Debug\net7.0\ref\Pruebas_xml.dll

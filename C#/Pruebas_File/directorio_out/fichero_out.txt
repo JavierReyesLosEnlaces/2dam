@@ -1,0 +1,4 @@
+Joan,Pérez,lala@email.com
+Lucio,Reyes,lola@email.com
+Aleja,Ramirez,lalo@email.com
+Juan,Toledo,jtnemail.com

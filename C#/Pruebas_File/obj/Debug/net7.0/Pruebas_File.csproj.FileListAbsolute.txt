@@ -1,0 +1,14 @@
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\bin\Debug\net7.0\Pruebas_File.exe
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\bin\Debug\net7.0\Pruebas_File.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\bin\Debug\net7.0\Pruebas_File.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\bin\Debug\net7.0\Pruebas_File.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\bin\Debug\net7.0\Pruebas_File.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\refint\Pruebas_File.dll
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\Pruebas_File.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\Pruebas_File\obj\Debug\net7.0\ref\Pruebas_File.dll

@@ -1,4 +1,6 @@
-﻿class Program
+﻿using MyBurguerLib_Ex2;
+
+class Program
 {
     static void Main(string[] args)
     {

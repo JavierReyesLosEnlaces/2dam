@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj": {}
+    "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_xml\\Pruebas_xml.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj": {
+    "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_xml\\Pruebas_xml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
-        "projectName": "McJavis",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_xml\\Pruebas_xml.csproj",
+        "projectName": "Pruebas_xml",
+        "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_xml\\Pruebas_xml.csproj",
         "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\obj\\",
+        "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_xml\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,11 +27,7 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {
-              "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj": {
-                "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -61,21 +57,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
-      }
-    },
-    "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj",
-        "projectName": "MyBurguerLib_Ex2",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj",
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {}
       }
     }
   }

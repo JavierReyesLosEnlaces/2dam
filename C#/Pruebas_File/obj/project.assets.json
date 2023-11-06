@@ -1,29 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "MyBurguerLib_Ex2/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/MyBurguerLib_Ex2.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MyBurguerLib_Ex2.dll": {}
-        }
-      }
-    }
+    "net7.0": {}
   },
-  "libraries": {
-    "MyBurguerLib_Ex2/1.0.0": {
-      "type": "project",
-      "path": "../MyBurguerLib_Ex2/MyBurguerLib_Ex2.csproj",
-      "msbuildProject": "../MyBurguerLib_Ex2/MyBurguerLib_Ex2.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "MyBurguerLib_Ex2 >= 1.0.0"
-    ]
+    "net7.0": []
   },
   "packageFolders": {
     "C:\\Users\\Alumno\\.nuget\\packages\\": {}
@@ -31,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
-      "projectName": "McJavis",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\McJavis.csproj",
+      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_File\\Pruebas_File.csproj",
+      "projectName": "Pruebas_File",
+      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_File\\Pruebas_File.csproj",
       "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Hamburguesería_VERSION3\\obj\\",
+      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\Pruebas_File\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,11 +33,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj": {
-              "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
