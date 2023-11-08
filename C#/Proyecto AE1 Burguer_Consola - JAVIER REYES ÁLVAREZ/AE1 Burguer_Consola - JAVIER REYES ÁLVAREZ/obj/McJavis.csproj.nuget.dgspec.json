@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\McJavis.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\McJavis.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\McJavis.csproj",
+        "projectName": "McJavis",
+        "projectPath": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\McJavis.csproj",
+        "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj": {
+                "projectPath": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj",
+        "projectName": "MyBurguerLib_Ex2",
+        "projectPath": "C:\\Users\\javir\\Desktop\\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\\MyBurguerLib_Ex2\\MyBurguerLib_Ex2.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

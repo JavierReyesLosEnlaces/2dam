@@ -1,0 +1,12 @@
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\bin\Debug\MyBurguerLib_Ex2.dll
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\bin\Debug\MyBurguerLib_Ex2.pdb
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.dll
+C:\Users\Alumno\Desktop\2dam\C#\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.pdb
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\bin\Debug\MyBurguerLib_Ex2.dll
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\bin\Debug\MyBurguerLib_Ex2.pdb
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.csproj.AssemblyReference.cache
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.csproj.CoreCompileInputs.cache
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.dll
+C:\Users\javir\Desktop\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.pdb
