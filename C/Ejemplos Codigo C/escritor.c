@@ -4,14 +4,16 @@
 #include <unistd.h>
 #include <string.h>
 
-int main() {
+int main()
+{
     int fd;
     char mensaje[] = "Hola desde el escritor!\n";
 
     // Abre el FIFO en modo escritura
     fd = open("myfifo", O_WRONLY);
 
-    if (fd < 0) {
+    if (fd < 0)
+    {
         perror("open");
         return 1;
     }
