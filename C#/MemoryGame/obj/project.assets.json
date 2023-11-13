@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MemoryGame\\MemoryGame.csproj",
+      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\javi\\2dam\\C#\\MemoryGame\\MemoryGame.csproj",
       "projectName": "MemoryGame",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MemoryGame\\MemoryGame.csproj",
+      "projectPath": "C:\\Users\\Alumno\\Desktop\\javi\\2dam\\C#\\MemoryGame\\MemoryGame.csproj",
       "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\MemoryGame\\obj\\",
+      "outputPath": "C:\\Users\\Alumno\\Desktop\\javi\\2dam\\C#\\MemoryGame\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
