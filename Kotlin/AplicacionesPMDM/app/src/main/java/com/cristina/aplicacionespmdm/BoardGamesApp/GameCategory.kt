@@ -8,3 +8,5 @@ sealed class GameCategory (var isSelected:Boolean = true) {
     object Legacy : GameCategory()
 
 }
+
+// clase inmutable: no puedes meter más
