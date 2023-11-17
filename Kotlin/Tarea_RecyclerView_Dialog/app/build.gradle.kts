@@ -5,11 +5,13 @@ plugins {
 
 android {
     namespace = "com.example.tarea_recyclerview_dialog"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.tarea_recyclerview_dialog"
         minSdk = 24
+        // en casa  -> targetSdk = 34
+        // en clase -> targetSdk = 33
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
