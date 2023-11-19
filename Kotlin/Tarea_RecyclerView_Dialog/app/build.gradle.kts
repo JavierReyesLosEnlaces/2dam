@@ -12,7 +12,7 @@ android {
         minSdk = 24
         // en casa  -> targetSdk = 34
         // en clase -> targetSdk = 33
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
