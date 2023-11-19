@@ -26,11 +26,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val verticalBarList = mutableListOf(
-        VerticalBar("vb1",  Color.argb(20,200,255,100)),
-        VerticalBar("vb2",  Color.argb(35,2,2,2)),
-        VerticalBar("vb3",  Color.argb(50,2,2,2)),
-        VerticalBar("vb4",  Color.argb(65,2,2,2)),
-        VerticalBar("vb5",  Color.argb(80,2,2,2)),
+        VerticalBar("V1(20%)",  Color.argb(20, 200, 255, 100)),
+        VerticalBar("V2(35%)",  Color.argb(35, 255, 100, 0)),  // Color más anaranjado
+        VerticalBar("V3(50%)",  Color.argb(50, 0, 255, 0)),    // Color más verde
+        VerticalBar("V4(65%)",  Color.argb(65, 0, 0, 255)),    // Color más azul
+        VerticalBar("V5(80%)",  Color.argb(80, 255, 0, 255))   // Color más magenta
+
     )
         // si accedes a una data class esta lista es mutable
         // si accedes a una sealed class (clase con valores que no pueden cambiar) esta lista es inmutable

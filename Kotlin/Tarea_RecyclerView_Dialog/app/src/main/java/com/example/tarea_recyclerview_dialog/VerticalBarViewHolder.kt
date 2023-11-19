@@ -1,4 +1,5 @@
 package com.example.tarea_recyclerview_dialog
+import android.graphics.Color
 import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -15,6 +16,7 @@ class VerticalBarViewHolder(view:View) : RecyclerView.ViewHolder(view) //le pasa
             "V1(20%)" -> {
                 tvH.text = verticalBarList.name
                 cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+                // setCardBackgroundColor necesita que le pases un int
             }
             "V2(35%)" -> {
                 tvH.text = verticalBarList.name
@@ -33,5 +35,22 @@ class VerticalBarViewHolder(view:View) : RecyclerView.ViewHolder(view) //le pasa
                 cardViewContainer.setCardBackgroundColor(verticalBarList.color)
             }
         }
+        /*when(verticalBarList.color){
+            Color.argb(20,200,255,100) -> {
+                cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+            }
+            Color.argb(35,2,2,2) -> {
+                cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+            }
+            Color.argb(50,2,2,2) -> {
+                cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+            }
+            Color.argb(65,2,2,2) -> {
+                cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+            }
+            Color.argb(80,2,2,2) -> {
+                cardViewContainer.setCardBackgroundColor(verticalBarList.color)
+            }
+        }*/
     }
 }

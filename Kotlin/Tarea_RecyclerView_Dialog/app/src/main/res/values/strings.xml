@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Tarea_RecyclerView_Dialog</string>
-    <string name="h3_80">H3(80%)</string>
-    <string name="h2_50">H2(50%)</string>
-    <string name="h1_20">H1(20%)</string>
+    <string name="hb3">H3(80%)</string>
+    <string name="hb2">H2(50%)</string>
+    <string name="hb1">H1(20%)</string>
 
     <string name="vb1">V1(20%)</string>
     <string name="vb2">V2(35%)</string>
