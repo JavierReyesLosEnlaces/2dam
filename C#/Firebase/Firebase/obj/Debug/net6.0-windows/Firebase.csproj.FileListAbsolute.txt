@@ -1,0 +1,16 @@
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\bin\Debug\net6.0-windows\Firebase.exe
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\bin\Debug\net6.0-windows\Firebase.deps.json
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\bin\Debug\net6.0-windows\Firebase.runtimeconfig.json
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\bin\Debug\net6.0-windows\Firebase.dll
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\bin\Debug\net6.0-windows\Firebase.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.Form1.resources
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.csproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.AssemblyInfoInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.AssemblyInfo.cs
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.dll
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\refint\Firebase.dll
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.pdb
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\Firebase.genruntimeconfig.cache
+C:\Users\Alumno\Desktop\2dam\C#\Firebase\Firebase\obj\Debug\net6.0-windows\ref\Firebase.dll
