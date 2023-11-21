@@ -2,7 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bgapp_background_app">#E91E63</color>
+
+    <color name="app_background">#2d4993</color>
+    <color name="btn_background">#6200ee</color>
 
     <color name="hb1">#339C27B0</color>
     <color name="hb2">#808BC34A</color>
@@ -13,4 +15,69 @@
     <color name="vb3">#CC3F51B5</color>
     <color name="vb4">#339C27B0</color>
     <color name="vb5">#808BC34A</color>
+
+    <color name="blanco_20">#33FFFFFF</color>
+    <color name="blanco_35">#59FFFFFF</color>
+    <color name="blanco_50">#80FFFFFF</color>
+    <color name="blanco_65">#A6FFFFFF</color>
+    <color name="blanco_80">#CCFFFFFF</color>
+
+    <color name="rojo_20">#33FF0000</color>
+    <color name="rojo_35">#59FF0000</color>
+    <color name="rojo_50">#80FF0000</color>
+    <color name="rojo_65">#A6FF0000</color>
+    <color name="rojo_80">#CCFF0000</color>
+
+    <color name="naranja_20">#33FFA500</color>
+    <color name="naranja_35">#59FFA500</color>
+    <color name="naranja_50">#80FFA500</color>
+    <color name="naranja_65">#A6FFA500</color>
+    <color name="naranja_80">#CCFFA500</color>
+
+    <color name="amarillo_20">#33FFFF00</color>
+    <color name="amarillo_35">#59FFFF00</color>
+    <color name="amarillo_50">#80FFFF00</color>
+    <color name="amarillo_65">#A6FFFF00</color>
+    <color name="amarillo_80">#CCFFFF00</color>
+
+    <color name="verde_20">#33008000</color>
+    <color name="verde_35">#59008000</color>
+    <color name="verde_50">#80008000</color>
+    <color name="verde_65">#A6008000</color>
+    <color name="verde_80">#CC008000</color>
+
+    <color name="cian_20">#3300FFFF</color>
+    <color name="cian_35">#5900FFFF</color>
+    <color name="cian_50">#8000FFFF</color>
+    <color name="cian_65">#A600FFFF</color>
+    <color name="cian_80">#CC00FFFF</color>
+
+    <color name="azul_20">#330000FF</color>
+    <color name="azul_35">#590000FF</color>
+    <color name="azul_50">#800000FF</color>
+    <color name="azul_65">#A60000FF</color>
+    <color name="azul_80">#CC0000FF</color>
+
+    <color name="violeta_20">#338A2BE2</color>
+    <color name="violeta_35">#598A2BE2</color>
+    <color name="violeta_50">#808A2BE2</color>
+    <color name="violeta_65">#A68A2BE2</color>
+    <color name="violeta_80">#CCA2BE2</color>
+
+    <color name="negro_20">#33000000</color>
+    <color name="negro_35">#59000000</color>
+    <color name="negro_50">#80000000</color>
+    <color name="negro_65">#A6000000</color>
+    <color name="negro_80">#CC000000</color>
+
+    <color name="blanco_100">#FFFFFFFF</color>
+    <color name="rojo_100">#FFFF0000</color>
+    <color name="naranja_100">#FFFFA500</color>
+    <color name="amarillo_100">#FFFFFF00</color>
+    <color name="verde_100">#FF008000</color>
+    <color name="cian_100">#FF00FFFF</color>
+    <color name="azul_100">#FF0000FF</color>
+    <color name="violeta_100">#FF8A2BE2</color>
+    <color name="negro_100">#FF000000</color>
+
 </resources>
