@@ -10,9 +10,12 @@ void opcion1();
 int opcion2();
 void opcion3();
 void opcion4();
-void opcion5();
+int opcion5();
 int opcion6();
 void opcion7();
+void opcion8();
+void opcion9();
+
 void limpiarBuffer();
 
 void mostrar();
@@ -28,10 +31,10 @@ int main()
         printf("2. Cuenta atrás (Terminado)\n");
         printf("3. Familia de procesos (Terminado)\n");
         printf("4. Mejores amigos (Terminado)\n");
-        printf("5. Escribir un fichero (Terminado)\n");
-        printf("6. Borrar todos los ficheros .txt\n");
-        printf("7. Opcion 7\n");
-        printf("8. Opcion 8\n");
+        printf("5. Escribir un fichero de texto (Terminado)\n");
+        printf("6. Borrar todos los ficheros de texto (Terminado)\n");
+        printf("7. Calculadora (Terminado)\n");
+        printf("8. Invertir tu nombre (Terminado)\n");
         printf("9. Opcion 9\n");
         printf("10. Opcion 10\n");
         printf("0. Salir\n");
@@ -63,7 +66,7 @@ int main()
                 opcion7();
                 break;
             case 8:
-                //opcion8;
+                opcion8();
                 break;
             case 9:
                 //opcion9;
@@ -75,7 +78,7 @@ int main()
                 printf("Saliendo del programa. Hasta luego!\n\n");
                 break;
             default:
-                printf("Opcion invalida. Por favor, selecciona una opcion valida.\n\n");
+                printf("Opcion invalida. Por favor, selecciona una opcion valida.\n");
                 break;
         }
     } while (opcion != 0);
@@ -189,10 +192,11 @@ void opcion4(){
         printf("-> Nombre: %s", mejoresAmigos[i].nombre);
         printf("-> Edad: %d\n", mejoresAmigos[i].edad);
     }
+    printf("Juntos suman una edad de %d\n", (mejoresAmigos[0].edad+mejoresAmigos[1].edad));
 }
 
 // Opción 5: introducir un nombre de fichero, un texto y te crea el fichero con el texto dentro
-void opcion5() {
+int opcion5() {
     char nombreFichero[50];
     char texto[50];
     char comando[100];
@@ -216,24 +220,95 @@ void opcion5() {
 
 // Opción 6: borrar todos los ficheros.txt
 int opcion6(){
-    system("ls -1 *.txt 2>/dev/null | wc -l > contador.md"); //cuenta el número de .txt que existen y los mete en contador.md
-    FILE *contador = popen("cat contador.md", "r"); //*contador lee el contenido de contador.md
-    if(contador == 0){
-        printf("No hay ningún fichero '.txt'\n");
+
+    system("(ls | grep -c '.txt')>contador.md"); //ls + contar archivos que contengan *.txt + meter el valor en contador.md
+    FILE *archivo = fopen("contador.md", "r"); //se intenta abrir contador.md
+
+    if(archivo==NULL){
+        printf("No se ha abierto correctamente.");
         return 1;
-    } else {
-        system("rm *.txt");
-        printf("Se han borrado con éxito.\n");
-        return 0;
+    }else{
+        int valor;
+        fscanf(archivo, "%d", &valor); //se lee el número de contador.md y se mete dentro de la variable valor
+        if(valor == 0){
+            printf("No hay ningún fichero '.txt'\n");
+            return 1;
+        } else { //2>/dev/null elimina el mensaje de error
+            system("rm *.txt");
+            printf("Se ha(n) borrado con éxito\n");
+            return 0;
+        }
     }
 } 
 
 // Opción 7: Calculadora
 void opcion7(){
-    char operadores[] = {'+', '-', '*', '/'};
-    printf("%d", sizeof(operadores));
+    char listaOperadores[] = {'+', '-', '*', '/'};
+    char operador;
+    int input;
+    float numero1, numero2, resultado;
+
+    printf("Número 1: ");
+    scanf("%f", &numero1);
+    limpiarBuffer();
+
+    printf("Número 2: "); 
+    scanf("%f", &numero2);
+    limpiarBuffer();
+
+    do{
+        printf("1. +\n2. -\n3. *\n4. /\nOperador:");
+        scanf("%d", &input);
+        limpiarBuffer();
+
+        switch(input){
+            case 1: 
+                operador = listaOperadores[0];
+                resultado = numero1 + numero2;
+                break;
+            case 2: 
+                operador = listaOperadores[1];
+                resultado = numero1 - numero2;
+                break;
+            case 3: 
+                operador = listaOperadores[2];
+                resultado = numero1 * numero2;
+                break;
+            case 4: 
+                operador = listaOperadores[3];
+                resultado = numero1 / numero2;
+                break;
+            default:
+                printf("Opción inválida\n");
+                break;
+        }
+    }while(input<1 || input>4);  
+    printf("%.2f %c %.2f = %.2f\n", numero1, operador, numero2, resultado);
 }
 
+// Opción 8: Introduce un nombre y te lo invierte
+void opcion8(){
+    char nombre[50];
+    char nombreInverso[50] = "";
+
+    printf("Introduce tu nombre: ");
+    fgets(nombre, sizeof(nombre), stdin);
+    
+    for (int i = strlen(nombre)-1, j=0; i >= 0 ; i--, j++)
+    {
+        nombreInverso[j] = nombre[i];
+    }
+    
+    nombreInverso[sizeof(nombreInverso)] = '\0';  
+
+    printf("Nombre %s", nombre);
+    printf("Nombre inverso: %s", nombreInverso);
+}
+
+void opcion9(){
+
+}
+// función auxiliar, limpiarBuffer() 
 void limpiarBuffer(){
     int c;
     while ((c=getchar()) != '\n' && c!=EOF);
