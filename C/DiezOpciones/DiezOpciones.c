@@ -14,7 +14,8 @@ int opcion5();
 int opcion6();
 void opcion7();
 void opcion8();
-void opcion9();
+int opcion9();
+int opcion10();
 
 void limpiarBuffer();
 
@@ -27,17 +28,17 @@ int main()
     do
     {
         printf("\n");
-        printf("1. Sumar dos números (Terminado)\n");
-        printf("2. Cuenta atrás (Terminado)\n");
-        printf("3. Familia de procesos (Terminado)\n");
-        printf("4. Mejores amigos (Terminado)\n");
-        printf("5. Escribir un fichero de texto (Terminado)\n");
-        printf("6. Borrar todos los ficheros de texto (Terminado)\n");
-        printf("7. Calculadora (Terminado)\n");
-        printf("8. Invertir tu nombre (Terminado)\n");
-        printf("9. Opcion 9\n");
-        printf("10. Opcion 10\n");
-        printf("0. Salir\n");
+        printf("0.  Salir (Terminado)\n");
+        printf("1.  Sumar dos números (Terminado)\n");
+        printf("2.  Cuenta atrás (Terminado)\n");
+        printf("3.  Familia de procesos (Terminado)\n");
+        printf("4.  Mejores amigos (Terminado)\n");
+        printf("5.  Escribir un fichero de texto (Terminado)\n");
+        printf("6.  Borrar todos los ficheros de texto (Terminado)\n");
+        printf("7.  Calculadora (Terminado)\n");
+        printf("8.  Invertir tu nombre (Terminado)\n");
+        printf("9.  Opcion 9\n");
+        printf("10. Número aleatorio\n");
         printf("Selecciona una opcion: \n");
         fgets(opcion, sizeof(opcion), stdin);
         numero = atoi(opcion);
@@ -69,10 +70,10 @@ int main()
                 opcion8();
                 break;
             case 9:
-                //opcion9;
+                opcion9();
                 break;
             case 10:
-                //opcion10;
+                opcion10();
                 break;
             case 0:
                 printf("Saliendo del programa. Hasta luego!\n\n");
@@ -81,7 +82,7 @@ int main()
                 printf("Opcion invalida. Por favor, selecciona una opcion valida.\n");
                 break;
         }
-    } while (opcion != 0);
+    } while (numero != 0);
     return 0;
 }
 
@@ -305,9 +306,42 @@ void opcion8(){
     printf("Nombre inverso: %s", nombreInverso);
 }
 
-void opcion9(){
+int opcion9(){
+// Declare the pipe outside the function
+    int tuberia[2];
+    char mensaje[50];
 
+    // Create the pipe
+    if (pipe(tuberia) == -1) {
+        perror("Error creating pipe");
+        return -1;
+    }
+
+    strcpy(mensaje, "Hola! Soy el padre hablando por la tubería!");
+
+    write(tuberia[1], mensaje, strlen(mensaje));
+    close(tuberia[1]);
+    return 0;
 }
+
+int opcion10(){
+    srand(time(NULL));
+    int numeroMin, numeroMax, rango, numeroAleatorio;
+
+    printf("Escoge un número mínimo:");
+    scanf("%d", &numeroMin);
+    limpiarBuffer();
+
+    printf("Escoge un número máximo:");
+    scanf("%d", &numeroMax);
+    limpiarBuffer();
+
+    rango = numeroMax-numeroMin+1;
+    numeroAleatorio = rand()%rango+numeroMin;
+    printf("Número aleatorio = %d", numeroAleatorio);
+    return 0;
+}
+
 // función auxiliar, limpiarBuffer() 
 void limpiarBuffer(){
     int c;
