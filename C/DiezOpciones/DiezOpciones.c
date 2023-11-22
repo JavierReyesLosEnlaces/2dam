@@ -4,11 +4,16 @@
 #include <unistd.h> 
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <time.h>
 
 void opcion1();
 int opcion2();
 void opcion3();
 void opcion4();
+void opcion5();
+int opcion6();
+void opcion7();
+void limpiarBuffer();
 
 void mostrar();
 
@@ -18,12 +23,13 @@ int main()
     int numero;
     do
     {
-        printf("\n1. Escribir un fichero\n");
-        printf("2. Cuenta atrás\n");
-        printf("3. Familia de procesos\n");
-        printf("4. Mejores amigos\n");
-        printf("5. Opcion 5\n");
-        printf("6. Opcion 6\n");
+        printf("\n");
+        printf("1. Sumar dos números (Terminado)\n");
+        printf("2. Cuenta atrás (Terminado)\n");
+        printf("3. Familia de procesos (Terminado)\n");
+        printf("4. Mejores amigos (Terminado)\n");
+        printf("5. Escribir un fichero (Terminado)\n");
+        printf("6. Borrar todos los ficheros .txt\n");
         printf("7. Opcion 7\n");
         printf("8. Opcion 8\n");
         printf("9. Opcion 9\n");
@@ -36,7 +42,7 @@ int main()
         switch (numero)
         {
             case 1:
-                opcion1();
+               opcion1();
                 break;
             case 2:
                 opcion2();
@@ -48,13 +54,13 @@ int main()
                 opcion4();
                 break;
             case 5:
-                //opcion5;
+                opcion5();
                 break;
             case 6:
-                //opcion6;
+                opcion6();
                 break;
             case 7:
-                //opcion7;
+                opcion7();
                 break;
             case 8:
                 //opcion8;
@@ -76,36 +82,29 @@ int main()
     return 0;
 }
 
-// HAY QUE SOLUCIONAR EL PROBLEMA DE LA DETECCIÓN DE ESPACIOS EN BLANCO
+// Opción 1: Suma de números
+void opcion1(){
+    int n1, n2, suma;
 
-// Opción 1: introducir un nombre de fichero, un texto y te crea el fichero con el texto dentro
-void opcion1() {
-    char nombreFichero[50];
-    char texto[50];
-    char comando[100];
+    printf("Introduce el primer número:\n");
+    scanf("%d", &n1);
+    limpiarBuffer();
 
-    printf("Introduce el nombre del fichero:\n");
-    fgets(nombreFichero, sizeof(nombreFichero), stdin);
-    if ((strlen(nombreFichero) > 0) && (nombreFichero[strlen(nombreFichero) - 1] == '\n'))
-    {
-        nombreFichero[strlen(nombreFichero) - 1] = '\0';
-    }
+    printf("Introduce el segundo número:\n");
+    scanf("%d", &n2);
+    limpiarBuffer();
 
-    printf("Escribe lo que quieras:\n");
-    fgets(texto, sizeof(texto), stdin);
-    if ((strlen(texto) > 0) && (texto[strlen(texto) - 1] == '\n'))
-    {
-        texto[strlen(texto) - 1] = '\0';
-    } 
-    snprintf(comando, sizeof(comando), "echo \"%s\" >> \"%s.txt\"", texto, nombreFichero);
-    system(comando);    
+    suma = n1 + n2;
+    printf("Resultado de la suma: %d\n", suma);
 }
 
 // Opción 2: dame un numero de segundos entre 0 y 10 segundos para la cuenta atrás
 int opcion2() {
+
     int segundos;  
     printf("Introduce un número entre 1 y 10 segundos para la cuenta atrás:\n");
     scanf("%d", &segundos);
+    limpiarBuffer();
 
     printf("Empezando la cuenta atrás.\n");
 
@@ -122,6 +121,7 @@ int opcion2() {
         return 0;
     }
 }
+
 // Opción 3: crear un proceso hijo y sacar sus ids
 void opcion3() {
     pid_t pid1;
@@ -156,6 +156,7 @@ void opcion3() {
     }
 }
 
+// Opción 4: mejores amigos
 void opcion4(){
     struct Amigo
     {
@@ -168,22 +169,72 @@ void opcion4(){
     printf("Quiero saber de tus dos mejores amigos...\n");
     
     printf("Introduce el nombre de tu primer amigo:\n");
-    scanf("%s", &mejoresAmigos[0].nombre);
+    fgets(mejoresAmigos[0].nombre, sizeof(mejoresAmigos[0].nombre), stdin);
 
     printf("Introduce la edad de tu primer amigo:\n");
     scanf("%d", &mejoresAmigos[0].edad);
+    limpiarBuffer();
 
     printf("Introduce el nombre de tu segundo amigo:\n");
-    scanf("%s", &mejoresAmigos[1].nombre);
+    fgets(mejoresAmigos[1].nombre, sizeof(mejoresAmigos[1].nombre), stdin);
 
     printf("Introduce la edad de tu segundo amigo:\n");
     scanf("%d", &mejoresAmigos[1].edad);
+    limpiarBuffer();
 
-    printf("Tus mejores amigos:\n");
+    printf("\nTus mejores amigos:\n");
     for (int i = 0; i < 2; i++)
     {
         printf("Amigo %d:\n", i+1);
-        printf("-> Nombre: %s\n", mejoresAmigos[i].nombre);
+        printf("-> Nombre: %s", mejoresAmigos[i].nombre);
         printf("-> Edad: %d\n", mejoresAmigos[i].edad);
     }
+}
+
+// Opción 5: introducir un nombre de fichero, un texto y te crea el fichero con el texto dentro
+void opcion5() {
+    char nombreFichero[50];
+    char texto[50];
+    char comando[100];
+
+    printf("Introduce el nombre del fichero:\n");
+    fgets(nombreFichero, sizeof(nombreFichero), stdin);
+    if ((strlen(nombreFichero) > 0) && (nombreFichero[strlen(nombreFichero) - 1] == '\n'))
+    {
+        nombreFichero[strlen(nombreFichero) - 1] = '\0';
+    }
+
+    printf("Escribe lo que quieras:\n");
+    fgets(texto, sizeof(texto), stdin);
+    if ((strlen(texto) > 0) && (texto[strlen(texto) - 1] == '\n'))
+    {
+        texto[strlen(texto) - 1] = '\0';
+    } 
+    snprintf(comando, sizeof(comando), "echo \"%s\" >> \"%s.txt\"", texto, nombreFichero);
+    system(comando);    
+}
+
+// Opción 6: borrar todos los ficheros.txt
+int opcion6(){
+    system("ls -1 *.txt 2>/dev/null | wc -l > contador.md"); //cuenta el número de .txt que existen y los mete en contador.md
+    FILE *contador = popen("cat contador.md", "r"); //*contador lee el contenido de contador.md
+    if(contador == 0){
+        printf("No hay ningún fichero '.txt'\n");
+        return 1;
+    } else {
+        system("rm *.txt");
+        printf("Se han borrado con éxito.\n");
+        return 0;
+    }
+} 
+
+// Opción 7: Calculadora
+void opcion7(){
+    char operadores[] = {'+', '-', '*', '/'};
+    printf("%d", sizeof(operadores));
+}
+
+void limpiarBuffer(){
+    int c;
+    while ((c=getchar()) != '\n' && c!=EOF);
 }
