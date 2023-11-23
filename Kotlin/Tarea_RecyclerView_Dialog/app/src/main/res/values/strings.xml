@@ -12,4 +12,15 @@
 
     <string name="change_color">Cambiar color</string>
     <string name="color_palette">Paleta de colores</string>
+
+    <string name="c1">Blanco</string>
+    <string name="c2">Rojo</string>
+    <string name="c3">Naranja</string>
+    <string name="c4">Amarillo</string>
+    <string name="c5">Verde</string>
+    <string name="c6">Cián</string>
+    <string name="c7">Azul</string>
+    <string name="c8">Violeta</string>
+    <string name="c9">Negro</string>
+    <string name="aplicar_color">Aplicar color</string>
 </resources>
