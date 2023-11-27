@@ -230,6 +230,7 @@
             button6.TabIndex = 4;
             button6.Text = "Gestor de imágenes";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label_titulo
             // 
@@ -285,6 +286,11 @@
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

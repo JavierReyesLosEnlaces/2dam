@@ -1,3 +1,4 @@
+using Firebase_Ex3;
 using Firebase_Ex3.Model;
 using Firebase_Ex3.Service;
 using FireSharp.Config;
@@ -12,6 +13,9 @@ namespace Firebase_Ex1
 
     {
         DataTable dt = new DataTable();
+        Form2 newWin = new Form2();
+
+
         //2. auth y config
         IFirebaseConfig config = new FirebaseConfig
         {
@@ -169,6 +173,11 @@ namespace Firebase_Ex1
         private void button5_Click(object sender, EventArgs e)
         {
             bringData();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            newWin.Show();
         }
     }
 }
