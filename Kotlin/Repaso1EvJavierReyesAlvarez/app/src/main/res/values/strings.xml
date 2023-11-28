@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Repaso1EvJavierReyesAlvarez</string>
+
+    <string name="negro">negro</string>
+    <string name="blanco">blanco</string>
+
+    <string name="rojo">rojo</string>
+    <string name="naranja">naranja</string>
+    <string name="amarillo">amarillo</string>
+    <string name="verde">verde</string>
+    <string name="cian">cian</string>
+    <string name="gris">gris</string>
+    <string name="azul">azul</string>
+    <string name="violeta">violeta</string>
+    <string name="elige_un_color">Elige un color\n</string>
+    <string name="aplicar_color">Aplicar color</string>
+</resources>

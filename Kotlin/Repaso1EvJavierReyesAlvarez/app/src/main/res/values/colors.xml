@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+
+    <color name="rojo">#FF0000</color>
+    <color name="naranja">#FF8400</color>
+    <color name="amarillo">#FFDD00</color>
+    <color name="verde">#26FF00</color>
+    <color name="cian">#00FFC3</color>
+    <color name="gris">#4C4C4C</color>
+    <color name="azul">#0023FF</color>
+    <color name="violeta">#EE00FF</color>
+
+    <color name="fondo">#7700FF</color>
+    <color name="fondo_dialog">#D35BFF</color>
+    <color name="morado_boton">#5732AE</color>
+
+</resources>
