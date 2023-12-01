@@ -1,22 +1,32 @@
 import java.io.File;
+import java.util.Scanner;
 
 public class main {
 
 	public static void main(String[] args) {		
 		String ruta;
 		int opcion;
+		Scanner teclado = new Scanner(input);
 		
 		do {
+			System.out.println("1. verDir");
+			System.out.println("Introduce una opción: ");
+			x = teclado.nextLine();
+			switch (x) {
+				case 1:
+					verDir();
+					break;
+				default:
+					System.out.println("Opción inválida");
+					break;
+			}			
 			
-			
-			
-		}while(x != =);
+		}while(x != 1);
 		
-		mostrarInfo(ruta);
 
 	}
 
-	private static void mostrarInfo(String ruta) {
+	private static void verDir(String ruta) {
 		File f = new File(ruta);
 		
 		// El método .listFiles() lista todos los archivos incluidos dentro del path especificado en "dir"
