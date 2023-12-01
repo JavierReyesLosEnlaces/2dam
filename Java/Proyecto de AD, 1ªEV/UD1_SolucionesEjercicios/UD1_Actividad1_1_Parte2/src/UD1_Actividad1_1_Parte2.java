@@ -9,13 +9,14 @@
 import java.io.File;
 
 public class UD1_Actividad1_1_Parte2 {
+
 	public static void main(String[] args) {
+		//args[0] = ".";
 		if (args.length != 1) {
 			System.out.println("HAY QUE INTRODUCIR UN ARGUMENTO...");
 			System.exit(0);
 		}
-		//String dir = args[0];
-		String dir = "C:\\Users\\javir\\Desktop\\random";
+		String dir = args[0];
 
 		System.out.println("Archivos en el directorio " + dir);
 		File f = new File(dir);

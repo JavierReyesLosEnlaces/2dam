@@ -1,22 +1,23 @@
-/* 
- * Este programa en Java muestra los ficheros (archivos o directorios) 
- * de un determinado directorio que se cargan en un array de elementos tipo File
- * utilizando el método list().
- */
-
 import java.io.File;
 
-public class UD1_Actividad1_1_Parte1 {
-	
-	// Método principal que se ejecuta al iniciar el programa
-	public static void main(String[] args) {	
-		// Se indica una ruta por medio de una cadena de texto y se guarda en la variable "dir"
-		// En este caso, "." significa "path actual", es decir, el directorio "UD1_Actividad1_1_Parte1"
-		String dir = ".";
+public class main {
+
+	public static void main(String[] args) {		
+		String ruta;
+		int opcion;
 		
-		// Se crea un objeto "f" de la clase "File" al que se le pasa "dir" como parámetro
-		// El objeto "f" apuntará al path especificado en la variable "dir"
-		File f = new File(dir);
+		do {
+			
+			
+			
+		}while(x != =);
+		
+		mostrarInfo(ruta);
+
+	}
+
+	private static void mostrarInfo(String ruta) {
+		File f = new File(ruta);
 		
 		// El método .listFiles() lista todos los archivos incluidos dentro del path especificado en "dir"
 		// Se utiliza el método "listFiles()" del objeto "f" para almacenar en un array los nombres de los archivos contenidos en el path
@@ -33,6 +34,8 @@ public class UD1_Actividad1_1_Parte1 {
 			File f2 = listaFicheros[i];
 			System.out.printf("Nombre: %s, es fichero?: %b, es directorio?: %b %n", 
 					f2.getName(), f2.isFile(), f2.isDirectory());
-		}
+		}		
+		
 	}
+
 }
