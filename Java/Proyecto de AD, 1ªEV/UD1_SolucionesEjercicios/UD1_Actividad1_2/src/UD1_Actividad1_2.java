@@ -12,79 +12,59 @@ public class UD1_Actividad1_2 {
             System.out.println("1. Ver Directorio (VerDir)");
             System.out.println("2. Ver Informacion (VerInf)");            
             System.out.println("3. Leer Fichero de Texto (LeerFichTextoBuff)");
-            System.out.println("4. Escribir Fichero de Texto (EscribirFichtextoBuff)");
-            
-            
+            System.out.println("4. Escribir Fichero de Texto (EscribirFichtextoBuff)");                   
             System.out.println("5. Leer Objeto Persona (LeerFichObject)");
-            System.out.println("6. Escribir Objeto Persona (EscribirFichObject)");
-            
-            
-
+            System.out.println("6. Escribir Objeto Persona (EscribirFichObject)");           
             System.out.println("7. Leer Fichero Aleatorio (LeerFichAleatorio)");
-            System.out.println("8. Escribir Fichero Aleatorio (EscribirFichAleatorio)");
-            
-
+            System.out.println("8. Escribir Fichero Aleatorio (EscribirFichAleatorio)");          
             System.out.println("9. Leer Registro Específico de Fichero Aleatorio (LeerFichAleatorioUnReg)");
-            System.out.println("10. Insertar Registro en Fichero Aleatorio (EscribirFichAleatorioUnReg)");
-            
+            System.out.println("10. Insertar Registro en Fichero Aleatorio (EscribirFichAleatorioUnReg)");           
             System.out.println(" ");
+            System.out.println("Introduce un número: ");
             opcion = teclado.nextInt();
             
             switch (opcion) {
                 case 0:
-                    System.out.println("Fin del programa. ");
+                    System.out.println("Has salido. ");
                     break;
-                    
-                    
-                    
-                    
                 case 1:
                     System.out.println("Introduce la ruta del directorio: ");
                     VerDir(teclado.next());
+                    System.out.println(" ");
                     break;
                 case 2:
                     System.out.println("Introduce la ruta del directorio: ");
                     VerInf(teclado.next());
+                    System.out.println(" ");
                     break;
-                    
-                    
-                    
-                    
                 case 3:
                     System.out.println("Introduce la ruta del fichero de texto: ");
                     LeerFichTextoBuff(teclado.next());
+                    System.out.println(" ");
                     break;
                 case 4:
                     System.out.println("Introduce la ruta del fichero de texto para escribir: ");
                     EscribirFichTextoBuff(teclado.next());
+                    System.out.println(" ");
                     break;
-                
-                
-                
                 case 5:
                     System.out.println("Introduce la ruta del fichero de texto para escribir: ");
                     LeerFichObject(teclado.next());
+                    System.out.println(" ");
                     break;                                      
                 case 6:
                     System.out.println("Introduce la ruta del fichero para escribir objetos Persona: ");
                     EscribirFichObject(teclado.next());
+                    System.out.println(" ");
                     break;
-                
-                
-                
-                
-                
-                
                 case 7:
                     System.out.println("Introduce la ruta del fichero aleatorio para escribir datos: ");
                     LeerFichAleatorio(teclado.next());;
                 case 8:
                     System.out.println("Introduce la ruta del fichero aleatorio para leer datos: ");
                     EscribirFichAleatorio(teclado.next());
+                    System.out.println(" ");
                     break;
-                    
-                    
-
                 case 9:
                     System.out.println("Introduce la ruta del fichero aleatorio para leer un registro: ");
                     String rutaFichero = teclado.next();
@@ -96,18 +76,11 @@ public class UD1_Actividad1_2 {
                     System.out.println("Introduce la ruta del fichero aleatorio para insertar un registro: ");
                     EscribirFichAleatorioUnReg(teclado.next());
                     break;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+
                 default:
                     System.out.println("Opción inválida");
                     break;
+                    
             }
         } while (opcion != 0);
     }
@@ -137,12 +110,11 @@ public class UD1_Actividad1_2 {
         } else {
             System.out.println("La ruta no es un directorio válido.");
         }
+       
     }
     
     private static void VerInf(String ruta) {
-
         File fichero = new File(ruta);
-
         if (fichero.exists()) {
             System.out.println("Atributos del fichero:");
             System.out.println("Nombre: " + fichero.getName());
@@ -158,32 +130,39 @@ public class UD1_Actividad1_2 {
             System.out.println("El fichero no existe.");
         }
     }
-    
-    
-    
-    
-    
+                  
     private static void LeerFichTextoBuff(String ruta) {
         try (BufferedReader br = new BufferedReader(new FileReader(new File(ruta)))) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 System.out.println(linea);
             }
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private static void EscribirFichTextoBuff(String ruta) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ruta)))) {
+    	File file = new File(ruta);
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
             Scanner teclado = new Scanner(System.in);
-            System.out.println("Introduce el texto a escribir en el fichero (escribe 'FIN' para terminar):");
-            String linea;
+            System.out.println("Introduce el texto a escribir en el fichero:\nRecuerda incluir el nombre del fichero en la ruta");
+            String linea= teclado.nextLine();
+            
+            while(linea.charAt(linea.length()-1)=='.') {
+            	System.out.println("holi");
+                bw.write(linea);
+                //bw.newLine();
+            }
+            /*
             while (!(linea = teclado.nextLine()).equalsIgnoreCase("FIN")) {
                 bw.write(linea);
                 bw.newLine();
             }
+            */
             System.out.println("Texto escrito en el fichero.");
+            bw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
