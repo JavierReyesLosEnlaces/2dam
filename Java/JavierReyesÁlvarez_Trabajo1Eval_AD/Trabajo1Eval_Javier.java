@@ -20,9 +20,10 @@ import org.w3c.dom.Element;
 public class Trabajo1Eval {
 	// Esta es la función "main"
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in); // teclado -> objeto de la clase "Scanner" que uso para pedir input
-													// del usuario por consola
-		int opcion; // opcion -> entero que se utiliza para la elección del subprograma en el menú
+		// teclado -> objeto de la clase "Scanner" que uso para pedir input del usuario por consola
+		Scanner teclado = new Scanner(System.in); 
+		// opcion -> entero que se utiliza para la elección del subprograma en el menú
+		int opcion; 
 		do {
 			// Menú de subprogramas dentro de un do-while para que se siga pidiendo
 			// introducir una opción hasta introducir un 0 y finalizar el programa
@@ -37,17 +38,16 @@ public class Trabajo1Eval {
 			System.out.println("8. Escribir Fichero Aleatorio (EscribirFichAleatorio)");
 			System.out.println("9. Leer Registro Específico de Fichero Aleatorio (LeerFichAleatorioUnReg)");
 			System.out.println("10. Insertar Registro en Fichero Aleatorio (EscribirFichAleatorioUnReg)");
-			System.out.println(
-					"11. Crear un fichero XML a partir de los datos de un fichero aleatorio existente (CrearEmpleadoXml)");
+			System.out.println("11. Crear un fichero XML a partir de los datos de un fichero aleatorio existente (CrearEmpleadoXml)");
 			System.out.println(" ");
 			System.out.println("Introduce un num: ");
 			// Se pide un entero por consola y se introduce dentro de la variable "opcion"
 			opcion = teclado.nextInt();
 			// switch-case -> dependiendo del valor de "opcion" tiene lugar un evento u otro
-			// Si "opcion" es distinto de 0, se vuelve a mostrar el menú, si "opcion" es 0
-			// se sale del programa
+			// Si "opcion" es distinto de 0, se vuelve a mostrar el menú, si "opcion" es 0 se sale del programa
 			switch (opcion) {
-			case 0: // Se sale del programa
+			case 0:
+				// Se sale del programa
 				System.out.println("Has salido. ");
 				break;
 			case 1:
@@ -122,6 +122,7 @@ public class Trabajo1Eval {
 				int numeroRegistro = teclado.nextInt();
 				// Se ejecuta el método con los parámetros indicados y se hace un salto de línea
 				LeerFichAleatorioUnReg(rutaFichero, numeroRegistro);
+				System.out.println(" ");
 				break;
 			case 10:
 				// Se pide la ruta del fichero aleatorio y se mete como parámetro en el método
@@ -129,6 +130,7 @@ public class Trabajo1Eval {
 				System.out.println("Introduce la ruta del fichero aleatorio para insertar un registro: ");
 				// Se ejecuta el método con el parámetro indicado y se hace un salto de línea
 				EscribirFichAleatorioUnReg(teclado.next());
+				System.out.println(" ");
 				break;
 			case 11:
 				// Se piden las rutas del fichero de entrada y la ruta del fichero de salida y
@@ -139,14 +141,15 @@ public class Trabajo1Eval {
 				String outputPath = teclado.next(); // Lee la ruta de salida desde la consola
 				// Se ejecuta el método con los parámetros indicados y se hace un salto de línea
 				convertirAXml(inputPath, outputPath);
+				System.out.println(" ");
 				break;
 			default:
-				// Cualquier otro input que no haya sido indicado anteriormente -> se muestra
-				// "Opción inválida"
+				// Cualquier otro input que no haya sido indicado anteriormente -> se muestra "Opción inválida"
 				System.out.println("Opcion invalida");
 				break;
 			}
-		} while (opcion != 0); // Mientras la opción sea 0, se seguirá preguntando
+		// Mientras la opción sea 0, se seguirá preguntando
+		} while (opcion != 0); 
 		// Se cierra el teclado
 		teclado.close();
 	}
@@ -160,18 +163,15 @@ public class Trabajo1Eval {
 			// Se obtiene la lista de ficheros (archivos o directorios) en el directorio y
 			// se mete en un array de Strings
 			String[] listaFicheros = directorio.list();
-			// Si la lista no está vacia y tiene uno o más elementos, se listan dichos
-			// elementos
+			// Si la lista no está vacia y tiene uno o más elementos, se listan dichos elementos
 			if (listaFicheros != null && listaFicheros.length > 0) {
 				System.out.println("Archivos en el directorio:");
 				// Se itera sobre la lista, por cada nombre de archivo dentro de la lista
 				for (String nombreFichero : listaFicheros) {
-					// Se construye la ruta completa del archivo y se mete dentro de la variable
-					// "rutaCompleta"
+					// Se construye la ruta completa del archivo y se mete dentro de la variable "rutaCompleta"
 					String rutaCompleta = directorio.getAbsolutePath() + File.separator + nombreFichero;
 
-					// Se verifica si es un fichero o un directorio por medio de un operador
-					// ternario
+					// Se verifica si es un fichero o un directorio por medio de un operador ternario
 					File fichero = new File(rutaCompleta);
 					String tipo = fichero.isFile() ? "Fichero" : "Directorio";
 					// Se muestra por pantalla el nombre del archivo y si es fichero o directorio
@@ -182,8 +182,7 @@ public class Trabajo1Eval {
 			} else {
 				System.out.println("El directorio está vacío.");
 			}
-			// Si el directorio no existe o "directorio" no es un directorio, se muestra
-			// este mensaje
+			// Si el directorio no existe o "directorio" no es un directorio, se muestra este mensaje
 		} else {
 			System.out.println("La ruta no es un directorio válido.");
 		}
@@ -193,10 +192,8 @@ public class Trabajo1Eval {
 		// Con la ruta de fichero introducida, se crea un objeto de la clase File
 		// llamado fichero que apunta a dicha ruta
 		File fichero = new File(ruta);
-		// Si el fichero existe, se muestra la siguiente información del fichero por
-		// medio de los siguientes métodos
-		// Hay más pero he puesto estos porque considero que son suficientes para
-		// mostrar que los entiendo, están explicados en las siguientes líneas
+		// Si el fichero existe, se muestra la siguiente información del fichero por medio de los siguientes métodos
+		// Hay más pero he puesto estos porque considero que son suficientes para mostrar que los entiendo, están explicados en las siguientes líneas
 		if (fichero.exists()) {
 			System.out.println("Atributos del fichero:");
 			System.out.println("Nombre: " + fichero.getName());
@@ -214,12 +211,10 @@ public class Trabajo1Eval {
 	}
 
 	private static void LeerFichTextoBuff(String ruta) {
-		// Se intenta crear un objeto "br" de la clase "BufferedReader" por medio de un
-		// try-catch
+		// Se intenta crear un objeto "br" de la clase "BufferedReader" por medio de un try-catch
 		// Un BufferedReader necesita de un objeto de la clase "FileReader" y este a su
 		// vez necesita de otro de la clase "File"
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (BufferedReader br = new BufferedReader(new FileReader(new File(ruta)))) {
 			String linea;
 			// Un while loop
@@ -243,11 +238,9 @@ public class Trabajo1Eval {
 	private static void EscribirFichTextoBuff(String ruta) {
 		// Se abre el teclado
 		Scanner teclado = new Scanner(System.in);
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		File file = new File(ruta);
-		// Se intenta crear un objeto "bw" de la clase "BufferedWriter" por medio de un
-		// try-catch
+		// Se intenta crear un objeto "bw" de la clase "BufferedWriter" por medio de un try-catch
 		// Un BufferedWriter necesita de un objeto de la clase "FileWriter" y este a su
 		// vez necesita de otro de la clase "File"
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
@@ -255,11 +248,9 @@ public class Trabajo1Eval {
 			// poner un punto y presionar "Enter"
 			System.out.println(
 					"Introduce el texto a escribir en el fichero:\nPara terminar de escribir, pon punto final y presiona 'Enter'");
-			// Se crea la variable "linea" que equivale a una línea que escribe el búffer en
-			// cada iteración (linea = teclado.nextLine())
+			// Se crea la variable "linea" que equivale a una línea que escribe el búffer en cada iteración (linea = teclado.nextLine())
 			String linea;
-			// Se crea la variable booleana "control" que nos ayudará a desempenyar la
-			// lógica del subprograma
+			// Se crea la variable booleana "control" que nos ayudará a desempenyar la lógica del subprograma
 			boolean control = false;
 
 			do {
@@ -283,19 +274,17 @@ public class Trabajo1Eval {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		// Se cierra el teclado
 		teclado.close();
 	}
 
 	private static void LeerFichObject(String ruta) {
-		// Se intenta crear un objeto "ois" de la clase "ObjectInputStream" por medio de
-		// un try-catch
+		// Se intenta crear un objeto "ois" de la clase "ObjectInputStream" por medio de un try-catch
 		// Un ObjectInputStream necesita de un objeto de la clase "FileInputStream" y
 		// este a su vez necesita de otro de la clase "File"
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File(ruta)))) {
-			// Se crea un bucle infinito para leer objetos hasta que se alcance el final del
-			// archivo
+			// Se crea un bucle infinito para leer objetos hasta que se alcance el final del archivo
 			while (true) {
 				try {
 					// Se intenta leer un objeto de tipo Persona desde el flujo de entrada
@@ -323,13 +312,11 @@ public class Trabajo1Eval {
 		// de un try-catch
 		// Un ObjectOutputStream necesita de un objeto de la clase "FileOutputStream" y
 		// este a su vez necesita de otro de la clase "File"
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (ObjectOutputStream oos = new MiObjectOutputStream(new FileOutputStream(new File(ruta), true))) {
-			// Se abre un objeto "teclado" de la clase Scanner para que el usuario escriba
-			// por consola
-			// Acto seguido, se piden introducir los datos "nombre" y "edad" del objeto de
-			// la clase "Persona", se guardan dentro de variables
+			// Se abre un objeto "teclado" de la clase Scanner para que el usuario escriba por consola
+			// Acto seguido, se piden introducir los datos "nombre" y "edad" del 			
+			// objeto de la clase "Persona", se guardan dentro de variables
 			System.out.println("Introduce los datos de la Persona:");
 			System.out.print("Nombre: ");
 			String nombre = teclado.nextLine();
@@ -345,6 +332,7 @@ public class Trabajo1Eval {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		// Se cierra el teclado
 		teclado.close();
 	}
 
@@ -352,10 +340,8 @@ public class Trabajo1Eval {
 		// Se intenta crear un objeto "raf" de la clase "RandomAccessFile" por medio de
 		// un try-catch de lectura "r"
 		// "RandomAccessFile" proporciona métodos para leer y escribir datos en un
-		// archivo de manera no secuencial (permite acceder a cualquier posición en el
-		// archivo)
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// archivo de manera no secuencial (permite acceder a cualquier posición en el archivo)
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (RandomAccessFile raf = new RandomAccessFile(new File(ruta), "r")) {
 			// Definimos el tamanyo de cada registro en bytes
 			int tamanyoRegistro = 36;
@@ -365,8 +351,7 @@ public class Trabajo1Eval {
 			// Mientras la posición del puntero sea menor al tamanyo del fichero (la opción
 			// contraria es imposible) se llevan a cabo una serie de lecturas
 			while (raf.getFilePointer() < tamanyoFichero) {
-				// Se lee el identificador del empleado y se guarda dentro de la variable
-				// "identificador"
+				// Se lee el identificador del empleado y se guarda dentro de la variable "identificador"
 				int identificador = raf.readInt();
 				// Se lee el apellido del empleado y se guarda dentro de la variable "apellido"
 				// Para esta lectura he creado el método leerCadenaConBuffer() que se encuentra
@@ -378,8 +363,7 @@ public class Trabajo1Eval {
 				// Se lee el salario del empleado y se guarda dentro de la variable "salario"
 				double salario = raf.readDouble();
 				// Por último, se muestran los resultados obtenidos en una línea
-				System.out.printf("Identificador: %d, Apellido: %s, Número de Departamento: %d, Salario: %.2f%n",
-						identificador, apellido.trim(), numeroDepartamento, salario);
+				System.out.printf("Identificador: %d, Apellido: %s, Número de Departamento: %d, Salario: %.2f%n", identificador, apellido.trim(), numeroDepartamento, salario);
 			}
 			// En el caso de no poder crearse el RandomAccessFile, se lanza una excepción
 		} catch (IOException e) {
@@ -391,10 +375,8 @@ public class Trabajo1Eval {
 		// Se intenta crear un objeto "raf" de la clase "RandomAccessFile" por medio de
 		// un try-catch de lectura y escritura ("rw")
 		// "RandomAccessFile" nos ofrece métodos para leer y escribir datos en un
-		// archivo de manera no secuencial (permite acceder a cualquier posición en el
-		// archivo)
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// archivo de manera no secuencial (permite acceder a cualquier posición en el archivo)
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (RandomAccessFile raf = new RandomAccessFile(new File(ruta), "rw")) {
 			// Creamos datos de ejemplo para que se generen datos aleatorios en el fichero
 			int[] identificadores = { 1, 2, 3, 4, 5 };
@@ -406,7 +388,7 @@ public class Trabajo1Eval {
 			// cada registro en bytes
 			int tamanyoRegistro = 36;
 			// Iteramos sobre los identificadores, uno a uno
-			// En cada iteración se c
+			// En cada iteración se hace lo siguiente: 
 			for (int i = 0; i < identificadores.length; i++) {
 				// Movemos el puntero al inicio del registro actual multiplicando el índice por
 				// el tamanyo del registro
@@ -418,8 +400,10 @@ public class Trabajo1Eval {
 				// El método puede encontrarse al final del documento en la parte de "MÉTODOS
 				// AUXILIARES" y se usa en otros subprogramas
 				escribirCadenaConBuffer(raf, nombres[i], 10);
-				raf.writeInt(numerosDepartamento[i]); // Se escribe el número del departamento
-				raf.writeDouble(salarios[i]); // Se escribe el salario
+				// Se escribe el número del departamento
+				raf.writeInt(numerosDepartamento[i]); 
+				// Se escribe el salario
+				raf.writeDouble(salarios[i]); 
 			}
 			// Se informa de que los registros han sido escritos
 			System.out.println("Registros escritos en el fichero aleatorio.");
@@ -432,8 +416,7 @@ public class Trabajo1Eval {
 	private static void LeerFichAleatorioUnReg(String ruta, int numeroRegistro) {
 		// Se intenta crear un objeto "raf" de la clase "RandomAccessFile" por medio de
 		// un try-catch de lectura y escritura ("rw"), como en el método anterior
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (RandomAccessFile raf = new RandomAccessFile(new File(ruta), "rw")) {
 			// Creamos una variable "tamanyoRegistro" que almacenará el tamanyo total de
 			// cada registro en bytes
@@ -459,8 +442,7 @@ public class Trabajo1Eval {
 	private static void EscribirFichAleatorioUnReg(String ruta) {
 		// Se intenta crear un objeto "raf" de la clase "RandomAccessFile" por medio de
 		// un try-catch de lectura y escritura ("rw"), como en el método anterior
-		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase
-		// "File"
+		// Pasamos la ruta del fichero introducida como parámetro al objeto de clase "File"
 		try (RandomAccessFile raf = new RandomAccessFile(new File(ruta), "rw")) {
 			// Ahora creamos algunos datos de ejemplo para escribir en el fichero aleatorio
 			// Identificador, nombre, numero de departamento y salario
@@ -489,15 +471,31 @@ public class Trabajo1Eval {
 
 	/*
 	 * He creado el método "convertirAXml()" para transformar un archivo de texto
-	 * que contenga nombres y edades como este: Juan 25 María 30 Pedro 22 Ana 28
+	 * que contenga nombres y edades como este:
+	 
+	 * Juan 25 María 30 Pedro 22 Ana 28
 	 * 
 	 * en un fichero XML:
 	 * 
-	 * <?xml version="1.0" encoding="UTF-8" standalone="no"?> <Personas> <Persona>
-	 * <Nombre>Juan</Nombre> <Edad>25</Edad> </Persona> <Persona>
-	 * <Nombre>María</Nombre> <Edad>30</Edad> </Persona> <Persona>
-	 * <Nombre>Pedro</Nombre> <Edad>22</Edad> </Persona> <Persona>
-	 * <Nombre>Ana</Nombre> <Edad>28</Edad> </Persona> </Personas>
+	 *		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	 *		<Personas>
+	 *			<Persona>
+	 *				<Nombre>Juan</Nombre>
+	 *				<Edad>25</Edad>
+	 *			</Persona>
+	 *			<Persona>
+	 *				<Nombre>María</Nombre>
+	 *				<Edad>30</Edad>
+	 *			</Persona>
+	 *			<Persona>
+	 *				<Nombre>Pedro</Nombre>
+	 *				<Edad>22</Edad>
+	 *			</Persona>
+	 *			<Persona>
+	 *				<Nombre>Ana</Nombre>
+	 *				<Edad>28</Edad>
+	 *			</Persona>
+	 *		</Personas>
 	 */
 
 	public static void convertirAXml(String inputPath, String outputPath) {
@@ -506,8 +504,7 @@ public class Trabajo1Eval {
 			// Hay que crear un objeto de la clase "DocumentBuilderFactory"
 			DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 
-			// A raiz de "documentBuilderFactory" creamos otro objeto de la clase
-			// "DocumentBuilder"
+			// A raiz de "documentBuilderFactory" creamos otro objeto de la clase "DocumentBuilder"
 
 			DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
@@ -518,10 +515,8 @@ public class Trabajo1Eval {
 			Element rootElement = document.createElement("Personas");
 			document.appendChild(rootElement);
 
-			// Ahora intentamos leer datos desde el archivo de entrada mediante un
-			// "BufferedReader"
-			// el FileReader apuntará hacia el fichero de entrada, es decir, el fichero de
-			// texto
+			// Ahora intentamos leer datos desde el archivo de entrada mediante un "BufferedReader"
+			// El FileReader apuntará hacia el fichero de entrada, es decir, el fichero de texto
 			try (BufferedReader reader = new BufferedReader(new FileReader(inputPath))) {
 				String line;
 				// La variable "line" representa cada línea que se lee por el búffer
@@ -571,8 +566,8 @@ public class Trabajo1Eval {
 			// Se usa un "FileWriter" para escribir en el nuevo fichero (el xml), el cual
 			// indicamos que es "outputPath"
 			try (FileWriter fileWriter = new FileWriter(outputPath)) {
-				// Se utiliza la clase "StreamResult" para especificar la ubicación del archivo
-				// de salida
+				// Se utiliza la clase "StreamResult" para especificar la ubicación del 
+				// archivo de salida
 				StreamResult result = new StreamResult(fileWriter);
 				// Realizamos la transformación
 				transformer.transform(source, result);
@@ -610,8 +605,7 @@ public class Trabajo1Eval {
 			if (i < cadena.length()) {
 				buffer[i] = cadena.charAt(i);
 			} else {
-				// Si la cadena es más corta que la longitud deseada, se llena con espacios en
-				// blanco
+				// Si la cadena es más corta que la longitud deseada, se llena con espacios en blanco
 				buffer[i] = ' ';
 			}
 		}
@@ -619,10 +613,9 @@ public class Trabajo1Eval {
 		raf.writeChars(new String(buffer));
 	}
 
-	// Clase Persona sencilla que implementa Serializable (para escribir objetos
-	// "Persona" en los subprogramas 5 y 6)
+	// Clase Persona sencilla que implementa Serializable
+	// Se usa para escribir objetos"Persona" en los subprogramas 5 y 6
 	public static class Persona implements Serializable {
-		private static final long serialVersionUID = 1L;
 		private String nombre;
 		private int edad;
 
@@ -638,7 +631,7 @@ public class Trabajo1Eval {
 
 	// Clase MiObjectOutputStream para evitar la escritura de la cabecera
 	// MiObjectOutputStream es una clase que extiende ObjectOutputStream para evitar
-	// la "StreamCorruptedException"
+	// la excepción "StreamCorruptedException"
 	public static class MiObjectOutputStream extends ObjectOutputStream {
 		public MiObjectOutputStream(OutputStream out) throws IOException {
 			super(out);
