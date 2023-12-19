@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.aplicaciones_pmdm.BoardgamesApp.BoardgamesActivity
 import com.example.aplicaciones_pmdm.HelloApp.MainActivity
 import com.example.aplicaciones_pmdm.IMCApp.IMCCalculatorActivity
 import com.example.aplicaciones_pmdm.MessageApp.MessageActivity
+import com.example.aplicaciones_pmdm.SuperoheroApp.SuperheroListActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,14 +26,9 @@ class MenuActivity : AppCompatActivity() {
         var btnIMCApp = findViewById<Button>(R.id.btnIMCActivity);
         btnIMCApp.setOnClickListener{navigateToIMCActivity()}
 
-        //Boardgames ACTIVITY
-        var btnBoardgamesApp = findViewById<Button>(R.id.btnBoardgamesActivity);
-        btnBoardgamesApp.setOnClickListener{navigateToBoardgamesActivity()}
-    }
-
-    private fun navigateToBoardgamesActivity() {
-        val intent = Intent(this, BoardgamesActivity::class.java)
-        startActivity(intent)
+        //Superhero ACTIVITY
+        var btnSuperheroApp = findViewById<Button>(R.id.btnSuperheroActivity);
+        btnSuperheroApp.setOnClickListener{navigateToSuperheroActivity()}
     }
 
     private fun navigateToHelloApp() {
@@ -48,6 +43,11 @@ class MenuActivity : AppCompatActivity() {
 
     private fun navigateToIMCActivity() {
         val intent = Intent(this, IMCCalculatorActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToSuperheroActivity() {
+        val intent = Intent(this, SuperheroListActivity::class.java)
         startActivity(intent)
     }
 }
