@@ -32,4 +32,5 @@
     <color name="bgapp_lcg_category">#4CAF50</color>
     <color name="bgapp_cooperative_category">#D016F1</color>
     <color name="bgapp_legacy_category">#EDF351</color>
+    <color name="violet35">#59D136F4</color>
 </resources>

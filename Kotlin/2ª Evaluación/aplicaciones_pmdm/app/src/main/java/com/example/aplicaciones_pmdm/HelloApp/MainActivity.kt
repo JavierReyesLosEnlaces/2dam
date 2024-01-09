@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         var boton = findViewById<Button>(R.id.btnSend)
         var texto = findViewById<EditText>(R.id.etName)
 

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 // a través de una interfaz y definiendo un arbol de clases cogiendo los datos del json que nos interesen
 data class SuperHeroDataResponse( // para obtener datos hay que coger los datos con exactamente el nombre
     @SerializedName("response") val response: String, //el dato del indice response lo vas a almacenar en la variable "response" -> si es un array de objetos vamos a tener que definir cada objetos por separado
-    @SerializedName("results") val superheroes: List<SuperheroItemResponse  >
+    @SerializedName("results") val superheroes: List<SuperheroItemResponse  > //el results para mi lo voy a llamar superheroes
 )
 
 data class SuperheroItemResponse(
