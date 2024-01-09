@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Proyecto2Ev_ReyesJavier</id>
+    <version>1.0.0</version>
+    <authors>Proyecto2Ev_ReyesJavier</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\bin\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.runtimeconfig.json" target="lib\net6.0-windows7.0\Proyecto2Ev_ReyesJavier.runtimeconfig.json" />
+    <file src="C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\bin\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.dll" target="lib\net6.0-windows7.0\Proyecto2Ev_ReyesJavier.dll" />
+  </files>
+</package>
