@@ -7,7 +7,14 @@ namespace Proyecto2Ev_ReyesJavier
         public Form1()
         {
             InitializeComponent();
-            Bebida b = new Bebida();
+            InitUI();
+        }
+
+        private void InitUI()
+        {
+            // No se puede redimensionar el Form1
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            VisorImg visorImg = new VisorImg(); 
         }
     }
 }

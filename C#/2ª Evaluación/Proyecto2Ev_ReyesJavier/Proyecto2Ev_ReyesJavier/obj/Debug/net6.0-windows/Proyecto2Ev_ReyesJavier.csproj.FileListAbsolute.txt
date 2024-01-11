@@ -14,3 +14,8 @@ C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJa
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.pdb
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.genruntimeconfig.cache
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\ref\Proyecto2Ev_ReyesJavier.dll
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\bin\Debug\net6.0-windows\BurgerLibrary.dll
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\bin\Debug\net6.0-windows\BurgerLibrary.pdb
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.csproj.CopyComplete
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Proyecto2Ev_ReyesJavier\Proyecto2Ev_ReyesJavier\obj\Debug\net6.0-windows\Proyecto2Ev_ReyesJavier.VisorImg.resources
