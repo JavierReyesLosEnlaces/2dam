@@ -1,6 +1,0 @@
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\bin\Debug\BurgerLibrary.dll
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\bin\Debug\BurgerLibrary.pdb
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.csproj.AssemblyReference.cache
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.dll
-C:\Users\Adrián\source\repos\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.pdb
