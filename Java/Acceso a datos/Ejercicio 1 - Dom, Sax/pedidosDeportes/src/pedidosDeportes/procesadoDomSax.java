@@ -1,15 +1,15 @@
-package pedidosDeportes;
+	package pedidosDeportes;
 
 import java.io.File;
-import java.text.ParseException;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.DOMImplementation;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class procesadoDomSax {
 
@@ -42,19 +42,31 @@ public class procesadoDomSax {
 	}
 
 	private static void procesadoSax(File f) {	
+
+	}
+
+	private static void procesadoDom(File f) {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document d = db.parse(f);
-			// En este punto tengo el objeto Document apuntando al fichero
+			// En este punto tengo el objeto Document apuntando al fichero					
 			
-			d.createElement("pedidos_deporte");		
+			// Elemento raiz <pedidos_deporte>
+			Element raiz = d.getDocumentElement();	
+			System.out.println(raiz.toString());
+			
+			// Elementos nodo 1
+			NodeList nodo1 = d.getElementsByTagName("pedido");
+			
+			// Elementos nodo 2
+			NodeList nodo2a = nodo1.getElementsByTagName("nombre");
+			NodeList nodo2b = nodo1.getElementsByTagName("numero_pedido");
+			NodeList nodo2c = nodo1.getElementsByTagName("articulos");
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	private static void procesadoDom(File f) {
 	}
 
 }
