@@ -8,7 +8,6 @@ namespace Entrega2Eval_JavierReyes
         private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
         private int fase = 1;
         private bool producto1Seleccionado, producto2Seleccionado;
-
         public Form1()
         {
             InitializeComponent();
@@ -104,6 +103,8 @@ namespace Entrega2Eval_JavierReyes
             // Esconder el botón de cancelar y table layout pannel de extras
             btn_cancelar.Visible = false;
             tlpExtras.Visible = false;
+
+            mostrarMainTlp();
         }
 
         private void btnProducto1_Click(object sender, EventArgs e)
@@ -178,6 +179,8 @@ namespace Entrega2Eval_JavierReyes
 
         private void btnExtras_Click(object sender, EventArgs e)
         {
+            mostrarExtrasTlp();
+
             // El label de extras se vuelven verde
             // El resto de labels se vuelven negros
             lbl_añadirExtras.BackColor = Color.FromArgb(22, 134, 55);
@@ -211,8 +214,12 @@ namespace Entrega2Eval_JavierReyes
             // Se abre un nuevo Form con la función de añadir y un botón de salir
         }
 
+
+
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
+            // 
+
             // Se pasa de fase
             fase += 1;
             //LoadFase();
@@ -224,6 +231,9 @@ namespace Entrega2Eval_JavierReyes
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
+            // Tlp de productos visible
+            tlp5.Visible = true;
+
             // Desselecciona los botones
             lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
 
@@ -244,6 +254,31 @@ namespace Entrega2Eval_JavierReyes
             btn_cancelar.Visible = false;
             tlpExtras.Visible = false;
 
+            mostrarMainTlp();
+
         }
+
+        private void mostrarMainTlp()
+        {
+
+            // Tlp de extras invisible
+            tlp10.Visible = false;
+            //tlp10.SendToBack();
+
+            // Tlp de productos visible visible
+            tlp5.Visible = true;
+            //tlp5.BringToFront();
+        }
+        private void mostrarExtrasTlp()
+        {
+            // Tlp de productos invisible
+            tlp5.Visible = false;
+            //tlp5.SendToBack();
+
+            // Tlp de extras visible
+            tlp10.Visible = true;
+            //tlp10.BringToFront();
+        }
+
     }
 }
