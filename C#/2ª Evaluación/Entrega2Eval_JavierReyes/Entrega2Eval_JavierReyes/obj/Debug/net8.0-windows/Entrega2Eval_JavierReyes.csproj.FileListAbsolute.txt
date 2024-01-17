@@ -49,3 +49,10 @@ C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_Javier
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\burguer3.png
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\pexels-polina-tankilevitch-8202845 (1).jpg
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl1.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\banner.jpg
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\banner1.jpg
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\banner_cropped.jpg
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\burguer.png
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\burguer3.png
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\pexels-polina-tankilevitch-8202845 (1).jpg
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl1.resources

@@ -5,7 +5,6 @@ namespace Entrega2Eval_JavierReyes
 {
     public partial class Form1 : Form
     {
-        private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
         private int fase = 1;
         private bool producto1Seleccionado, producto2Seleccionado;
         public Form1()
@@ -17,7 +16,6 @@ namespace Entrega2Eval_JavierReyes
 
         private void LoadFase()
         {
-
             switch (fase)
             {
                 case 1:
@@ -75,9 +73,14 @@ namespace Entrega2Eval_JavierReyes
             }
         }
 
+
+
         // dependiendo de la fase el lbl_tipoProducto cambia
         private void InitUI()
         {
+            // Inicializar main menu
+            mostrarMainTlp();
+
             // Tamaño del Form fijo
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
@@ -103,8 +106,6 @@ namespace Entrega2Eval_JavierReyes
             // Esconder el botón de cancelar y table layout pannel de extras
             btn_cancelar.Visible = false;
             tlpExtras.Visible = false;
-
-            mostrarMainTlp();
         }
 
         private void btnProducto1_Click(object sender, EventArgs e)
@@ -181,12 +182,6 @@ namespace Entrega2Eval_JavierReyes
         {
             mostrarExtrasTlp();
 
-            // El label de extras se vuelven verde
-            // El resto de labels se vuelven negros
-            lbl_añadirExtras.BackColor = Color.FromArgb(22, 134, 55);
-            //tlp6.BackColor = Color.FromArgb(0, 0, 0);
-            //tlp7.BackColor = Color.FromArgb(0, 0, 0);
-
             // Mostrar el botón de cancelar
             btn_cancelar.Visible = true;
 
@@ -218,8 +213,6 @@ namespace Entrega2Eval_JavierReyes
 
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
-            // 
-
             // Se pasa de fase
             fase += 1;
             //LoadFase();
@@ -262,23 +255,45 @@ namespace Entrega2Eval_JavierReyes
         {
 
             // Tlp de extras invisible
-            tlp10.Visible = false;
-            //tlp10.SendToBack();
+            usc1.Visible = false;
+            usc1.SendToBack();
 
             // Tlp de productos visible visible
             tlp5.Visible = true;
-            //tlp5.BringToFront();
+            tlp5.BringToFront();
         }
         private void mostrarExtrasTlp()
         {
+            // Se carga la información del menú de extras
+            LoadExtras();
+
             // Tlp de productos invisible
             tlp5.Visible = false;
-            //tlp5.SendToBack();
+            tlp5.SendToBack();
 
             // Tlp de extras visible
-            tlp10.Visible = true;
-            //tlp10.BringToFront();
+            usc1.Visible = true;
+            usc1.BringToFront();
         }
 
+        private void LoadExtras()
+        {
+            // Se cargan las imágenes
+            usc1.buttonExtras1.Image = System.Drawing.Image.FromFile("img\\Extras\\extraPatty.jpg");
+            usc1.buttonExtras2.Image = System.Drawing.Image.FromFile("img\\Extras\\extraBacon.jpg");
+            usc1.buttonExtras3.Image = System.Drawing.Image.FromFile("img\\Extras\\extraLechuga.jpg");
+            usc1.buttonExtras4.Image = System.Drawing.Image.FromFile("img\\Extras\\extraOnion.jpg");
+            usc1.buttonExtras5.Image = System.Drawing.Image.FromFile("img\\Extras\\extraQueso.jpg");
+            usc1.buttonExtras6.Image = System.Drawing.Image.FromFile("img\\Extras\\bbqdip.jpg");
+
+            // Se carga el texto
+            lbl_tipoProducto.Text = "Extras";
+            usc1.labelExtras1.Text = "Extra patty";
+            usc1.labelExtras2.Text = "Extra bacon";
+            usc1.labelExtras3.Text = "Extra lechuga";
+            usc1.labelExtras4.Text = "Extra onion";
+            usc1.labelExtras5.Text = "Extra queso";
+            usc1.labelExtras6.Text = "Extra dip";
+        }
     }
 }
