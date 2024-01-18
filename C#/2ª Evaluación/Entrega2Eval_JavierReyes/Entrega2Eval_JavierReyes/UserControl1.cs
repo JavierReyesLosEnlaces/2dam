@@ -1,25 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿
 namespace Entrega2Eval_JavierReyes
 {
     public partial class UserControl1 : UserControl
-
     {
-        private bool bstate1 = false, bstate2 = false, bstate3 = false, bstate4 = false, bstate5 = false, bstate6 = false;
-        private int numeroExtras = 0;
+        public bool bstate1, bstate2, bstate3, bstate4, bstate5, bstate6;
+        public int numeroExtras;
         public UserControl1()
         {
             InitializeComponent();
+            Reset();
         }
 
+        public void Reset()
+        {
+            numeroExtras = 0;
+            bstate1 = false;
+            bstate2 = false;
+            bstate3 = false;
+            bstate4 = false; 
+            bstate5 = false;
+            bstate6 = false;
+            labelExtras1.BackColor = Color.Black;
+            panelColor1.BackColor = Color.FromArgb(255, 152, 83);
+
+            labelExtras2.BackColor = Color.Black;
+            panelColor2.BackColor = Color.FromArgb(255, 152, 83);
+
+            labelExtras3.BackColor = Color.Black;
+            panelColor3.BackColor = Color.FromArgb(255, 152, 83);
+
+            labelExtras4.BackColor = Color.Black;
+            panelColor4.BackColor = Color.FromArgb(255, 152, 83);
+
+            labelExtras5.BackColor = Color.Black;
+            panelColor5.BackColor = Color.FromArgb(255, 152, 83);
+
+            labelExtras6.BackColor = Color.Black;
+            panelColor6.BackColor = Color.FromArgb(255, 152, 83);
+        }
+        
+        // Botones
         private void buttonExtras1_Click_1(object sender, EventArgs e)
         {
             if (bstate1 == false)
@@ -37,7 +57,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate1 = false;
             }
         }
-
         private void buttonExtras2_Click_1(object sender, EventArgs e)
         {
             if(bstate2 == false)
@@ -55,7 +74,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate2 = false;
             }
         }
-
         private void buttonExtras3_Click(object sender, EventArgs e)
         {
             if(bstate3 == false)
@@ -73,7 +91,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate3 = false;
             }
         }
-
         private void buttonExtras4_Click(object sender, EventArgs e)
         {
             if(bstate4 == false)
@@ -91,7 +108,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate4 = false;
             }
         }
-
         private void buttonExtras5_Click(object sender, EventArgs e)
         {
             if(bstate5 == false)
@@ -109,7 +125,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate5 = false;
             }
         }
-
         private void buttonExtra6_Click(object sender, EventArgs e) {
 
             if (bstate6 == false)

@@ -73,7 +73,7 @@
             label11 = new Label();
             label12 = new Label();
             button5 = new Button();
-            usc1 = new UserControl1();
+            userControl1 = new UserControl1();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             panelDerecho1.SuspendLayout();
@@ -243,7 +243,6 @@
             lbl_descripcionTitulo.Name = "lbl_descripcionTitulo";
             lbl_descripcionTitulo.Size = new Size(294, 49);
             lbl_descripcionTitulo.TabIndex = 0;
-            lbl_descripcionTitulo.Text = "Instrucciones";
             lbl_descripcionTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_descripcion
@@ -258,7 +257,6 @@
             lbl_descripcion.Padding = new Padding(5);
             lbl_descripcion.Size = new Size(294, 115);
             lbl_descripcion.TabIndex = 1;
-            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido.";
             // 
             // tlp4
             // 
@@ -357,6 +355,7 @@
             tlpProducto2.Controls.Add(btnProducto2, 0, 0);
             tlpProducto2.Controls.Add(tlp7, 0, 1);
             tlpProducto2.Dock = DockStyle.Fill;
+            tlpProducto2.ForeColor = SystemColors.ControlText;
             tlpProducto2.Location = new Point(237, 0);
             tlpProducto2.Margin = new Padding(0);
             tlpProducto2.Name = "tlpProducto2";
@@ -401,6 +400,7 @@
             // lbl_precioProducto2
             // 
             lbl_precioProducto2.AutoSize = true;
+            lbl_precioProducto2.BackColor = Color.Transparent;
             lbl_precioProducto2.Dock = DockStyle.Fill;
             lbl_precioProducto2.Font = new Font("Ink Free", 10F, FontStyle.Bold);
             lbl_precioProducto2.ForeColor = SystemColors.ButtonHighlight;
@@ -414,6 +414,7 @@
             // lbl_nombreProducto2
             // 
             lbl_nombreProducto2.AutoSize = true;
+            lbl_nombreProducto2.BackColor = Color.Transparent;
             lbl_nombreProducto2.Dock = DockStyle.Fill;
             lbl_nombreProducto2.Font = new Font("Ink Free", 10F, FontStyle.Bold);
             lbl_nombreProducto2.ForeColor = SystemColors.ButtonHighlight;
@@ -459,6 +460,7 @@
             // lbl_precioProducto1
             // 
             lbl_precioProducto1.AutoSize = true;
+            lbl_precioProducto1.BackColor = Color.Transparent;
             lbl_precioProducto1.Dock = DockStyle.Fill;
             lbl_precioProducto1.Font = new Font("Ink Free", 10F, FontStyle.Bold);
             lbl_precioProducto1.ForeColor = SystemColors.ButtonHighlight;
@@ -472,6 +474,7 @@
             // lbl_nombreProducto1
             // 
             lbl_nombreProducto1.AutoSize = true;
+            lbl_nombreProducto1.BackColor = Color.Transparent;
             lbl_nombreProducto1.Dock = DockStyle.Fill;
             lbl_nombreProducto1.Font = new Font("Ink Free", 10F, FontStyle.Bold);
             lbl_nombreProducto1.ForeColor = SystemColors.ButtonHighlight;
@@ -583,6 +586,7 @@
             btn_añadirPagar.Size = new Size(301, 53);
             btn_añadirPagar.TabIndex = 4;
             btn_añadirPagar.UseVisualStyleBackColor = false;
+            btn_añadirPagar.Click += btn_añadirPagar_Click_1;
             // 
             // btn_cancelar
             // 
@@ -746,13 +750,13 @@
             button5.TabIndex = 2;
             button5.UseVisualStyleBackColor = false;
             // 
-            // usc1
+            // userControl1
             // 
-            usc1.BackColor = Color.FromArgb(80, 34, 18);
-            usc1.Location = new Point(11, 275);
-            usc1.Name = "usc1";
-            usc1.Size = new Size(474, 513);
-            usc1.TabIndex = 6;
+            userControl1.BackColor = Color.White;
+            userControl1.Location = new Point(11, 275);
+            userControl1.Name = "userControl1";
+            userControl1.Size = new Size(474, 512);
+            userControl1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -760,7 +764,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(80, 34, 18);
             ClientSize = new Size(811, 861);
-            Controls.Add(usc1);
+            Controls.Add(userControl1);
             Controls.Add(tlp2);
             Controls.Add(tlp1);
             Name = "Form1";
@@ -846,5 +850,6 @@
         private Label label12;
         private Button button5;
         public UserControl1 usc1;
+        private UserControl1 userControl1;
     }
 }

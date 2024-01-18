@@ -1,21 +1,19 @@
 
-using System.Drawing.Text;
-
 namespace Entrega2Eval_JavierReyes
 {
     public partial class Form1 : Form
     {
         private int fase = 1;
-        private bool producto1Seleccionado, producto2Seleccionado;
         public Form1()
         {
             InitializeComponent();
             InitUI();
-            LoadFase();
+            InitFase();
         }
-
-        private void LoadFase()
+        // Inits
+        private void InitFase()
         {
+
             switch (fase)
             {
                 case 1:
@@ -72,10 +70,6 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
-
-
-
-        // dependiendo de la fase el lbl_tipoProducto cambia
         private void InitUI()
         {
             // Inicializar main menu
@@ -89,6 +83,10 @@ namespace Entrega2Eval_JavierReyes
             btnProducto2.BackgroundImageLayout = ImageLayout.Stretch;
             btnExtras.BackgroundImageLayout = ImageLayout.Stretch;
 
+            // Todos los labels negros
+            lbl_nombreProducto1.BackColor = Color.FromArgb(0, 0, 0);
+            lbl_nombreProducto2.BackColor = Color.FromArgb(0, 0, 0);
+            lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
 
             // Imágenes clickables y sus ClickListeners
             btnProducto1.Click += btnProducto1_Click;
@@ -98,7 +96,10 @@ namespace Entrega2Eval_JavierReyes
             // Quitar botones de maximizar y minimizar
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
+            
+            // Cargar descripción
+            lbl_descripcionTitulo.Text = "Instrucciones";
+            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido o continúa sin pedir seleccionando \"No quiero, gracias\"";
 
             // Estado inicial del botón de añadir/pagar
             btn_añadirPagar.Text = "No quiero, gracias";
@@ -108,9 +109,11 @@ namespace Entrega2Eval_JavierReyes
             tlpExtras.Visible = false;
         }
 
+        // Botones
         private void btnProducto1_Click(object sender, EventArgs e)
         {
             // El fondo del nombre y el precio se vuelven verde
+
             // El resto de labels se vuelven negros
             tlp6.BackColor = Color.FromArgb(22, 134, 55);
             tlp7.BackColor = Color.FromArgb(0, 0, 0);
@@ -142,10 +145,10 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
-
         private void btnProducto2_Click(object sender, EventArgs e)
         {
             // El fondo del nombre y el precio se vuelven verde
+
             // El resto de labels se vuelven negros
             tlp7.BackColor = Color.FromArgb(22, 134, 55);
             tlp6.BackColor = Color.FromArgb(0, 0, 0);
@@ -177,7 +180,6 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
-
         private void btnExtras_Click(object sender, EventArgs e)
         {
             mostrarExtrasTlp();
@@ -208,24 +210,20 @@ namespace Entrega2Eval_JavierReyes
 
             // Se abre un nuevo Form con la función de añadir y un botón de salir
         }
-
-
-
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
             // Se pasa de fase
             fase += 1;
-            //LoadFase();
+            InitFase();
 
             // Se añade el producto a la lista del pedido con su precio
 
             // Cuando se va a pagar tiene que dar opcion de eliminar alguna cosa
         }
-
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             // Tlp de productos visible
-            tlp5.Visible = true;
+            //tlp5.Visible = true;
 
             // Desselecciona los botones
             lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
@@ -241,26 +239,50 @@ namespace Entrega2Eval_JavierReyes
 
             // Vuelve el menú de descripción al estado anterior
             lbl_descripcionTitulo.Text = "Instrucciones";
-            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido.";
+            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido o continúa sin pedir seleccionando \"No quiero, gracias\"";
 
             // Esconder el botón de cancelar y table layout pannel de extras
-            btn_cancelar.Visible = false;
-            tlpExtras.Visible = false;
+            //btn_cancelar.Visible = false;
+            //tlpExtras.Visible = false;
 
-            mostrarMainTlp();
+            //mostrarMainTlp();
+            userControl1.Reset();
+
+            switch (fase)
+            {
+                case 1:
+                    lbl_tipoProducto.Text = "Hamburguesa";
+                    break;
+                case 3:
+                    lbl_tipoProducto.Text = "Complementos";
+                    break;
+                default:
+                    lbl_tipoProducto.Text = "ERROR";
+                    break;
+            }
 
         }
+        private void btn_añadirPagar_Click_1(object sender, EventArgs e)
+        {
+            fase++;
+            InitFase();
+            mostrarMainTlp();
+        }
 
+        // Otros
         private void mostrarMainTlp()
         {
-
             // Tlp de extras invisible
-            usc1.Visible = false;
-            usc1.SendToBack();
+            userControl1.Visible = false;
+            userControl1.SendToBack();
 
             // Tlp de productos visible visible
             tlp5.Visible = true;
             tlp5.BringToFront();
+
+            // Se invisibiliza extras y el botón de cancelar
+            btn_cancelar.Visible = false;
+            tlpExtras.Visible = false;
         }
         private void mostrarExtrasTlp()
         {
@@ -272,28 +294,27 @@ namespace Entrega2Eval_JavierReyes
             tlp5.SendToBack();
 
             // Tlp de extras visible
-            usc1.Visible = true;
-            usc1.BringToFront();
+            userControl1.Visible = true;
+            userControl1.BringToFront();
         }
-
         private void LoadExtras()
         {
             // Se cargan las imágenes
-            usc1.buttonExtras1.Image = System.Drawing.Image.FromFile("img\\Extras\\extraPatty.jpg");
-            usc1.buttonExtras2.Image = System.Drawing.Image.FromFile("img\\Extras\\extraBacon.jpg");
-            usc1.buttonExtras3.Image = System.Drawing.Image.FromFile("img\\Extras\\extraLechuga.jpg");
-            usc1.buttonExtras4.Image = System.Drawing.Image.FromFile("img\\Extras\\extraOnion.jpg");
-            usc1.buttonExtras5.Image = System.Drawing.Image.FromFile("img\\Extras\\extraQueso.jpg");
-            usc1.buttonExtras6.Image = System.Drawing.Image.FromFile("img\\Extras\\bbqdip.jpg");
+            userControl1.buttonExtras1.Image = System.Drawing.Image.FromFile("img\\Extras\\extraPatty.jpg");
+            userControl1.buttonExtras2.Image = System.Drawing.Image.FromFile("img\\Extras\\extraBacon.jpg");
+            userControl1.buttonExtras3.Image = System.Drawing.Image.FromFile("img\\Extras\\extraLechuga.jpg");
+            userControl1.buttonExtras4.Image = System.Drawing.Image.FromFile("img\\Extras\\extraOnion.jpg");
+            userControl1.buttonExtras5.Image = System.Drawing.Image.FromFile("img\\Extras\\extraQueso.jpg");
+            userControl1.buttonExtras6.Image = System.Drawing.Image.FromFile("img\\Extras\\bbqdip.jpg");
 
             // Se carga el texto
             lbl_tipoProducto.Text = "Extras";
-            usc1.labelExtras1.Text = "Extra patty";
-            usc1.labelExtras2.Text = "Extra bacon";
-            usc1.labelExtras3.Text = "Extra lechuga";
-            usc1.labelExtras4.Text = "Extra onion";
-            usc1.labelExtras5.Text = "Extra queso";
-            usc1.labelExtras6.Text = "Extra dip";
+            userControl1.labelExtras1.Text = "Extra patty";
+            userControl1.labelExtras2.Text = "Extra bacon";
+            userControl1.labelExtras3.Text = "Extra lechuga";
+            userControl1.labelExtras4.Text = "Extra onion";
+            userControl1.labelExtras5.Text = "Extra queso";
+            userControl1.labelExtras6.Text = "Extra dip";
         }
     }
 }
