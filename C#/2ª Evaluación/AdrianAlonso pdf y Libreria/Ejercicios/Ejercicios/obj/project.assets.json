@@ -26,19 +26,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alumno\\.nuget\\packages\\": {}
+    "C:\\Users\\javir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
+      "projectUniqueName": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
       "projectName": "Ejercicios",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
-      "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\obj\\",
+      "projectPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
+      "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -52,8 +52,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\BurgerLibrary\\BurgerLibrary.csproj": {
-              "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\BurgerLibrary\\BurgerLibrary.csproj"
+            "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\BurgerLibrary\\BurgerLibrary.csproj": {
+              "projectPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\BurgerLibrary\\BurgerLibrary.csproj"
             }
           }
         }
@@ -78,30 +78,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

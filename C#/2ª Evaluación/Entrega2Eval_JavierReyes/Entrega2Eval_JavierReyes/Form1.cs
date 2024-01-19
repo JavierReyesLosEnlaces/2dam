@@ -1,15 +1,30 @@
 
+using BurgerLibrary.Modelo.Productos;
+
 namespace Entrega2Eval_JavierReyes
 {
     public partial class Form1 : Form
     {
         private int fase = 1;
+        private bool p1f1, p2f1, p1f2, p2f2, p1f3, p2f3;   
         public Form1()
         {
             InitializeComponent();
             InitUI();
+            InitSeleccion();
             InitFase();
         }
+
+        private void InitSeleccion()
+        {
+            p1f1 = false;
+            p2f1 = false;
+            p1f2 = false;
+            p2f2 = false;
+            p1f3 = false;
+            p2f3 = false;
+        }
+
         // Inits
         private void InitFase()
         {
@@ -132,13 +147,19 @@ namespace Entrega2Eval_JavierReyes
                 case 1:
                     lbl_descripcion.Text = "BurgAndrés\nIngredientes: Pan, Carne de Vacuno, Queso Cheddar, Lechuga, Pepinillos, Ketchup.";
                     tlpExtras.Visible = true;
+                    p1f1 = true;
+                    p2f2 = false;
                     break;
                 case 2:
                     lbl_descripcion.Text = "Un refresco de AdriCola de manzana refrescante";
+                    p1f2 = true;
+                    p2f2 = false;
                     break;
                 case 3:
                     lbl_descripcion.Text = "Unas ricas croquetas de jamón\nIngredientes:  Leche entera, Mantequilla, Harina refinada, Jamon (25%), Huevo cocido, Pan rallado.";
                     tlpExtras.Visible = true;
+                    p1f3 = true;
+                    p2f3 = false;
                     break;
                 default:
                     lbl_descripcion.Text = "";
@@ -167,13 +188,19 @@ namespace Entrega2Eval_JavierReyes
                 case 1:
                     lbl_descripcion.Text = "BigAdri\nIngredientes:  Pan, Doble Carne de Vacuno, Doble Queso, Bacon, Lechuga, Cebolla, Mostaza.";
                     tlpExtras.Visible = true;
+                    p2f1 = true;
+                    p1f1 = false;
                     break;
                 case 2:
                     lbl_descripcion.Text = "Una botella de agua de 300ml";
+                    p2f2 = true;
+                    p1f2 = false;
                     break;
                 case 3:
                     lbl_descripcion.Text = "Nuestros nuevos PoNuggets\nIngredientes: Pollo (25%), Queso crema, Ajo, Sal, Pimienta, Harina refinada, Pan rallado, Aceite de palma.";
                     tlpExtras.Visible = true;
+                    p2f3 = true;
+                    p1f3 = false;
                     break;
                 default:
                     lbl_descripcion.Text = "";
@@ -267,7 +294,39 @@ namespace Entrega2Eval_JavierReyes
             fase++;
             InitFase();
             mostrarMainTlp();
+
+            switch(fase)
+            {
+                case 1:
+                    List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
+                    Comida c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
+                    break;
+                case 2:
+                    Bebida b = new Bebida("Adricola", 3.00f, 400, 250);
+                    break;
+                case 3:
+                    List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
+                    Complemento cm = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
+                    break;
+                default:
+                    Console.WriteLine("Ha tenido lugar un error.");
+                    break;
+            }
         }
+
+        /*       
+        List<Extra> extra = new List<Extra>();
+        //Lista de extras
+        extra.Add(new Extra("Bacon", 1.50f, 100, 2));
+        extra.Add(new Extra("Queso", 1.20f, 100, 2));
+        extra.Add(new Extra("Lechuga", 0.60f, 100, 2));
+        extra.Add(new Extra("Cebolla", 0.60f, 50, 1));
+        extra.Add(new Extra("Pan", 0.60f, 50, 1));
+        extra.Add(new Extra("Salsa BBQ", 1.00f, 150, 1));
+        extra.Add(new Extra("Carne de Vacuno", 2.00f, 200, 1));
+        extra.Add(new Extra("Carne de Seitán", 2.00f, 100, 1));
+        */
+
 
         // Otros
         private void mostrarMainTlp()

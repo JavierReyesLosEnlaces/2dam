@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G1/15QiXiHUG5c2ZPyzK14F7XM66EEryNxvH8xhbDS+uCWDrmDWmyAGHWcwTrfet0LmEejWYg0L8mM5AZI8n8A==",
+  "dgSpecHash": "vwDqS2J7iQdJcl5cbATLIhpjRymv1jaHUkGhqt1m2eMbl8rrZAw9kCsZ7PoKS4eMAieUNtzoGF5P9jFl2S4qcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Alumno\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Alumno\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Alumno\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\Alumno\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\AdrianAlonso pdf y Libreria\\Ejercicios\\Ejercicios\\Ejercicios.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
