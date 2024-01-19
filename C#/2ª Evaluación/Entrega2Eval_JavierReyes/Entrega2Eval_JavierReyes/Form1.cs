@@ -10,9 +10,10 @@ namespace Entrega2Eval_JavierReyes
         public Form1()
         {
             InitializeComponent();
+
             InitUI();
             InitSeleccion();
-            InitFase();
+            InitDatosFase();
         }
 
         private void InitSeleccion()
@@ -26,9 +27,8 @@ namespace Entrega2Eval_JavierReyes
         }
 
         // Inits
-        private void InitFase()
+        private void InitDatosFase()
         {
-
             switch (fase)
             {
                 case 1:
@@ -44,7 +44,10 @@ namespace Entrega2Eval_JavierReyes
                     btnProducto2.BackgroundImage = System.Drawing.Image.FromFile("img\\Hamburguesas\\bigAdri.jpg");
                     btnExtras.BackgroundImage = System.Drawing.Image.FromFile("img\\Otros\\bbqdip.jpg");
 
+                    // Estado botón
+                    btn_añadirPagar.Text = "Añadir";
                     break;
+
                 case 2:
                     // Cargar texto
                     lbl_tipoProducto.Text = "Bebidas";
@@ -60,8 +63,8 @@ namespace Entrega2Eval_JavierReyes
 
                     // Estado botón
                     btn_añadirPagar.Text = "Añadir";
-
                     break;
+
                 case 3:
                     // Cargar texto
                     lbl_tipoProducto.Text = "Complementos";
@@ -77,7 +80,6 @@ namespace Entrega2Eval_JavierReyes
 
                     // Estado botón
                     btn_añadirPagar.Text = "Pagar";
-
                     break;
 
                 default:
@@ -86,10 +88,7 @@ namespace Entrega2Eval_JavierReyes
             }
         }
         private void InitUI()
-        {
-            // Inicializar main menu
-            mostrarMainTlp();
-
+        {       
             // Tamaño del Form fijo
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
@@ -97,12 +96,7 @@ namespace Entrega2Eval_JavierReyes
             btnProducto1.BackgroundImageLayout = ImageLayout.Stretch;
             btnProducto2.BackgroundImageLayout = ImageLayout.Stretch;
             btnExtras.BackgroundImageLayout = ImageLayout.Stretch;
-
-            // Todos los labels negros
-            lbl_nombreProducto1.BackColor = Color.FromArgb(0, 0, 0);
-            lbl_nombreProducto2.BackColor = Color.FromArgb(0, 0, 0);
-            lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
-
+            
             // Imágenes clickables y sus ClickListeners
             btnProducto1.Click += btnProducto1_Click;
             btnProducto2.Click += btnProducto2_Click;
@@ -111,25 +105,15 @@ namespace Entrega2Eval_JavierReyes
             // Quitar botones de maximizar y minimizar
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            
-            // Cargar descripción
-            lbl_descripcionTitulo.Text = "Instrucciones";
-            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido o continúa sin pedir seleccionando \"No quiero, gracias\"";
 
-            // Estado inicial del botón de añadir/pagar
-            btn_añadirPagar.Text = "No quiero, gracias";
-
-            // Esconder el botón de cancelar y table layout pannel de extras
-            btn_cancelar.Visible = false;
-            tlpExtras.Visible = false;
+            // Inicializar main menu
+            mostrarMainTlp();
         }
 
         // Botones
         private void btnProducto1_Click(object sender, EventArgs e)
         {
-            // El fondo del nombre y el precio se vuelven verde
-
-            // El resto de labels se vuelven negros
+            // Producto 1 en verde, Producto 2 y Extras en negro
             tlp6.BackColor = Color.FromArgb(22, 134, 55);
             tlp7.BackColor = Color.FromArgb(0, 0, 0);
             lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
@@ -142,6 +126,7 @@ namespace Entrega2Eval_JavierReyes
 
             // Se muestra la descripción del producto 1
             lbl_descripcionTitulo.Text = "Ingredientes:";
+
             switch (fase)
             {
                 case 1:
@@ -241,7 +226,7 @@ namespace Entrega2Eval_JavierReyes
         {
             // Se pasa de fase
             fase += 1;
-            InitFase();
+            InitDatosFase();
 
             // Se añade el producto a la lista del pedido con su precio
 
@@ -249,14 +234,13 @@ namespace Entrega2Eval_JavierReyes
         }
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
+            mostrarMainTlp();
             // Tlp de productos visible
-            //tlp5.Visible = true;
+            tlp6.BackColor = Color.Black;
+            tlp7.BackColor = Color.Black;
 
-            // Desselecciona los botones
-            lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
 
-            tlp6.BackColor = Color.FromArgb(0, 0, 0);
-            tlp7.BackColor = Color.FromArgb(0, 0, 0);
+
 
             // Botón de añadir vuelve a No quiero nada
             btn_añadirPagar.Text = "No quiero, gracias";
@@ -273,7 +257,7 @@ namespace Entrega2Eval_JavierReyes
             //tlpExtras.Visible = false;
 
             //mostrarMainTlp();
-            userControl1.Reset();
+            userControl1.ResetState();
 
             switch (fase)
             {
@@ -292,10 +276,14 @@ namespace Entrega2Eval_JavierReyes
         private void btn_añadirPagar_Click_1(object sender, EventArgs e)
         {
             fase++;
-            InitFase();
+            InitDatosFase();
             mostrarMainTlp();
+            // Tlp negros
+            tlp6.BackColor = Color.Black;
+            tlp7.BackColor = Color.Black;
+            lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
 
-            switch(fase)
+            switch (fase)
             {
                 case 1:
                     List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
@@ -342,6 +330,18 @@ namespace Entrega2Eval_JavierReyes
             // Se invisibiliza extras y el botón de cancelar
             btn_cancelar.Visible = false;
             tlpExtras.Visible = false;
+
+            // Tlp negros
+            tlp6.BackColor = Color.Black;
+            tlp7.BackColor = Color.Black;
+            lbl_añadirExtras.BackColor = Color.FromArgb(0, 0, 0);
+
+            // Cargar descripción
+            lbl_descripcionTitulo.Text = "Instrucciones";
+            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido o continúa sin pedir seleccionando \"No quiero, gracias\"";
+
+            // Estado inicial del botón de añadir/pagar
+            btn_añadirPagar.Text = "No quiero, gracias";
         }
         private void mostrarExtrasTlp()
         {

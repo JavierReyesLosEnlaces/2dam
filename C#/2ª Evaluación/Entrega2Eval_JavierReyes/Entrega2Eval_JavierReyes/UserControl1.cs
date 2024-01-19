@@ -8,18 +8,20 @@ namespace Entrega2Eval_JavierReyes
         public UserControl1()
         {
             InitializeComponent();
-            Reset();
+            ResetState();
         }
 
-        public void Reset()
+        public void ResetState()
         {
             numeroExtras = 0;
+
             bstate1 = false;
             bstate2 = false;
             bstate3 = false;
             bstate4 = false; 
             bstate5 = false;
             bstate6 = false;
+
             labelExtras1.BackColor = Color.Black;
             panelColor1.BackColor = Color.FromArgb(255, 152, 83);
 
