@@ -40,8 +40,8 @@ namespace Entrega2Eval_JavierReyes
             labelExtras6.BackColor = Color.Black;
             panelColor6.BackColor = Color.FromArgb(255, 152, 83);
         }
-        
-        // Botones
+
+        // BOTONES 
         private void buttonExtras1_Click_1(object sender, EventArgs e)
         {
             if (bstate1 == false)
@@ -127,8 +127,8 @@ namespace Entrega2Eval_JavierReyes
                 bstate5 = false;
             }
         }
-        private void buttonExtra6_Click(object sender, EventArgs e) {
-
+        private void buttonExtra6_Click(object sender, EventArgs e)
+        {
             if (bstate6 == false)
             {
                 labelExtras6.BackColor = Color.FromArgb(22, 134, 55);
@@ -143,8 +143,6 @@ namespace Entrega2Eval_JavierReyes
                 numeroExtras--;
                 bstate6 = false;
             }
-
-
         }
     }
 }
