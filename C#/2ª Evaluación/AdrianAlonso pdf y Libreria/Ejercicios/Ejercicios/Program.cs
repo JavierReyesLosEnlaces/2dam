@@ -209,7 +209,7 @@ internal class Program
 
         //Ingredientes primeros
         List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
-        List<string> ing2 = new List<string>() { "Pan", "Doble Carne de Vacuno", "Doble Queso", "Bacon", "Lechuga", "Cebolla", "Mostaza" };
+         
 
         //Lista de primeros
         primeros.Add(new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150));

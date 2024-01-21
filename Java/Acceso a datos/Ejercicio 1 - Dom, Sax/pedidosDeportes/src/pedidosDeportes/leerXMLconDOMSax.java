@@ -54,32 +54,34 @@ public class leerXMLconDOMSax {
 	}
 
     private static void insertarDatos(File f) { //clase DOM modificada
+    	String nombreTabla, campo1, campo2, campo3;
+    	Integer campo4; 
     	try {
 			// dbf, db, d y normalize
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document d = db.parse(f);
 			d.getDocumentElement().normalize();
-
+			
 			Node raiz = d.getDocumentElement();
+			
+			nombreTabla = raiz.getLocalName();
+			
 			NodeList pedidos = d.getElementsByTagName("pedido");
 
-			/*
-			 * Tienes un NodeList, lo recorres y sacas un nodo Después tienes que comprobar
-			 * que ese nodo es, en efecto un elemento, después creas el elemento y de él
-			 * sacas la información
-			 */
 
 			for (int i = 0; i < pedidos.getLength(); i++) {
 				Node nodoPedido = pedidos.item(i);
-				System.out.println("-> PEDIDO " + (i + 1));
 
 				if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) { // si nodoPedido es un nodo
 					Element pedido = (Element) nodoPedido;
 					System.out.println("Nombre: " + pedido.getElementsByTagName("nombre").item(0).getTextContent());
 					System.out.println(
 							"N. de pedido: " + pedido.getElementsByTagName("numero_pedido").item(0).getTextContent());
-
+						
+					campo1 = pedido.getElementsByTagName("numero_pedido").item(0).getTextContent();
+					campo2 = pedido.getElementsByTagName("nombre").item(0).getTextContent();
+					
 					NodeList articulos = pedido.getElementsByTagName("articulo");
 					for (int j = 0; j < articulos.getLength(); j++) {
 						Node nodoArticulo = articulos.item(j);
@@ -87,16 +89,27 @@ public class leerXMLconDOMSax {
 							Element articulo = (Element) nodoArticulo;
 							System.out.println("Descripcion del articulo: " + articulo.getAttribute("descripcion"));
 							System.out.println("Cantidad: " + articulo.getAttribute("cantidad"));
+							
+							campo3 = articulo.getAttribute("descripcion");
+							campo4 = Integer.parseInt((articulo.getAttribute("cantidad")));
+					    	
+					    	generarTabla(nombreTabla, campo1, campo2, campo3, campo4);
 						}
 					}
 					System.out.println("");
 				}
 			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
+	
+
+	private static void generarTabla(String nombreTabla, String campo1, String campo2, String campo3, Integer campo4) {
+		System.out.println(nombreTabla);
 		
 	}
 
