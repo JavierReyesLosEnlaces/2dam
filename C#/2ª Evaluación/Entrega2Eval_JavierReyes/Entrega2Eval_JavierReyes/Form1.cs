@@ -7,9 +7,10 @@ namespace Entrega2Eval_JavierReyes
     {
         // VARIABLES 
         private int fase = 0;
-        private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;  
+        private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
+        private bool tieneExtras1 = false, tieneExtras2 = false;
         private List<Producto> orden = new List<Producto>();
-        
+
         // MAIN
         public Form1()
         {
@@ -46,7 +47,7 @@ namespace Entrega2Eval_JavierReyes
         private void CargarFase()
         {
             fase++;
-            
+
             switch (fase)
             {
                 case 1:
@@ -94,13 +95,25 @@ namespace Entrega2Eval_JavierReyes
 
                     break;
 
+                case 4:
+                    lbl_tipoProducto.Text = "Tu pedido";
+                    //btn_añadirPagar.Text = "Pagar";
+                    lbl_descripcion.Text = userControl1.numeroExtras+"extras";
+
+
+                    // Tlp de productos invisible
+                    tlp5.Visible = false;
+                    tlp5.SendToBack();
+
+                    // Tlp de extras visible
+                    userControl1.Visible = false;
+                    userControl1.SendToBack();
+                    break;
+
                 default:
                     lbl_descripcion.Text = "ERROR";
                     break;
             }
-            
-
-
         }
         private void IrAlMenu()
         {
@@ -144,10 +157,12 @@ namespace Entrega2Eval_JavierReyes
         }
 
         // BOTONES DE PRODUCTO
-        private void btnProducto1_Click(object sender, EventArgs e) {
+        private void btnProducto1_Click(object sender, EventArgs e)
+        {
             MostrarProducto(1);
-        }      
-        private void btnProducto2_Click(object sender, EventArgs e) {
+        }
+        private void btnProducto2_Click(object sender, EventArgs e)
+        {
             MostrarProducto(2);
         }
 
@@ -170,11 +185,17 @@ namespace Entrega2Eval_JavierReyes
             {
                 tlp6.BackColor = Color.FromArgb(22, 134, 55);
                 tlp7.BackColor = Color.Black;
+                if (fase == 1) p1f1 = true;
+                if(fase == 2) p1f2 = true;
+                if (fase == 3) p1f3 = true;
             }
             else if (producto == 2)
             {
                 tlp7.BackColor = Color.FromArgb(22, 134, 55);
                 tlp6.BackColor = Color.Black;
+                if (fase == 1) p2f1 = true;
+                if (fase == 2) p2f2 = true;
+                if (fase == 3) p2f3 = true;
             }
 
             // Otros ajustes comunes
@@ -191,27 +212,21 @@ namespace Entrega2Eval_JavierReyes
                     lbl_descripcion.Text = (producto == 1) ? "BurgAndrés\nIngredientes: Pan, Carne de Vacuno, Queso Cheddar, Lechuga, Pepinillos, Ketchup." :
                                                             "BigAdri\nIngredientes: Pan, Doble Carne de Vacuno, Doble Queso, Bacon, Lechuga, Cebolla, Mostaza.";
                     tlpExtras.Visible = true;
-                    p1f1 = (producto == 1);
-                    p2f1 = (producto == 2);
 
                     break;
                 case 2:
                     lbl_descripcion.Text = (producto == 1) ? "Un refresco de AdriCola de manzana refrescante" :
                                                             "Una botella de agua de 300ml";
-                    p1f2 = (producto == 1);
-                    p2f2 = (producto == 2);
 
                     break;
                 case 3:
                     lbl_descripcion.Text = (producto == 1) ? "Unas ricas croquetas de jamón\nIngredientes: Leche entera, Mantequilla, Harina refinada, Jamon (25%), Eevo cocido, Pan rallado." :
                                                             "Nuestros nuevos PoNuggets\nIngredientes: Pollo (25%), Queso crema, Ajo, Sal, Pimienta, Harina refinada, Pan rallado, Aceite de palma.";
                     tlpExtras.Visible = true;
-                    p1f3 = (producto == 1);
-                    p2f3 = (producto == 2);
 
                     break;
                 default:
-                    lbl_descripcion.Text = "eRROR";
+                    lbl_descripcion.Text = "ERROR";
                     break;
             }
         }
@@ -305,7 +320,7 @@ namespace Entrega2Eval_JavierReyes
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
             // Hasta la fase dos todavía se repite el ciclo una vez más
-            if (fase <= 2)
+            if (fase <= 3)
             {
                 switch (fase)
                 {
@@ -317,7 +332,7 @@ namespace Entrega2Eval_JavierReyes
                             c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
                             orden.Add(c);
                             pro1.Text = c.Nombre;
-                            pre1.Text = "....... +" + c.Precio.ToString()+ "€";
+                            pre1.Text = " +" + c.Precio.ToString() + "€";
                         }
                         if (p2f1)
                         {
@@ -325,97 +340,59 @@ namespace Entrega2Eval_JavierReyes
                             c = new Comida("BigAdri", 4.50f, 600, ing2, "Carnivora", 150);
                             orden.Add(c);
                             pro1.Text = c.Nombre;
-                            pre1.Text = "....... +" + c.Precio.ToString() + "€";
+                            pre1.Text = "+" + c.Precio.ToString() + "€";
                         }
+                        IrAlMenu();
+                        CargarFase();
                         break;
                     case 2:
+                        Bebida b;
                         if (p1f2)
                         {
-                            Bebida b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
+                            b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
                             orden.Add(b);
                             pro2.Text = b.Nombre;
-                            pre2.Text = "....... +" + b.Precio.ToString() + "€";
+                            pre2.Text = "+" + b.Precio.ToString() + "€";
                         }
                         if (p2f2)
                         {
-                            Bebida b = new Bebida("Agua 300ml", 1.00f, 25, 300);
+                            b = new Bebida("Agua 300ml", 1.00f, 25, 300);
                             orden.Add(b);
                             pro2.Text = b.Nombre;
-                            pre2.Text = "....... +" + b.Precio.ToString() + "€";
+                            pre2.Text = "+" + b.Precio.ToString() + "€";
                         }
+                        IrAlMenu();
+                        CargarFase();
                         break;
                     case 3:
+                        Complemento cc;
                         if (p1f3)
                         {
-                            //Ingredientes complementos
                             List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
-                            Complemento cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
+                            cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
                             orden.Add(cc);
                             pro3.Text = cc.Nombre;
-                            pre3.Text = "....... +" + cc.Precio.ToString() + "€";
+                            pre3.Text = "+" + cc.Precio.ToString() + "€";
                         }
                         if (p2f3)
                         {
                             List<string> comp2 = new List<string>() { "Pollo (25%)", "Queso crema", "Ajo", "Sal", "Pimienta", "Harina refinada", "Pan rallado", "Aceite de palma" };
-                            Complemento cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
+                            cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
                             orden.Add(cc);
                             pro3.Text = cc.Nombre;
-                            pre3.Text = "....... +" + cc.Precio.ToString() + "€";
-
+                            pre3.Text = "+" + cc.Precio.ToString() + "€";
                         }
-                        break;                           
+                        CargarFase();
+
+                        break;
+                    default: break;
                 }
-                IrAlMenu();
-                CargarFase();
             }
-            
-
-            
-
-
-            /*
-            switch (fase)
-            {
-                case 1:
-                    List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
-                    Comida c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
-                    break;
-                case 2:
-                    Bebida b = new Bebida("Adricola", 3.00f, 400, 250);
-                    break;
-                case 3:
-                    List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
-                    Complemento cm = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
-                    break;
-                default:
-                    Console.WriteLine("Ha tenido lugar un error.");
-                    break;
-            }
-            */
-
-            // Se añade el producto a la lista del pedido con su precio
 
             // Cuando se va a pagar tiene que dar opcion de eliminar alguna cosa
 
             //tras seleccionar el último producto debe aparecer PAGAR
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
+    
 }

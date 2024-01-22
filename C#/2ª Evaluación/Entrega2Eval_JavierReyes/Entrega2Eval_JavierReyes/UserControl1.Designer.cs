@@ -102,6 +102,7 @@
             // 
             // tlpExtras6
             // 
+            tlpExtras6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras6.ColumnCount = 1;
             tlpExtras6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras6.Controls.Add(labelExtras6, 0, 1);
@@ -155,6 +156,7 @@
             // 
             // tlpExtras5
             // 
+            tlpExtras5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras5.ColumnCount = 1;
             tlpExtras5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras5.Controls.Add(labelExtras5, 0, 1);
@@ -208,6 +210,7 @@
             // 
             // tlpExtras4
             // 
+            tlpExtras4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras4.ColumnCount = 1;
             tlpExtras4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras4.Controls.Add(labelExtras4, 0, 1);
@@ -261,6 +264,7 @@
             // 
             // tlpExtras3
             // 
+            tlpExtras3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras3.ColumnCount = 1;
             tlpExtras3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras3.Controls.Add(labelExtras3, 0, 1);
@@ -314,6 +318,7 @@
             // 
             // tlpExtras2
             // 
+            tlpExtras2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras2.ColumnCount = 1;
             tlpExtras2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras2.Controls.Add(labelExtras2, 0, 1);
@@ -367,6 +372,7 @@
             // 
             // tlpExtras1
             // 
+            tlpExtras1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpExtras1.ColumnCount = 1;
             tlpExtras1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpExtras1.Controls.Add(labelExtras1, 0, 1);

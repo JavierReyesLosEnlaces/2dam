@@ -3,8 +3,8 @@ namespace Entrega2Eval_JavierReyes
 {
     public partial class UserControl1 : UserControl
     {
-        public bool bstate1, bstate2, bstate3, bstate4, bstate5, bstate6;
-        public int numeroExtras;
+        public bool bstate1=false, bstate2 = false, bstate3 = false, bstate4 = false, bstate5 = false, bstate6 = false;
+        public int numeroExtras=0;
         public UserControl1()
         {
             InitializeComponent();
@@ -13,14 +13,14 @@ namespace Entrega2Eval_JavierReyes
 
         public void ResetState()
         {
-            numeroExtras = 0;
-
+            /*
             bstate1 = false;
             bstate2 = false;
             bstate3 = false;
             bstate4 = false; 
             bstate5 = false;
             bstate6 = false;
+            */
 
             labelExtras1.BackColor = Color.Black;
             panelColor1.BackColor = Color.FromArgb(255, 152, 83);
@@ -131,7 +131,7 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate6 == false)
             {
-                labelExtras6.BackColor = Color.FromArgb(22, 134, 55);
+                labelExtras6.BackColor = Color.FromArgb(22, 134, 55); 
                 panelColor6.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate6 = true;
@@ -144,5 +144,6 @@ namespace Entrega2Eval_JavierReyes
                 bstate6 = false;
             }
         }
+
     }
 }
