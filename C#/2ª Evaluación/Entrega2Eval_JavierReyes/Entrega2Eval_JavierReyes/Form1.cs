@@ -32,12 +32,12 @@ namespace Entrega2Eval_JavierReyes
             List<Extra> extra = new List<Extra>();
 
             //Lista de extras
-            extra.Add(new Extra("Extra Patty", 1.50f, 100, 2));
-            extra.Add(new Extra("Extra bacon", 1.20f, 100, 2));
-            extra.Add(new Extra("Extra lechuga", 0.60f, 100, 2));
-            extra.Add(new Extra("Extra onion", 0.60f, 50, 1));
-            extra.Add(new Extra("Extra queso", 0.60f, 50, 1));
-            extra.Add(new Extra("Extra dip", 1.00f, 150, 1));
+            extra.Add(new Extra("Patty", 1.50f, 100, 2));
+            extra.Add(new Extra("Bacon", 1.20f, 100, 2));
+            extra.Add(new Extra("Lechuga", 0.60f, 100, 2));
+            extra.Add(new Extra("Onion", 0.60f, 50, 1));
+            extra.Add(new Extra("Queso", 0.60f, 50, 1));
+            extra.Add(new Extra("Dip", 1.00f, 150, 1));
 
             return extra;
         }
@@ -151,7 +151,7 @@ namespace Entrega2Eval_JavierReyes
                 suma += orden[i].Precio;
             }
 
-            return (suma+pExtras1+pExtras3).ToString();
+            return (suma+pExtras1+pExtras3).ToString("F2");
         }
 
         private void IrAlMenu()
@@ -335,12 +335,19 @@ namespace Entrega2Eval_JavierReyes
 
             // Se carga el texto
             lbl_tipoProducto.Text = "Extras";
-            userControl1.labelExtras1.Text = "Extra patty";
-            userControl1.labelExtras2.Text = "Extra bacon";
-            userControl1.labelExtras3.Text = "Extra lechuga";
-            userControl1.labelExtras4.Text = "Extra onion";
-            userControl1.labelExtras5.Text = "Extra queso";
-            userControl1.labelExtras6.Text = "Extra dip";
+            userControl1.labelExtras1.Text = catalogoExtras[0].Nombre;
+            userControl1.labelExtras2.Text = catalogoExtras[1].Nombre;
+            userControl1.labelExtras3.Text = catalogoExtras[2].Nombre;
+            userControl1.labelExtras4.Text = catalogoExtras[3].Nombre;
+            userControl1.labelExtras5.Text = catalogoExtras[4].Nombre;
+            userControl1.labelExtras6.Text = catalogoExtras[5].Nombre;
+
+            userControl1.precioExtras1.Text = catalogoExtras[0].Precio.ToString("F2")+ " €";
+            userControl1.precioExtras2.Text = catalogoExtras[1].Precio.ToString("F2") + " €";
+            userControl1.precioExtras3.Text = catalogoExtras[2].Precio.ToString("F2") + " €"; ;
+            userControl1.precioExtras4.Text = catalogoExtras[3].Precio.ToString("F2") + " €";
+            userControl1.precioExtras5.Text = catalogoExtras[4].Precio.ToString("F2") + " €";
+            userControl1.precioExtras6.Text = catalogoExtras[5].Precio.ToString("F2") + " €";
 
             // Botón y Descripción
             btn_añadirPagar.Text = "Añadir a la cesta";

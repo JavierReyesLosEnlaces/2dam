@@ -25,21 +25,27 @@ namespace Entrega2Eval_JavierReyes
             
 
             labelExtras1.BackColor = Color.Black;
+            precioExtras1.BackColor = Color.Black;
             panelColor1.BackColor = Color.FromArgb(255, 152, 83);
 
             labelExtras2.BackColor = Color.Black;
+            precioExtras2.BackColor = Color.Black;
             panelColor2.BackColor = Color.FromArgb(255, 152, 83);
 
             labelExtras3.BackColor = Color.Black;
+            precioExtras3.BackColor = Color.Black;
             panelColor3.BackColor = Color.FromArgb(255, 152, 83);
 
             labelExtras4.BackColor = Color.Black;
+            precioExtras4.BackColor = Color.Black;
             panelColor4.BackColor = Color.FromArgb(255, 152, 83);
 
             labelExtras5.BackColor = Color.Black;
+            precioExtras5.BackColor = Color.Black;
             panelColor5.BackColor = Color.FromArgb(255, 152, 83);
 
             labelExtras6.BackColor = Color.Black;
+            precioExtras6.BackColor = Color.Black;
             panelColor6.BackColor = Color.FromArgb(255, 152, 83);
         }
 
@@ -49,13 +55,16 @@ namespace Entrega2Eval_JavierReyes
             if (bstate1 == false)
             {
                 labelExtras1.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras1.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor1.BackColor = Color.FromArgb(22, 171, 71);
+                 
                 numeroExtras++;
                 bstate1 = true;
             }
             else
             {
                 labelExtras1.BackColor = Color.Black;
+                precioExtras1.BackColor = Color.Black;
                 panelColor1.BackColor = Color.FromArgb(255, 152, 83); 
                 numeroExtras--;
                 bstate1 = false;
@@ -66,6 +75,7 @@ namespace Entrega2Eval_JavierReyes
             if(bstate2 == false)
             {
                 labelExtras2.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras2.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor2.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate2 = true;
@@ -73,6 +83,7 @@ namespace Entrega2Eval_JavierReyes
             else
             {
                 labelExtras2.BackColor = Color.Black;
+                precioExtras2.BackColor = Color.Black;
                 panelColor2.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate2 = false;
@@ -83,6 +94,7 @@ namespace Entrega2Eval_JavierReyes
             if(bstate3 == false)
             {
                 labelExtras3.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras3.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor3.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate3 = true;
@@ -90,6 +102,7 @@ namespace Entrega2Eval_JavierReyes
             else
             {
                 labelExtras3.BackColor = Color.Black;
+                precioExtras3.BackColor = Color.Black;
                 panelColor3.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate3 = false;
@@ -100,6 +113,7 @@ namespace Entrega2Eval_JavierReyes
             if(bstate4 == false)
             {
                 labelExtras4.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras4.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor4.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate4 = true;
@@ -107,6 +121,7 @@ namespace Entrega2Eval_JavierReyes
             else
             {
                 labelExtras4.BackColor = Color.Black;
+                precioExtras4.BackColor = Color.Black;
                 panelColor4.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate4 = false;
@@ -117,6 +132,7 @@ namespace Entrega2Eval_JavierReyes
             if(bstate5 == false)
             {
                 labelExtras5.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras5.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor5.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate5 = true;
@@ -124,6 +140,7 @@ namespace Entrega2Eval_JavierReyes
             else
             {
                 labelExtras5.BackColor = Color.Black;
+                precioExtras5.BackColor = Color.Black;
                 panelColor5.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate5 = false;
@@ -133,7 +150,8 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate6 == false)
             {
-                labelExtras6.BackColor = Color.FromArgb(22, 134, 55); 
+                labelExtras6.BackColor = Color.FromArgb(22, 134, 55);
+                precioExtras6.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor6.BackColor = Color.FromArgb(22, 171, 71);
                 numeroExtras++;
                 bstate6 = true;
@@ -141,6 +159,7 @@ namespace Entrega2Eval_JavierReyes
             else
             {
                 labelExtras6.BackColor = Color.Black;
+                precioExtras6.BackColor = Color.Black;
                 panelColor6.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate6 = false;
