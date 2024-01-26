@@ -8,6 +8,7 @@ namespace Entrega2Eval_JavierReyes
         // VARIABLES 
         private int fase = 0;
         private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
+        private bool slot1 = false, slot2 = false, slot3 = false, slot4 = false, slot5 = false;
         private float pExtras1 = 0.00f, pExtras3 = 0.00f;
 
         private List<Producto> listaProductos = new List<Producto>();
@@ -117,22 +118,31 @@ namespace Entrega2Eval_JavierReyes
                     break;
 
                 case 4:
-                    lbl_tipoProducto.Text = "Tu pedido";
-                    //btn_añadirPagar.Text = "Pagar";
-                    lbl_descripcion.Text = userControl1.numeroExtras + "extras";
+                    lbl_tipoProducto.Text = "¿Quitamos algo?";
+                    btn_añadirPagar.Text = "Continuar";
+                    lbl_descripcionTitulo.Text = "Instrucciones";
+                    lbl_descripcion.Text = "Quita aquellos productos que no te interesen de tu pedido";
 
-                    lbl_descripcion.Text = "A pagar parguela";
-                    lbl_descripcionTitulo.Text = "Aquí se describe cómo pagar ";
-                    btn_cancelar.Visible = false;
+                    // Tlp de borrado de ítems 
+                    userControl2.Visible = true;
+                    userControl2.BringToFront();
 
                     // Tlp de productos invisible
                     tlp5.Visible = false;
                     tlp5.SendToBack();
 
-                    // Tlp de extras visible
+                    // Tlp de extras invisible
                     userControl1.Visible = false;
                     userControl1.SendToBack();
 
+                    // Botón de cancelar invisible
+                    btn_cancelar.Visible = false;
+
+                    userControl2.button1.Text = "Quitar " + listaProductos[0].Nombre;
+                    userControl2.button2.Text = "Quitar extras de la hamburguesa";
+                    userControl2.button3.Text = "Quitar " + listaProductos[1].Nombre;
+                    userControl2.button4.Text = "Quitar " + listaProductos[2].Nombre;
+                    userControl2.button5.Text = "Quitar extras de los complementos";
 
                     lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3)+ "€";
                     break;
@@ -143,12 +153,12 @@ namespace Entrega2Eval_JavierReyes
             }
         }
 
-        private string calculoPrecioTotal(List<Producto> orden, float pExtras1, float pExtras3)
+        private string calculoPrecioTotal(List<Producto> listaProductos, float pExtras1, float pExtras3)
         {
             float suma = 0.00f;
-            for (int i = 0; i < orden.Count; i++)
+            for (int i = 0; i < listaProductos.Count; i++)
             {
-                suma += orden[i].Precio;
+                suma += listaProductos[i].Precio;
             }
 
             return (suma+pExtras1+pExtras3).ToString("F2");
@@ -163,6 +173,10 @@ namespace Entrega2Eval_JavierReyes
             // Tlp de productos visible 
             tlp5.Visible = true;
             tlp5.BringToFront();
+
+            // Tlp de borrado de ítems 
+            userControl2.Visible = false;
+            userControl2.SendToBack();
 
             // Se invisibiliza extras y el botón de cancelar
             btn_cancelar.Visible = false;
@@ -305,6 +319,10 @@ namespace Entrega2Eval_JavierReyes
             userControl1.Visible = true;
             userControl1.BringToFront();
 
+            // Tlp de borrado de ítems 
+            userControl2.Visible = false;
+            userControl2.SendToBack();
+
             // Se invisibiliza extras y el botón de cancelar
             btn_cancelar.Visible = true;
             tlpExtras.Visible = true;
@@ -379,6 +397,7 @@ namespace Entrega2Eval_JavierReyes
                 {
                     case 1:
                         Comida c;
+                        // Producto fase 1
                         if (p1f1)
                         {
                             List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
@@ -396,7 +415,9 @@ namespace Entrega2Eval_JavierReyes
                             pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         }
 
-                        if (userControl1.bstate1) listaExtras1.Add(catalogoExtras[0]);
+                        slot1 = true;
+                        // Extras fase 1
+                        if (userControl1.bstate1) listaExtras1.Add(catalogoExtras[0]); 
                         if (userControl1.bstate2) listaExtras1.Add(catalogoExtras[1]);
                         if (userControl1.bstate3) listaExtras1.Add(catalogoExtras[2]);
                         if (userControl1.bstate4) listaExtras1.Add(catalogoExtras[3]);
@@ -411,14 +432,16 @@ namespace Entrega2Eval_JavierReyes
                             {
                                 pro1Extras.Text = userControl1.numeroExtras + " extras";
                                 pre1Extras.Text = "+ " + pExtras1.ToString("F2") + "€";
+                                slot2 = true;
+
                             }
                         }
-
                         userControl1.numeroExtras = 0;
                         IrAlMenu();
                         CargarFase();
                         break;
                     case 2:
+                        // Producto fase 2
                         Bebida b;
                         if (p1f2)
                         {
@@ -434,11 +457,13 @@ namespace Entrega2Eval_JavierReyes
                             pro2.Text = b.Nombre;
                             pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
                         }
+                        slot3 = true;
                         IrAlMenu();
                         CargarFase();
                         break;
                     
                     case 3:
+                        // Producto fase 3
                         Complemento cc;
                         if (p1f3)
                         {
@@ -456,7 +481,8 @@ namespace Entrega2Eval_JavierReyes
                             pro3.Text = cc.Nombre;
                             pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         }
-
+                        slot4 = true;
+                        // Extras fase 4
                         if (userControl1.bstate1) listaExtras3.Add(catalogoExtras[0]);
                         if (userControl1.bstate2) listaExtras3.Add(catalogoExtras[1]);
                         if (userControl1.bstate3) listaExtras3.Add(catalogoExtras[2]);
@@ -472,6 +498,7 @@ namespace Entrega2Eval_JavierReyes
                             {
                                 pro3Extras.Text = userControl1.numeroExtras + " extras";
                                 pre3Extras.Text = "+ " + pExtras3.ToString("F2") + "€";
+                                slot5 = true;
                             }
                         }
 
