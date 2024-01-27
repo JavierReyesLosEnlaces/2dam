@@ -142,7 +142,7 @@ namespace Entrega2Eval_JavierReyes
                     // Botón de cancelar invisible
                     btn_cancelar.Visible = false;
 
-
+                    comprobarBotones();
 
 
 
@@ -161,75 +161,55 @@ namespace Entrega2Eval_JavierReyes
             {
                 userControl2.b1.Visible = true;
                 userControl2.pictureBox1.Visible = true;
-                pre1.BackColor = Color.FromArgb(255, 249, 244);
-                pro1.BackColor = Color.FromArgb(255, 249, 244);
             }
             else
             {
                 userControl2.b1.Visible = false;
                 userControl2.pictureBox1.Visible = false;
-                pre1.BackColor = Color.FromArgb(255, 128, 128);
-                pro1.BackColor = Color.FromArgb(255, 128, 128);
             }
 
             if (slots[1] == true)
             {
                 userControl2.b2.Visible = true;
                 userControl2.pictureBox2.Visible = true;
-                pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
-                pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
             }
             else
             {
                 userControl2.b2.Visible = false;
                 userControl2.pictureBox2.Visible = false;
-                pre1Extras.BackColor = Color.FromArgb(255, 128, 128);
-                pro1Extras.BackColor = Color.FromArgb(255, 128, 128);
             }
 
             if (slots[2] == true)
             {
                 userControl2.b3.Visible = true;
-                userControl2.pictureBox2.Visible = true;
-                pre2.BackColor = Color.FromArgb(255, 249, 244);
-                pro2.BackColor = Color.FromArgb(255, 249, 244);
+                userControl2.pictureBox3.Visible = true;
             }
             else
             {
                 userControl2.b3.Visible = false;
-                userControl2.pictureBox2.Visible = false;
-                pre2.BackColor = Color.FromArgb(255, 128, 128);
-                pro2.BackColor = Color.FromArgb(255, 128, 128);
+                userControl2.pictureBox3.Visible = false;
             }
 
             if (slots[3] == true)
             {
                 userControl2.b4.Visible = true;
-                userControl2.pictureBox3.Visible = true;
-                pre3.BackColor = Color.FromArgb(255, 249, 244);
-                pro3.BackColor = Color.FromArgb(255, 249, 244);
+                userControl2.pictureBox4.Visible = true;
             }
             else
             {
                 userControl2.b4.Visible = false;
-                userControl2.pictureBox3.Visible = false;
-                pre3.BackColor = Color.FromArgb(255, 128, 128);
-                pro3.BackColor = Color.FromArgb(255, 128, 128);
+                userControl2.pictureBox4.Visible = false;
             }
 
             if (slots[4] == true)
             {
                 userControl2.b5.Visible = true;
-                userControl2.pictureBox4.Visible = true;
-                pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
-                pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                userControl2.pictureBox5.Visible = true;
             }
             else
             {
                 userControl2.b5.Visible = false;
-                userControl2.pictureBox4.Visible = false;
-                pre3Extras.BackColor = Color.FromArgb(255, 128, 128);
-                pre3Extras.BackColor = Color.FromArgb(255, 128, 128);
+                userControl2.pictureBox5.Visible = false;
             }
         }
 
