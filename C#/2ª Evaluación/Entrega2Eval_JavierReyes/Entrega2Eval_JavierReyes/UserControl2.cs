@@ -33,12 +33,12 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate1)
             {
-                button1.BackColor = Color.Black;
+                b1.BackColor = Color.Black;
                 bstate1 = false;
             }
             else
             {
-                button1.BackColor = Color.FromArgb(172, 0, 0);
+                b1.BackColor = Color.FromArgb(172, 0, 0);
                 bstate1 = true;
             }
         }
@@ -47,12 +47,12 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate2)
             {
-                button2.BackColor = Color.Black;
+                b2.BackColor = Color.Black;
                 bstate2 = false;
             }
             else
             {
-                button2.BackColor = Color.FromArgb(172, 0, 0);
+                b2.BackColor = Color.FromArgb(172, 0, 0);
                 bstate2 = true;
             }
         }
@@ -61,12 +61,12 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate3)
             {
-                button3.BackColor = Color.Black;
+                b3.BackColor = Color.Black;
                 bstate3 = false;
             }
             else
             {
-                button3.BackColor = Color.FromArgb(172, 0, 0);
+                b3.BackColor = Color.FromArgb(172, 0, 0);
                 bstate3 = true;
             }
         }
@@ -75,12 +75,12 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate4)
             {
-                button4.BackColor = Color.Black;
+                b4.BackColor = Color.Black;
                 bstate4 = false;
             }
             else
             {
-                button4.BackColor = Color.FromArgb(172, 0, 0);
+                b4.BackColor = Color.FromArgb(172, 0, 0);
                 bstate4 = true;
             }
         }
@@ -89,12 +89,12 @@ namespace Entrega2Eval_JavierReyes
         {
             if (bstate5)
             {
-                button5.BackColor = Color.Black;
+                b5.BackColor = Color.Black;
                 bstate5 = false;
             }
             else
             {
-                button5.BackColor = Color.FromArgb(172, 0, 0);
+                b5.BackColor = Color.FromArgb(172, 0, 0);
                 bstate5 = true;
             }
         }

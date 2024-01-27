@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Alumno\\.nuget\\packages\\": {}
+    "C:\\Users\\javir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes.csproj",
+      "projectUniqueName": "C:\\Users\\javir\\Desktop\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes.csproj",
       "projectName": "Entrega2Eval_JavierReyes",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes.csproj",
-      "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\obj\\",
+      "projectPath": "C:\\Users\\javir\\Desktop\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes.csproj",
+      "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\javir\\Desktop\\2dam\\C#\\2ª Evaluación\\Entrega2Eval_JavierReyes\\Entrega2Eval_JavierReyes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

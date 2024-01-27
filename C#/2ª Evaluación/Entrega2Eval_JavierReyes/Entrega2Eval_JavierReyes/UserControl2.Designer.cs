@@ -29,33 +29,54 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl2));
+            pictureBanner = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
+            b5 = new Button();
+            b4 = new Button();
+            b3 = new Button();
+            b2 = new Button();
+            b1 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBanner).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBanner
+            // 
+            pictureBanner.BackgroundImage = (Image)resources.GetObject("pictureBanner.BackgroundImage");
+            pictureBanner.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBanner.Location = new Point(0, 17);
+            pictureBanner.Margin = new Padding(0);
+            pictureBanner.Name = "pictureBanner";
+            pictureBanner.Size = new Size(474, 133);
+            pictureBanner.TabIndex = 3;
+            pictureBanner.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(button5, 0, 4);
-            tableLayoutPanel1.Controls.Add(button4, 0, 3);
-            tableLayoutPanel1.Controls.Add(button3, 0, 2);
-            tableLayoutPanel1.Controls.Add(button2, 0, 1);
-            tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 3);
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(pictureBox5, 1, 4);
+            tableLayoutPanel1.Controls.Add(pictureBox4, 1, 3);
+            tableLayoutPanel1.Controls.Add(pictureBox3, 1, 2);
+            tableLayoutPanel1.Controls.Add(pictureBox2, 1, 1);
+            tableLayoutPanel1.Controls.Add(b5, 0, 4);
+            tableLayoutPanel1.Controls.Add(b4, 0, 3);
+            tableLayoutPanel1.Controls.Add(b3, 0, 2);
+            tableLayoutPanel1.Controls.Add(b2, 0, 1);
+            tableLayoutPanel1.Controls.Add(b1, 0, 0);
+            tableLayoutPanel1.Controls.Add(pictureBox1, 1, 0);
+            tableLayoutPanel1.Location = new Point(3, 167);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -63,152 +84,167 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.Size = new Size(280, 249);
-            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.Size = new Size(468, 342);
+            tableLayoutPanel1.TabIndex = 4;
             // 
-            // button5
+            // pictureBox5
             // 
-            button5.BackColor = Color.Black;
-            button5.Dock = DockStyle.Fill;
-            button5.FlatStyle = FlatStyle.Popup;
-            button5.Font = new Font("Ink Free", 12F, FontStyle.Bold);
-            button5.ForeColor = SystemColors.ControlLightLight;
-            button5.Location = new Point(5, 201);
-            button5.Margin = new Padding(5);
-            button5.Name = "button5";
-            button5.Size = new Size(270, 43);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Dock = DockStyle.Fill;
+            pictureBox5.Location = new Point(237, 275);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(228, 64);
+            pictureBox5.TabIndex = 14;
+            pictureBox5.TabStop = false;
             // 
-            // button4
+            // pictureBox4
             // 
-            button4.BackColor = Color.Black;
-            button4.Dock = DockStyle.Fill;
-            button4.FlatStyle = FlatStyle.Popup;
-            button4.Font = new Font("Ink Free", 12F, FontStyle.Bold);
-            button4.ForeColor = SystemColors.ControlLightLight;
-            button4.Location = new Point(5, 152);
-            button4.Margin = new Padding(5);
-            button4.Name = "button4";
-            button4.Size = new Size(270, 39);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox4.Dock = DockStyle.Fill;
+            pictureBox4.Location = new Point(237, 207);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(228, 62);
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
             // 
-            // button3
+            // pictureBox3
             // 
-            button3.BackColor = Color.Black;
-            button3.Dock = DockStyle.Fill;
-            button3.FlatStyle = FlatStyle.Popup;
-            button3.Font = new Font("Ink Free", 12F, FontStyle.Bold);
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(5, 103);
-            button3.Margin = new Padding(5);
-            button3.Name = "button3";
-            button3.Size = new Size(270, 39);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Black;
-            button2.Dock = DockStyle.Fill;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Font = new Font("Ink Free", 12F, FontStyle.Bold);
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(5, 54);
-            button2.Margin = new Padding(5);
-            button2.Name = "button2";
-            button2.Size = new Size(270, 39);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Black;
-            button1.Dock = DockStyle.Fill;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Ink Free", 12F, FontStyle.Bold);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(5, 5);
-            button1.Margin = new Padding(5);
-            button1.Name = "button1";
-            button1.Size = new Size(270, 39);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel1, 0, 0);
-            tableLayoutPanel2.Controls.Add(pictureBox1, 1, 0);
-            tableLayoutPanel2.Location = new Point(3, 126);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(409, 255);
-            tableLayoutPanel2.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources.flecha1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(289, 50);
-            pictureBox1.Margin = new Padding(3, 50, 3, 50);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 155);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Dock = DockStyle.Fill;
+            pictureBox3.Location = new Point(237, 139);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(228, 62);
+            pictureBox3.TabIndex = 12;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Location = new Point(237, 71);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(415, 120);
-            pictureBox2.TabIndex = 3;
+            pictureBox2.Size = new Size(228, 62);
+            pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
+            // 
+            // b5
+            // 
+            b5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b5.BackColor = Color.Red;
+            b5.FlatStyle = FlatStyle.Flat;
+            b5.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b5.ForeColor = SystemColors.ControlLightLight;
+            b5.Location = new Point(170, 275);
+            b5.Name = "b5";
+            b5.Size = new Size(61, 64);
+            b5.TabIndex = 9;
+            b5.Text = "X";
+            b5.UseVisualStyleBackColor = false;
+            // 
+            // b4
+            // 
+            b4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b4.BackColor = Color.Red;
+            b4.FlatStyle = FlatStyle.Flat;
+            b4.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b4.ForeColor = SystemColors.ControlLightLight;
+            b4.Location = new Point(170, 207);
+            b4.Name = "b4";
+            b4.Size = new Size(61, 62);
+            b4.TabIndex = 7;
+            b4.Text = "X";
+            b4.UseVisualStyleBackColor = false;
+            // 
+            // b3
+            // 
+            b3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b3.BackColor = Color.Red;
+            b3.FlatStyle = FlatStyle.Flat;
+            b3.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b3.ForeColor = SystemColors.ControlLightLight;
+            b3.Location = new Point(170, 139);
+            b3.Name = "b3";
+            b3.Size = new Size(61, 62);
+            b3.TabIndex = 5;
+            b3.Text = "X";
+            b3.UseVisualStyleBackColor = false;
+            // 
+            // b2
+            // 
+            b2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b2.BackColor = Color.Red;
+            b2.FlatStyle = FlatStyle.Flat;
+            b2.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b2.ForeColor = SystemColors.ControlLightLight;
+            b2.Location = new Point(170, 71);
+            b2.Name = "b2";
+            b2.Size = new Size(61, 62);
+            b2.TabIndex = 2;
+            b2.Text = "X";
+            b2.UseVisualStyleBackColor = false;
+            // 
+            // b1
+            // 
+            b1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b1.BackColor = Color.Red;
+            b1.FlatStyle = FlatStyle.Flat;
+            b1.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b1.ForeColor = SystemColors.ControlLightLight;
+            b1.Location = new Point(170, 3);
+            b1.Name = "b1";
+            b1.Size = new Size(61, 62);
+            b1.TabIndex = 0;
+            b1.Text = "X";
+            b1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(237, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(228, 62);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // UserControl2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 152, 83);
-            Controls.Add(pictureBox2);
-            Controls.Add(tableLayoutPanel2);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(pictureBanner);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserControl2";
-            Size = new Size(415, 384);
+            Size = new Size(474, 512);
             Click += button1_Click;
+            ((System.ComponentModel.ISupportInitialize)pictureBanner).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
+        private PictureBox pictureBanner;
         private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        public Button button1;
-        public Button button4;
-        public Button button3;
-        public Button button2;
-        public Button button5;
+        public PictureBox pictureBox5;
+        public Button b1;
+        public Button b5;
+        public Button b4;
+        public Button b3;
+        public Button b2;
+        public PictureBox pictureBox4;
+        public PictureBox pictureBox3;
+        public PictureBox pictureBox2;
+        public PictureBox pictureBox1;
     }
 }
