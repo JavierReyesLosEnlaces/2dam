@@ -14,8 +14,6 @@ namespace Entrega2Eval_JavierReyes
         
         private List<Extra> listaExtras1 = new List<Extra>();
         private List<Extra> listaExtras3 = new List<Extra>();
-
-
         private List<Extra> catalogoExtras = creaExtras();
 
         // MAIN
@@ -245,12 +243,9 @@ namespace Entrega2Eval_JavierReyes
                     {
                         MostrarPantallaFinal();
                     }
-
-
                     break;
                 case 5:
                     MostrarPantallaFinal();
-
                     break;
 
                 default:
@@ -568,224 +563,231 @@ namespace Entrega2Eval_JavierReyes
             // Botón de cancelar invisible
             btn_cancelar.Visible = false;
 
-
+            // Pantalla final visible
             userControl3.Visible = true;
             userControl3.BringToFront();
 
-
-            lbl_total1.Visible = true;
-            lbl_total2.Visible = true;
-            btn_añadirPagar.Enabled = false;
+            // Situación inicial del botón
+            btn_añadirPagar.Visible = false;
             btn_añadirPagar.Text = "Pagar e imprimir ticket";
 
-            lbl_descripcionTitulo.Text = "Instrucciones";
 
             if (listaProductos.Count == 0)
             {
                 lbl_tipoProducto.Text = "Compra cancelada";
+                lbl_descripcionTitulo.Text = "Adiós";
                 lbl_descripcion.Text = "¡Una pena, esperamos verte pronto!";
-                lbl_total1.Text = " ";
-                lbl_total2.Text = " ";
+
+                lbl_total1.Visible = false;
+                lbl_total2.Visible = false;
+
+                userControl3.btn_caja.Visible = false;
+                userControl3.btn_tarjeta.Visible = false;                
             }
             else
             {
-                lbl_tipoProducto.Text = "Pantalla de pago";
+                lbl_tipoProducto.Text = "¿Cómo quieres pagar?";
+                lbl_descripcionTitulo.Text = "Instrucciones";
                 lbl_descripcion.Text = "Selecciona un método de pago y presiona 'Pagar e imprimir ticket'";
+
+                lbl_total1.Visible = true;
+                lbl_total2.Visible = true;
+
+                if (userControl3.bstateCaja || userControl3.bstateTarjeta)
+                {
+                    btn_añadirPagar.Visible = true;
+                }
             }
         }
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
-
             // Hasta la fase dos todavía se repite el ciclo una vez más
-            if (fase <= 4)
+            switch (fase)
             {
-                switch (fase)
-                {
-                    case 1:
-                        Comida c;
-                        // Producto fase 1
-                        if (p1f1)
+                case 1:
+                    Comida c;
+                    // Producto fase 1
+                    if (p1f1)
+                    {
+                        List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
+                        c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
+                        listaProductos.Add(c);
+                        pro1.Text = c.Nombre;
+                        pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
+                        slots[0] = true;
+                    }
+                    if (p2f1)
+                    {
+                        List<string> ing2 = new List<string>() { "Pan", "Doble Carne de Vacuno", "Doble Queso", "Bacon", "Lechuga", "Cebolla", "Mostaza" };
+                        c = new Comida("BigAdri", 4.50f, 600, ing2, "Carnivora", 150);
+                        listaProductos.Add(c);
+                        pro1.Text = c.Nombre;
+                        pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
+                        slots[0] = true;
+                    }
+                    // Extras fase 1
+                    if (userControl1.bstate1) listaExtras1.Add(catalogoExtras[0]);
+                    if (userControl1.bstate2) listaExtras1.Add(catalogoExtras[1]);
+                    if (userControl1.bstate3) listaExtras1.Add(catalogoExtras[2]);
+                    if (userControl1.bstate4) listaExtras1.Add(catalogoExtras[3]);
+                    if (userControl1.bstate5) listaExtras1.Add(catalogoExtras[4]);
+                    if (userControl1.bstate6) listaExtras1.Add(catalogoExtras[5]);
+
+                    for (int i = 0; i < listaExtras1.Count; i++)
+                    {
+                        pExtras1 += listaExtras1[i].Precio;
+
+                        if (pExtras1 > 0)
                         {
-                            List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
-                            c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
-                            listaProductos.Add(c);
-                            pro1.Text = c.Nombre;
-                            pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
-                            slots[0] = true;
+                            pro1Extras.Text = userControl1.numeroExtras + " extras";
+                            pre1Extras.Text = "+ " + pExtras1.ToString("F2") + "€";
+                            slots[1] = true;
                         }
-                        if (p2f1)
+                    }
+                    userControl1.numeroExtras = 0;
+                    IrAlMenu();
+                    CargarFase();
+                    break;
+                case 2:
+                    // Producto fase 2
+                    Bebida b;
+                    if (p1f2)
+                    {
+                        b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
+                        listaProductos.Add(b);
+                        pro2.Text = b.Nombre;
+                        pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
+                        slots[2] = true;
+                    }
+                    if (p2f2)
+                    {
+                        b = new Bebida("Agua 300ml", 1.00f, 25, 300);
+                        listaProductos.Add(b);
+                        pro2.Text = b.Nombre;
+                        pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
+                        slots[2] = true;
+                    }
+                    IrAlMenu();
+                    CargarFase();
+                    break;
+
+                case 3:
+                    // Producto fase 3
+                    Complemento cc;
+                    if (p1f3)
+                    {
+                        List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
+                        cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
+                        listaProductos.Add(cc);
+                        pro3.Text = cc.Nombre;
+                        pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
+                        slots[3] = true;
+                    }
+                    if (p2f3)
+                    {
+                        List<string> comp2 = new List<string>() { "Pollo (25%)", "Queso crema", "Ajo", "Sal", "Pimienta", "Harina refinada", "Pan rallado", "Aceite de palma" };
+                        cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
+                        listaProductos.Add(cc);
+                        pro3.Text = cc.Nombre;
+                        pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
+                        slots[3] = true;
+                    }
+                    // Extras fase 4
+                    if (userControl1.bstate1) listaExtras3.Add(catalogoExtras[0]);
+                    if (userControl1.bstate2) listaExtras3.Add(catalogoExtras[1]);
+                    if (userControl1.bstate3) listaExtras3.Add(catalogoExtras[2]);
+                    if (userControl1.bstate4) listaExtras3.Add(catalogoExtras[3]);
+                    if (userControl1.bstate5) listaExtras3.Add(catalogoExtras[4]);
+                    if (userControl1.bstate6) listaExtras3.Add(catalogoExtras[5]);
+
+                    for (int i = 0; i < listaExtras3.Count; i++)
+                    {
+                        pExtras3 += listaExtras3[i].Precio;
+
+                        if (pExtras3 > 0)
                         {
-                            List<string> ing2 = new List<string>() { "Pan", "Doble Carne de Vacuno", "Doble Queso", "Bacon", "Lechuga", "Cebolla", "Mostaza" };
-                            c = new Comida("BigAdri", 4.50f, 600, ing2, "Carnivora", 150);
-                            listaProductos.Add(c);
-                            pro1.Text = c.Nombre;
-                            pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
-                            slots[0] = true;
+                            pro3Extras.Text = userControl1.numeroExtras + " extras";
+                            pre3Extras.Text = "+ " + pExtras3.ToString("F2") + "€";
+                            slots[4] = true;
                         }
-                        // Extras fase 1
-                        if (userControl1.bstate1) listaExtras1.Add(catalogoExtras[0]);
-                        if (userControl1.bstate2) listaExtras1.Add(catalogoExtras[1]);
-                        if (userControl1.bstate3) listaExtras1.Add(catalogoExtras[2]);
-                        if (userControl1.bstate4) listaExtras1.Add(catalogoExtras[3]);
-                        if (userControl1.bstate5) listaExtras1.Add(catalogoExtras[4]);
-                        if (userControl1.bstate6) listaExtras1.Add(catalogoExtras[5]);
+                    }
 
-                        for (int i = 0; i < listaExtras1.Count; i++)
+                    userControl1.numeroExtras = 0;
+                    CargarFase();
+
+                    break;
+                case 4:
+                    //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
+                    // Productos
+
+                    if (userControl2.bstate1)
+                    {
+                        Producto comida = listaProductos.FirstOrDefault(p => p is Comida);
+                        if (comida != null)
                         {
-                            pExtras1 += listaExtras1[i].Precio;
-
-                            if (pExtras1 > 0)
-                            {
-                                pro1Extras.Text = userControl1.numeroExtras + " extras";
-                                pre1Extras.Text = "+ " + pExtras1.ToString("F2") + "€";
-                                slots[1] = true;
-                            }
-                        }
-                        userControl1.numeroExtras = 0;
-                        IrAlMenu();
-                        CargarFase();
-                        break;
-                    case 2:
-                        // Producto fase 2
-                        Bebida b;
-                        if (p1f2)
-                        {
-                            b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
-                            listaProductos.Add(b);
-                            pro2.Text = b.Nombre;
-                            pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
-                            slots[2] = true;
-                        }
-                        if (p2f2)
-                        {
-                            b = new Bebida("Agua 300ml", 1.00f, 25, 300);
-                            listaProductos.Add(b);
-                            pro2.Text = b.Nombre;
-                            pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
-                            slots[2] = true;
-                        }
-                        IrAlMenu();
-                        CargarFase();
-                        break;
-
-                    case 3:
-                        // Producto fase 3
-                        Complemento cc;
-                        if (p1f3)
-                        {
-                            List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
-                            cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
-                            listaProductos.Add(cc);
-                            pro3.Text = cc.Nombre;
-                            pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
-                            slots[3] = true;
-                        }
-                        if (p2f3)
-                        {
-                            List<string> comp2 = new List<string>() { "Pollo (25%)", "Queso crema", "Ajo", "Sal", "Pimienta", "Harina refinada", "Pan rallado", "Aceite de palma" };
-                            cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
-                            listaProductos.Add(cc);
-                            pro3.Text = cc.Nombre;
-                            pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
-                            slots[3] = true;
-                        }
-                        // Extras fase 4
-                        if (userControl1.bstate1) listaExtras3.Add(catalogoExtras[0]);
-                        if (userControl1.bstate2) listaExtras3.Add(catalogoExtras[1]);
-                        if (userControl1.bstate3) listaExtras3.Add(catalogoExtras[2]);
-                        if (userControl1.bstate4) listaExtras3.Add(catalogoExtras[3]);
-                        if (userControl1.bstate5) listaExtras3.Add(catalogoExtras[4]);
-                        if (userControl1.bstate6) listaExtras3.Add(catalogoExtras[5]);
-
-                        for (int i = 0; i < listaExtras3.Count; i++)
-                        {
-                            pExtras3 += listaExtras3[i].Precio;
-
-                            if (pExtras3 > 0)
-                            {
-                                pro3Extras.Text = userControl1.numeroExtras + " extras";
-                                pre3Extras.Text = "+ " + pExtras3.ToString("F2") + "€";
-                                slots[4] = true;
-                            }
-                        }
-
-                        userControl1.numeroExtras = 0;
-                        CargarFase();
-
-                        break;
-                    case 4:
-                        //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
-                        // Productos
-
-                        if (userControl2.bstate1)
-                        {
-                            Producto comida = listaProductos.FirstOrDefault(p => p is Comida);
-                            if (comida != null)
-                            {
-                                listaProductos.Remove(comida);
-                            }
-
-                            pro1.Text = " ";
-                            pre1.Text = " ";
-                            pro1.BackColor = Color.FromArgb(255, 249, 244);
-                            pre1.BackColor = Color.FromArgb(255, 249, 244);
-                        }
-                        if (userControl2.bstate3)
-                        {
-                            Producto bebida = listaProductos.FirstOrDefault(p => p is Bebida);
-                            if (bebida != null)
-                            {
-                                listaProductos.Remove(bebida);
-                            }
-
-                            pro2.Text = " ";
-                            pre2.Text = " ";
-                            pro2.BackColor = Color.FromArgb(255, 249, 244);
-                            pre2.BackColor = Color.FromArgb(255, 249, 244);
-                        }
-                        if (userControl2.bstate4)
-                        {
-                            Producto complemento = listaProductos.FirstOrDefault(p => p is Complemento);
-                            if (complemento != null)
-                            {
-                                listaProductos.Remove(complemento);
-                            }
-
-                            pro3.Text = " ";
-                            pre3.Text = " ";
-                            pro3.BackColor = Color.FromArgb(255, 249, 244);
-                            pre3.BackColor = Color.FromArgb(255, 249, 244);
-                        }
-                        // Extras
-                        if (userControl2.bstate2)
-                        {
-                            pExtras1 = 0;
-
-                            pro1Extras.Text = " ";
-                            pre1Extras.Text = " ";
-                            pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
-                            pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
-                        }
-                        if (userControl2.bstate5)
-                        {
-                            pExtras3 = 0;
-
-                            pro3Extras.Text = " ";
-                            pre3Extras.Text = " ";
-                            pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
-                            pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                            listaProductos.Remove(comida);
                         }
 
-                        // Recalcular el precio con los nuevos parámetros
-                        lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3).ToString("F2") + "€";
-                        CargarFase();
-                        break;
-                    case 5:
-                        break;
-                    default: break;
-                }
-                userControl1.ResetState();
+                        pro1.Text = " ";
+                        pre1.Text = " ";
+                        pro1.BackColor = Color.FromArgb(255, 249, 244);
+                        pre1.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+                    if (userControl2.bstate3)
+                    {
+                        Producto bebida = listaProductos.FirstOrDefault(p => p is Bebida);
+                        if (bebida != null)
+                        {
+                            listaProductos.Remove(bebida);
+                        }
+
+                        pro2.Text = " ";
+                        pre2.Text = " ";
+                        pro2.BackColor = Color.FromArgb(255, 249, 244);
+                        pre2.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+                    if (userControl2.bstate4)
+                    {
+                        Producto complemento = listaProductos.FirstOrDefault(p => p is Complemento);
+                        if (complemento != null)
+                        {
+                            listaProductos.Remove(complemento);
+                        }
+
+                        pro3.Text = " ";
+                        pre3.Text = " ";
+                        pro3.BackColor = Color.FromArgb(255, 249, 244);
+                        pre3.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+                    // Extras
+                    if (userControl2.bstate2)
+                    {
+                        pExtras1 = 0;
+
+                        pro1Extras.Text = " ";
+                        pre1Extras.Text = " ";
+                        pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
+                        pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+                    if (userControl2.bstate5)
+                    {
+                        pExtras3 = 0;
+
+                        pro3Extras.Text = " ";
+                        pre3Extras.Text = " ";
+                        pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                        pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+
+                    // Recalcular el precio con los nuevos parámetros
+                    lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3).ToString("F2") + "€";
+                    CargarFase();
+                    break;
+                case 5:
+                    break;
+                default: break;
             }
+            userControl1.ResetState();
         }
     }
 }

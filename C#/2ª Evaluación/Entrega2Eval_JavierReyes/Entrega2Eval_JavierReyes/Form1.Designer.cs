@@ -939,7 +939,7 @@
             userControl3.BackColor = Color.FromArgb(255, 152, 83);
             userControl3.Location = new Point(11, 275);
             userControl3.Name = "userControl3";
-            userControl3.Size = new Size(474, 513);
+            userControl3.Size = new Size(474, 510);
             userControl3.TabIndex = 8;
             userControl3.Visible = false;
             // 
@@ -1023,7 +1023,6 @@
         private Label label2;
         private Label lbl_descripcion;
         private TableLayoutPanel tlp14;
-        private Button btn_añadirPagar;
         private Button btn_cancelar;
         private TableLayoutPanel tlp16;
         private TableLayoutPanel tlp11;
@@ -1052,5 +1051,6 @@
         private Label lbl_total2;
         private Label lbl_total1;
         private UserControl3 userControl3;
+        public Button btn_añadirPagar;
     }
 }
