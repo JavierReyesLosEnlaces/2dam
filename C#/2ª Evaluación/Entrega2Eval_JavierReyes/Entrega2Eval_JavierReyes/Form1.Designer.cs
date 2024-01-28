@@ -1050,7 +1050,7 @@
         public Label pre1;
         private Label lbl_total2;
         private Label lbl_total1;
-        private UserControl3 userControl3;
         public Button btn_añadirPagar;
+        public UserControl3 userControl3;
     }
 }

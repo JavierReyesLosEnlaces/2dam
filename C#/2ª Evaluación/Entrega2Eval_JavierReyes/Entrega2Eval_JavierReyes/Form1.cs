@@ -30,7 +30,7 @@ namespace Entrega2Eval_JavierReyes
             userControl2.Button2Click += UserControl2_Button2Click;
             userControl2.Button3Click += UserControl2_Button3Click;
             userControl2.Button4Click += UserControl2_Button4Click;
-            userControl2.Button5Click += UserControl2_Button5Click;
+            userControl2.Button5Click += UserControl2_Button5Click;           
         }
 
         private void UserControl2_Button1Click(object sender, EventArgs e)
@@ -253,9 +253,6 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
-
-
-
         private void comprobarBotones()
         {
             if (slots[0] == true)
@@ -593,10 +590,13 @@ namespace Entrega2Eval_JavierReyes
                 lbl_total1.Visible = true;
                 lbl_total2.Visible = true;
 
-                if (userControl3.bstateCaja || userControl3.bstateTarjeta)
-                {
-                    btn_añadirPagar.Visible = true;
-                }
+                userControl3.btn_caja.Visible = true;
+                userControl3.btn_tarjeta.Visible = true;
+
+                btn_añadirPagar.Visible = true;
+                btn_añadirPagar.Enabled = false;
+
+                // AQUÍ ES DONDE RESIDE EL PROBLEMA
             }
         }
         private void btn_añadirPagar_Click(object sender, EventArgs e)

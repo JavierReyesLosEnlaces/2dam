@@ -4,7 +4,8 @@ namespace Entrega2Eval_JavierReyes
     public partial class UserControl3 : UserControl
     {
         // Estados de los botones
-        public bool bstateCaja, bstateTarjeta;
+        public bool bstateCaja { get; private set; }
+        public bool bstateTarjeta { get; private set; }
 
         public UserControl3()
         {
