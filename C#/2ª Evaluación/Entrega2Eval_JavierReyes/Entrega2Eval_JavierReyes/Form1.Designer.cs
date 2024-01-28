@@ -85,6 +85,7 @@
             button5 = new Button();
             userControl1 = new UserControl1();
             userControl2 = new UserControl2();
+            userControl3 = new UserControl3();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             panelDerecho1.SuspendLayout();
@@ -210,8 +211,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Ink Free", 14F, FontStyle.Bold);
             label2.Location = new Point(3, 0);
+            label2.Margin = new Padding(3, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(292, 51);
+            label2.Size = new Size(293, 51);
             label2.TabIndex = 1;
             label2.Text = "Pedido";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -932,12 +934,22 @@
             userControl2.Size = new Size(474, 513);
             userControl2.TabIndex = 7;
             // 
+            // userControl3
+            // 
+            userControl3.BackColor = Color.FromArgb(255, 152, 83);
+            userControl3.Location = new Point(11, 275);
+            userControl3.Name = "userControl3";
+            userControl3.Size = new Size(474, 513);
+            userControl3.TabIndex = 8;
+            userControl3.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(80, 34, 18);
             ClientSize = new Size(811, 861);
+            Controls.Add(userControl3);
             Controls.Add(userControl2);
             Controls.Add(userControl1);
             Controls.Add(tlp2);
@@ -1039,5 +1051,6 @@
         public Label pre1;
         private Label lbl_total2;
         private Label lbl_total1;
+        private UserControl3 userControl3;
     }
 }

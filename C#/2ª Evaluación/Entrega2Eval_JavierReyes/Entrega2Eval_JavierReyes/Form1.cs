@@ -9,11 +9,9 @@ namespace Entrega2Eval_JavierReyes
         private int fase = 0;
         private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
         private bool[] slots = new bool[5];
-
-
         private float pExtras1 = 0.00f, pExtras3 = 0.00f;
-
         private List<Producto> listaProductos = new List<Producto>();
+        
         private List<Extra> listaExtras1 = new List<Extra>();
         private List<Extra> listaExtras3 = new List<Extra>();
 
@@ -46,16 +44,15 @@ namespace Entrega2Eval_JavierReyes
                 pro1.BackColor = Color.FromArgb(252, 96, 96);
                 pre1.BackColor = Color.FromArgb(252, 96, 96);
             }
-            
+
             else
             {
                 // Cambiar el color de pro1 y pre1 a rojo
                 pro1.BackColor = Color.FromArgb(255, 249, 244);
                 pre1.BackColor = Color.FromArgb(255, 249, 244);
             }
-            
-        }
 
+        }
         private void UserControl2_Button2Click(object sender, EventArgs e)
         {
             // Cambiar el color de pro1Extras y pro1Extras a rojo
@@ -113,7 +110,6 @@ namespace Entrega2Eval_JavierReyes
                 pre3.BackColor = Color.FromArgb(255, 249, 244);
             }
         }
-
         private void UserControl2_Button5Click(object sender, EventArgs e)
         {
             // Cambiar el color de pro3Extras y pre3Extras a rojo
@@ -132,9 +128,6 @@ namespace Entrega2Eval_JavierReyes
                 pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
             }
         }
-
-
-
         private static List<Extra> creaExtras()
         {
             List<Extra> extra = new List<Extra>();
@@ -148,9 +141,7 @@ namespace Entrega2Eval_JavierReyes
             extra.Add(new Extra("Dip", 1.00f, 150, 1));
 
             return extra;
-        }
-
-        // INITS
+        }        // INITS
         private void InitUI()
         {
             // Tamaño del Form fijo
@@ -225,31 +216,41 @@ namespace Entrega2Eval_JavierReyes
                     break;
 
                 case 4:
-                    // Menú de quitar algo
-                    lbl_tipoProducto.Text = "¿Quitamos algo?";
-                    btn_añadirPagar.Text = "Continuar";
-                    lbl_descripcionTitulo.Text = "Instrucciones";
-                    lbl_descripcion.Text = "Quita aquellos productos que no te interesen de tu pedido";
+                    if (listaProductos.Count > 0)
+                    {
+                        // Menú de quitar algo
+                        lbl_tipoProducto.Text = "¿Quitamos algo?";
+                        btn_añadirPagar.Text = "Continuar";
+                        lbl_descripcionTitulo.Text = "Instrucciones";
+                        lbl_descripcion.Text = "Quita aquellos productos que no te interesen de tu pedido";
 
-                    // Tlp de borrado de ítems 
-                    userControl2.Visible = true;
-                    userControl2.BringToFront();
+                        // Tlp de borrado de ítems 
+                        userControl2.Visible = true;
+                        userControl2.BringToFront();
 
-                    // Tlp de productos invisible
-                    tlp5.Visible = false;
-                    tlp5.SendToBack();
+                        // Tlp de productos invisible
+                        tlp5.Visible = false;
+                        tlp5.SendToBack();
 
-                    // Tlp de extras invisible
-                    userControl1.Visible = false;
-                    userControl1.SendToBack();
+                        // Tlp de extras invisible
+                        userControl1.Visible = false;
+                        userControl1.SendToBack();
 
-                    // Botón de cancelar invisible
-                    btn_cancelar.Visible = false;
+                        // Botón de cancelar invisible
+                        btn_cancelar.Visible = false;
 
-                    comprobarBotones();
+                        comprobarBotones();
+                    }
+                    else
+                    {
+                        MostrarPantallaFinal();
+                    }
 
 
-                    lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3) + "€";
+                    break;
+                case 5:
+                    MostrarPantallaFinal();
+
                     break;
 
                 default:
@@ -257,6 +258,8 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
+
+
 
         private void comprobarBotones()
         {
@@ -315,7 +318,6 @@ namespace Entrega2Eval_JavierReyes
                 userControl2.pb5.Visible = false;
             }
         }
-
         private float calculoPrecioTotal(List<Producto> listaProductos, float pExtras1, float pExtras3)
         {
             float suma = 0.00f;
@@ -327,7 +329,6 @@ namespace Entrega2Eval_JavierReyes
             //return (suma + pExtras1 + pExtras3).ToString("F2");
             return (suma + pExtras1 + pExtras3);
         }
-
         private void IrAlMenu()
         {
             // Tlp de extras invisible
@@ -550,12 +551,53 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
+        private void MostrarPantallaFinal()
+        {
+            // Tlp de borrado de ítems invisible 
+            userControl2.Visible = false;
+            userControl2.SendToBack();
 
+            // Tlp de productos invisible
+            tlp5.Visible = false;
+            tlp5.SendToBack();
+
+            // Tlp de extras invisible
+            userControl1.Visible = false;
+            userControl1.SendToBack();
+
+            // Botón de cancelar invisible
+            btn_cancelar.Visible = false;
+
+
+            userControl3.Visible = true;
+            userControl3.BringToFront();
+
+
+            lbl_total1.Visible = true;
+            lbl_total2.Visible = true;
+            btn_añadirPagar.Enabled = false;
+            btn_añadirPagar.Text = "Pagar e imprimir ticket";
+
+            lbl_descripcionTitulo.Text = "Instrucciones";
+
+            if (listaProductos.Count == 0)
+            {
+                lbl_tipoProducto.Text = "Compra cancelada";
+                lbl_descripcion.Text = "¡Una pena, esperamos verte pronto!";
+                lbl_total1.Text = " ";
+                lbl_total2.Text = " ";
+            }
+            else
+            {
+                lbl_tipoProducto.Text = "Pantalla de pago";
+                lbl_descripcion.Text = "Selecciona un método de pago y presiona 'Pagar e imprimir ticket'";
+            }
+        }
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
 
             // Hasta la fase dos todavía se repite el ciclo una vez más
-            if (fase <= 3)
+            if (fase <= 4)
             {
                 switch (fase)
                 {
@@ -597,7 +639,6 @@ namespace Entrega2Eval_JavierReyes
                                 pro1Extras.Text = userControl1.numeroExtras + " extras";
                                 pre1Extras.Text = "+ " + pExtras1.ToString("F2") + "€";
                                 slots[1] = true;
-
                             }
                         }
                         userControl1.numeroExtras = 0;
@@ -675,39 +716,76 @@ namespace Entrega2Eval_JavierReyes
                     case 4:
                         //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
                         // Productos
+
                         if (userControl2.bstate1)
                         {
-                            listaProductos.RemoveAt(0);
+                            Producto comida = listaProductos.FirstOrDefault(p => p is Comida);
+                            if (comida != null)
+                            {
+                                listaProductos.Remove(comida);
+                            }
+
+                            pro1.Text = " ";
+                            pre1.Text = " ";
+                            pro1.BackColor = Color.FromArgb(255, 249, 244);
+                            pre1.BackColor = Color.FromArgb(255, 249, 244);
                         }
                         if (userControl2.bstate3)
                         {
-                            listaProductos.RemoveAt(1);
+                            Producto bebida = listaProductos.FirstOrDefault(p => p is Bebida);
+                            if (bebida != null)
+                            {
+                                listaProductos.Remove(bebida);
+                            }
+
+                            pro2.Text = " ";
+                            pre2.Text = " ";
+                            pro2.BackColor = Color.FromArgb(255, 249, 244);
+                            pre2.BackColor = Color.FromArgb(255, 249, 244);
                         }
                         if (userControl2.bstate4)
                         {
-                            listaProductos.RemoveAt(2);
+                            Producto complemento = listaProductos.FirstOrDefault(p => p is Complemento);
+                            if (complemento != null)
+                            {
+                                listaProductos.Remove(complemento);
+                            }
+
+                            pro3.Text = " ";
+                            pre3.Text = " ";
+                            pro3.BackColor = Color.FromArgb(255, 249, 244);
+                            pre3.BackColor = Color.FromArgb(255, 249, 244);
                         }
                         // Extras
                         if (userControl2.bstate2)
                         {
                             pExtras1 = 0;
+
+                            pro1Extras.Text = " ";
+                            pre1Extras.Text = " ";
+                            pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
+                            pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
                         }
                         if (userControl2.bstate5)
                         {
                             pExtras3 = 0;
+
+                            pro3Extras.Text = " ";
+                            pre3Extras.Text = " ";
+                            pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                            pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
                         }
 
                         // Recalcular el precio con los nuevos parámetros
-                        lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3).ToString();
+                        lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3).ToString("F2") + "€";
+                        CargarFase();
+                        break;
+                    case 5:
                         break;
                     default: break;
                 }
                 userControl1.ResetState();
             }
-
-            // Cuando se va a pagar tiene que dar opcion de eliminar alguna cosa
-
-            //tras seleccionar el último producto debe aparecer PAGAR
         }
     }
 }
