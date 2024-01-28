@@ -679,8 +679,8 @@
             // tlp3
             // 
             tlp3.ColumnCount = 2;
-            tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66F));
-            tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34F));
+            tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.6666641F));
+            tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tlp3.Controls.Add(lbl_total2, 1, 0);
             tlp3.Controls.Add(lbl_total1, 0, 0);
             tlp3.Location = new Point(481, 575);
@@ -697,12 +697,13 @@
             lbl_total2.Dock = DockStyle.Fill;
             lbl_total2.Font = new Font("Ink Free", 15F, FontStyle.Bold);
             lbl_total2.ForeColor = SystemColors.Window;
-            lbl_total2.Location = new Point(202, 0);
+            lbl_total2.Location = new Point(204, 0);
             lbl_total2.Name = "lbl_total2";
-            lbl_total2.Size = new Size(97, 49);
+            lbl_total2.Size = new Size(95, 49);
             lbl_total2.TabIndex = 1;
             lbl_total2.Text = "-";
             lbl_total2.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_total2.Visible = false;
             // 
             // lbl_total1
             // 
@@ -712,10 +713,11 @@
             lbl_total1.ForeColor = SystemColors.ButtonHighlight;
             lbl_total1.Location = new Point(3, 0);
             lbl_total1.Name = "lbl_total1";
-            lbl_total1.Size = new Size(193, 49);
+            lbl_total1.Size = new Size(195, 49);
             lbl_total1.TabIndex = 0;
             lbl_total1.Text = "Total:";
             lbl_total1.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_total1.Visible = false;
             // 
             // tlp14
             // 
@@ -986,8 +988,6 @@
         private Panel panelDerecho1;
         private TableLayoutPanel tlp4;
         private TableLayoutPanel tlp3;
-        private Label lbl_total1;
-        private Label lbl_total2;
         private Panel panelIzquierdo2;
         private TableLayoutPanel tlp5;
         private TableLayoutPanel tlpProducto2;
@@ -1037,5 +1037,7 @@
         public Label pro3Extras;
         public Label pre3Extras;
         public Label pre1;
+        private Label lbl_total2;
+        private Label lbl_total1;
     }
 }

@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl2));
             pictureBanner = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pb5 = new PictureBox();
+            pb4 = new PictureBox();
+            pb3 = new PictureBox();
+            pb2 = new PictureBox();
             b5 = new Button();
             b4 = new Button();
             b3 = new Button();
             b2 = new Button();
             b1 = new Button();
-            pictureBox1 = new PictureBox();
+            pb1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBanner).BeginInit();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb1).BeginInit();
             SuspendLayout();
             // 
             // pictureBanner
@@ -66,16 +66,16 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43F));
-            tableLayoutPanel1.Controls.Add(pictureBox5, 1, 4);
-            tableLayoutPanel1.Controls.Add(pictureBox4, 1, 3);
-            tableLayoutPanel1.Controls.Add(pictureBox3, 1, 2);
-            tableLayoutPanel1.Controls.Add(pictureBox2, 1, 1);
+            tableLayoutPanel1.Controls.Add(pb5, 1, 4);
+            tableLayoutPanel1.Controls.Add(pb4, 1, 3);
+            tableLayoutPanel1.Controls.Add(pb3, 1, 2);
+            tableLayoutPanel1.Controls.Add(pb2, 1, 1);
             tableLayoutPanel1.Controls.Add(b5, 0, 4);
             tableLayoutPanel1.Controls.Add(b4, 0, 3);
             tableLayoutPanel1.Controls.Add(b3, 0, 2);
             tableLayoutPanel1.Controls.Add(b2, 0, 1);
             tableLayoutPanel1.Controls.Add(b1, 0, 0);
-            tableLayoutPanel1.Controls.Add(pictureBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(pb1, 1, 0);
             tableLayoutPanel1.Location = new Point(3, 167);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
@@ -88,53 +88,53 @@
             tableLayoutPanel1.Size = new Size(468, 342);
             tableLayoutPanel1.TabIndex = 4;
             // 
-            // pictureBox5
+            // pb5
             // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Dock = DockStyle.Fill;
-            pictureBox5.Location = new Point(266, 272);
-            pictureBox5.Margin = new Padding(0, 0, 70, 0);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(132, 70);
-            pictureBox5.TabIndex = 14;
-            pictureBox5.TabStop = false;
+            pb5.BackgroundImage = (Image)resources.GetObject("pb5.BackgroundImage");
+            pb5.BackgroundImageLayout = ImageLayout.Stretch;
+            pb5.Dock = DockStyle.Fill;
+            pb5.Location = new Point(266, 272);
+            pb5.Margin = new Padding(0, 0, 70, 0);
+            pb5.Name = "pb5";
+            pb5.Size = new Size(132, 70);
+            pb5.TabIndex = 14;
+            pb5.TabStop = false;
             // 
-            // pictureBox4
+            // pb4
             // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Dock = DockStyle.Fill;
-            pictureBox4.Location = new Point(266, 204);
-            pictureBox4.Margin = new Padding(0, 0, 70, 0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(132, 68);
-            pictureBox4.TabIndex = 13;
-            pictureBox4.TabStop = false;
+            pb4.BackgroundImage = (Image)resources.GetObject("pb4.BackgroundImage");
+            pb4.BackgroundImageLayout = ImageLayout.Stretch;
+            pb4.Dock = DockStyle.Fill;
+            pb4.Location = new Point(266, 204);
+            pb4.Margin = new Padding(0, 0, 70, 0);
+            pb4.Name = "pb4";
+            pb4.Size = new Size(132, 68);
+            pb4.TabIndex = 13;
+            pb4.TabStop = false;
             // 
-            // pictureBox3
+            // pb3
             // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Location = new Point(266, 136);
-            pictureBox3.Margin = new Padding(0, 0, 70, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(132, 68);
-            pictureBox3.TabIndex = 12;
-            pictureBox3.TabStop = false;
+            pb3.BackgroundImage = (Image)resources.GetObject("pb3.BackgroundImage");
+            pb3.BackgroundImageLayout = ImageLayout.Stretch;
+            pb3.Dock = DockStyle.Fill;
+            pb3.Location = new Point(266, 136);
+            pb3.Margin = new Padding(0, 0, 70, 0);
+            pb3.Name = "pb3";
+            pb3.Size = new Size(132, 68);
+            pb3.TabIndex = 12;
+            pb3.TabStop = false;
             // 
-            // pictureBox2
+            // pb2
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Location = new Point(266, 68);
-            pictureBox2.Margin = new Padding(0, 0, 70, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(132, 68);
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
+            pb2.BackgroundImage = (Image)resources.GetObject("pb2.BackgroundImage");
+            pb2.BackgroundImageLayout = ImageLayout.Stretch;
+            pb2.Dock = DockStyle.Fill;
+            pb2.Location = new Point(266, 68);
+            pb2.Margin = new Padding(0, 0, 70, 0);
+            pb2.Name = "pb2";
+            pb2.Size = new Size(132, 68);
+            pb2.TabIndex = 11;
+            pb2.TabStop = false;
             // 
             // b5
             // 
@@ -217,17 +217,17 @@
             b1.UseVisualStyleBackColor = false;
             b1.Click += button1_Click;
             // 
-            // pictureBox1
+            // pb1
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(266, 0);
-            pictureBox1.Margin = new Padding(0, 0, 70, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(132, 68);
-            pictureBox1.TabIndex = 10;
-            pictureBox1.TabStop = false;
+            pb1.BackgroundImage = (Image)resources.GetObject("pb1.BackgroundImage");
+            pb1.BackgroundImageLayout = ImageLayout.Stretch;
+            pb1.Dock = DockStyle.Fill;
+            pb1.Location = new Point(266, 0);
+            pb1.Margin = new Padding(0, 0, 70, 0);
+            pb1.Name = "pb1";
+            pb1.Size = new Size(132, 68);
+            pb1.TabIndex = 10;
+            pb1.TabStop = false;
             // 
             // UserControl2
             // 
@@ -242,22 +242,22 @@
             Click += button1_Click;
             ((System.ComponentModel.ISupportInitialize)pictureBanner).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private PictureBox pictureBanner;
         private TableLayoutPanel tableLayoutPanel1;
-        public PictureBox pictureBox4;
-        public PictureBox pictureBox3;
-        public PictureBox pictureBox2;
-        public PictureBox pictureBox1;
-        public PictureBox pictureBox5;
+        public PictureBox pb4;
+        public PictureBox pb3;
+        public PictureBox pb2;
+        public PictureBox pb1;
+        public PictureBox pb5;
         public Button b5;
         public Button b4;
         public Button b3;

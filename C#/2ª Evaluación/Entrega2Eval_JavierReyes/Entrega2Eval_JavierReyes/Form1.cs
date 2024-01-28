@@ -46,12 +46,14 @@ namespace Entrega2Eval_JavierReyes
                 pro1.BackColor = Color.FromArgb(252, 96, 96);
                 pre1.BackColor = Color.FromArgb(252, 96, 96);
             }
+            
             else
             {
                 // Cambiar el color de pro1 y pre1 a rojo
                 pro1.BackColor = Color.FromArgb(255, 249, 244);
                 pre1.BackColor = Color.FromArgb(255, 249, 244);
             }
+            
         }
 
         private void UserControl2_Button2Click(object sender, EventArgs e)
@@ -246,12 +248,6 @@ namespace Entrega2Eval_JavierReyes
 
                     comprobarBotones();
 
-                    if (userControl2.bstate1)
-                    {
-                        pre1.BackColor = Color.Red;
-                        pro1.BackColor = Color.Red;
-
-                    }
 
                     lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3) + "€";
                     break;
@@ -267,56 +263,56 @@ namespace Entrega2Eval_JavierReyes
             if (slots[0] == true)
             {
                 userControl2.b1.Visible = true;
-                userControl2.pictureBox1.Visible = true;
+                userControl2.pb1.Visible = true;
             }
             else
             {
                 userControl2.b1.Visible = false;
-                userControl2.pictureBox1.Visible = false;
+                userControl2.pb1.Visible = false;
             }
 
             if (slots[1] == true)
             {
                 userControl2.b2.Visible = true;
-                userControl2.pictureBox2.Visible = true;
+                userControl2.pb2.Visible = true;
             }
             else
             {
                 userControl2.b2.Visible = false;
-                userControl2.pictureBox2.Visible = false;
+                userControl2.pb2.Visible = false;
             }
 
             if (slots[2] == true)
             {
                 userControl2.b3.Visible = true;
-                userControl2.pictureBox3.Visible = true;
+                userControl2.pb3.Visible = true;
             }
             else
             {
                 userControl2.b3.Visible = false;
-                userControl2.pictureBox3.Visible = false;
+                userControl2.pb3.Visible = false;
             }
 
             if (slots[3] == true)
             {
                 userControl2.b4.Visible = true;
-                userControl2.pictureBox4.Visible = true;
+                userControl2.pb4.Visible = true;
             }
             else
             {
                 userControl2.b4.Visible = false;
-                userControl2.pictureBox4.Visible = false;
+                userControl2.pb4.Visible = false;
             }
 
             if (slots[4] == true)
             {
                 userControl2.b5.Visible = true;
-                userControl2.pictureBox5.Visible = true;
+                userControl2.pb5.Visible = true;
             }
             else
             {
                 userControl2.b5.Visible = false;
-                userControl2.pictureBox5.Visible = false;
+                userControl2.pb5.Visible = false;
             }
         }
 
