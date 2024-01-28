@@ -84,6 +84,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(468, 342);
             tableLayoutPanel1.TabIndex = 4;
             // 
@@ -149,6 +150,7 @@
             b5.TabIndex = 9;
             b5.Text = "X";
             b5.UseVisualStyleBackColor = false;
+            b5.Click += button5_Click;
             // 
             // b4
             // 
@@ -164,6 +166,7 @@
             b4.TabIndex = 7;
             b4.Text = "X";
             b4.UseVisualStyleBackColor = false;
+            b4.Click += button4_Click;
             // 
             // b3
             // 
@@ -179,6 +182,7 @@
             b3.TabIndex = 5;
             b3.Text = "X";
             b3.UseVisualStyleBackColor = false;
+            b3.Click += button3_Click;
             // 
             // b2
             // 
@@ -194,6 +198,7 @@
             b2.TabIndex = 2;
             b2.Text = "X";
             b2.UseVisualStyleBackColor = false;
+            b2.Click += button2_Click;
             // 
             // b1
             // 
@@ -203,13 +208,14 @@
             b1.FlatStyle = FlatStyle.Flat;
             b1.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
             b1.ForeColor = SystemColors.ControlLightLight;
-            b1.Location = new Point(205, 0);
-            b1.Margin = new Padding(0);
+            b1.Location = new Point(205, 3);
+            b1.Margin = new Padding(3, 3, 0, 3);
             b1.Name = "b1";
-            b1.Size = new Size(61, 68);
+            b1.Size = new Size(61, 62);
             b1.TabIndex = 0;
             b1.Text = "X";
             b1.UseVisualStyleBackColor = false;
+            b1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -247,15 +253,15 @@
         #endregion
         private PictureBox pictureBanner;
         private TableLayoutPanel tableLayoutPanel1;
-        public PictureBox pictureBox5;
-        public Button b1;
-        public Button b5;
-        public Button b4;
-        public Button b3;
-        public Button b2;
         public PictureBox pictureBox4;
         public PictureBox pictureBox3;
         public PictureBox pictureBox2;
         public PictureBox pictureBox1;
+        public PictureBox pictureBox5;
+        public Button b5;
+        public Button b4;
+        public Button b3;
+        public Button b2;
+        public Button b1;
     }
 }

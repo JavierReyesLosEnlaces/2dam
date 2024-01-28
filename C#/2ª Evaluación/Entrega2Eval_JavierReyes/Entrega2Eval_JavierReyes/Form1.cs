@@ -1,6 +1,5 @@
 
 using BurgerLibrary.Modelo.Productos;
-using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
@@ -29,7 +28,110 @@ namespace Entrega2Eval_JavierReyes
             InitUI();
             CargarFase();
             IrAlMenu();
+
+            // Suscribir los métodos a los eventos ButtonClick de UserControl2
+            userControl2.Button1Click += UserControl2_Button1Click;
+            userControl2.Button2Click += UserControl2_Button2Click;
+            userControl2.Button3Click += UserControl2_Button3Click;
+            userControl2.Button4Click += UserControl2_Button4Click;
+            userControl2.Button5Click += UserControl2_Button5Click;
         }
+
+        private void UserControl2_Button1Click(object sender, EventArgs e)
+        {
+            // Cambiar el color del botón según el estado actual
+            if (userControl2.bstate1)
+            {
+                // Color rojo
+                pro1.BackColor = Color.FromArgb(252, 96, 96);
+                pre1.BackColor = Color.FromArgb(252, 96, 96);
+            }
+            else
+            {
+                // Cambiar el color de pro1 y pre1 a rojo
+                pro1.BackColor = Color.FromArgb(255, 249, 244);
+                pre1.BackColor = Color.FromArgb(255, 249, 244);
+            }
+        }
+
+        private void UserControl2_Button2Click(object sender, EventArgs e)
+        {
+            // Cambiar el color de pro1Extras y pro1Extras a rojo
+            if (userControl2.bstate2)
+            {
+                // Color rojo
+                pro1Extras.BackColor = Color.FromArgb(252, 96, 96);
+                pre1Extras.BackColor = Color.FromArgb(252, 96, 96);
+            }
+            else
+            {
+                // Cambiar el color de pro1 y pre1 a rojo
+                pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
+                pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
+            }
+
+
+        }
+        private void UserControl2_Button3Click(object sender, EventArgs e)
+        {
+            // Cambiar el color de pro2 y pre2 a rojo
+
+            if (userControl2.bstate3)
+            {
+                // Color rojo
+                pro2.BackColor = Color.FromArgb(252, 96, 96);
+                pre2.BackColor = Color.FromArgb(252, 96, 96);
+            }
+            else
+            {
+                // Cambiar el color de pro1 y pre1 a rojo
+                pro2.BackColor = Color.FromArgb(255, 249, 244);
+                pre2.BackColor = Color.FromArgb(255, 249, 244);
+            }
+
+
+
+
+        }
+        private void UserControl2_Button4Click(object sender, EventArgs e)
+        {
+            // Cambiar el color de pro3 y pre3 a rojo
+
+
+            if (userControl2.bstate4)
+            {
+                // Color rojo
+                pro3.BackColor = Color.FromArgb(252, 96, 96);
+                pre3.BackColor = Color.FromArgb(252, 96, 96);
+            }
+            else
+            {
+                // Cambiar el color de pro1 y pre1 a rojo
+                pro3.BackColor = Color.FromArgb(255, 249, 244);
+                pre3.BackColor = Color.FromArgb(255, 249, 244);
+            }
+        }
+
+        private void UserControl2_Button5Click(object sender, EventArgs e)
+        {
+            // Cambiar el color de pro3Extras y pre3Extras a rojo
+
+
+            if (userControl2.bstate5)
+            {
+                // Color rojo
+                pro3Extras.BackColor = Color.FromArgb(252, 96, 96);
+                pre3Extras.BackColor = Color.FromArgb(252, 96, 96);
+            }
+            else
+            {
+                // Cambiar el color de pro1 y pre1 a rojo
+                pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
+                pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
+            }
+        }
+
+
 
         private static List<Extra> creaExtras()
         {
@@ -144,7 +246,12 @@ namespace Entrega2Eval_JavierReyes
 
                     comprobarBotones();
 
+                    if (userControl2.bstate1)
+                    {
+                        pre1.BackColor = Color.Red;
+                        pro1.BackColor = Color.Red;
 
+                    }
 
                     lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3) + "€";
                     break;
@@ -213,7 +320,7 @@ namespace Entrega2Eval_JavierReyes
             }
         }
 
-        private string calculoPrecioTotal(List<Producto> listaProductos, float pExtras1, float pExtras3)
+        private float calculoPrecioTotal(List<Producto> listaProductos, float pExtras1, float pExtras3)
         {
             float suma = 0.00f;
             for (int i = 0; i < listaProductos.Count; i++)
@@ -221,7 +328,8 @@ namespace Entrega2Eval_JavierReyes
                 suma += listaProductos[i].Precio;
             }
 
-            return (suma + pExtras1 + pExtras3).ToString("F2");
+            //return (suma + pExtras1 + pExtras3).ToString("F2");
+            return (suma + pExtras1 + pExtras3);
         }
 
         private void IrAlMenu()
@@ -568,8 +676,34 @@ namespace Entrega2Eval_JavierReyes
                         CargarFase();
 
                         break;
+                    case 4:
+                        //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
+                        // Productos
+                        if (userControl2.bstate1)
+                        {
+                            listaProductos.RemoveAt(0);
+                        }
+                        if (userControl2.bstate3)
+                        {
+                            listaProductos.RemoveAt(1);
+                        }
+                        if (userControl2.bstate4)
+                        {
+                            listaProductos.RemoveAt(2);
+                        }
+                        // Extras
+                        if (userControl2.bstate2)
+                        {
+                            pExtras1 = 0;
+                        }
+                        if (userControl2.bstate5)
+                        {
+                            pExtras3 = 0;
+                        }
 
-
+                        // Recalcular el precio con los nuevos parámetros
+                        lbl_total2.Text = calculoPrecioTotal(listaProductos, pExtras1, pExtras3).ToString();
+                        break;
                     default: break;
                 }
                 userControl1.ResetState();
@@ -580,5 +714,4 @@ namespace Entrega2Eval_JavierReyes
             //tras seleccionar el último producto debe aparecer PAGAR
         }
     }
-
 }

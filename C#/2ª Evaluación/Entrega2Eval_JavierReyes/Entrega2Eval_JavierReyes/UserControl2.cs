@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.AxHost;
-
+﻿
 namespace Entrega2Eval_JavierReyes
 {
     public partial class UserControl2 : UserControl
     {
+        // Declaración de un evento que se activará cuando se presione el botón 1
+        public event EventHandler Button1Click;
+        public event EventHandler Button2Click;
+        public event EventHandler Button3Click;
+        public event EventHandler Button4Click;
+        public event EventHandler Button5Click;
+
         public bool bstate1, bstate2, bstate3, bstate4, bstate5;
         public UserControl2()
         {
@@ -31,6 +28,7 @@ namespace Entrega2Eval_JavierReyes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
             if (bstate1)
             {
                 b1.BackColor = Color.Black;
@@ -41,10 +39,20 @@ namespace Entrega2Eval_JavierReyes
                 b1.BackColor = Color.FromArgb(172, 0, 0);
                 bstate1 = true;
             }
+            */
+            // Cambiar el estado del botón 1
+            bstate1 = !bstate1;
+
+            // Cambiar el color del botón 1
+            //b1.BackColor = bstate1 ? Color.FromArgb(172, 0, 0) : Color.Black;
+
+            // Si se suscribe algún método al evento Button1Click, activarlo
+            Button1Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             if (bstate2)
             {
                 b2.BackColor = Color.Black;
@@ -55,10 +63,20 @@ namespace Entrega2Eval_JavierReyes
                 b2.BackColor = Color.FromArgb(172, 0, 0);
                 bstate2 = true;
             }
+            */
+            // Cambiar el estado del botón 2
+            bstate2 = !bstate2;
+
+            // Cambiar el color del botón 2
+            //b2.BackColor = bstate2 ? Color.FromArgb(172, 0, 0) : Color.Black;
+
+            // Si se suscribe algún método al evento Button2Click, activarlo
+            Button2Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            /*
             if (bstate3)
             {
                 b3.BackColor = Color.Black;
@@ -69,10 +87,20 @@ namespace Entrega2Eval_JavierReyes
                 b3.BackColor = Color.FromArgb(172, 0, 0);
                 bstate3 = true;
             }
+            */
+            // Cambiar el estado del botón 3
+            bstate3 = !bstate3;
+
+            // Cambiar el color del botón 3
+            //b3.BackColor = bstate3 ? Color.FromArgb(172, 0, 0) : Color.Black;
+
+            // Si se suscribe algún método al evento Button3Click, activarlo
+            Button3Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            /*
             if (bstate4)
             {
                 b4.BackColor = Color.Black;
@@ -83,10 +111,20 @@ namespace Entrega2Eval_JavierReyes
                 b4.BackColor = Color.FromArgb(172, 0, 0);
                 bstate4 = true;
             }
+            */
+            // Cambiar el estado del botón 4
+            bstate4 = !bstate4;
+
+            // Cambiar el color del botón 4
+            //b4.BackColor = bstate4 ? Color.FromArgb(172, 0, 0) : Color.Black;
+
+            // Si se suscribe algún método al evento Button4Click, activarlo
+            Button4Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            /*
             if (bstate5)
             {
                 b5.BackColor = Color.Black;
@@ -97,6 +135,15 @@ namespace Entrega2Eval_JavierReyes
                 b5.BackColor = Color.FromArgb(172, 0, 0);
                 bstate5 = true;
             }
+            */
+            // Cambiar el estado del botón 5
+            bstate5 = !bstate5;
+
+            // Cambiar el color del botón 5
+            //b5.BackColor = bstate5 ? Color.FromArgb(172, 0, 0) : Color.Black;
+
+            // Si se suscribe algún método al evento Button5Click, activarlo
+            Button5Click?.Invoke(this, EventArgs.Empty);
         }
 
     }
