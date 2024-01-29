@@ -20,7 +20,7 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 
 		File f = new File("xml\\Pedidos_Tiendas.xml");
-		String bd = "jdbc:sqlite:sample2.db";
+		String bd = "jdbc:sqlite:sample.db";
 		Connection conn = ConexionBD(bd);
 
 		int opcion;
@@ -93,7 +93,7 @@ public class Main {
 			d.getDocumentElement().normalize();
 
 			Statement stm;
-			
+
 			NodeList pedidos = d.getElementsByTagName("pedido");
 			for (int i = 0; i < pedidos.getLength(); i++) {
 				Node nodoPedido = pedidos.item(i);
@@ -106,25 +106,31 @@ public class Main {
 					String fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
 
 					// Inserción
-					String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente + "', '" + fecha + "')";	
-					
+					String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente
+							+ "', '" + fecha + "')";
+
 					// Comprobación de PKs
-					String comprobacion = "SELECT num_pedido FROM pedidos WHERE (num_pedido = '"+numero_pedido+"');";					
+					String comprobacion = "SELECT num_pedido FROM pedidos WHERE (num_pedido = '" + numero_pedido
+							+ "');";
 					stm = conn.createStatement();
 					ResultSet rs = stm.executeQuery(comprobacion);
-								
+
 					try {
-						if (!rs.next()) {						
+						if (!rs.next()) {
 							stm = conn.createStatement();
 							stm.executeUpdate(insPedidos);
 							System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
-						}else {
-							System.out.println("No puede insertarse, ya existe dicha PK. ");
-						}						
+						} else {
+
+							
+							// SI ES LA MISMA PK, DAR LA OPCIÓN DE SOBREESCRIBIR
+							opcionSobreescribir();
+							
+						}
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
-									
+
 					NodeList articulos = pedido.getElementsByTagName("articulo");
 					for (int j = 0; j < articulos.getLength(); j++) {
 						Node nodoArticulo = articulos.item(j);
@@ -135,19 +141,27 @@ public class Main {
 							String cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
 
 							// Inserción
-							String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '" + codigo
-									+ "', '" + cantidad + "');";
+							String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '"
+									+ codigo + "', '" + cantidad + "');";
 							try {
+								// Comprobación de PKs (PK compuesta entre num_pedido y código)
+								String comprobacionArticulo = "SELECT * FROM articulosPedido WHERE num_pedido = '"
+										+ numero_pedido + "' AND codigo = '"+ codigo + "';";
 								stm = conn.createStatement();
-								stm.executeUpdate(insArticulosPedido);
-								System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
+								ResultSet rsArticulo = stm.executeQuery(comprobacionArticulo);
+
+								if (!rsArticulo.next()) {
+									stm = conn.createStatement();
+									stm.executeUpdate(insArticulosPedido);
+									System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
+								} else {
+									System.out.println("No puede insertarse, ya existe dicha PK en 'articulosPedido'");
+								}
 							} catch (SQLException e) {
 								e.printStackTrace();
 							}
-
 						}
 					}
-					
 				}
 			}
 			System.out.println("");
@@ -155,6 +169,29 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static void opcionSobreescribir() {
+		Scanner teclado = new Scanner(System.in);
+		int opcion;
+		do {
+			System.out.println("Parece que ya existe un registro con la misma PK en 'pedidos'");
+			System.out.println("0. No sobreescribirlo");
+			System.out.println("1. Sobreescribirlo");
+			opcion = teclado.nextInt();
+			switch(opcion) {
+			case 0: 
+				System.out.println("No se sobreescribe");
+				break;
+			case 1: 
+				System.out.println("se sobreescribe");
+				break;
+			default: 
+				System.out.println("Error");
+				break;
+			}
+			
+		}while(opcion!=0 && opcion!=1);
 	}
 
 	private static void DesconexionBD(Connection conn) {
@@ -181,8 +218,10 @@ public class Main {
 	}
 
 	private static void CrearTablas(String bd, Connection conn) {
-		String ct_pedidos = "CREATE TABLE IF NOT EXISTS pedidos(num_pedido TEXT PRIMARY KEY UNIQUE, num_cliente TEXT, fecha TEXT);";
-		String ct_articulosPedido = "CREATE TABLE IF NOT EXISTS articulosPedido(num_pedido INTEGER, codigo TEXT, cantidad INTEGER, FOREIGN KEY(num_pedido) REFERENCES pedidos(num_pedido));";
+		String ct_pedidos = "CREATE TABLE IF NOT EXISTS pedidos(num_pedido TEXT PRIMARY KEY UNIQUE, num_cliente TEXT, fecha TEXT, FOREIGN KEY(num_cliente) REFERENCES clientes(num_cliente));";
+		String ct_articulosPedido = "CREATE TABLE IF NOT EXISTS articulosPedido(num_pedido TEXT, codigo TEXT, cantidad INTEGER, FOREIGN KEY(num_pedido) REFERENCES pedidos(num_pedido));";
+		String ct_clientes = "CREATE TABLE IF NOT EXISTS clientes(num_cliente TEXT PRIMARY KEY UNIQUE, nombre TEXT, direccion TEXT, telefono TEXT);";
+		String ct_articulos =  "CREATE TABLE IF NOT EXISTS articulos(descripcion TEXT, nombrePadre TEXT, nombreMadre TEXT, fecha_alta TEXT);";
 		Statement stm;
 
 		try {
@@ -191,6 +230,10 @@ public class Main {
 			System.out.println("Se ha creado la tabla de pedidos.");
 			stm.executeUpdate(ct_articulosPedido);
 			System.out.println("Se ha creado la tabla de articulosPedido.");
+			stm.executeUpdate(ct_clientes);
+			System.out.println("Se ha creado la tabla de clientes.");
+			stm.executeUpdate(ct_articulos);
+			System.out.println("Se ha creado la tabla de articulos.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

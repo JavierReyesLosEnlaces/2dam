@@ -565,7 +565,7 @@ namespace Entrega2Eval_JavierReyes
             userControl3.BringToFront();
 
             // Situación inicial del botón
-            btn_añadirPagar.Visible = false;
+            btn_añadirPagar.Visible = true;
             btn_añadirPagar.Text = "Pagar e imprimir ticket";
 
 
@@ -593,10 +593,12 @@ namespace Entrega2Eval_JavierReyes
                 userControl3.btn_caja.Visible = true;
                 userControl3.btn_tarjeta.Visible = true;
 
-                btn_añadirPagar.Visible = true;
-                btn_añadirPagar.Enabled = false;
+                userControl3.bstateCaja = true;
+                userControl3.bstateTarjeta = false;
 
-                // AQUÍ ES DONDE RESIDE EL PROBLEMA
+                userControl3.btn_caja.BackColor = Color.FromArgb(29, 171, 71);
+                //userControl3.btn_tarjeta.BackColor = Color.FromArgb(255, 152, 83);
+
             }
         }
         private void btn_añadirPagar_Click(object sender, EventArgs e)

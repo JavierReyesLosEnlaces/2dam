@@ -937,6 +937,8 @@
             // userControl3
             // 
             userControl3.BackColor = Color.FromArgb(255, 152, 83);
+            userControl3.bstateCaja = true;
+            userControl3.bstateTarjeta = false;
             userControl3.Location = new Point(11, 275);
             userControl3.Name = "userControl3";
             userControl3.Size = new Size(474, 510);

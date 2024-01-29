@@ -4,8 +4,8 @@ namespace Entrega2Eval_JavierReyes
     public partial class UserControl3 : UserControl
     {
         // Estados de los botones
-        public bool bstateCaja { get; private set; }
-        public bool bstateTarjeta { get; private set; }
+        public bool bstateCaja { get; set; }
+        public bool bstateTarjeta { get; set; }
 
         public UserControl3()
         {
@@ -13,29 +13,50 @@ namespace Entrega2Eval_JavierReyes
             InitializeComponent();
         }
 
+        
         private void ResetState()
         {
-            bstateCaja = false;
+            bstateCaja = true;
             bstateTarjeta = false;
+
         }
+
 
         public void btn_caja_Click_1(object sender, EventArgs e)
         {
             // Cambiar el estado del botón
-            bstateCaja = !bstateCaja;
+            bstateCaja = true;
+            bstateTarjeta = false;
 
-            // Cambiar el color de fondo de los botones
-            btn_caja.BackColor = Color.FromArgb(29, 171, 71);
-            btn_tarjeta.BackColor = Color.FromArgb(255, 152, 83);
+            if(bstateCaja)
+            {
+                btn_caja.BackColor = Color.FromArgb(29, 171, 71);
+                btn_tarjeta.BackColor = Color.FromArgb(255, 152, 83);
+            }
+            else
+            {
+                btn_caja.BackColor = Color.FromArgb(255, 152, 83);
+                btn_tarjeta.BackColor = Color.FromArgb(29, 171, 71);
+            }
+
         }
 
         public void btn_tarjeta_Click_1(object sender, EventArgs e)
         {
-            bstateTarjeta = !bstateTarjeta;
+            // Cambiar el estado del botón
+            bstateCaja = false;
+            bstateTarjeta = true;
 
-            // Cambiar el color de fondo de los botones
-            btn_caja.BackColor = Color.FromArgb(255, 152, 83);
-            btn_tarjeta.BackColor = Color.FromArgb(29, 171, 71);
+            if (bstateTarjeta)
+            {
+                btn_tarjeta.BackColor = Color.FromArgb(29, 171, 71);
+                btn_caja.BackColor = Color.FromArgb(255, 152, 83);
+            }
+            else
+            {
+                btn_tarjeta.BackColor = Color.FromArgb(255, 152, 83);
+                btn_caja.BackColor = Color.FromArgb(29, 171, 71);
+            }
         }
     }
 }
