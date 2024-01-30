@@ -57,35 +57,13 @@ public class Main {
 		teclado.close();
 	}
 
-	private static void BorrarTablas(File f, Connection conn) {
-		Statement stm;
-		// Se borran las tablas
-		String borrarDatos = "DROP TABLE IF EXISTS pedidos; DROP TABLE IF EXISTS articulosPedido;";
-		try {
-			stm = conn.createStatement();
-			stm.executeUpdate(borrarDatos);
-			System.out.println("Tablas 'pedidos' y 'articulosPedido' borradas");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		System.out.println(" ");
-	}
-
-	private static void BorrarDatos(File f, Connection conn) {
-		Statement stm;
-		// Se borran los datos, no las tablas
-		String borrarDatos = "DELETE FROM pedidos; DELETE FROM articulosPedido;";
-		try {
-			stm = conn.createStatement();
-			stm.executeUpdate(borrarDatos);
-			System.out.println("Datos borrados de 'pedidos' y 'articulosPedido'");
-		} catch (SQLException e) {
-			System.out.println("No existen las tablas de 'pedidos' y 'articulosPedido'");
-		}
-		System.out.println(" ");
-	}
-
 	private static void LecturaVolcadoXML(File f, Connection conn) {
+		String numero_cliente = null;
+		String numero_pedido = null;
+		String fecha = null;
+		String codigo = null;
+		String cantidad = null;
+		
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
@@ -101,66 +79,53 @@ public class Main {
 				if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) {
 					Element pedido = (Element) nodoPedido;
 
-					String numero_cliente = pedido.getElementsByTagName("numero-cliente").item(0).getTextContent();
-					String numero_pedido = pedido.getElementsByTagName("numero-pedido").item(0).getTextContent();
-					String fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
+					// SE CONSIGUEN LOS ELEMENTOS
+					numero_cliente = pedido.getElementsByTagName("numero-cliente").item(0).getTextContent();
+					numero_pedido = pedido.getElementsByTagName("numero-pedido").item(0).getTextContent();
+					fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
 
-					// Inserción
-					String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente
-							+ "', '" + fecha + "')";
-
-					// Comprobación de PKs
-					String comprobacion = "SELECT num_pedido FROM pedidos WHERE (num_pedido = '" + numero_pedido
-							+ "');";
+					// SE COMPRUEBA SI EXISTE LA PK 
+					String comprobacion = "SELECT num_pedido FROM pedidos WHERE (num_pedido = '" + numero_pedido + "');";
 					stm = conn.createStatement();
-					ResultSet rs = stm.executeQuery(comprobacion);
+					ResultSet rs = stm.executeQuery(comprobacion);				
 
 					try {
+						// SI NO EXISTE EL DATO, SE INSERTA EN AMBAS TABLAS
 						if (!rs.next()) {
+							
+							// INSERCIÓN EN pedidos
+							String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente + "', '" + fecha + "')";
 							stm = conn.createStatement();
 							stm.executeUpdate(insPedidos);
 							System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
-						} else {
+												
+							NodeList articulos = pedido.getElementsByTagName("articulo");
+							for (int j = 0; j < articulos.getLength(); j++) {
+								Node nodoArticulo = articulos.item(j);
+								if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
+									Element articulo = (Element) nodoArticulo;
 
-							
-							// SI ES LA MISMA PK, DAR LA OPCIÓN DE SOBREESCRIBIR
-							opcionSobreescribir();
-							
+									codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
+									cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
+									
+									// INSERCIÓN EN articulosPedido	
+									String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '" + codigo + "', '" + cantidad + "');";
+									try {
+										stm = conn.createStatement();
+										stm.executeUpdate(insArticulosPedido);
+										System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
+
+									} catch (SQLException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+						// SI EXISTE EL DATO, HAY QUE PROPONER ACTUALIZAR LOS DATOS VIEJOS POR LOS NUEVOS EN AMBAS TABLAS
+						} else {
+							OpcionSobreescribir(conn, numero_pedido, numero_cliente, fecha, codigo, cantidad);							
 						}
 					} catch (SQLException e) {
 						e.printStackTrace();
-					}
-
-					NodeList articulos = pedido.getElementsByTagName("articulo");
-					for (int j = 0; j < articulos.getLength(); j++) {
-						Node nodoArticulo = articulos.item(j);
-						if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
-							Element articulo = (Element) nodoArticulo;
-
-							String codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
-							String cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
-
-							// Inserción
-							String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '"
-									+ codigo + "', '" + cantidad + "');";
-							try {
-								// Comprobación de PKs (PK compuesta entre num_pedido y código)
-								String comprobacionArticulo = "SELECT * FROM articulosPedido WHERE num_pedido = '"
-										+ numero_pedido + "' AND codigo = '"+ codigo + "';";
-								stm = conn.createStatement();
-								ResultSet rsArticulo = stm.executeQuery(comprobacionArticulo);
-
-								if (!rsArticulo.next()) {
-									stm = conn.createStatement();
-									stm.executeUpdate(insArticulosPedido);
-									System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
-								} else {
-									System.out.println("No puede insertarse, ya existe dicha PK en 'articulosPedido'");
-								}
-							} catch (SQLException e) {
-								e.printStackTrace();
-							}
-						}
 					}
 				}
 			}
@@ -171,36 +136,54 @@ public class Main {
 		}
 	}
 
-	private static void opcionSobreescribir() {
+	private static void BorrarDatos(File f, Connection conn) {
+		Statement stm;
+		// Se borran los datos, no las tablas
+		String borrarDatos = "DELETE FROM pedidos; DELETE FROM articulosPedido;";
+		try {
+			stm = conn.createStatement();
+			stm.executeUpdate(borrarDatos);
+			System.out.println("Datos borrados de 'pedidos' y 'articulosPedido'");
+		} catch (SQLException e) {
+			System.out.println("No existen las tablas de 'pedidos' y 'articulosPedido'");
+		}
+		System.out.println(" ");
+	}
+	
+	private static void OpcionSobreescribir(Connection conn, String numero_pedido, String numero_cliente, String fecha, String codigo, String cantidad) {
 		Scanner teclado = new Scanner(System.in);
+		Statement stm;
 		int opcion;
 		do {
-			System.out.println("Parece que ya existe un registro con la misma PK en 'pedidos'");
-			System.out.println("0. No sobreescribirlo");
-			System.out.println("1. Sobreescribirlo");
+			System.out.println("Parece que ya existe un registro con  numero_pedido '"+numero_pedido+"' en 'pedidos' y, por lo tanto, en 'articulosPedido'");		
+			System.out.println("0. No sobreescribirlo en 'pedidos' y 'articulosPedido'");
+			System.out.println("1. Sobreescribirlo en 'pedidos' y 'articulosPedido");
 			opcion = teclado.nextInt();
 			switch(opcion) {
 			case 0: 
-				System.out.println("No se sobreescribe");
+				System.out.println("No se sobreescribe, se mantiene el antiguo registro. ");
 				break;
 			case 1: 
-				System.out.println("se sobreescribe");
+				// AQUÍ DEBE HACERSE UN UPDATE EN 'pedidos' Y 'articulosPedido' CON LOS NUEVOS VALORES EN ESE NÚMERO PEDIDO
+				String upPedidos = "UPDATE pedidos SET num_pedido = '"+numero_pedido+"', num_cliente = '"+numero_cliente+ "', fecha ='" + fecha + "' WHERE num_pedido = '" + numero_pedido + "';";
+				String upArticulosPedido = "UPDATE articulosPedido SET num_pedido = '"+numero_pedido+"', codigo = '"+codigo+"', cantidad = '"+cantidad+ "' WHERE num_pedido = '" + numero_pedido + "';";			
+				try {
+					stm = conn.createStatement();
+					stm.executeUpdate(upPedidos);
+					System.out.println("Se ha actualizado la tabla 'pedidos'");
+					stm.executeUpdate(upArticulosPedido);
+					System.out.println("Se ha actualizado la tabla 'articulosPedido'");
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+				System.out.println("Se sobreescribe el antiguo registro con el nuevo.");
 				break;
 			default: 
-				System.out.println("Error");
+				System.out.println("Opción erronea, vuelve a intentarlo");
 				break;
-			}
-			
+			}			
 		}while(opcion!=0 && opcion!=1);
-	}
-
-	private static void DesconexionBD(Connection conn) {
-		try {
-			conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println("Te has desconectado a la base de datos.");
 	}
 
 	private static Connection ConexionBD(String bd) {
@@ -216,6 +199,15 @@ public class Main {
 		System.out.println("Te has conectado a la base de datos.");
 		return conn;
 	}
+	
+	private static void DesconexionBD(Connection conn) {
+		try {
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Te has desconectado a la base de datos.");
+	}
 
 	private static void CrearTablas(String bd, Connection conn) {
 		String ct_pedidos = "CREATE TABLE IF NOT EXISTS pedidos(num_pedido TEXT PRIMARY KEY UNIQUE, num_cliente TEXT, fecha TEXT, FOREIGN KEY(num_cliente) REFERENCES clientes(num_cliente));";
@@ -227,13 +219,30 @@ public class Main {
 		try {
 			stm = conn.createStatement();
 			stm.executeUpdate(ct_pedidos);
-			System.out.println("Se ha creado la tabla de pedidos.");
+			System.out.println("Se ha creado la tabla 'pedidos'");
 			stm.executeUpdate(ct_articulosPedido);
-			System.out.println("Se ha creado la tabla de articulosPedido.");
+			System.out.println("Se ha creado la tabla 'articulosPedido'");
 			stm.executeUpdate(ct_clientes);
-			System.out.println("Se ha creado la tabla de clientes.");
+			System.out.println("Se ha creado la tabla 'clientes'");
 			stm.executeUpdate(ct_articulos);
-			System.out.println("Se ha creado la tabla de articulos.");
+			System.out.println("Se ha creado la tabla 'articulos'");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(" ");
+	}
+	
+	private static void BorrarTablas(File f, Connection conn) {
+		Statement stm;
+		// Se borran las tablas
+		String borrarDatos = "DROP TABLE IF EXISTS pedidos; DROP TABLE IF EXISTS articulosPedido; DROP TABLE IF EXISTS clientes; DROP TABLE IF EXISTS articulos";
+		try {
+			stm = conn.createStatement();
+			stm.executeUpdate(borrarDatos);
+			System.out.println("Se ha borrado la tabla 'pedidos'");
+			System.out.println("Se ha borrado la tabla 'articulosPedido'");
+			System.out.println("Se ha borrado la tabla 'clientes'");
+			System.out.println("Se ha borrado la tabla 'articulos'");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

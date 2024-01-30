@@ -139,7 +139,7 @@
             lbl_banner.Name = "lbl_banner";
             lbl_banner.Size = new Size(811, 63);
             lbl_banner.TabIndex = 1;
-            lbl_banner.Text = "Bienvenido a la Hamburguesería McEnlaces! ";
+            lbl_banner.Text = "Hamburguesería 'Los Enlaces'";
             lbl_banner.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tlp2
