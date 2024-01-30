@@ -1,4 +1,6 @@
-﻿namespace Informe
+﻿using System.Runtime.CompilerServices;
+
+namespace Informe
 {
     partial class Form2
     {
@@ -28,12 +30,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            reportViewer1.AutoSize = true;
+            reportViewer1.Location = new Point(0, 0);
+            reportViewer1.Name = "ReportViewer";
+            reportViewer1.ServerReport.BearerToken = null;
+            reportViewer1.Size = new Size(396, 246);
+            reportViewer1.TabIndex = 0;
+            // 
+            // Form2
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(reportViewer1);
+            Name = "Form2";
+            Text = "Form2";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
+
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

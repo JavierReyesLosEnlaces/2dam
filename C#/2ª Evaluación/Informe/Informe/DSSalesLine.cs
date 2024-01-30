@@ -1,0 +1,7 @@
+﻿namespace Informe
+{
+}
+
+namespace Informe
+{
+}

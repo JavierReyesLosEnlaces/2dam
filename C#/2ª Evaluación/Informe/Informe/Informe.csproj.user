@@ -12,5 +12,8 @@
     <None Update="DataSet1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="DSSalesLine.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

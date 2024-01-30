@@ -45,12 +45,13 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(btnEmpezar, 0, 1);
-            tableLayoutPanel1.Location = new Point(0, 443);
+            tableLayoutPanel1.Location = new Point(0, 332);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(625, 172);
+            tableLayoutPanel1.Size = new Size(547, 129);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -62,7 +63,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(619, 86);
+            label1.Size = new Size(541, 64);
             label1.TabIndex = 3;
             label1.Text = "'LOS ENLACES'";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -77,10 +78,10 @@
             btnEmpezar.FlatStyle = FlatStyle.Flat;
             btnEmpezar.Font = new Font("Jokerman", 24F, FontStyle.Bold);
             btnEmpezar.ForeColor = Color.White;
-            btnEmpezar.Location = new Point(0, 86);
+            btnEmpezar.Location = new Point(0, 64);
             btnEmpezar.Margin = new Padding(0);
             btnEmpezar.Name = "btnEmpezar";
-            btnEmpezar.Size = new Size(625, 86);
+            btnEmpezar.Size = new Size(547, 65);
             btnEmpezar.TabIndex = 2;
             btnEmpezar.Text = "Empezar";
             btnEmpezar.UseVisualStyleBackColor = false;
@@ -95,11 +96,12 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(labelTitulo1, 0, 0);
             tableLayoutPanel2.Font = new Font("Jokerman", 19.8000011F, FontStyle.Bold);
-            tableLayoutPanel2.Location = new Point(0, 12);
+            tableLayoutPanel2.Location = new Point(0, 9);
+            tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(625, 212);
+            tableLayoutPanel2.Size = new Size(547, 159);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // labelTitulo1
@@ -111,23 +113,25 @@
             labelTitulo1.ForeColor = Color.White;
             labelTitulo1.Location = new Point(3, 0);
             labelTitulo1.Name = "labelTitulo1";
-            labelTitulo1.Size = new Size(619, 212);
+            labelTitulo1.Size = new Size(541, 159);
             labelTitulo1.TabIndex = 0;
             labelTitulo1.Text = "BIENVENIDO A LA HAMBURGUESERÍA ";
             labelTitulo1.TextAlign = ContentAlignment.TopCenter;
             // 
             // Form0
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 170, 1);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(625, 615);
+            ClientSize = new Size(547, 461);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form0";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             FormClosed += Form0_FormClosed;
             tableLayoutPanel1.ResumeLayout(false);

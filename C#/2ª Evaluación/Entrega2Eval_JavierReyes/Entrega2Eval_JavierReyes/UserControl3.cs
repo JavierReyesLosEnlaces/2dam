@@ -1,13 +1,13 @@
 ﻿
 namespace Entrega2Eval_JavierReyes
 {
-    public partial class UserControl3 : UserControl
+    public partial class userControl3 : UserControl
     {
         // Estados de los botones
         public bool bstateCaja { get; set; }
         public bool bstateTarjeta { get; set; }
 
-        public UserControl3()
+        public userControl3()
         {
             ResetState();
             InitializeComponent();
