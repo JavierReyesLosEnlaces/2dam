@@ -27,5 +27,21 @@
             // Cerrar Form0
             this.Hide();
         }
+
+        private void btnEmpezar_MouseEnter(object sender, EventArgs e)
+        {
+            btnEmpezar.BackColor = Color.FromArgb(45, 123, 60);
+        }
+
+        private void btnEmpezar_MouseLeave(object sender, EventArgs e)
+        {
+            btnEmpezar.BackColor = Color.Black;
+        }
+
+        private void Form0_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Si se cierra el Form0 se cierra la aplicación
+            Application.Exit();
+        }
     }
 }

@@ -958,6 +958,7 @@
             Controls.Add(tlp1);
             Name = "Form1";
             Text = "Form";
+            FormClosed += Form1_FormClosed;
             tlp1.ResumeLayout(false);
             tlp1.PerformLayout();
             tlp2.ResumeLayout(false);

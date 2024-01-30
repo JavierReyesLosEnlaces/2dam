@@ -89,3 +89,6 @@ C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\ref\Entrega2Eval_JavierReyes.dll
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl3.resources
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form0.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form0.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl2.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl3.resources

@@ -69,12 +69,13 @@
             // 
             // btnEmpezar
             // 
+            btnEmpezar.BackColor = Color.Black;
             btnEmpezar.BackgroundImageLayout = ImageLayout.Zoom;
             btnEmpezar.Dock = DockStyle.Fill;
             btnEmpezar.FlatAppearance.BorderColor = Color.White;
-            btnEmpezar.FlatAppearance.BorderSize = 4;
+            btnEmpezar.FlatAppearance.BorderSize = 3;
             btnEmpezar.FlatStyle = FlatStyle.Flat;
-            btnEmpezar.Font = new Font("Ink Free", 20F, FontStyle.Bold);
+            btnEmpezar.Font = new Font("Jokerman", 24F, FontStyle.Bold);
             btnEmpezar.ForeColor = Color.White;
             btnEmpezar.Location = new Point(0, 86);
             btnEmpezar.Margin = new Padding(0);
@@ -82,8 +83,10 @@
             btnEmpezar.Size = new Size(625, 86);
             btnEmpezar.TabIndex = 2;
             btnEmpezar.Text = "Empezar";
-            btnEmpezar.UseVisualStyleBackColor = true;
+            btnEmpezar.UseVisualStyleBackColor = false;
             btnEmpezar.Click += btnEmpezar_Click;
+            btnEmpezar.MouseEnter += btnEmpezar_MouseEnter;
+            btnEmpezar.MouseLeave += btnEmpezar_MouseLeave;
             // 
             // tableLayoutPanel2
             // 
@@ -126,6 +129,7 @@
             DoubleBuffered = true;
             Name = "Form0";
             Text = "Form2";
+            FormClosed += Form0_FormClosed;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

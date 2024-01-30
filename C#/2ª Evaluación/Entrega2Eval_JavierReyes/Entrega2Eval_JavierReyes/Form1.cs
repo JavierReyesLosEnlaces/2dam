@@ -11,7 +11,7 @@ namespace Entrega2Eval_JavierReyes
         private bool[] slots = new bool[5];
         private float pExtras1 = 0.00f, pExtras3 = 0.00f;
         private List<Producto> listaProductos = new List<Producto>();
-        
+
         private List<Extra> listaExtras1 = new List<Extra>();
         private List<Extra> listaExtras3 = new List<Extra>();
         private List<Extra> catalogoExtras = creaExtras();
@@ -30,7 +30,7 @@ namespace Entrega2Eval_JavierReyes
             userControl2.Button2Click += UserControl2_Button2Click;
             userControl2.Button3Click += UserControl2_Button3Click;
             userControl2.Button4Click += UserControl2_Button4Click;
-            userControl2.Button5Click += UserControl2_Button5Click;           
+            userControl2.Button5Click += UserControl2_Button5Click;
         }
 
         private void UserControl2_Button1Click(object sender, EventArgs e)
@@ -579,7 +579,7 @@ namespace Entrega2Eval_JavierReyes
                 lbl_total2.Visible = false;
 
                 userControl3.btn_caja.Visible = false;
-                userControl3.btn_tarjeta.Visible = false;                
+                userControl3.btn_tarjeta.Visible = false;
             }
             else
             {
@@ -791,5 +791,12 @@ namespace Entrega2Eval_JavierReyes
             }
             userControl1.ResetState();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Si se cierra el Form1 se cierra la aplicación
+            Application.Exit();
+        }
     }
+
 }
