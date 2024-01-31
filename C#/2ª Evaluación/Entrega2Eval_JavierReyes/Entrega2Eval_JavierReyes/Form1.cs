@@ -947,7 +947,7 @@ namespace Entrega2Eval_JavierReyes
             Application.Exit();
         }
 
-        private void MostrarPantallaFactura()
+        public void MostrarPantallaFactura()
         {
             // Tlp de productos invisible
             tlp5.Visible = false;

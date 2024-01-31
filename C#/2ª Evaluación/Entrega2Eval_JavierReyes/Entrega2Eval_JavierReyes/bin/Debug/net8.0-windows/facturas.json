@@ -3,3 +3,6 @@
 {"IdPedido":15,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Croquetas","Precio":9,"Calorias":600},{"Nombre":"Onion","Precio":0.6,"Calorias":50},{"Nombre":"Dip","Precio":1,"Calorias":150}],"Observaciones":"Esta es mi observaci\u00F3n","Total":15.1}
 {"IdPedido":16,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400}],"Observaciones":"Ninguna","Total":7.5}
 {"IdPedido":17,"Comanda":[{"Nombre":"BurgAndr\u00E9s","Precio":1.65,"Calorias":300},{"Nombre":"Agua 300ml","Precio":1,"Calorias":25}],"Observaciones":"dd","Total":2.65}
+{"IdPedido":18,"Comanda":[],"Observaciones":"Ninguna","Total":0}
+{"IdPedido":19,"Comanda":[],"Observaciones":"Ninguna","Total":0}
+{"IdPedido":20,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Queso","Precio":0.6,"Calorias":50},{"Nombre":"PoNuggets","Precio":9,"Calorias":600}],"Observaciones":"Lolool","Total":14.1}

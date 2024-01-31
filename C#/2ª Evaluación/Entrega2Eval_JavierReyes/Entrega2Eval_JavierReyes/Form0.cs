@@ -12,62 +12,72 @@ namespace Entrega2Eval_JavierReyes
         {
             InitializeComponent();
             InitUI();
-            RevisarUltimoPedido();
         }
 
-        private void RevisarUltimoPedido()
+        private void btnPedidoAyer_Click(object sender, EventArgs e)
         {
-            // Ruta al archivo JSON de facturas
+            Form1 form1 = new Form1();
+            form1.fase = 5;
+            form1.Show();
+
+            Factura f = ObtenerUltimoPedido();
+            form1.MostrarPantallaFactura();
+            
+        }
+
+        private Factura ObtenerUltimoPedido()
+        {
             string rutaArchivo = "facturas.json";
 
             // Verificar si el archivo existe
-            if (File.Exists(rutaArchivo))
+            if (!File.Exists(rutaArchivo))
             {
-                try
-                {
-                    // Leer el contenido del archivo JSON
-                    string contenidoJson = File.ReadAllText(rutaArchivo);
-
-                    // Convertir el contenido a un objeto JSON
-                    Factura[] facturas = JsonSerializer.Deserialize<Factura[]>(contenidoJson);
-
-                    // Verificar si hay alguna factura
-                    if (facturas.Length > 0)
-                    {
-                        // Obtener la última factura
-                        Factura ultimaFactura = facturas[^1]; // Utiliza el índice ^1 para obtener el último elemento en el array
-
-                        // Mostrar la última factura como opción "Quiero repetir el pedido"
-                        MostrarOpcionRepetirFactura(ultimaFactura);
-                    }
-                    else
-                    {
-                        Console.WriteLine("No hay facturas disponibles.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al leer el archivo JSON: " + ex.Message);
-                }
+                Console.WriteLine("El archivo facturas.json no existe.");
+                return null;
             }
-            else
+
+            try
             {
-                Console.WriteLine("El archivo de facturas no existe.");
+                // Leer todo el contenido del archivo JSON
+                string json = File.ReadAllText(rutaArchivo);
+
+                // Deserializar el JSON en una lista de objetos Pedido
+                List<Factura> pedidos = JsonSerializer.Deserialize<List<Factura>>(json);
+
+                // Obtener el último pedido ordenando la lista por IdPedido de forma descendente y tomando el primer elemento
+                Factura ultimoPedido = pedidos.OrderByDescending(p => p.IdPedido).FirstOrDefault();
+
+                return ultimoPedido;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al leer el archivo facturas.json: {ex.Message}");
+                return null;
             }
         }
 
-        static void MostrarOpcionRepetirFactura(Factura factura)
-        {
-            // Aquí puedes mostrar los detalles de la factura como una opción para repetir
-            // Por ejemplo, podrías imprimir el ID de la factura y algunos detalles relevantes
-            Console.WriteLine("Quiero repetir la siguiente factura:");
 
-            int idFactura = factura.IdPedido;
-            float total = factura.Total;
-            Console.WriteLine($"ID Factura: {idFactura}, Total: {total}");
 
-            // Puedes mostrar más detalles según sea necesario, como los elementos de la comanda o las observaciones
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void InitUI()
         {
@@ -105,47 +115,6 @@ namespace Entrega2Eval_JavierReyes
             Application.Exit();
         }
 
-        private void btnPedidoAyer_Click(object sender, EventArgs e)
-        {
-            Form1 f1 = new Form1();
-            // Ruta al archivo JSON de facturas
-            string rutaArchivo = "facturas.json";
 
-            // Verificar si el archivo existe
-            if (File.Exists(rutaArchivo))
-            {
-                try
-                {
-                    // Leer todas las líneas del archivo
-                    string[] lineasJson = File.ReadAllLines(rutaArchivo);
-
-                    // Verificar si hay alguna línea en el archivo
-                    if (lineasJson.Length > 0)
-                    {
-                        // Obtener la última línea que contiene un objeto JSON válido
-                        string ultimaLineaJson = lineasJson.Last();
-
-                        // Deserializar la última línea JSON en un objeto Factura
-                        Factura ultimaFactura = JsonSerializer.Deserialize<Factura>(ultimaLineaJson);
-
-                        // Pasar los valores de la última factura al método GenerarFactura
-                        f1.GenerarFactura(ultimaFactura.Comanda, ultimaFactura.Observaciones);
-                    }
-                    else
-                    {
-                        MessageBox.Show("El archivo de facturas está vacío.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al leer el archivo JSON: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("El archivo de facturas no existe.");
-            }
-
-        }
     }
 }

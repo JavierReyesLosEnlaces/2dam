@@ -16,3 +16,9 @@ C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libre
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.csproj.CoreCompileInputs.cache
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.dll
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.pdb
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\bin\Debug\BurgerLibrary.dll
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\bin\Debug\BurgerLibrary.pdb
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.csproj.AssemblyReference.cache
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.dll
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\AdrianAlonso pdf y Libreria - modificado\Ejercicios\BurgerLibrary\obj\Debug\BurgerLibrary.pdb
