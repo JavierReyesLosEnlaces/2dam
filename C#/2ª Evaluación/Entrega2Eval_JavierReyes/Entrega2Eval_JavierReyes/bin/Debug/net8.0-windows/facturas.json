@@ -1,0 +1,4 @@
+{"IdPedido":9,"Comanda":[{"Nombre":"BurgAndr\u00E9s","Precio":1.65,"Calorias":300},{"Nombre":"Dip","Precio":1,"Calorias":150},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400},{"Nombre":"Croquetas","Precio":9,"Calorias":600},{"Nombre":"Dip","Precio":1,"Calorias":150}],"Observaciones":"big smoke","Total":15.65}
+{"IdPedido":10,"Comanda":[{"Nombre":"BurgAndr\u00E9s","Precio":1.65,"Calorias":300}],"Observaciones":"cj","Total":1.65}
+{"IdPedido":11,"Comanda":[{"Nombre":"Agua 300ml","Precio":1,"Calorias":25}],"Observaciones":"ryder","Total":1}
+{"IdPedido":12,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Bacon","Precio":1.2,"Calorias":100},{"Nombre":"Onion","Precio":0.6,"Calorias":50},{"Nombre":"Dip","Precio":1,"Calorias":150},{"Nombre":"Agua 300ml","Precio":1,"Calorias":25}],"Observaciones":"busta!","Total":8.299999}

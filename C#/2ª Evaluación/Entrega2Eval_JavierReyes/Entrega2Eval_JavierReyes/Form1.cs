@@ -1,5 +1,7 @@
 
 using BurgerLibrary.Modelo.Productos;
+using System.Text.Json;
+using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
@@ -8,14 +10,19 @@ namespace Entrega2Eval_JavierReyes
     {
         // VARIABLES 
         private int fase = 0;
+        // RELACIÓN PRODUCTO SELECCIONADO-FASE
         private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
+        // PARA LA GESTIÓN DE LOS BOTONES DE userControl2
         private bool[] slots = new bool[5];
-        private float pExtras1 = 0.00f, pExtras3 = 0.00f;
+        // LA COMANDA
         private List<Producto> comanda = new List<Producto>();
+        List<Factura> facturas = new List<Factura>();
 
-        private List<Extra> listaExtras1 = new List<Extra>();
-        private List<Extra> listaExtras3 = new List<Extra>();
+
+
         private List<Extra> catalogoExtras = creaExtras();
+
+        private bool sinCompra;
 
         // MAIN
         public Form1()
@@ -314,16 +321,16 @@ namespace Entrega2Eval_JavierReyes
                 userControl2.pb5.Visible = false;
             }
         }
-        private float calculoPrecioTotal(List<Producto> listaProductos, float pExtras1, float pExtras3)
+        private float calculoPrecioTotal(List<Producto> comanda)
         {
             float suma = 0.00f;
-            for (int i = 0; i < listaProductos.Count; i++)
+            for (int i = 0; i < comanda.Count; i++)
             {
-                suma += listaProductos[i].Precio;
+                suma += comanda[i].Precio;
             }
 
             //return (suma + pExtras1 + pExtras3).ToString("F2");
-            return (suma + pExtras1 + pExtras3);
+            return (suma);
         }
         private void IrAlMenu()
         {
@@ -588,10 +595,13 @@ namespace Entrega2Eval_JavierReyes
 
                 userControl3.tb_observaciones.Visible = false;
                 userControl3.lb_observaciones.Visible = false;
+
+                btn_añadirPagar.Text = "Salir";
+                sinCompra = true;
             }
             else
             {
-                lbl_tipoProducto.Text = "Ultimos detalles de tu pedido";
+                lbl_tipoProducto.Text = "Ultimos detalles";
                 lbl_descripcionTitulo.Text = "Instrucciones";
                 lbl_descripcion.Text = "Selecciona un método de pago y añade una observación a tu pedido'";
                 btn_añadirPagar.Text = "Aceptar";
@@ -634,73 +644,63 @@ namespace Entrega2Eval_JavierReyes
                         pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         slots[0] = true;
                     }
-                    // Extras fase 1
-                    /*
-                    if (userControl1.bstate1) listaExtras1.Add(catalogoExtras[0]);
-                    if (userControl1.bstate2) listaExtras1.Add(catalogoExtras[1]);
-                    if (userControl1.bstate3) listaExtras1.Add(catalogoExtras[2]);
-                    if (userControl1.bstate4) listaExtras1.Add(catalogoExtras[3]);
-                    if (userControl1.bstate5) listaExtras1.Add(catalogoExtras[4]);
-                    if (userControl1.bstate6) listaExtras1.Add(catalogoExtras[5]);
-                    */
 
-                    int contadorExtras = 0;
-                    float precioExtras = 0.00f;
+                    int contadorExtras1 = 0;
+                    float precioExtras1 = 0.00f;
 
                     if (userControl1.bstate1)
                     {
                         comanda.Add(catalogoExtras[0]);
-                        contadorExtras++;
-                        catalogoExtras[0].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[0].Precio;
                     }
                     if (userControl1.bstate2)
                     {
                         comanda.Add(catalogoExtras[1]);
-                        contadorExtras++;
-                        catalogoExtras[1].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[1].Precio;
                     }
                     if (userControl1.bstate3)
                     {
                         comanda.Add(catalogoExtras[2]);
-                        contadorExtras++;
-                        catalogoExtras[2].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[2].Precio;
                     }
                     if (userControl1.bstate4)
                     {
                         comanda.Add(catalogoExtras[3]);
-                        contadorExtras++;
-                        catalogoExtras[3].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[3].Precio;
                     }
                     if (userControl1.bstate5)
                     {
                         comanda.Add(catalogoExtras[4]);
-                        contadorExtras++;
-                        catalogoExtras[4].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[4].Precio;
                     }
                     if (userControl1.bstate6)
                     {
                         comanda.Add(catalogoExtras[5]);
-                        contadorExtras++;
-                        catalogoExtras[5].Precio += precioExtras;
+                        contadorExtras1++;
+                        precioExtras1 += catalogoExtras[5].Precio;
                     }
 
-
-                    if (contadorExtras > 0)
+                    if (contadorExtras1 > 0)
                     {
-                        pro1Extras.Text = contadorExtras + " extras";
-                        pre1Extras.Text = "+ " + precioExtras.ToString("F2") + "€"; // Mostramos el precio total de los extras
+                        pro1Extras.Text = contadorExtras1 + " extras";
+                        pre1Extras.Text = "+ " + precioExtras1.ToString("F2") + "€"; // Mostramos el precio total de los extras
                         slots[1] = true;
                     }
 
-                    for (int i = 0; i < contadorExtras; i++)
+                    for (int i = 0; i < contadorExtras1; i++)
                     {
-                        // pExtras1 += listaExtras1[i].Precio;
+                        //pExtras1 += listaExtras1[i].Precio;
 
-                        if (contadorExtras > 0)
+                        if (contadorExtras1 > 0)
                         {
-                            pro1Extras.Text = contadorExtras + " extras";
+                            pro1Extras.Text = contadorExtras1 + " extras";
                             //pre1Extras.Text = "+ " + precioExtras.ToString("F2") + "€";
-                            pre1Extras.Text = "+ " + precioExtras + "€";
+                            pre1Extras.Text = "+ " + precioExtras1.ToString("F2") + "€";
                             slots[1] = true;
                         }
                     }
@@ -766,86 +766,157 @@ namespace Entrega2Eval_JavierReyes
                         pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         slots[3] = true;
                     }
-                    // Extras fase 4
-                    if (userControl1.bstate1) listaExtras3.Add(catalogoExtras[0]);
-                    if (userControl1.bstate2) listaExtras3.Add(catalogoExtras[1]);
-                    if (userControl1.bstate3) listaExtras3.Add(catalogoExtras[2]);
-                    if (userControl1.bstate4) listaExtras3.Add(catalogoExtras[3]);
-                    if (userControl1.bstate5) listaExtras3.Add(catalogoExtras[4]);
-                    if (userControl1.bstate6) listaExtras3.Add(catalogoExtras[5]);
 
-                    for (int i = 0; i < listaExtras3.Count; i++)
+                    int contadorExtras3 = 0;
+                    float precioExtras3 = 0.00f;
+
+                    if (userControl1.bstate1)
                     {
-                        pExtras3 += listaExtras3[i].Precio;
+                        comanda.Add(catalogoExtras[0]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[0].Precio;
+                    }
+                    if (userControl1.bstate2)
+                    {
+                        comanda.Add(catalogoExtras[1]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[1].Precio;
+                    }
+                    if (userControl1.bstate3)
+                    {
+                        comanda.Add(catalogoExtras[2]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[2].Precio;
+                    }
+                    if (userControl1.bstate4)
+                    {
+                        comanda.Add(catalogoExtras[3]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[3].Precio;
+                    }
+                    if (userControl1.bstate5)
+                    {
+                        comanda.Add(catalogoExtras[4]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[4].Precio;
+                    }
+                    if (userControl1.bstate6)
+                    {
+                        comanda.Add(catalogoExtras[5]);
+                        contadorExtras3++;
+                        precioExtras3 += catalogoExtras[5].Precio;
+                    }
 
-                        if (pExtras3 > 0)
+                    if(contadorExtras3 > 0)
+                    {
+                        pro3Extras.Text = contadorExtras3 + " extras";
+                        pre1Extras.Text = "+ " + precioExtras3.ToString("F2") + "€";
+                        slots[4] = true;
+                    }
+
+                    for (int i = 0; i < contadorExtras3; i++)
+                    {
+                         //pExtras3 += listaExtras3[i].Precio;
+
+                        if (contadorExtras3 > 0)
                         {
-                            pro3Extras.Text = userControl1.numeroExtras + " extras";
-                            pre3Extras.Text = "+ " + pExtras3.ToString("F2") + "€";
+                            pro3Extras.Text = contadorExtras3 + " extras";
+                            //pre1Extras.Text = "+ " + precioExtras.ToString("F2") + "€";
+                            pre3Extras.Text = "+ " + precioExtras3.ToString("F2") + "€";
                             slots[4] = true;
                         }
                     }
 
-                    userControl1.numeroExtras = 0;
                     CargarFase();
 
                     break;
                 case 4:
                     //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
-                    // Productos
+                    if (sinCompra) Application.Exit();
 
+                    
+                    // Comida
                     if (userControl2.bstate1)
                     {
+                        
                         Producto comida = comanda.FirstOrDefault(p => p is Comida);
                         if (comida != null)
                         {
                             comanda.Remove(comida);
                         }
+                        
+                        //comanda.RemoveAt(0);
 
                         pro1.Text = " ";
                         pre1.Text = " ";
                         pro1.BackColor = Color.FromArgb(255, 249, 244);
                         pre1.BackColor = Color.FromArgb(255, 249, 244);
                     }
-                    if (userControl2.bstate3)
-                    {
-                        Producto bebida = comanda.FirstOrDefault(p => p is Bebida);
-                        if (bebida != null)
-                        {
-                            comanda.Remove(bebida);
-                        }
 
-                        pro2.Text = " ";
-                        pre2.Text = " ";
-                        pro2.BackColor = Color.FromArgb(255, 249, 244);
-                        pre2.BackColor = Color.FromArgb(255, 249, 244);
-                    }
-                    if (userControl2.bstate4)
-                    {
-                        Producto complemento = comanda.FirstOrDefault(p => p is Complemento);
-                        if (complemento != null)
-                        {
-                            comanda.Remove(complemento);
-                        }
-
-                        pro3.Text = " ";
-                        pre3.Text = " ";
-                        pro3.BackColor = Color.FromArgb(255, 249, 244);
-                        pre3.BackColor = Color.FromArgb(255, 249, 244);
-                    }
-                    // Extras
+                    // Extras Comida
                     if (userControl2.bstate2)
                     {
-                        pExtras1 = 0;
+                        Producto extras1 = comanda.FirstOrDefault(p => p is Extra);
+                        if (extras1 != null)
+                        {
+                            comanda.Remove(extras1);
+                        }
+                        
+                        //comanda.RemoveAt(1);
 
                         pro1Extras.Text = " ";
                         pre1Extras.Text = " ";
                         pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
                         pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
                     }
+
+                    // Bebida
+                    if (userControl2.bstate3)
+                    {
+                        
+                        Producto bebida = comanda.FirstOrDefault(p => p is Bebida);
+                        if (bebida != null)
+                        {
+                            comanda.Remove(bebida);
+                        }
+                        
+                        //comanda.RemoveAt(2);
+
+                        pro2.Text = " ";
+                        pre2.Text = " ";
+                        pro2.BackColor = Color.FromArgb(255, 249, 244);
+                        pre2.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+
+                    // Complementos 
+
+                    if (userControl2.bstate4)
+                    {
+                        
+                        Producto complemento = comanda.FirstOrDefault(p => p is Complemento);
+                        if (complemento != null)
+                        {
+                            comanda.Remove(complemento);
+                        }
+                        
+                        //comanda.RemoveAt(3);
+                        pro3.Text = " ";
+                        pre3.Text = " ";
+                        pro3.BackColor = Color.FromArgb(255, 249, 244);
+                        pre3.BackColor = Color.FromArgb(255, 249, 244);
+                    }
+
+                    // Extras Complementos
+
                     if (userControl2.bstate5)
                     {
-                        pExtras3 = 0;
+                        Producto extras3 = comanda.FirstOrDefault(p => p is Extra);
+                        if (extras3 != null)
+                        {
+                            comanda.Remove(extras3);
+                        }
+                        //pExtras3 = 0;
+                        //comanda.RemoveAt(4);
 
                         pro3Extras.Text = " ";
                         pre3Extras.Text = " ";
@@ -854,7 +925,7 @@ namespace Entrega2Eval_JavierReyes
                     }
 
                     // Recalcular el precio con los nuevos parámetros
-                    lbl_total2.Text = calculoPrecioTotal(comanda, pExtras1, pExtras3).ToString("F2") + "€";
+                    lbl_total2.Text = calculoPrecioTotal(comanda).ToString("F2") + "€";
                     CargarFase();
                     break;
                 case 5:
@@ -900,8 +971,79 @@ namespace Entrega2Eval_JavierReyes
             lbl_tipoProducto.Text = "Tu comanda";
             btn_añadirPagar.Text = "Pagar";
 
+            String observaciones = userControl3.tb_observaciones.Text;
+            GenerarFactura(comanda, observaciones);
+
 
         }
+
+        private void GenerarFactura(List<Producto> comanda, string observaciones)
+        {
+            PedidoManager pedidoManager = new PedidoManager();
+            // Generar ID de pedido
+            int idPedido = pedidoManager.GenerarNuevoIdPedido();
+
+            // Limpia el listBox antes de agregar nuevos elementos
+            userControl4.listBox1.Items.Clear();
+
+            userControl4.listBox1.Items.Add($"ID Pedido: {idPedido}");
+            userControl4.listBox1.Items.Add("=================================");
+            userControl4.listBox1.Items.Add("         FACTURA DE COMPRA        ");
+            userControl4.listBox1.Items.Add("=================================");
+            userControl4.listBox1.Items.Add("");
+
+            // Agrega cada producto a la factura y calcula el total
+            float total = 0.00f;
+            foreach (var producto in comanda)
+            {
+                // Formatea el precio con paréntesis
+                string precioFormateado = $"({producto.Precio:N2} €)";
+                // Agrega el nombre del producto y el precio con paréntesis junto con el ID del pedido
+                userControl4.listBox1.Items.Add($"{producto.Nombre} {precioFormateado}");
+                total += producto.Precio;
+            }
+
+            // Agrega una línea de separación
+            userControl4.listBox1.Items.Add("----------------------------------------------");
+
+            // Agrega el total al final de la factura
+            userControl4.listBox1.Items.Add($"{"TOTAL:",-20} {total,10:N2} €");
+
+            // Agrega las observaciones al final de la factura
+            userControl4.listBox1.Items.Add("");
+            userControl4.listBox1.Items.Add("Observaciones:");
+            if (observaciones == "")
+            {
+                observaciones = "Ninguna";
+            }
+
+            userControl4.listBox1.Items.Add(observaciones);
+
+
+
+            // Crear y agregar la factura a la lista
+            var factura = new Factura
+            {
+                IdPedido = idPedido,
+                Comanda = comanda,
+                Observaciones = observaciones,
+                Total = total
+            };
+            facturas.Add(factura);
+
+            // Guardar la factura actual en un archivo JSON
+            string facturaJson = JsonSerializer.Serialize(factura);
+            using (StreamWriter sw = File.AppendText("facturas.json"))
+            {
+                sw.WriteLine(facturaJson);
+            }
+
+            // Guardar el último ID de pedido en un archivo
+            pedidoManager.GuardarUltimoIdPedido();
+        }
+
+
+
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {

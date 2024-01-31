@@ -95,3 +95,4 @@ C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form0.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl3.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl4.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl4.resources

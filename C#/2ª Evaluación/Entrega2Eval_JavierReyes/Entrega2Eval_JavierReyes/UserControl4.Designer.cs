@@ -35,25 +35,26 @@
             // 
             listBox1.BackColor = Color.FromArgb(255, 249, 244);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(59, 25);
+            listBox1.Location = new Point(67, 33);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(292, 334);
+            listBox1.Size = new Size(333, 444);
             listBox1.TabIndex = 0;
             // 
             // UserControl4
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 152, 83);
             Controls.Add(listBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "UserControl4";
-            Size = new Size(415, 384);
+            Size = new Size(474, 512);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListBox listBox1;
+        public ListBox listBox1;
     }
 }
