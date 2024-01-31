@@ -9,13 +9,13 @@ namespace Entrega2Eval_JavierReyes
         Form1 : Form
     {
         // VARIABLES 
-        private int fase = 0;
+        public int fase = 0;
         // RELACIÓN PRODUCTO SELECCIONADO-FASE
         private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
         // PARA LA GESTIÓN DE LOS BOTONES DE userControl2
         private bool[] slots = new bool[5];
         // LA COMANDA
-        private List<Producto> comanda = new List<Producto>();
+        private List<Producto> factura = new List<Producto>();
         List<Factura> facturas = new List<Factura>();
 
 
@@ -222,7 +222,7 @@ namespace Entrega2Eval_JavierReyes
                     break;
 
                 case 4:
-                    if (comanda.Count > 0)
+                    if (factura.Count > 0)
                     {
                         // Menú de quitar algo
                         lbl_tipoProducto.Text = "¿Quitamos algo?";
@@ -256,7 +256,9 @@ namespace Entrega2Eval_JavierReyes
                     MostrarPantallaObservaciones();
                     break;
                 case 6:
-
+                    lbl_tipoProducto.Text = "Se ha generado tu factura";
+                    lbl_descripcionTitulo.Text = "Listo!";
+                    lbl_descripcion.Text = "Dale al botón de 'Pagar' para terminar";
                     MostrarPantallaFactura();
                     break;
                 default:
@@ -580,7 +582,7 @@ namespace Entrega2Eval_JavierReyes
             btn_añadirPagar.Text = "Pagar e imprimir ticket";
 
 
-            if (comanda.Count == 0)
+            if (factura.Count == 0)
             {
                 lbl_tipoProducto.Text = "Compra cancelada";
                 lbl_descripcionTitulo.Text = "Adiós";
@@ -630,7 +632,7 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
                         c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
-                        comanda.Add(c);
+                        factura.Add(c);
                         pro1.Text = c.Nombre;
                         pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         slots[0] = true;
@@ -639,7 +641,7 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> ing2 = new List<string>() { "Pan", "Doble Carne de Vacuno", "Doble Queso", "Bacon", "Lechuga", "Cebolla", "Mostaza" };
                         c = new Comida("BigAdri", 4.50f, 600, ing2, "Carnivora", 150);
-                        comanda.Add(c);
+                        factura.Add(c);
                         pro1.Text = c.Nombre;
                         pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         slots[0] = true;
@@ -650,37 +652,37 @@ namespace Entrega2Eval_JavierReyes
 
                     if (userControl1.bstate1)
                     {
-                        comanda.Add(catalogoExtras[0]);
+                        factura.Add(catalogoExtras[0]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[0].Precio;
                     }
                     if (userControl1.bstate2)
                     {
-                        comanda.Add(catalogoExtras[1]);
+                        factura.Add(catalogoExtras[1]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[1].Precio;
                     }
                     if (userControl1.bstate3)
                     {
-                        comanda.Add(catalogoExtras[2]);
+                        factura.Add(catalogoExtras[2]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[2].Precio;
                     }
                     if (userControl1.bstate4)
                     {
-                        comanda.Add(catalogoExtras[3]);
+                        factura.Add(catalogoExtras[3]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[3].Precio;
                     }
                     if (userControl1.bstate5)
                     {
-                        comanda.Add(catalogoExtras[4]);
+                        factura.Add(catalogoExtras[4]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[4].Precio;
                     }
                     if (userControl1.bstate6)
                     {
-                        comanda.Add(catalogoExtras[5]);
+                        factura.Add(catalogoExtras[5]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[5].Precio;
                     }
@@ -728,7 +730,7 @@ namespace Entrega2Eval_JavierReyes
                     if (p1f2)
                     {
                         b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
-                        comanda.Add(b);
+                        factura.Add(b);
                         pro2.Text = b.Nombre;
                         pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
                         slots[2] = true;
@@ -736,7 +738,7 @@ namespace Entrega2Eval_JavierReyes
                     if (p2f2)
                     {
                         b = new Bebida("Agua 300ml", 1.00f, 25, 300);
-                        comanda.Add(b);
+                        factura.Add(b);
                         pro2.Text = b.Nombre;
                         pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
                         slots[2] = true;
@@ -752,7 +754,7 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
                         cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
-                        comanda.Add(cc);
+                        factura.Add(cc);
                         pro3.Text = cc.Nombre;
                         pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         slots[3] = true;
@@ -761,7 +763,7 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> comp2 = new List<string>() { "Pollo (25%)", "Queso crema", "Ajo", "Sal", "Pimienta", "Harina refinada", "Pan rallado", "Aceite de palma" };
                         cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
-                        comanda.Add(cc);
+                        factura.Add(cc);
                         pro3.Text = cc.Nombre;
                         pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         slots[3] = true;
@@ -772,37 +774,37 @@ namespace Entrega2Eval_JavierReyes
 
                     if (userControl1.bstate1)
                     {
-                        comanda.Add(catalogoExtras[0]);
+                        factura.Add(catalogoExtras[0]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[0].Precio;
                     }
                     if (userControl1.bstate2)
                     {
-                        comanda.Add(catalogoExtras[1]);
+                        factura.Add(catalogoExtras[1]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[1].Precio;
                     }
                     if (userControl1.bstate3)
                     {
-                        comanda.Add(catalogoExtras[2]);
+                        factura.Add(catalogoExtras[2]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[2].Precio;
                     }
                     if (userControl1.bstate4)
                     {
-                        comanda.Add(catalogoExtras[3]);
+                        factura.Add(catalogoExtras[3]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[3].Precio;
                     }
                     if (userControl1.bstate5)
                     {
-                        comanda.Add(catalogoExtras[4]);
+                        factura.Add(catalogoExtras[4]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[4].Precio;
                     }
                     if (userControl1.bstate6)
                     {
-                        comanda.Add(catalogoExtras[5]);
+                        factura.Add(catalogoExtras[5]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[5].Precio;
                     }
@@ -839,10 +841,10 @@ namespace Entrega2Eval_JavierReyes
                     if (userControl2.bstate1)
                     {
                         
-                        Producto comida = comanda.FirstOrDefault(p => p is Comida);
+                        Producto comida = factura.FirstOrDefault(p => p is Comida);
                         if (comida != null)
                         {
-                            comanda.Remove(comida);
+                            factura.Remove(comida);
                         }
                         
                         //comanda.RemoveAt(0);
@@ -856,10 +858,10 @@ namespace Entrega2Eval_JavierReyes
                     // Extras Comida
                     if (userControl2.bstate2)
                     {
-                        Producto extras1 = comanda.FirstOrDefault(p => p is Extra);
+                        Producto extras1 = factura.FirstOrDefault(p => p is Extra);
                         if (extras1 != null)
                         {
-                            comanda.Remove(extras1);
+                            factura.Remove(extras1);
                         }
                         
                         //comanda.RemoveAt(1);
@@ -874,10 +876,10 @@ namespace Entrega2Eval_JavierReyes
                     if (userControl2.bstate3)
                     {
                         
-                        Producto bebida = comanda.FirstOrDefault(p => p is Bebida);
+                        Producto bebida = factura.FirstOrDefault(p => p is Bebida);
                         if (bebida != null)
                         {
-                            comanda.Remove(bebida);
+                            factura.Remove(bebida);
                         }
                         
                         //comanda.RemoveAt(2);
@@ -893,10 +895,10 @@ namespace Entrega2Eval_JavierReyes
                     if (userControl2.bstate4)
                     {
                         
-                        Producto complemento = comanda.FirstOrDefault(p => p is Complemento);
+                        Producto complemento = factura.FirstOrDefault(p => p is Complemento);
                         if (complemento != null)
                         {
-                            comanda.Remove(complemento);
+                            factura.Remove(complemento);
                         }
                         
                         //comanda.RemoveAt(3);
@@ -910,10 +912,10 @@ namespace Entrega2Eval_JavierReyes
 
                     if (userControl2.bstate5)
                     {
-                        Producto extras3 = comanda.FirstOrDefault(p => p is Extra);
+                        Producto extras3 = factura.FirstOrDefault(p => p is Extra);
                         if (extras3 != null)
                         {
-                            comanda.Remove(extras3);
+                            factura.Remove(extras3);
                         }
                         //pExtras3 = 0;
                         //comanda.RemoveAt(4);
@@ -925,7 +927,7 @@ namespace Entrega2Eval_JavierReyes
                     }
 
                     // Recalcular el precio con los nuevos parámetros
-                    lbl_total2.Text = calculoPrecioTotal(comanda).ToString("F2") + "€";
+                    lbl_total2.Text = calculoPrecioTotal(factura).ToString("F2") + "€";
                     CargarFase();
                     break;
                 case 5:
@@ -968,16 +970,16 @@ namespace Entrega2Eval_JavierReyes
 
             //Se visibiliza el userControl4
             userControl4.Visible = true;
-            lbl_tipoProducto.Text = "Tu comanda";
+            lbl_tipoProducto.Text = "Tu pedido se ha realizado";
             btn_añadirPagar.Text = "Pagar";
 
             String observaciones = userControl3.tb_observaciones.Text;
-            GenerarFactura(comanda, observaciones);
+            GenerarFactura(factura, observaciones);
 
 
         }
 
-        private void GenerarFactura(List<Producto> comanda, string observaciones)
+        public void GenerarFactura(List<Producto> comanda, string observaciones)
         {
             PedidoManager pedidoManager = new PedidoManager();
             // Generar ID de pedido
@@ -987,9 +989,9 @@ namespace Entrega2Eval_JavierReyes
             userControl4.listBox1.Items.Clear();
 
             userControl4.listBox1.Items.Add($"ID Pedido: {idPedido}");
-            userControl4.listBox1.Items.Add("=================================");
-            userControl4.listBox1.Items.Add("         FACTURA DE COMPRA        ");
-            userControl4.listBox1.Items.Add("=================================");
+            userControl4.listBox1.Items.Add("==========================================================");
+            userControl4.listBox1.Items.Add("                            FACTURA DE COMPRA        ");
+            userControl4.listBox1.Items.Add("==========================================================");
             userControl4.listBox1.Items.Add("");
 
             // Agrega cada producto a la factura y calcula el total
@@ -1004,7 +1006,7 @@ namespace Entrega2Eval_JavierReyes
             }
 
             // Agrega una línea de separación
-            userControl4.listBox1.Items.Add("----------------------------------------------");
+            userControl4.listBox1.Items.Add("----------------------------------------------------------");
 
             // Agrega el total al final de la factura
             userControl4.listBox1.Items.Add($"{"TOTAL:",-20} {total,10:N2} €");

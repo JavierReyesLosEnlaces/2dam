@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Ejercicios/1.0.0": {
+        "dependencies": {
+          "BurgerLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Ejercicios.dll": {}
+        }
+      },
+      "BurgerLibrary/1.0.0": {
+        "runtime": {
+          "BurgerLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ejercicios/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BurgerLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
