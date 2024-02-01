@@ -13,7 +13,7 @@ namespace Entrega2Eval_JavierReyes
             InitializeComponent();
         }
 
-        
+
         private void ResetState()
         {
             bstateCaja = true;
@@ -28,7 +28,7 @@ namespace Entrega2Eval_JavierReyes
             bstateCaja = true;
             bstateTarjeta = false;
 
-            if(bstateCaja)
+            if (bstateCaja)
             {
                 btn_caja.BackColor = Color.FromArgb(29, 171, 71);
                 btn_tarjeta.BackColor = Color.FromArgb(255, 152, 83);

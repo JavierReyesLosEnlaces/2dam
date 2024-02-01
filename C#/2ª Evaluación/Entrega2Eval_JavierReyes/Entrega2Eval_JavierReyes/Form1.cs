@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
-    public partial class 
+    public partial class
         Form1 : Form
     {
         // VARIABLES 
@@ -256,10 +256,7 @@ namespace Entrega2Eval_JavierReyes
                     MostrarPantallaObservaciones();
                     break;
                 case 6:
-                    lbl_tipoProducto.Text = "Se ha generado tu factura";
-                    lbl_descripcionTitulo.Text = "Listo!";
-                    lbl_descripcion.Text = "Dale al botón de 'Pagar' para terminar";
-                    MostrarPantallaFactura();
+                    MostrarPantallaFactura(factura);
                     break;
                 default:
                     lbl_descripcion.Text = "ERROR";
@@ -590,7 +587,7 @@ namespace Entrega2Eval_JavierReyes
 
                 lbl_total1.Visible = false;
                 lbl_total2.Visible = false;
-                
+
 
                 userControl3.btn_caja.Visible = false;
                 userControl3.btn_tarjeta.Visible = false;
@@ -809,7 +806,7 @@ namespace Entrega2Eval_JavierReyes
                         precioExtras3 += catalogoExtras[5].Precio;
                     }
 
-                    if(contadorExtras3 > 0)
+                    if (contadorExtras3 > 0)
                     {
                         pro3Extras.Text = contadorExtras3 + " extras";
                         pre1Extras.Text = "+ " + precioExtras3.ToString("F2") + "€";
@@ -818,7 +815,7 @@ namespace Entrega2Eval_JavierReyes
 
                     for (int i = 0; i < contadorExtras3; i++)
                     {
-                         //pExtras3 += listaExtras3[i].Precio;
+                        //pExtras3 += listaExtras3[i].Precio;
 
                         if (contadorExtras3 > 0)
                         {
@@ -836,17 +833,17 @@ namespace Entrega2Eval_JavierReyes
                     //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
                     if (sinCompra) Application.Exit();
 
-                    
+
                     // Comida
                     if (userControl2.bstate1)
                     {
-                        
+
                         Producto comida = factura.FirstOrDefault(p => p is Comida);
                         if (comida != null)
                         {
                             factura.Remove(comida);
                         }
-                        
+
                         //comanda.RemoveAt(0);
 
                         pro1.Text = " ";
@@ -863,7 +860,7 @@ namespace Entrega2Eval_JavierReyes
                         {
                             factura.Remove(extras1);
                         }
-                        
+
                         //comanda.RemoveAt(1);
 
                         pro1Extras.Text = " ";
@@ -875,13 +872,13 @@ namespace Entrega2Eval_JavierReyes
                     // Bebida
                     if (userControl2.bstate3)
                     {
-                        
+
                         Producto bebida = factura.FirstOrDefault(p => p is Bebida);
                         if (bebida != null)
                         {
                             factura.Remove(bebida);
                         }
-                        
+
                         //comanda.RemoveAt(2);
 
                         pro2.Text = " ";
@@ -894,13 +891,13 @@ namespace Entrega2Eval_JavierReyes
 
                     if (userControl2.bstate4)
                     {
-                        
+
                         Producto complemento = factura.FirstOrDefault(p => p is Complemento);
                         if (complemento != null)
                         {
                             factura.Remove(complemento);
                         }
-                        
+
                         //comanda.RemoveAt(3);
                         pro3.Text = " ";
                         pre3.Text = " ";
@@ -947,8 +944,10 @@ namespace Entrega2Eval_JavierReyes
             Application.Exit();
         }
 
-        public void MostrarPantallaFactura()
+        public void MostrarPantallaFactura(List<Producto> factura)
         {
+
+
             // Tlp de productos invisible
             tlp5.Visible = false;
             tlp5.SendToBack();
@@ -972,6 +971,9 @@ namespace Entrega2Eval_JavierReyes
             userControl4.Visible = true;
             lbl_tipoProducto.Text = "Tu pedido se ha realizado";
             btn_añadirPagar.Text = "Pagar";
+            lbl_tipoProducto.Text = "Se ha generado tu factura";
+            lbl_descripcionTitulo.Text = "Listo!";
+            lbl_descripcion.Text = "Dale al botón de 'Pagar' para terminar";
 
             String observaciones = userControl3.tb_observaciones.Text;
             GenerarFactura(factura, observaciones);
@@ -990,7 +992,7 @@ namespace Entrega2Eval_JavierReyes
 
             userControl4.listBox1.Items.Add($"ID Pedido: {idPedido}");
             userControl4.listBox1.Items.Add("==========================================================");
-            userControl4.listBox1.Items.Add("                            FACTURA DE COMPRA        ");
+            userControl4.listBox1.Items.Add("                        FACTURA DE COMPRA        ");
             userControl4.listBox1.Items.Add("==========================================================");
             userControl4.listBox1.Items.Add("");
 

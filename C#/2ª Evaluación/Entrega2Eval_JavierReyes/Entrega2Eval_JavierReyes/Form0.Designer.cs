@@ -1,6 +1,6 @@
 ﻿namespace Entrega2Eval_JavierReyes
 {
-    partial class Form0
+    partial class form0
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form0));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form0));
             tableLayoutPanel1 = new TableLayoutPanel();
+            btnUltimoPedido = new Button();
             label1 = new Label();
             btnEmpezar = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             labelTitulo1 = new Label();
-            btnUltimoPedido = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -47,15 +47,35 @@
             tableLayoutPanel1.Controls.Add(btnUltimoPedido, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(btnEmpezar, 0, 1);
-            tableLayoutPanel1.Location = new Point(0, 383);
-            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel1.Location = new Point(96, 485);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(547, 187);
+            tableLayoutPanel1.Size = new Size(450, 263);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // btnUltimoPedido
+            // 
+            btnUltimoPedido.BackColor = Color.Black;
+            btnUltimoPedido.BackgroundImageLayout = ImageLayout.Zoom;
+            btnUltimoPedido.Dock = DockStyle.Fill;
+            btnUltimoPedido.FlatAppearance.BorderColor = Color.White;
+            btnUltimoPedido.FlatAppearance.BorderSize = 3;
+            btnUltimoPedido.FlatStyle = FlatStyle.Flat;
+            btnUltimoPedido.Font = new Font("Jokerman", 24F, FontStyle.Bold);
+            btnUltimoPedido.ForeColor = Color.White;
+            btnUltimoPedido.Location = new Point(6, 180);
+            btnUltimoPedido.Margin = new Padding(6);
+            btnUltimoPedido.Name = "btnUltimoPedido";
+            btnUltimoPedido.Size = new Size(438, 77);
+            btnUltimoPedido.TabIndex = 4;
+            btnUltimoPedido.Text = "Pedir lo de ayer";
+            btnUltimoPedido.UseVisualStyleBackColor = false;
+            btnUltimoPedido.Click += btnPedidoAyer_Click;
+            btnUltimoPedido.MouseEnter += btnUltimoPedido_MouseEnter;
+            btnUltimoPedido.MouseLeave += btnUltimoPedido_MouseLeave;
             // 
             // label1
             // 
@@ -66,7 +86,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(541, 62);
+            label1.Size = new Size(444, 87);
             label1.TabIndex = 3;
             label1.Text = "'LOS ENLACES'";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -81,10 +101,10 @@
             btnEmpezar.FlatStyle = FlatStyle.Flat;
             btnEmpezar.Font = new Font("Jokerman", 24F, FontStyle.Bold);
             btnEmpezar.ForeColor = Color.White;
-            btnEmpezar.Location = new Point(0, 62);
-            btnEmpezar.Margin = new Padding(0);
+            btnEmpezar.Location = new Point(6, 93);
+            btnEmpezar.Margin = new Padding(6);
             btnEmpezar.Name = "btnEmpezar";
-            btnEmpezar.Size = new Size(547, 62);
+            btnEmpezar.Size = new Size(438, 75);
             btnEmpezar.TabIndex = 2;
             btnEmpezar.Text = "Empezar";
             btnEmpezar.UseVisualStyleBackColor = false;
@@ -99,12 +119,11 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(labelTitulo1, 0, 0);
             tableLayoutPanel2.Font = new Font("Jokerman", 19.8000011F, FontStyle.Bold);
-            tableLayoutPanel2.Location = new Point(0, 9);
-            tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel2.Location = new Point(0, 12);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(547, 159);
+            tableLayoutPanel2.Size = new Size(625, 212);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // labelTitulo1
@@ -116,43 +135,23 @@
             labelTitulo1.ForeColor = Color.White;
             labelTitulo1.Location = new Point(3, 0);
             labelTitulo1.Name = "labelTitulo1";
-            labelTitulo1.Size = new Size(541, 159);
+            labelTitulo1.Size = new Size(619, 212);
             labelTitulo1.TabIndex = 0;
             labelTitulo1.Text = "BIENVENIDO A LA HAMBURGUESERÍA ";
             labelTitulo1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // btnUltimoPedido
+            // form0
             // 
-            btnUltimoPedido.BackColor = Color.Black;
-            btnUltimoPedido.BackgroundImageLayout = ImageLayout.Zoom;
-            btnUltimoPedido.Dock = DockStyle.Fill;
-            btnUltimoPedido.FlatAppearance.BorderColor = Color.White;
-            btnUltimoPedido.FlatAppearance.BorderSize = 3;
-            btnUltimoPedido.FlatStyle = FlatStyle.Flat;
-            btnUltimoPedido.Font = new Font("Jokerman", 24F, FontStyle.Bold);
-            btnUltimoPedido.ForeColor = Color.White;
-            btnUltimoPedido.Location = new Point(0, 124);
-            btnUltimoPedido.Margin = new Padding(0);
-            btnUltimoPedido.Name = "btnUltimoPedido";
-            btnUltimoPedido.Size = new Size(547, 63);
-            btnUltimoPedido.TabIndex = 4;
-            btnUltimoPedido.Text = "Pedir lo de ayer";
-            btnUltimoPedido.UseVisualStyleBackColor = false;
-            btnUltimoPedido.Click += btnPedidoAyer_Click;
-            // 
-            // Form0
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 170, 1);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new Size(547, 570);
+            ClientSize = new Size(635, 665);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Form0";
+            Name = "form0";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             FormClosed += Form0_FormClosed;

@@ -13,6 +13,7 @@ namespace Entrega2Eval_JavierReyes
         public List<Producto> Comanda { get; set; }
         public string Observaciones { get; set; }
         public float Total { get; set; }
+        public IEnumerable<object> Items { get; internal set; }
     }
 }
 

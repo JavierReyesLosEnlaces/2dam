@@ -1,14 +1,15 @@
 ﻿using BurgerLibrary.Modelo.Productos;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
-    public partial class Form0 : Form
+    public partial class form0 : Form
     {
-        public Form0()
+        public form0()
         {
             InitializeComponent();
             InitUI();
@@ -16,67 +17,44 @@ namespace Entrega2Eval_JavierReyes
 
         private void btnPedidoAyer_Click(object sender, EventArgs e)
         {
+            List<Producto> productos = ObtenerProductosDelPedidoConMayorId();
+            // Luego puedes pasar esta lista de productos al siguiente formulario
             Form1 form1 = new Form1();
-            form1.fase = 5;
+            form1.fase = 6;
+            form1.MostrarPantallaFactura(productos);
             form1.Show();
-
-            Factura f = ObtenerUltimoPedido();
-            form1.MostrarPantallaFactura();
-            
         }
 
-        private Factura ObtenerUltimoPedido()
+        private List<Producto> ObtenerProductosDelPedidoConMayorId()
         {
-            string rutaArchivo = "facturas.json";
+            List<Producto> productos = new List<Producto>();
+            int maxIdPedido = -1;
 
-            // Verificar si el archivo existe
-            if (!File.Exists(rutaArchivo))
+            // Lee el archivo JSON "facturas.json" línea por línea
+            string jsonFilePath = "facturas.json";
+            if (File.Exists(jsonFilePath))
             {
-                Console.WriteLine("El archivo facturas.json no existe.");
-                return null;
+                // Abre el archivo para leer línea por línea
+                using (StreamReader file = new StreamReader(jsonFilePath))
+                {
+                    string line;
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        // Deserializa cada línea en un objeto Factura
+                        Factura factura = JsonSerializer.Deserialize<Factura>(line);
+
+                        // Compara el IdPedido con el máximo encontrado hasta ahora
+                        if (factura != null && factura.IdPedido > maxIdPedido)
+                        {
+                            maxIdPedido = factura.IdPedido;
+                            productos = factura.Comanda;
+                        }
+                    }
+                }
             }
 
-            try
-            {
-                // Leer todo el contenido del archivo JSON
-                string json = File.ReadAllText(rutaArchivo);
-
-                // Deserializar el JSON en una lista de objetos Pedido
-                List<Factura> pedidos = JsonSerializer.Deserialize<List<Factura>>(json);
-
-                // Obtener el último pedido ordenando la lista por IdPedido de forma descendente y tomando el primer elemento
-                Factura ultimoPedido = pedidos.OrderByDescending(p => p.IdPedido).FirstOrDefault();
-
-                return ultimoPedido;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al leer el archivo facturas.json: {ex.Message}");
-                return null;
-            }
+            return productos;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         private void InitUI()
@@ -87,6 +65,8 @@ namespace Entrega2Eval_JavierReyes
             // Quitar botones de maximizar y minimizar
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+
+            VerificarEstadoBtnUltimoPedido();
         }
 
         private void btnEmpezar_Click(object sender, EventArgs e)
@@ -101,13 +81,26 @@ namespace Entrega2Eval_JavierReyes
 
         private void btnEmpezar_MouseEnter(object sender, EventArgs e)
         {
-            btnEmpezar.BackColor = Color.FromArgb(45, 123, 60);
+            btnEmpezar.BackColor = System.Drawing.Color.FromArgb(45, 123, 60);
         }
 
         private void btnEmpezar_MouseLeave(object sender, EventArgs e)
         {
-            btnEmpezar.BackColor = Color.Black;
+            btnEmpezar.BackColor = System.Drawing.Color.Black;
         }
+
+
+        private void btnUltimoPedido_MouseEnter(object sender, EventArgs e)
+        {
+            btnUltimoPedido.BackColor = System.Drawing.Color.FromArgb(45, 123, 60);
+        }
+
+        private void btnUltimoPedido_MouseLeave(object sender, EventArgs e)
+        {
+            btnUltimoPedido.BackColor = System.Drawing.Color.Black;
+        }
+
+
 
         private void Form0_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -115,6 +108,21 @@ namespace Entrega2Eval_JavierReyes
             Application.Exit();
         }
 
+        private void VerificarEstadoBtnUltimoPedido()
+        {
+            // Verificar si el archivo JSON está vacío
+            string jsonFilePath = "facturas.json";
+            bool archivoVacio = !File.Exists(jsonFilePath) || new FileInfo(jsonFilePath).Length == 0;
 
+            // Habilitar o deshabilitar el botón según el estado del archivo
+            btnUltimoPedido.Visible = !archivoVacio;
+
+            // Si el archivo no está vacío, cambia el tamaño del formulario
+            if (!archivoVacio)
+            {
+                this.Width = 657;
+                this.Height = 800;
+            }
+        }
     }
 }

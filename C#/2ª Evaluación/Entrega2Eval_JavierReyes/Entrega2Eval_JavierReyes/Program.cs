@@ -13,7 +13,7 @@ namespace Entrega2Eval_JavierReyes
             ApplicationConfiguration.Initialize();
         
             //form1.Show(); // Mostrar Form1
-            Application.Run(new Form0());
+            Application.Run(new form0());
 
         }
     }
