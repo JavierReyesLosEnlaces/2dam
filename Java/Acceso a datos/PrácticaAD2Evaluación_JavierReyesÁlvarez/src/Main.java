@@ -1,5 +1,6 @@
 import java.sql.Statement;
 import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,11 +9,13 @@ import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class Main {
 
@@ -20,7 +23,7 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 
 		File f = new File("xml\\Pedidos_Tiendas.xml");
-		String bd = "jdbc:sqlite:sample.db";
+		String bd = "jdbc:sqlite:sample7.db";
 		Connection conn = ConexionBD(bd);
 
 		int opcion;
@@ -73,7 +76,7 @@ public class Main {
 			Statement stm;
 
 			NodeList pedidos = d.getElementsByTagName("pedido");
-			for (int i = 0; i < pedidos.getLength(); i++) {
+			for (int i = 0; i < pedidos.getLength(); i++) {			// POR CADA PEDIDO
 				Node nodoPedido = pedidos.item(i);
 
 				if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) {
@@ -89,44 +92,41 @@ public class Main {
 					stm = conn.createStatement();
 					ResultSet rs = stm.executeQuery(comprobacion);				
 
-					try {
-						// SI NO EXISTE EL DATO, SE INSERTA EN AMBAS TABLAS
-						if (!rs.next()) {
-							
-							// INSERCIÓN EN pedidos
-							String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente + "', '" + fecha + "')";
-							stm = conn.createStatement();
-							stm.executeUpdate(insPedidos);
-							System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
-												
-							NodeList articulos = pedido.getElementsByTagName("articulo");
-							for (int j = 0; j < articulos.getLength(); j++) {
-								Node nodoArticulo = articulos.item(j);
-								if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
-									Element articulo = (Element) nodoArticulo;
+					// SI NO EXISTE EL DATO, SE INSERTA EN AMBAS TABLAS
+					if (!rs.next()) {
+						
+						// INSERCIÓN EN pedidos
+						String insPedidos = "INSERT INTO pedidos VALUES('" + numero_pedido + "', '" + numero_cliente + "', '" + fecha + "')";
+						stm = conn.createStatement();
+						stm.executeUpdate(insPedidos);
+						System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
+											
+						NodeList articulos = pedido.getElementsByTagName("articulo");
+						for (int j = 0; j < articulos.getLength(); j++) {					// EN CADA PEDIDO, CADA 
+							Node nodoArticulo = articulos.item(j);
+							if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
+								Element articulo = (Element) nodoArticulo;
 
-									codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
-									cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
-									
-									// INSERCIÓN EN articulosPedido	
-									String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '" + codigo + "', '" + cantidad + "');";
-									try {
-										stm = conn.createStatement();
-										stm.executeUpdate(insArticulosPedido);
-										System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
+								codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
+								cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
+								
+								// INSERCIÓN EN articulosPedido	
+								String insArticulosPedido = "INSERT INTO articulosPedido VALUES('" + numero_pedido + "', '" + codigo + "', '" + cantidad + "');";
+								try {
+									stm = conn.createStatement();
+									stm.executeUpdate(insArticulosPedido);
+									System.out.println("Dato insertado en la tabla 'articulosPedido' correctamente");
 
-									} catch (SQLException e) {
-										e.printStackTrace();
-									}
+								} catch (SQLException e) {
+									e.printStackTrace();
 								}
 							}
-						// SI EXISTE EL DATO, HAY QUE PROPONER ACTUALIZAR LOS DATOS VIEJOS POR LOS NUEVOS EN AMBAS TABLAS
-						} else {
-							OpcionSobreescribir(conn, numero_pedido, numero_cliente, fecha, codigo, cantidad);							
 						}
-					} catch (SQLException e) {
-						e.printStackTrace();
+					// SI EXISTE EL DATO, HAY QUE PROPONER ACTUALIZAR LOS DATOS VIEJOS POR LOS NUEVOS EN AMBAS TABLAS
+					} else {
+						OpcionSobreescribir(conn, numero_pedido, f);							
 					}
+
 				}
 			}
 			System.out.println("");
@@ -150,9 +150,14 @@ public class Main {
 		System.out.println(" ");
 	}
 	
-	private static void OpcionSobreescribir(Connection conn, String numero_pedido, String numero_cliente, String fecha, String codigo, String cantidad) {
+	private static void OpcionSobreescribir(Connection conn, String numero_pedido, File f) throws ParserConfigurationException, SAXException, IOException {
 		Scanner teclado = new Scanner(System.in);
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document d = db.parse(f);
+		d.getDocumentElement().normalize();
 		Statement stm;
+		
 		int opcion;
 		do {
 			System.out.println("Parece que ya existe un registro con  numero_pedido '"+numero_pedido+"' en 'pedidos' y, por lo tanto, en 'articulosPedido'");		
@@ -164,20 +169,49 @@ public class Main {
 				System.out.println("No se sobreescribe, se mantiene el antiguo registro. ");
 				break;
 			case 1: 
-				// AQUÍ DEBE HACERSE UN UPDATE EN 'pedidos' Y 'articulosPedido' CON LOS NUEVOS VALORES EN ESE NÚMERO PEDIDO
-				String upPedidos = "UPDATE pedidos SET num_pedido = '"+numero_pedido+"', num_cliente = '"+numero_cliente+ "', fecha ='" + fecha + "' WHERE num_pedido = '" + numero_pedido + "';";
-				String upArticulosPedido = "UPDATE articulosPedido SET num_pedido = '"+numero_pedido+"', codigo = '"+codigo+"', cantidad = '"+cantidad+ "' WHERE num_pedido = '" + numero_pedido + "';";			
-				try {
-					stm = conn.createStatement();
-					stm.executeUpdate(upPedidos);
-					System.out.println("Se ha actualizado la tabla 'pedidos'");
-					stm.executeUpdate(upArticulosPedido);
-					System.out.println("Se ha actualizado la tabla 'articulosPedido'");
-				} catch (SQLException e) {
-					e.printStackTrace();
+				NodeList pedidos = d.getElementsByTagName("pedido");
+				for (int i = 0; i < pedidos.getLength(); i++) {			// POR CADA PEDIDO
+					Node nodoPedido = pedidos.item(i);
+
+					if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) {
+						Element pedido = (Element) nodoPedido;
+
+						// SE CONSIGUEN LOS ELEMENTOS
+						String numero_cliente = pedido.getElementsByTagName("numero-cliente").item(0).getTextContent();
+						numero_pedido = pedido.getElementsByTagName("numero-pedido").item(0).getTextContent();
+						String fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
+
+						// ACTUALIZACION EN pedidos							
+						String upPedidos = "UPDATE pedidos SET num_pedido = '"+numero_pedido+"', num_cliente = '"+numero_cliente+ "', fecha ='" + fecha + "' WHERE num_pedido = '" + numero_pedido + "';";						
+						try {
+							stm = conn.createStatement();
+							stm.executeUpdate(upPedidos);
+						} catch (SQLException e) {
+							e.printStackTrace();
+						}
+						System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
+											
+						NodeList articulos = pedido.getElementsByTagName("articulo");
+						for (int j = 0; j < articulos.getLength(); j++) {					// EN CADA PEDIDO, CADA 
+							Node nodoArticulo = articulos.item(j);
+							if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
+								Element articulo = (Element) nodoArticulo;
+
+								String codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
+								String cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
+								
+								// ACTUALIZACION EN articulosPedido	
+								String upArticulosPedido = "UPDATE articulosPedido SET num_pedido = '"+numero_pedido+"', codigo = '"+codigo+"', cantidad = '"+cantidad+ "' WHERE num_pedido = '" + numero_pedido + "';";			
+								try {
+									stm = conn.createStatement();
+									stm.executeUpdate(upArticulosPedido);
+								} catch (SQLException e) {
+									e.printStackTrace();
+								}
+							}
+						}
+					}
 				}
-				
-				System.out.println("Se sobreescribe el antiguo registro con el nuevo.");
 				break;
 			default: 
 				System.out.println("Opción erronea, vuelve a intentarlo");
@@ -185,6 +219,7 @@ public class Main {
 			}			
 		}while(opcion!=0 && opcion!=1);
 	}
+	
 
 	private static Connection ConexionBD(String bd) {
 		Connection conn = null;
