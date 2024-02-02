@@ -23,16 +23,16 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 
 		File f = new File("xml\\Pedidos_Tiendas.xml");
-		String bd = "jdbc:sqlite:sample7.db";
+		String bd = "jdbc:sqlite:bds\\sample1.db";
 		Connection conn = ConexionBD(bd);
+		CrearTablas(bd, conn);
 
 		int opcion;
 		do {
-			System.out.println("0. Salir");
-			System.out.println("1. Crear las tablas ");
-			System.out.println("2. Borrar las tablas");
-			System.out.println("3. Borrar datos de las tablas");
-			System.out.println("4. Leer XML y volcar los datos");
+			System.out.println("0. Desconectarse");
+			System.out.println("1. Borrar las tablas");
+			System.out.println("2. Borrar datos de las tablas");
+			System.out.println("3. Leer XML y volcar los datos");
 
 			opcion = teclado.nextInt();
 			switch (opcion) {
@@ -40,15 +40,12 @@ public class Main {
 				DesconexionBD(conn);
 				break;
 			case 1:
-				CrearTablas(bd, conn);
-				break;
-			case 2:
 				BorrarTablas(f, conn);
 				break;
-			case 3:
+			case 2:
 				BorrarDatos(f, conn);
 				break;
-			case 4:
+			case 3:
 				LecturaVolcadoXML(f, conn);
 				break;
 			default:
@@ -166,53 +163,64 @@ public class Main {
 			opcion = teclado.nextInt();
 			switch(opcion) {
 			case 0: 
-				System.out.println("No se sobreescribe, se mantiene el antiguo registro. ");
+				System.out.println("No se ha sobreescrito. ");
 				break;
-			case 1: 
-				NodeList pedidos = d.getElementsByTagName("pedido");
-				for (int i = 0; i < pedidos.getLength(); i++) {			// POR CADA PEDIDO
-					Node nodoPedido = pedidos.item(i);
+			case 1: 		
+			    NodeList pedidos = d.getElementsByTagName("pedido");
+			    for (int i = 0; i < pedidos.getLength(); i++) {
+			        Node nodoPedido = pedidos.item(i);
 
-					if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) {
-						Element pedido = (Element) nodoPedido;
+			        if (nodoPedido.getNodeType() == Node.ELEMENT_NODE) {
+			            Element pedido = (Element) nodoPedido;
 
-						// SE CONSIGUEN LOS ELEMENTOS
-						String numero_cliente = pedido.getElementsByTagName("numero-cliente").item(0).getTextContent();
-						numero_pedido = pedido.getElementsByTagName("numero-pedido").item(0).getTextContent();
-						String fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
+			            String numero_pedido_actual = pedido.getElementsByTagName("numero-pedido").item(0).getTextContent();
 
-						// ACTUALIZACION EN pedidos							
-						String upPedidos = "UPDATE pedidos SET num_pedido = '"+numero_pedido+"', num_cliente = '"+numero_cliente+ "', fecha ='" + fecha + "' WHERE num_pedido = '" + numero_pedido + "';";						
-						try {
-							stm = conn.createStatement();
-							stm.executeUpdate(upPedidos);
-						} catch (SQLException e) {
-							e.printStackTrace();
-						}
-						System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
-											
-						NodeList articulos = pedido.getElementsByTagName("articulo");
-						for (int j = 0; j < articulos.getLength(); j++) {					// EN CADA PEDIDO, CADA 
-							Node nodoArticulo = articulos.item(j);
-							if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
-								Element articulo = (Element) nodoArticulo;
+			            if (numero_pedido_actual.equals(numero_pedido)) {
+			                String numero_cliente = pedido.getElementsByTagName("numero-cliente").item(0).getTextContent();
+			                String fecha = pedido.getElementsByTagName("fecha").item(0).getTextContent();
 
-								String codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
-								String cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
-								
-								// ACTUALIZACION EN articulosPedido	
-								String upArticulosPedido = "UPDATE articulosPedido SET num_pedido = '"+numero_pedido+"', codigo = '"+codigo+"', cantidad = '"+cantidad+ "' WHERE num_pedido = '" + numero_pedido + "';";			
-								try {
-									stm = conn.createStatement();
-									stm.executeUpdate(upArticulosPedido);
-								} catch (SQLException e) {
-									e.printStackTrace();
-								}
-							}
-						}
-					}
-				}
-				break;
+			                // Actualizar datos en la tabla pedidos
+			                String upPedidos = "UPDATE pedidos SET num_cliente = '"+numero_cliente+ "', fecha ='" + fecha + "' WHERE num_pedido = '" + numero_pedido + "';";						
+			                try {
+			                    stm = conn.createStatement();
+			                    stm.executeUpdate(upPedidos);
+			                    System.out.println("Dato insertado en la tabla 'pedidos' correctamente");
+			                } catch (SQLException e) {
+			                    e.printStackTrace();
+			                }
+
+			                // Eliminar todas las entradas relacionadas con el numero_pedido actual en articulosPedido
+			                String delTuplaArticulosPedido = "DELETE FROM articulosPedido WHERE num_pedido = '"+numero_pedido_actual+"';";
+			                try {
+			                    stm = conn.createStatement();
+			                    stm.executeUpdate(delTuplaArticulosPedido);
+			                } catch (SQLException e) {
+			                    e.printStackTrace();
+			                }
+
+			                // Insertar los articulos del pedido actual en articulosPedido
+			                NodeList articulos = pedido.getElementsByTagName("articulo");
+			                for (int j = 0; j < articulos.getLength(); j++) {
+			                    Node nodoArticulo = articulos.item(j);
+			                    if (nodoArticulo.getNodeType() == Node.ELEMENT_NODE) {
+			                        Element articulo = (Element) nodoArticulo;
+
+			                        String codigo = articulo.getElementsByTagName("codigo").item(0).getTextContent();
+			                        String cantidad = articulo.getElementsByTagName("cantidad").item(0).getTextContent();
+
+			                        String upArticulosPedido = "INSERT INTO articulosPedido VALUES('"+numero_pedido_actual+"', '"+codigo+"', '"+cantidad+"');";
+			                        try {
+			                            stm = conn.createStatement();
+			                            stm.executeUpdate(upArticulosPedido);
+			                        } catch (SQLException e) {
+			                            e.printStackTrace();
+			                        }
+			                    }
+			                }
+			            }
+			        }
+			    }
+			    break;
 			default: 
 				System.out.println("Opción erronea, vuelve a intentarlo");
 				break;
@@ -241,14 +249,14 @@ public class Main {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Te has desconectado a la base de datos.");
+		System.out.println("Te has desconectado.");
 	}
 
 	private static void CrearTablas(String bd, Connection conn) {
 		String ct_pedidos = "CREATE TABLE IF NOT EXISTS pedidos(num_pedido TEXT PRIMARY KEY UNIQUE, num_cliente TEXT, fecha TEXT, FOREIGN KEY(num_cliente) REFERENCES clientes(num_cliente));";
 		String ct_articulosPedido = "CREATE TABLE IF NOT EXISTS articulosPedido(num_pedido TEXT, codigo TEXT, cantidad INTEGER, FOREIGN KEY(num_pedido) REFERENCES pedidos(num_pedido));";
 		String ct_clientes = "CREATE TABLE IF NOT EXISTS clientes(num_cliente TEXT PRIMARY KEY UNIQUE, nombre TEXT, direccion TEXT, telefono TEXT);";
-		String ct_articulos =  "CREATE TABLE IF NOT EXISTS articulos(descripcion TEXT, nombrePadre TEXT, nombreMadre TEXT, fecha_alta TEXT);";
+		String ct_articulos =  "CREATE TABLE IF NOT EXISTS articulos(descripcion TEXT, familiaProducto TEXT, fecha_alta TEXT);";
 		Statement stm;
 
 		try {
