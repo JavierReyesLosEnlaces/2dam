@@ -1,2 +1,2 @@
-{"IdPedido":90,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Onion","Precio":0.6,"Calorias":50},{"Nombre":"Queso","Precio":0.6,"Calorias":50},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400}],"Observaciones":"Hola!","Total":8.7,"Items":null}
-{"IdPedido":91,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Onion","Precio":0.6,"Calorias":50},{"Nombre":"Queso","Precio":0.6,"Calorias":50},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400}],"Observaciones":"Ninguna","Total":8.7,"Items":null}
+{"IdPedido":93,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"PoNuggets","Precio":9,"Calorias":600}],"Observaciones":"Ninguna","Total":13.5,"Items":null}
+{"IdPedido":94,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"PoNuggets","Precio":9,"Calorias":600}],"Observaciones":"Ninguna","Total":13.5,"Items":null}

@@ -32,7 +32,7 @@ namespace Entrega2Eval_JavierReyes
             bstate1 = !bstate1;
 
             // Si se suscribe algún método al evento Button1Click, activarlo
-            Button1Click?.Invoke(this, EventArgs.Empty);
+           // Button1Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Entrega2Eval_JavierReyes
             bstate2 = !bstate2;
 
             // Si se suscribe algún método al evento Button2Click, activarlo
-            Button2Click?.Invoke(this, EventArgs.Empty);
+           // Button2Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Entrega2Eval_JavierReyes
             bstate3 = !bstate3;
 
             // Si se suscribe algún método al evento Button3Click, activarlo
-            Button3Click?.Invoke(this, EventArgs.Empty);
+           // Button3Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Entrega2Eval_JavierReyes
             bstate4 = !bstate4;
 
             // Si se suscribe algún método al evento Button4Click, activarlo
-            Button4Click?.Invoke(this, EventArgs.Empty);
+            //Button4Click?.Invoke(this, EventArgs.Empty);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Entrega2Eval_JavierReyes
             bstate5 = !bstate5;
 
             // Si se suscribe algún método al evento Button5Click, activarlo
-            Button5Click?.Invoke(this, EventArgs.Empty);
+           // Button5Click?.Invoke(this, EventArgs.Empty);
         }
 
     }

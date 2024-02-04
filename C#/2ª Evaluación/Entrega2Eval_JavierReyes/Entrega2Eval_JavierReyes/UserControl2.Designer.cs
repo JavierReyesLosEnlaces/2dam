@@ -38,9 +38,9 @@
             b5 = new Button();
             b4 = new Button();
             b3 = new Button();
-            b2 = new Button();
             b1 = new Button();
             pb1 = new PictureBox();
+            b2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBanner).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb5).BeginInit();
@@ -184,22 +184,6 @@
             b3.UseVisualStyleBackColor = false;
             b3.Click += button3_Click;
             // 
-            // b2
-            // 
-            b2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            b2.BackColor = Color.Red;
-            b2.FlatStyle = FlatStyle.Flat;
-            b2.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
-            b2.ForeColor = SystemColors.ControlLightLight;
-            b2.Location = new Point(205, 71);
-            b2.Margin = new Padding(3, 3, 0, 3);
-            b2.Name = "b2";
-            b2.Size = new Size(61, 62);
-            b2.TabIndex = 2;
-            b2.Text = "X";
-            b2.UseVisualStyleBackColor = false;
-            b2.Click += button2_Click;
-            // 
             // b1
             // 
             b1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
@@ -228,6 +212,22 @@
             pb1.Size = new Size(132, 68);
             pb1.TabIndex = 10;
             pb1.TabStop = false;
+            // 
+            // b2
+            // 
+            b2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            b2.BackColor = Color.Red;
+            b2.FlatStyle = FlatStyle.Flat;
+            b2.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
+            b2.ForeColor = SystemColors.ControlLightLight;
+            b2.Location = new Point(205, 71);
+            b2.Margin = new Padding(3, 3, 0, 3);
+            b2.Name = "b2";
+            b2.Size = new Size(61, 62);
+            b2.TabIndex = 2;
+            b2.Text = "X";
+            b2.UseVisualStyleBackColor = false;
+            b2.Click += button2_Click;
             // 
             // UserControl2
             // 
@@ -261,7 +261,7 @@
         public Button b5;
         public Button b4;
         public Button b3;
-        public Button b2;
         public Button b1;
+        public Button b2;
     }
 }

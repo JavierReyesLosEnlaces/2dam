@@ -833,94 +833,31 @@ namespace Entrega2Eval_JavierReyes
                     //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
                     if (sinCompra) Application.Exit();
 
-
-                    // Comida
-                    if (userControl2.bstate1)
+                    // Productos de la factura que no son Extras
+                    if (factura.Any(p => p is Comida) && userControl2.bstate1)
                     {
+                        factura.RemoveAt(0);
 
-                        Producto comida = factura.FirstOrDefault(p => p is Comida);
-                        if (comida != null)
+                        if (factura[1] != null)
                         {
-                            factura.Remove(comida);
+                            factura.RemoveAt(1);
                         }
-
-                        //comanda.RemoveAt(0);
-
-                        pro1.Text = " ";
-                        pre1.Text = " ";
-                        pro1.BackColor = Color.FromArgb(255, 249, 244);
-                        pre1.BackColor = Color.FromArgb(255, 249, 244);
                     }
 
-                    // Extras Comida
-                    if (userControl2.bstate2)
+                    if (factura.Any(p => p is Bebida) && userControl2.bstate3)
                     {
-                        Producto extras1 = factura.FirstOrDefault(p => p is Extra);
-                        if (extras1 != null)
-                        {
-                            factura.Remove(extras1);
-                        }
-
-                        //comanda.RemoveAt(1);
-
-                        pro1Extras.Text = " ";
-                        pre1Extras.Text = " ";
-                        pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
-                        pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
+                        factura.RemoveAt(2);
                     }
 
-                    // Bebida
-                    if (userControl2.bstate3)
+
+                    if (factura.Any(p => p is Complemento) && userControl2.bstate5)
                     {
+                        factura.RemoveAt(3);
 
-                        Producto bebida = factura.FirstOrDefault(p => p is Bebida);
-                        if (bebida != null)
+                        if (factura[4] != null)
                         {
-                            factura.Remove(bebida);
+                            factura.RemoveAt(1);
                         }
-
-                        //comanda.RemoveAt(2);
-
-                        pro2.Text = " ";
-                        pre2.Text = " ";
-                        pro2.BackColor = Color.FromArgb(255, 249, 244);
-                        pre2.BackColor = Color.FromArgb(255, 249, 244);
-                    }
-
-                    // Complementos 
-
-                    if (userControl2.bstate4)
-                    {
-
-                        Producto complemento = factura.FirstOrDefault(p => p is Complemento);
-                        if (complemento != null)
-                        {
-                            factura.Remove(complemento);
-                        }
-
-                        //comanda.RemoveAt(3);
-                        pro3.Text = " ";
-                        pre3.Text = " ";
-                        pro3.BackColor = Color.FromArgb(255, 249, 244);
-                        pre3.BackColor = Color.FromArgb(255, 249, 244);
-                    }
-
-                    // Extras Complementos
-
-                    if (userControl2.bstate5)
-                    {
-                        Producto extras3 = factura.FirstOrDefault(p => p is Extra);
-                        if (extras3 != null)
-                        {
-                            factura.Remove(extras3);
-                        }
-                        //pExtras3 = 0;
-                        //comanda.RemoveAt(4);
-
-                        pro3Extras.Text = " ";
-                        pre3Extras.Text = " ";
-                        pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
-                        pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
                     }
 
                     // Recalcular el precio con los nuevos parámetros
