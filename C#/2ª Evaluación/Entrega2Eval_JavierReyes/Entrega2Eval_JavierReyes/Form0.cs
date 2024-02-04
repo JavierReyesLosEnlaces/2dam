@@ -1,49 +1,49 @@
 ﻿using BurgerLibrary.Modelo.Productos;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.Json;
-using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
-    public partial class form0 : Form
+    public partial class Form0 : Form
     {
-        public form0()
+        public Form0()
         {
             InitializeComponent();
             InitUI();
         }
 
-        private void btnPedidoAyer_Click(object sender, EventArgs e)
+        // SE INICIALIZAN PROPIEDADES GENERALES DEL FORM0
+        private void InitUI()
         {
-            List<Producto> productos = ObtenerProductosDelPedidoConMayorId();
-            // Luego puedes pasar esta lista de productos al siguiente formulario
-            Form1 form1 = new Form1();
-            form1.fase = 6;
-            form1.MostrarPantallaFactura(productos);
-            form1.Show();
+            // TAMAÑO DEL FORM FIJO
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            // QUITAR BOTONES DE MAXIMIZAR Y MINIMIZAR
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
+            VerificarEstadoBtnUltimoPedido();
         }
 
+        // SE OBTIENEN LOS PRODUCTOS DEL PEDIDO CON MAYOR ID 
         private List<Producto> ObtenerProductosDelPedidoConMayorId()
         {
             List<Producto> productos = new List<Producto>();
-            int maxIdPedido = -1;   
+            int maxIdPedido = -1;
 
-            // Lee el archivo JSON "historicoDeFacturas.json" línea por línea
+            // LEE EL ARCHIVO JSON "historicoDeFacturas.json" LÍNEA POR LÍNEA
             string jsonFilePath = "facturas.json";
             if (File.Exists(jsonFilePath))
             {
-                // Abre el archivo para leer línea por línea
+                // ABRE EL ARCHIVO PARA LEER LÍNEA POR LÍNEA
                 using (StreamReader file = new StreamReader(jsonFilePath))
                 {
                     string line;
                     while ((line = file.ReadLine()) != null)
                     {
-                        // Deserializa cada línea en un objeto Factura
+                        // DESERIALIZA CADA LÍNEA EN UN OBJETO Factura
                         Factura factura = JsonSerializer.Deserialize<Factura>(line);
 
-                        // Compara el IdPedido con el máximo encontrado hasta ahora
+                        // COMPARA EL IdPedido CON EL MÁXIMO ENCONTRADO HASTA AHORA
                         if (factura != null && factura.IdPedido > maxIdPedido)
                         {
                             maxIdPedido = factura.IdPedido;
@@ -52,77 +52,59 @@ namespace Entrega2Eval_JavierReyes
                     }
                 }
             }
-
             return productos;
         }
 
-
-        private void InitUI()
-        {
-            // Tamaño del Form fijo
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
-            // Quitar botones de maximizar y minimizar
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-
-            VerificarEstadoBtnUltimoPedido();
-        }
-
-        private void btnEmpezar_Click(object sender, EventArgs e)
-        {
-            // Abrir Form1
-            Form1 f1 = new Form1();
-            f1.Show();
-
-            // Cerrar Form0
-            this.Hide();
-        }
-
-        private void btnEmpezar_MouseEnter(object sender, EventArgs e)
-        {
-            btnEmpezar.BackColor = System.Drawing.Color.FromArgb(45, 123, 60);
-        }
-
-        private void btnEmpezar_MouseLeave(object sender, EventArgs e)
-        {
-            btnEmpezar.BackColor = System.Drawing.Color.Black;
-        }
-
-
-        private void btnUltimoPedido_MouseEnter(object sender, EventArgs e)
-        {
-            btnUltimoPedido.BackColor = System.Drawing.Color.FromArgb(45, 123, 60);
-        }
-
-        private void btnUltimoPedido_MouseLeave(object sender, EventArgs e)
-        {
-            btnUltimoPedido.BackColor = System.Drawing.Color.Black;
-        }
-
-
-
-        private void Form0_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // Si se cierra el Form0 se cierra la aplicación
-            Application.Exit();
-        }
-
+        // SE VERIFICA EL ESTADO DEL BOTÓN DE "ÚLTIMO PEDIDO"
         private void VerificarEstadoBtnUltimoPedido()
         {
-            // Verificar si el archivo JSON está vacío
+            // VERIFICAR SI EL ARCHIVO JSON ESTÁ VACÍO
             string jsonFilePath = "facturas.json";
             bool archivoVacio = !File.Exists(jsonFilePath) || new FileInfo(jsonFilePath).Length == 0;
 
-            // Habilitar o deshabilitar el botón según el estado del archivo
+            // HABILITAR O DESHABILITAR EL BOTÓN SEGÚN EL ESTADO DEL ARCHIVO
             btnUltimoPedido.Visible = !archivoVacio;
 
-            // Si el archivo no está vacío, cambia el tamaño del formulario
+            // SI EL ARCHIVO NO ESTÁ VACÍO, CAMBIA EL TAMAÑO DEL FORMULARIO
             if (!archivoVacio)
             {
                 this.Width = 657;
                 this.Height = 800;
             }
         }
+
+        private void btnEmpezar_Click(object sender, EventArgs e)
+        {
+            // ABRIR Form1
+            Form1 f1 = new Form1();
+            f1.Show();
+
+            // CERRAR Form0
+            this.Hide();
+        }
+
+        // SE MUESTRA EL ÚLTIMO PEDIDO REALIZADO EN FORM1
+        private void btnPedidoAyer_Click(object sender, EventArgs e)
+        {
+            // SE OBTIENE LOS PRODUCTOS DEL PEDIDO CON EL MAYOR ID
+            List<Producto> productos = ObtenerProductosDelPedidoConMayorId();
+
+            // LUEGO SE PUEDE PASAR LA LISTA DE PRODUCTOS AL SIGUIENTE FORMULARIO
+            Form1 form1 = new Form1();
+            form1.fase = 6;
+            form1.MostrarPantallaFactura(productos);
+            form1.Show();
+        }
+
+        private void btnEmpezar_MouseEnter(object sender, EventArgs e) { btnEmpezar.BackColor = System.Drawing.Color.FromArgb(45, 123, 60); }
+
+        private void btnEmpezar_MouseLeave(object sender, EventArgs e) { btnEmpezar.BackColor = System.Drawing.Color.Black; }
+
+        private void btnUltimoPedido_MouseEnter(object sender, EventArgs e) { btnUltimoPedido.BackColor = System.Drawing.Color.FromArgb(45, 123, 60); }
+
+        private void btnUltimoPedido_MouseLeave(object sender, EventArgs e) { btnUltimoPedido.BackColor = System.Drawing.Color.Black; }
+
+        // SI SE CIERRA "Form1" SE APAGA LA APLICACIÓN 
+        private void Form0_FormClosed(object sender, FormClosedEventArgs e) { Application.Exit(); }
     }
 }

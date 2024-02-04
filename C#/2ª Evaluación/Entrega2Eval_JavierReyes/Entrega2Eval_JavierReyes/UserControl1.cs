@@ -1,10 +1,8 @@
-﻿
-namespace Entrega2Eval_JavierReyes
+﻿namespace Entrega2Eval_JavierReyes
 {
     public partial class UserControl1 : UserControl
     {
         public bool bstate1, bstate2, bstate3, bstate4, bstate5, bstate6;
-        // Variables temporales
         public int numeroExtras;
 
         public UserControl1()
@@ -13,16 +11,16 @@ namespace Entrega2Eval_JavierReyes
             ResetState();
         }
 
+        // ESTE MÉTODO RESETEA LOS COLORES Y LOS ESTADOS, TAMBIÉN PONE EL CONTADOR DE EXTRAS A 0 
         public void ResetState()
         {
             numeroExtras = 0;
             bstate1 = false;
             bstate2 = false;
             bstate3 = false;
-            bstate4 = false; 
+            bstate4 = false;
             bstate5 = false;
             bstate6 = false;
-            
 
             labelExtras1.BackColor = Color.Black;
             precioExtras1.BackColor = Color.Black;
@@ -49,7 +47,8 @@ namespace Entrega2Eval_JavierReyes
             panelColor6.BackColor = Color.FromArgb(255, 152, 83);
         }
 
-        // BOTONES 
+        /*CUANDO SE HACE CLICK SOBRE CUALQUIERA DE LOS BOTONES, CAMBIA SU ESTADO (bstate)
+        DEPENDIENDO DE SU ESTADO, CAMBIA EL COLOR Y LA CANTIDAD DE EXTRAS*/
         private void buttonExtras1_Click_1(object sender, EventArgs e)
         {
             if (bstate1 == false)
@@ -57,7 +56,7 @@ namespace Entrega2Eval_JavierReyes
                 labelExtras1.BackColor = Color.FromArgb(22, 134, 55);
                 precioExtras1.BackColor = Color.FromArgb(22, 134, 55);
                 panelColor1.BackColor = Color.FromArgb(22, 171, 71);
-                 
+
                 numeroExtras++;
                 bstate1 = true;
             }
@@ -65,14 +64,14 @@ namespace Entrega2Eval_JavierReyes
             {
                 labelExtras1.BackColor = Color.Black;
                 precioExtras1.BackColor = Color.Black;
-                panelColor1.BackColor = Color.FromArgb(255, 152, 83); 
+                panelColor1.BackColor = Color.FromArgb(255, 152, 83);
                 numeroExtras--;
                 bstate1 = false;
             }
         }
         private void buttonExtras2_Click_1(object sender, EventArgs e)
         {
-            if(bstate2 == false)
+            if (bstate2 == false)
             {
                 labelExtras2.BackColor = Color.FromArgb(22, 134, 55);
                 precioExtras2.BackColor = Color.FromArgb(22, 134, 55);
@@ -91,7 +90,7 @@ namespace Entrega2Eval_JavierReyes
         }
         private void buttonExtras3_Click(object sender, EventArgs e)
         {
-            if(bstate3 == false)
+            if (bstate3 == false)
             {
                 labelExtras3.BackColor = Color.FromArgb(22, 134, 55);
                 precioExtras3.BackColor = Color.FromArgb(22, 134, 55);
@@ -110,7 +109,7 @@ namespace Entrega2Eval_JavierReyes
         }
         private void buttonExtras4_Click(object sender, EventArgs e)
         {
-            if(bstate4 == false)
+            if (bstate4 == false)
             {
                 labelExtras4.BackColor = Color.FromArgb(22, 134, 55);
                 precioExtras4.BackColor = Color.FromArgb(22, 134, 55);
@@ -129,7 +128,7 @@ namespace Entrega2Eval_JavierReyes
         }
         private void buttonExtras5_Click(object sender, EventArgs e)
         {
-            if(bstate5 == false)
+            if (bstate5 == false)
             {
                 labelExtras5.BackColor = Color.FromArgb(22, 134, 55);
                 precioExtras5.BackColor = Color.FromArgb(22, 134, 55);
@@ -165,6 +164,5 @@ namespace Entrega2Eval_JavierReyes
                 bstate6 = false;
             }
         }
-
     }
 }

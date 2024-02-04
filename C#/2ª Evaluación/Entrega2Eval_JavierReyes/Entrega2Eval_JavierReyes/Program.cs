@@ -11,10 +11,9 @@ namespace Entrega2Eval_JavierReyes
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-        
-            //form1.Show(); // Mostrar Form1
-            Application.Run(new form0());
 
+            //form1.Show(); // Mostrar Form1
+            Application.Run(new Form0());
         }
     }
 }

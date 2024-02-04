@@ -1,6 +1,6 @@
 ﻿namespace Entrega2Eval_JavierReyes
 {
-    partial class form0
+    partial class Form0
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form0));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form0));
             tableLayoutPanel1 = new TableLayoutPanel();
             btnUltimoPedido = new Button();
             label1 = new Label();
@@ -83,7 +83,7 @@
             label1.BackColor = Color.Transparent;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Jokerman", 30F, FontStyle.Bold);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = SystemColors.Window;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
             label1.Size = new Size(444, 87);
@@ -132,7 +132,7 @@
             labelTitulo1.BackColor = Color.Transparent;
             labelTitulo1.Dock = DockStyle.Fill;
             labelTitulo1.Font = new Font("Jokerman", 30F, FontStyle.Bold);
-            labelTitulo1.ForeColor = Color.White;
+            labelTitulo1.ForeColor = SystemColors.Window;
             labelTitulo1.Location = new Point(3, 0);
             labelTitulo1.Name = "labelTitulo1";
             labelTitulo1.Size = new Size(619, 212);
@@ -140,18 +140,18 @@
             labelTitulo1.Text = "BIENVENIDO A LA HAMBURGUESERÍA ";
             labelTitulo1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // form0
+            // Form0
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 170, 1);
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(635, 665);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
-            Name = "form0";
+            Name = "Form0";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             FormClosed += Form0_FormClosed;

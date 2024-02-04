@@ -485,7 +485,7 @@
             // btnExtras
             // 
             btnExtras.BackColor = Color.Transparent;
-            btnExtras.BackgroundImageLayout = ImageLayout.None;
+            btnExtras.BackgroundImageLayout = ImageLayout.Stretch;
             btnExtras.Dock = DockStyle.Fill;
             btnExtras.FlatAppearance.BorderSize = 3;
             btnExtras.FlatStyle = FlatStyle.Popup;
@@ -534,7 +534,7 @@
             // btnProducto2
             // 
             btnProducto2.BackColor = Color.Transparent;
-            btnProducto2.BackgroundImageLayout = ImageLayout.None;
+            btnProducto2.BackgroundImageLayout = ImageLayout.Stretch;
             btnProducto2.Dock = DockStyle.Fill;
             btnProducto2.FlatAppearance.BorderColor = Color.FromArgb(214, 34, 0);
             btnProducto2.FlatAppearance.BorderSize = 0;
@@ -654,7 +654,7 @@
             // btnProducto1
             // 
             btnProducto1.BackColor = Color.Transparent;
-            btnProducto1.BackgroundImageLayout = ImageLayout.None;
+            btnProducto1.BackgroundImageLayout = ImageLayout.Stretch;
             btnProducto1.Dock = DockStyle.Fill;
             btnProducto1.FlatAppearance.BorderColor = Color.FromArgb(214, 34, 0);
             btnProducto1.FlatAppearance.BorderSize = 0;
@@ -770,7 +770,7 @@
             btn_cancelar.TabIndex = 5;
             btn_cancelar.Text = "X";
             btn_cancelar.UseVisualStyleBackColor = false;
-            btn_cancelar.Click += btn_cancelar_Click;
+            btn_cancelar.Click += btnCancelar_Click;
             // 
             // tlp16
             // 
@@ -933,7 +933,7 @@
             userControl2.Location = new Point(11, 275);
             userControl2.Margin = new Padding(3, 5, 3, 5);
             userControl2.Name = "userControl2";
-            userControl2.Size = new Size(474, 513);
+            userControl2.Size = new Size(474, 512);
             userControl2.TabIndex = 7;
             // 
             // userControl3
@@ -943,7 +943,7 @@
             userControl3.bstateTarjeta = false;
             userControl3.Location = new Point(11, 275);
             userControl3.Name = "userControl3";
-            userControl3.Size = new Size(474, 509);
+            userControl3.Size = new Size(474, 512);
             userControl3.TabIndex = 8;
             userControl3.Visible = false;
             // 
@@ -953,7 +953,7 @@
             userControl4.Location = new Point(11, 275);
             userControl4.Margin = new Padding(3, 5, 3, 5);
             userControl4.Name = "userControl4";
-            userControl4.Size = new Size(474, 513);
+            userControl4.Size = new Size(474, 512);
             userControl4.TabIndex = 9;
             userControl4.Visible = false;
             // 
