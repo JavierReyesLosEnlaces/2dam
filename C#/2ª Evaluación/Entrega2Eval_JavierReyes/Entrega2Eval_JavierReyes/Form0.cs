@@ -28,9 +28,9 @@ namespace Entrega2Eval_JavierReyes
         private List<Producto> ObtenerProductosDelPedidoConMayorId()
         {
             List<Producto> productos = new List<Producto>();
-            int maxIdPedido = -1;
+            int maxIdPedido = -1;   
 
-            // Lee el archivo JSON "facturas.json" línea por línea
+            // Lee el archivo JSON "historicoDeFacturas.json" línea por línea
             string jsonFilePath = "facturas.json";
             if (File.Exists(jsonFilePath))
             {

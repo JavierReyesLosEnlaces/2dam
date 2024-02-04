@@ -1,44 +1,46 @@
 
 using BurgerLibrary.Modelo.Productos;
 using System.Text.Json;
-using System.Windows.Forms;
 
 namespace Entrega2Eval_JavierReyes
 {
-    public partial class
-        Form1 : Form
+    public partial class Form1 : Form
     {
-        // VARIABLES 
+        // VARIABLE DE FASE 
         public int fase = 0;
-        // RELACIÓN PRODUCTO SELECCIONADO-FASE
+
+        // RELACIÓN "PRODUCTO SELECCIONADO"-"FASE"
         private bool p1f1 = false, p2f1 = false, p1f2 = false, p2f2 = false, p1f3 = false, p2f3 = false;
-        // PARA LA GESTIÓN DE LOS BOTONES DE userControl2
+
+        // ARRAY DE BOOLEANOS PARA LA GESTIÓN DE LOS BOTONES DE userControl2
         private bool[] slots = new bool[5];
-        // LA COMANDA
+
+        // LISTAS PARA GESTIONAR LAS FACTURAS
         private List<Producto> factura = new List<Producto>();
-        List<Factura> facturas = new List<Factura>();
+        private List<Factura> historicoDeFacturas = new List<Factura>();
 
-
-
+        // CREACIÓN DE UN CATÁLOGO DE EXTRAS
         private List<Extra> catalogoExtras = creaExtras();
 
+        // VARIABLE BOOLEANA PARA LA SALIDA SIN COMPRA
         private bool sinCompra;
 
         // MAIN
         public Form1()
         {
             InitializeComponent();
-
             InitUI();
             CargarFase();
             IrAlMenu();
+            SuscribirMetodosUserControl2();
+        }
 
-            // Suscribir los métodos a los eventos ButtonClick de UserControl2
+        private void SuscribirMetodosUserControl2()
+        {
+            // SE SUSCRIBEN LOS MÉTODOS A LOS EVENTOS BUTTONCLICK DE USER CONTROL
             userControl2.Button1Click += UserControl2_Button1Click;
-            userControl2.Button2Click += UserControl2_Button2Click;
             userControl2.Button3Click += UserControl2_Button3Click;
             userControl2.Button4Click += UserControl2_Button4Click;
-            userControl2.Button5Click += UserControl2_Button5Click;
         }
 
         private void UserControl2_Button1Click(object sender, EventArgs e)
@@ -49,6 +51,8 @@ namespace Entrega2Eval_JavierReyes
                 // Color rojo
                 pro1.BackColor = Color.FromArgb(252, 96, 96);
                 pre1.BackColor = Color.FromArgb(252, 96, 96);
+                pro1Extras.BackColor = Color.FromArgb(252, 96, 96);
+                pre1Extras.BackColor = Color.FromArgb(252, 96, 96);
             }
 
             else
@@ -56,27 +60,12 @@ namespace Entrega2Eval_JavierReyes
                 // Cambiar el color de pro1 y pre1 a rojo
                 pro1.BackColor = Color.FromArgb(255, 249, 244);
                 pre1.BackColor = Color.FromArgb(255, 249, 244);
-            }
-
-        }
-        private void UserControl2_Button2Click(object sender, EventArgs e)
-        {
-            // Cambiar el color de pro1Extras y pro1Extras a rojo
-            if (userControl2.bstate2)
-            {
-                // Color rojo
-                pro1Extras.BackColor = Color.FromArgb(252, 96, 96);
-                pre1Extras.BackColor = Color.FromArgb(252, 96, 96);
-            }
-            else
-            {
-                // Cambiar el color de pro1 y pre1 a rojo
                 pro1Extras.BackColor = Color.FromArgb(255, 249, 244);
                 pre1Extras.BackColor = Color.FromArgb(255, 249, 244);
             }
 
-
         }
+
         private void UserControl2_Button3Click(object sender, EventArgs e)
         {
             // Cambiar el color de pro2 y pre2 a rojo
@@ -108,32 +97,19 @@ namespace Entrega2Eval_JavierReyes
                 // Color rojo
                 pro3.BackColor = Color.FromArgb(252, 96, 96);
                 pre3.BackColor = Color.FromArgb(252, 96, 96);
-            }
-            else
-            {
-                // Cambiar el color de pro1 y pre1 a rojo
-                pro3.BackColor = Color.FromArgb(255, 249, 244);
-                pre3.BackColor = Color.FromArgb(255, 249, 244);
-            }
-        }
-        private void UserControl2_Button5Click(object sender, EventArgs e)
-        {
-            // Cambiar el color de pro3Extras y pre3Extras a rojo
-
-
-            if (userControl2.bstate5)
-            {
-                // Color rojo
                 pro3Extras.BackColor = Color.FromArgb(252, 96, 96);
                 pre3Extras.BackColor = Color.FromArgb(252, 96, 96);
             }
             else
             {
                 // Cambiar el color de pro1 y pre1 a rojo
+                pro3.BackColor = Color.FromArgb(255, 249, 244);
+                pre3.BackColor = Color.FromArgb(255, 249, 244);
                 pro3Extras.BackColor = Color.FromArgb(255, 249, 244);
                 pre3Extras.BackColor = Color.FromArgb(255, 249, 244);
             }
         }
+
         private static List<Extra> creaExtras()
         {
             List<Extra> extra = new List<Extra>();
@@ -147,7 +123,8 @@ namespace Entrega2Eval_JavierReyes
             extra.Add(new Extra("Dip", 1.00f, 150, 1));
 
             return extra;
-        }        // INITS
+        }
+        // INITS
         private void InitUI()
         {
             // Tamaño del Form fijo
@@ -158,10 +135,7 @@ namespace Entrega2Eval_JavierReyes
             btnProducto2.BackgroundImageLayout = ImageLayout.Stretch;
             btnExtras.BackgroundImageLayout = ImageLayout.Stretch;
 
-            // Imágenes clickables y sus ClickListeners
-            btnProducto1.Click += btnProducto1_Click;
-            btnProducto2.Click += btnProducto2_Click;
-            btnExtras.Click += btnExtras_Click;
+
 
             // Quitar botones de maximizar y minimizar
             this.MaximizeBox = false;
@@ -222,7 +196,7 @@ namespace Entrega2Eval_JavierReyes
                     break;
 
                 case 4:
-                    if (factura.Count > 0)
+                    if (!(factura.All(factura => factura == null)))
                     {
                         // Menú de quitar algo
                         lbl_tipoProducto.Text = "¿Quitamos algo?";
@@ -249,7 +223,7 @@ namespace Entrega2Eval_JavierReyes
                     }
                     else
                     {
-                        MostrarPantallaObservaciones();
+                        MostrarPantallaSalidaSinCompra();
                     }
                     break;
                 case 5:
@@ -263,6 +237,34 @@ namespace Entrega2Eval_JavierReyes
                     break;
             }
         }
+
+        private void MostrarPantallaSalidaSinCompra()
+        {
+            lbl_tipoProducto.Text = "Compra cancelada";
+            lbl_descripcionTitulo.Text = "Adiós";
+            lbl_descripcion.Text = "¡Una pena, esperamos verte pronto!";
+
+            lbl_total1.Visible = false;
+            lbl_total2.Visible = false;
+
+            tlpProducto1.Visible = false;
+            tlpProducto2.Visible = false;
+            tlpExtras.Visible = false;
+
+            userControl2.tableLayoutGeneral.Visible = false;
+            userControl2.pictureBanner.Visible = false;
+
+
+            userControl3.btn_caja.Visible = false;
+            userControl3.btn_tarjeta.Visible = false;
+
+            userControl3.tb_observaciones.Visible = false;
+            userControl3.lb_observaciones.Visible = false;
+
+            btn_añadirPagar.Text = "Salir";
+            sinCompra = true;
+        }
+
         private void comprobarBotones()
         {
             if (slots[0] == true)
@@ -278,12 +280,10 @@ namespace Entrega2Eval_JavierReyes
 
             if (slots[1] == true)
             {
-                userControl2.b2.Visible = true;
                 userControl2.pb2.Visible = true;
             }
             else
             {
-                userControl2.b2.Visible = false;
                 userControl2.pb2.Visible = false;
             }
 
@@ -311,21 +311,23 @@ namespace Entrega2Eval_JavierReyes
 
             if (slots[4] == true)
             {
-                userControl2.b5.Visible = true;
                 userControl2.pb5.Visible = true;
             }
             else
             {
-                userControl2.b5.Visible = false;
                 userControl2.pb5.Visible = false;
             }
         }
-        private float calculoPrecioTotal(List<Producto> comanda)
+        private float calculoPrecioTotal(List<Producto> factura)
         {
             float suma = 0.00f;
-            for (int i = 0; i < comanda.Count; i++)
+            for (int i = 0; i < factura.Count; i++)
             {
-                suma += comanda[i].Precio;
+                if(factura[i]!= null)
+                {
+                suma += factura[i].Precio;
+
+                }
             }
 
             //return (suma + pExtras1 + pExtras3).ToString("F2");
@@ -579,28 +581,8 @@ namespace Entrega2Eval_JavierReyes
             btn_añadirPagar.Text = "Pagar e imprimir ticket";
 
 
-            if (factura.Count == 0)
-            {
-                lbl_tipoProducto.Text = "Compra cancelada";
-                lbl_descripcionTitulo.Text = "Adiós";
-                lbl_descripcion.Text = "¡Una pena, esperamos verte pronto!";
 
-                lbl_total1.Visible = false;
-                lbl_total2.Visible = false;
-
-
-                userControl3.btn_caja.Visible = false;
-                userControl3.btn_tarjeta.Visible = false;
-
-                userControl3.tb_observaciones.Visible = false;
-                userControl3.lb_observaciones.Visible = false;
-
-                btn_añadirPagar.Text = "Salir";
-                sinCompra = true;
-            }
-            else
-            {
-                lbl_tipoProducto.Text = "Ultimos detalles";
+                lbl_tipoProducto.Text = "Últimos detalles";
                 lbl_descripcionTitulo.Text = "Instrucciones";
                 lbl_descripcion.Text = "Selecciona un método de pago y añade una observación a tu pedido'";
                 btn_añadirPagar.Text = "Aceptar";
@@ -615,7 +597,7 @@ namespace Entrega2Eval_JavierReyes
                 userControl3.bstateTarjeta = false;
 
                 userControl3.btn_caja.BackColor = Color.FromArgb(29, 171, 71);
-            }
+            
         }
         private void btn_añadirPagar_Click(object sender, EventArgs e)
         {
@@ -629,59 +611,64 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> ing1 = new List<string>() { "Pan", "Carne de Vacuno", "Queso Cheddar", "Lechuga", "Pepinillos", "Ketchup" };
                         c = new Comida("BurgAndrés", 1.65f, 300, ing1, "Carnivora", 150);
-                        factura.Add(c);
+                        factura.Insert(0, c);
                         pro1.Text = c.Nombre;
                         pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         slots[0] = true;
                     }
-                    if (p2f1)
+                    else if (p2f1)
                     {
                         List<string> ing2 = new List<string>() { "Pan", "Doble Carne de Vacuno", "Doble Queso", "Bacon", "Lechuga", "Cebolla", "Mostaza" };
                         c = new Comida("BigAdri", 4.50f, 600, ing2, "Carnivora", 150);
-                        factura.Add(c);
+                        factura.Insert(0, c);
                         pro1.Text = c.Nombre;
                         pre1.Text = "+ " + c.Precio.ToString("F2") + "€";
                         slots[0] = true;
+                    }
+                    else
+                    {
+                        factura.Insert(0, null);
                     }
 
                     int contadorExtras1 = 0;
                     float precioExtras1 = 0.00f;
+                    int caloriasExtras1 = 0;
 
                     if (userControl1.bstate1)
                     {
-                        factura.Add(catalogoExtras[0]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[0].Precio;
+                        caloriasExtras1 += catalogoExtras[0].Calorias;
                     }
                     if (userControl1.bstate2)
                     {
-                        factura.Add(catalogoExtras[1]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[1].Precio;
+                        caloriasExtras1 += catalogoExtras[1].Calorias;
                     }
                     if (userControl1.bstate3)
                     {
-                        factura.Add(catalogoExtras[2]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[2].Precio;
+                        caloriasExtras1 += catalogoExtras[2].Calorias;
                     }
                     if (userControl1.bstate4)
                     {
-                        factura.Add(catalogoExtras[3]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[3].Precio;
+                        caloriasExtras1 += catalogoExtras[3].Calorias;
                     }
                     if (userControl1.bstate5)
                     {
-                        factura.Add(catalogoExtras[4]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[4].Precio;
+                        caloriasExtras1 += catalogoExtras[4].Calorias;
                     }
                     if (userControl1.bstate6)
                     {
-                        factura.Add(catalogoExtras[5]);
                         contadorExtras1++;
                         precioExtras1 += catalogoExtras[5].Precio;
+                        caloriasExtras1 += catalogoExtras[5].Calorias;
                     }
 
                     if (contadorExtras1 > 0)
@@ -689,8 +676,16 @@ namespace Entrega2Eval_JavierReyes
                         pro1Extras.Text = contadorExtras1 + " extras";
                         pre1Extras.Text = "+ " + precioExtras1.ToString("F2") + "€"; // Mostramos el precio total de los extras
                         slots[1] = true;
+
+                        factura.Insert(1, new Extra("Extra de la hamburguesa", precioExtras1, caloriasExtras1, 1));
+                    }
+                    else
+                    {
+                        factura.Insert(1, null);
                     }
 
+
+                    /*
                     for (int i = 0; i < contadorExtras1; i++)
                     {
                         //pExtras1 += listaExtras1[i].Precio;
@@ -702,7 +697,7 @@ namespace Entrega2Eval_JavierReyes
                             pre1Extras.Text = "+ " + precioExtras1.ToString("F2") + "€";
                             slots[1] = true;
                         }
-                    }
+                    */
 
                     /*
                     for (int i = 0; i < listaExtras1.Count; i++)
@@ -727,18 +722,22 @@ namespace Entrega2Eval_JavierReyes
                     if (p1f2)
                     {
                         b = new Bebida("Refrigerio 250ml", 3.00f, 400, 250);
-                        factura.Add(b);
+                        factura.Insert(2, b);
                         pro2.Text = b.Nombre;
                         pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
                         slots[2] = true;
                     }
-                    if (p2f2)
+                    else if (p2f2)
                     {
                         b = new Bebida("Agua 300ml", 1.00f, 25, 300);
-                        factura.Add(b);
+                        factura.Insert(2, b);
                         pro2.Text = b.Nombre;
                         pre2.Text = "+ " + b.Precio.ToString("F2") + "€";
                         slots[2] = true;
+                    }
+                    else
+                    {
+                        factura.Insert(2, null);
                     }
                     IrAlMenu();
                     CargarFase();
@@ -751,68 +750,79 @@ namespace Entrega2Eval_JavierReyes
                     {
                         List<string> comp1 = new List<string>() { "Leche entera", "Mantequilla", "Harina refinada", "Jamon (25%)", "Huevo cocido", "Pan rallado" };
                         cc = new Complemento("Croquetas", 9.00f, 600, comp1, 6);
-                        factura.Add(cc);
+                        factura.Insert(3, cc);
                         pro3.Text = cc.Nombre;
                         pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         slots[3] = true;
                     }
-                    if (p2f3)
+                    else if (p2f3)
                     {
                         List<string> comp2 = new List<string>() { "Pollo (25%)", "Queso crema", "Ajo", "Sal", "Pimienta", "Harina refinada", "Pan rallado", "Aceite de palma" };
                         cc = new Complemento("PoNuggets", 9.00f, 600, comp2, 6);
-                        factura.Add(cc);
+                        factura.Insert(3, cc);
                         pro3.Text = cc.Nombre;
                         pre3.Text = "+ " + cc.Precio.ToString("F2") + "€";
                         slots[3] = true;
+                    }
+                    else
+                    {
+                        factura.Insert(3, null);
                     }
 
                     int contadorExtras3 = 0;
                     float precioExtras3 = 0.00f;
+                    int caloriasExtras3 = 0;
 
                     if (userControl1.bstate1)
                     {
-                        factura.Add(catalogoExtras[0]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[0].Precio;
+                        caloriasExtras3 += catalogoExtras[0].Calorias;
                     }
                     if (userControl1.bstate2)
                     {
-                        factura.Add(catalogoExtras[1]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[1].Precio;
+                        caloriasExtras3 += catalogoExtras[1].Calorias;
                     }
                     if (userControl1.bstate3)
                     {
-                        factura.Add(catalogoExtras[2]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[2].Precio;
+                        caloriasExtras3 += catalogoExtras[2].Calorias;
                     }
                     if (userControl1.bstate4)
                     {
-                        factura.Add(catalogoExtras[3]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[3].Precio;
+                        caloriasExtras3 += catalogoExtras[3].Calorias;
                     }
                     if (userControl1.bstate5)
                     {
-                        factura.Add(catalogoExtras[4]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[4].Precio;
+                        caloriasExtras3 += catalogoExtras[4].Calorias;
                     }
                     if (userControl1.bstate6)
                     {
-                        factura.Add(catalogoExtras[5]);
                         contadorExtras3++;
                         precioExtras3 += catalogoExtras[5].Precio;
+                        caloriasExtras3 += catalogoExtras[5].Calorias;
                     }
 
                     if (contadorExtras3 > 0)
                     {
                         pro3Extras.Text = contadorExtras3 + " extras";
-                        pre1Extras.Text = "+ " + precioExtras3.ToString("F2") + "€";
+                        pre3Extras.Text = "+ " + precioExtras3.ToString("F2") + "€";
                         slots[4] = true;
-                    }
 
+                        factura.Insert(4, new Extra("Extra del complemento", precioExtras3, caloriasExtras3, 1));
+                    }
+                    else
+                    {
+                        factura.Insert(4, null);
+                    }
+                    /*
                     for (int i = 0; i < contadorExtras3; i++)
                     {
                         //pExtras3 += listaExtras3[i].Precio;
@@ -825,44 +835,63 @@ namespace Entrega2Eval_JavierReyes
                             slots[4] = true;
                         }
                     }
-
+                    */
                     CargarFase();
 
                     break;
                 case 4:
-                    //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
-                    if (sinCompra) Application.Exit();
-
-                    // Productos de la factura que no son Extras
-                    if (factura.Any(p => p is Comida) && userControl2.bstate1)
+                    if (sinCompra)
                     {
-                        factura.RemoveAt(0);
-
-                        if (factura[1] != null)
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        //Nos encontramos en la pantalla de quitar productos y al presionar se va a recalcular el precio
+                        // Productos de la factura que no son Extras
+                        if (userControl2.bstate1)
+                        {
+                            factura[0] = null;
+                            factura[1] = null;
+                        }
+                        /*
+                        if (userControl2.bstate2)
                         {
                             factura.RemoveAt(1);
                         }
-                    }
+                        */
 
-                    if (factura.Any(p => p is Bebida) && userControl2.bstate3)
-                    {
-                        factura.RemoveAt(2);
-                    }
-
-
-                    if (factura.Any(p => p is Complemento) && userControl2.bstate5)
-                    {
-                        factura.RemoveAt(3);
-
-                        if (factura[4] != null)
+                        if (userControl2.bstate3)
                         {
-                            factura.RemoveAt(1);
+                            factura[2] = null;
+
+                        }
+
+                        if (userControl2.bstate4)
+                        {
+                            factura[3] = null;
+                            factura[4] = null;
+                        }
+
+                        /*
+                        if (userControl2.bstate5)
+                        {
+                            factura.RemoveAt(4);
+
+                        }
+                        */
+
+                        if(!factura.All(factura => factura == null))
+                        {
+                            // Recalcular el precio con los nuevos parámetros
+                            lbl_total2.Text = calculoPrecioTotal(factura).ToString("F2") + "€";
+                            CargarFase();
+                        }
+                        else
+                        {
+                            MostrarPantallaSalidaSinCompra();
                         }
                     }
 
-                    // Recalcular el precio con los nuevos parámetros
-                    lbl_total2.Text = calculoPrecioTotal(factura).ToString("F2") + "€";
-                    CargarFase();
                     break;
                 case 5:
                     CargarFase();
@@ -924,6 +953,9 @@ namespace Entrega2Eval_JavierReyes
             // Generar ID de pedido
             int idPedido = pedidoManager.GenerarNuevoIdPedido();
 
+            // Elimina los elementos nulos de la lista comanda
+            comanda.RemoveAll(producto => producto == null);
+
             // Limpia el listBox antes de agregar nuevos elementos
             userControl4.listBox1.Items.Clear();
 
@@ -960,8 +992,6 @@ namespace Entrega2Eval_JavierReyes
 
             userControl4.listBox1.Items.Add(observaciones);
 
-
-
             // Crear y agregar la factura a la lista
             var factura = new Factura
             {
@@ -970,7 +1000,7 @@ namespace Entrega2Eval_JavierReyes
                 Observaciones = observaciones,
                 Total = total
             };
-            facturas.Add(factura);
+            historicoDeFacturas.Add(factura);
 
             // Guardar la factura actual en un archivo JSON
             string facturaJson = JsonSerializer.Serialize(factura);
@@ -982,6 +1012,7 @@ namespace Entrega2Eval_JavierReyes
             // Guardar el último ID de pedido en un archivo
             pedidoManager.GuardarUltimoIdPedido();
         }
+
 
 
 

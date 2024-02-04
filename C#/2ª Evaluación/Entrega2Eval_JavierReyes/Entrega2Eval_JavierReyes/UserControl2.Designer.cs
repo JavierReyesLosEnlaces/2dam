@@ -30,19 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl2));
             pictureBanner = new PictureBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutGeneral = new TableLayoutPanel();
             pb5 = new PictureBox();
             pb4 = new PictureBox();
             pb3 = new PictureBox();
             pb2 = new PictureBox();
-            b5 = new Button();
             b4 = new Button();
             b3 = new Button();
             b1 = new Button();
             pb1 = new PictureBox();
-            b2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBanner).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
+            tableLayoutGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb3).BeginInit();
@@ -61,32 +59,30 @@
             pictureBanner.TabIndex = 3;
             pictureBanner.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // tableLayoutGeneral
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43F));
-            tableLayoutPanel1.Controls.Add(pb5, 1, 4);
-            tableLayoutPanel1.Controls.Add(pb4, 1, 3);
-            tableLayoutPanel1.Controls.Add(pb3, 1, 2);
-            tableLayoutPanel1.Controls.Add(pb2, 1, 1);
-            tableLayoutPanel1.Controls.Add(b5, 0, 4);
-            tableLayoutPanel1.Controls.Add(b4, 0, 3);
-            tableLayoutPanel1.Controls.Add(b3, 0, 2);
-            tableLayoutPanel1.Controls.Add(b2, 0, 1);
-            tableLayoutPanel1.Controls.Add(b1, 0, 0);
-            tableLayoutPanel1.Controls.Add(pb1, 1, 0);
-            tableLayoutPanel1.Location = new Point(3, 167);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 5;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(468, 342);
-            tableLayoutPanel1.TabIndex = 4;
+            tableLayoutGeneral.ColumnCount = 2;
+            tableLayoutGeneral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57F));
+            tableLayoutGeneral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43F));
+            tableLayoutGeneral.Controls.Add(pb5, 1, 4);
+            tableLayoutGeneral.Controls.Add(pb4, 1, 3);
+            tableLayoutGeneral.Controls.Add(pb3, 1, 2);
+            tableLayoutGeneral.Controls.Add(pb2, 1, 1);
+            tableLayoutGeneral.Controls.Add(b4, 0, 3);
+            tableLayoutGeneral.Controls.Add(b3, 0, 2);
+            tableLayoutGeneral.Controls.Add(b1, 0, 0);
+            tableLayoutGeneral.Controls.Add(pb1, 1, 0);
+            tableLayoutGeneral.Location = new Point(3, 167);
+            tableLayoutGeneral.Name = "tableLayoutGeneral";
+            tableLayoutGeneral.RowCount = 5;
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutGeneral.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutGeneral.Size = new Size(468, 342);
+            tableLayoutGeneral.TabIndex = 4;
             // 
             // pb5
             // 
@@ -135,22 +131,6 @@
             pb2.Size = new Size(132, 68);
             pb2.TabIndex = 11;
             pb2.TabStop = false;
-            // 
-            // b5
-            // 
-            b5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            b5.BackColor = Color.Red;
-            b5.FlatStyle = FlatStyle.Flat;
-            b5.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
-            b5.ForeColor = SystemColors.ControlLightLight;
-            b5.Location = new Point(205, 275);
-            b5.Margin = new Padding(3, 3, 0, 3);
-            b5.Name = "b5";
-            b5.Size = new Size(61, 64);
-            b5.TabIndex = 9;
-            b5.Text = "X";
-            b5.UseVisualStyleBackColor = false;
-            b5.Click += button5_Click;
             // 
             // b4
             // 
@@ -213,35 +193,19 @@
             pb1.TabIndex = 10;
             pb1.TabStop = false;
             // 
-            // b2
-            // 
-            b2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            b2.BackColor = Color.Red;
-            b2.FlatStyle = FlatStyle.Flat;
-            b2.Font = new Font("Malgun Gothic", 14F, FontStyle.Bold);
-            b2.ForeColor = SystemColors.ControlLightLight;
-            b2.Location = new Point(205, 71);
-            b2.Margin = new Padding(3, 3, 0, 3);
-            b2.Name = "b2";
-            b2.Size = new Size(61, 62);
-            b2.TabIndex = 2;
-            b2.Text = "X";
-            b2.UseVisualStyleBackColor = false;
-            b2.Click += button2_Click;
-            // 
             // UserControl2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 152, 83);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tableLayoutGeneral);
             Controls.Add(pictureBanner);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UserControl2";
             Size = new Size(474, 512);
             Click += button1_Click;
             ((System.ComponentModel.ISupportInitialize)pictureBanner).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutGeneral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb3).EndInit();
@@ -251,17 +215,15 @@
         }
 
         #endregion
-        private PictureBox pictureBanner;
-        private TableLayoutPanel tableLayoutPanel1;
         public PictureBox pb4;
         public PictureBox pb3;
         public PictureBox pb2;
         public PictureBox pb1;
         public PictureBox pb5;
-        public Button b5;
         public Button b4;
         public Button b3;
         public Button b1;
-        public Button b2;
+        public PictureBox pictureBanner;
+        public TableLayoutPanel tableLayoutGeneral;
     }
 }

@@ -419,7 +419,7 @@
             lbl_descripcion.ForeColor = SystemColors.ButtonHighlight;
             lbl_descripcion.Location = new Point(3, 49);
             lbl_descripcion.Name = "lbl_descripcion";
-            lbl_descripcion.Padding = new Padding(5, 5, 5, 5);
+            lbl_descripcion.Padding = new Padding(5);
             lbl_descripcion.Size = new Size(294, 115);
             lbl_descripcion.TabIndex = 1;
             // 
@@ -492,11 +492,12 @@
             btnExtras.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnExtras.ForeColor = SystemColors.ButtonHighlight;
             btnExtras.Location = new Point(15, 15);
-            btnExtras.Margin = new Padding(15, 15, 15, 15);
+            btnExtras.Margin = new Padding(15);
             btnExtras.Name = "btnExtras";
             btnExtras.Size = new Size(201, 195);
             btnExtras.TabIndex = 6;
             btnExtras.UseVisualStyleBackColor = false;
+            btnExtras.Click += btnExtras_Click;
             // 
             // lbl_añadirExtras
             // 
@@ -539,7 +540,7 @@
             btnProducto2.FlatAppearance.BorderSize = 0;
             btnProducto2.FlatStyle = FlatStyle.Popup;
             btnProducto2.Location = new Point(15, 15);
-            btnProducto2.Margin = new Padding(15, 15, 15, 15);
+            btnProducto2.Margin = new Padding(15);
             btnProducto2.Name = "btnProducto2";
             btnProducto2.Size = new Size(207, 200);
             btnProducto2.TabIndex = 4;
@@ -659,7 +660,7 @@
             btnProducto1.FlatAppearance.BorderSize = 0;
             btnProducto1.FlatStyle = FlatStyle.Popup;
             btnProducto1.Location = new Point(15, 15);
-            btnProducto1.Margin = new Padding(15, 15, 15, 15);
+            btnProducto1.Margin = new Padding(15);
             btnProducto1.Name = "btnProducto1";
             btnProducto1.Size = new Size(207, 200);
             btnProducto1.TabIndex = 2;
@@ -687,7 +688,7 @@
             tlp3.Controls.Add(lbl_total2, 1, 0);
             tlp3.Controls.Add(lbl_total1, 0, 0);
             tlp3.Location = new Point(481, 575);
-            tlp3.Margin = new Padding(7, 7, 7, 7);
+            tlp3.Margin = new Padding(7);
             tlp3.Name = "tlp3";
             tlp3.RowCount = 1;
             tlp3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
