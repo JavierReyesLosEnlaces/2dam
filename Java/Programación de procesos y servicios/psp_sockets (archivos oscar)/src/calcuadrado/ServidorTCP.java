@@ -54,7 +54,7 @@ public class ServidorTCP {
 				 dis.close();
 				 dos.close();
 				 sckt.close();
-				 ss.close();
+				 //ss.close();
 				 // Registramos en salida estandard
 				 System.out.println( "Cliente = " + direcc + ":" + puerto
 				 + "\tEntrada = " + entrada + "\tSalida = " +
@@ -63,7 +63,5 @@ public class ServidorTCP {
 				 System.err.println("Se ha producido la excepción : " +e);
 			 }
 		 }
-
 	}
-
 }
