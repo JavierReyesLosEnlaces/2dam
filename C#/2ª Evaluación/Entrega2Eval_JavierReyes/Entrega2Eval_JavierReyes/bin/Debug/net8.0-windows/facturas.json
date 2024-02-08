@@ -1,0 +1,4 @@
+{"IdPedido":161,"Comanda":[{"Nombre":"BurgAndr\u00E9s","Precio":1.65,"Calorias":300},{"Nombre":"Croquetas","Precio":9,"Calorias":600}],"Observaciones":"Sin gluten","Total":10.65}
+{"IdPedido":162,"Comanda":[{"Nombre":"BurgAndr\u00E9s","Precio":1.65,"Calorias":300},{"Nombre":"Croquetas","Precio":9,"Calorias":600}],"Observaciones":"Ninguna","Total":10.65}
+{"IdPedido":163,"Comanda":[{"Nombre":"Croquetas","Precio":9,"Calorias":600},{"Nombre":"Extra(s) del complemento","Precio":1.6,"Calorias":200}],"Observaciones":"aggh","Total":10.6}
+{"IdPedido":164,"Comanda":[{"Nombre":"Croquetas","Precio":9,"Calorias":600},{"Nombre":"Extra(s) del complemento","Precio":1.6,"Calorias":200}],"Observaciones":"Ninguna","Total":10.6}

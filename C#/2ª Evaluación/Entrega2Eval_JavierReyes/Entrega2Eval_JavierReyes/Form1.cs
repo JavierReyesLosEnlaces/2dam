@@ -292,7 +292,7 @@ namespace Entrega2Eval_JavierReyes
 
             // AJUSTES COMUNES EN EL EVENTO
             lbl_añadirExtras.BackColor = Color.Black;
-            btn_añadirPagar.Text = "Añadir a la cesta";
+            btn_añadirPagar.Text = "Añadir";
             btn_cancelar.Visible = true;
             lbl_descripcionTitulo.Text = "Ingredientes:";
 
@@ -300,19 +300,20 @@ namespace Entrega2Eval_JavierReyes
             switch (fase)
             {
                 case 1:
-                    lbl_descripcion.Text = (opcion == 1) ? "BurgAndrés\nIngredientes: Pan, Carne de Vacuno, Queso Cheddar, Lechuga, Pepinillos, Ketchup." :
-                                                            "BigAdri\nIngredientes: Pan, Doble Carne de Vacuno, Doble Queso, Bacon, Lechuga, Cebolla, Mostaza.";
+                    lbl_descripcion.Text = (opcion == 1) ? "Pan, Carne de Vacuno, Queso Cheddar, Lechuga, Pepinillos, Ketchup." :
+                                                            "Pan, Doble Carne de Vacuno, Doble Queso, Bacon, Lechuga, Cebolla, Mostaza.";
                     tlpExtras.Visible = true;
 
                     break;
                 case 2:
-                    lbl_descripcion.Text = (opcion == 1) ? "Un refresco de AdriCola de manzana refrescante" :
-                                                            "Una botella de agua de 300ml";
+                    lbl_descripcionTitulo.Text = "Descripción:";
+                    lbl_descripcion.Text = (opcion == 1) ? "Un refresco 'AdriCola' de manzana refrescante (330ml)" :
+                                                            "Una botella de agua (300ml)";
 
                     break;
                 case 3:
-                    lbl_descripcion.Text = (opcion == 1) ? "Unas ricas croquetas de jamón\nIngredientes: Leche entera, Mantequilla, Harina refinada, Jamon (25%), Eevo cocido, Pan rallado." :
-                                                            "Nuestros nuevos PoNuggets\nIngredientes: Pollo (25%), Queso crema, Ajo, Sal, Pimienta, Harina refinada, Pan rallado, Aceite de palma.";
+                    lbl_descripcion.Text = (opcion == 1) ? "Leche entera, Mantequilla, Harina refinada, Jamón (25%), Huevo cocido, Pan rallado." :
+                                                            "Pollo (25%), Queso crema, Ajo, Sal, Pimienta, Harina refinada, Pan rallado, Aceite de palma.";
                     tlpExtras.Visible = true;
 
                     break;
@@ -646,7 +647,7 @@ namespace Entrega2Eval_JavierReyes
             tlp7.BackColor = Color.Black;
             lbl_añadirExtras.BackColor = Color.Black;
             lbl_descripcionTitulo.Text = "Instrucciones";
-            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para añadirlo a tu pedido o continúa sin pedir seleccionando \"No quiero, gracias\"";
+            lbl_descripcion.Text = "Selecciona un producto y presiona el botón de \"Añadir\" para agregarlo a tu pedido o continúa sin pedir nada seleccionando \"No quiero, gracias\"";
             btn_añadirPagar.Text = "No quiero, gracias";
 
             // DEPENDIENDO DE LA FASE, SE INICIALIZA EL TEXTO DE "lbl_tipoProducto"
@@ -701,7 +702,7 @@ namespace Entrega2Eval_JavierReyes
             userControl1.panelColor4.BackColor = Color.FromArgb(255, 152, 83);
             userControl1.panelColor5.BackColor = Color.FromArgb(255, 152, 83);
             userControl1.panelColor6.BackColor = Color.FromArgb(255, 152, 83);
-            btn_añadirPagar.Text = "Añadir a la cesta";
+            btn_añadirPagar.Text = "Añadir";
             lbl_descripcionTitulo.Text = "Extra-rico";
 
             // SE CARGAN LAS IMÁGENES
@@ -845,7 +846,7 @@ namespace Entrega2Eval_JavierReyes
             lbl_tipoProducto.Text = "Tu pedido se ha realizado";
             btn_añadirPagar.Text = "Pagar";
             lbl_tipoProducto.Text = "Se ha generado tu factura";
-            lbl_descripcionTitulo.Text = "Listo!";
+            lbl_descripcionTitulo.Text = "¡Listo!";
             lbl_descripcion.Text = "Dale al botón de 'Pagar' para terminar";
 
             // SE RECOGE EL TEXTO DE "OBSERVACIONES" Y SE PASA COMO PARÁMETRO AL MÉTODO "GenerarFactura" JUNTO A LA FACTURA
