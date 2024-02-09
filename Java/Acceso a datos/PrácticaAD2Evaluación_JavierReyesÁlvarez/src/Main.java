@@ -24,7 +24,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		File f = new File("xml\\Pedidos_Tiendas.xml");
-		String bd = "jdbc:sqlite:bds\\bdDeJavierfINAL.db";
+		String bd = "jdbc:sqlite:bdDePedidos.db";
 		boolean tablasCreadas = false;
 		
 		// EL PROGRAMA CONECTA AUTOMÁTICAMENTE CON LA BASE DE DATOS CUANDO SE EJECUTA
