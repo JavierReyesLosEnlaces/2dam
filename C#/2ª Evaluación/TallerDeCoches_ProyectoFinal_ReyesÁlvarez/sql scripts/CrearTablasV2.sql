@@ -1,8 +1,17 @@
+DROP TABLE IF EXISTS pedidos;
+DROP TABLE IF EXISTS servicios;
+DROP TABLE IF EXISTS coches;
+DROP TABLE IF EXISTS talleres;
+DROP TABLE IF EXISTS empleados;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS usuarios;
+DROP TABLE IF EXISTS roles;
+
+
 CREATE TABLE roles (
     id_rol INT PRIMARY KEY,
-    permiso_lectura TINYINT, 
-    permiso_escritura TINYINT, 
-    permiso_modificacion TINYINT
+    permiso_lectura BIT, 
+    permiso_escritura BIT
 );
 
 CREATE TABLE usuarios (

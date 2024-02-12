@@ -50,3 +50,4 @@ C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_Proy
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.pdb
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.genruntimeconfig.cache
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\ref\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.dll
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\bin\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.dll.config
