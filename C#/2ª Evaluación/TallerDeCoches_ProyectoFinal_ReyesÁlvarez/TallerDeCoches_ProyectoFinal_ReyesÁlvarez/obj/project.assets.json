@@ -2224,11 +2224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj",
+      "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj",
       "projectName": "TallerDeCoches_ProyectoFinal_ReyesÁlvarez",
-      "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj",
+      "projectPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj",
       "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\obj\\",
+      "outputPath": "C:\\Users\\Alumno\\Desktop\\2dam\\C#\\2ª Evaluación\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",

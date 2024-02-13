@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS roles;
 
 CREATE TABLE roles (
     id_rol INT PRIMARY KEY,
+	nombre_rol VARCHAR(15),
     permiso_lectura BIT, 
     permiso_escritura BIT
 );
@@ -30,7 +31,8 @@ CREATE TABLE usuarios (
 
 CREATE TABLE clientes (
     id_cliente INT PRIMARY KEY,
-    estado_cuenta VARCHAR(15),
+    adeuda BIT,
+	cantidad_adeudada DECIMAL(8,2),
     fecha_registro DATE,
     codigo_postal VARCHAR(5),
     id_usuario INT,
