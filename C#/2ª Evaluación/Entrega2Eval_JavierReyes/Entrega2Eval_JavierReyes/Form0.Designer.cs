@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form0));
             tableLayoutPanel1 = new TableLayoutPanel();
             btnUltimoPedido = new Button();
-            label1 = new Label();
             btnEmpezar = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            labelTitulo1 = new Label();
+            panel1 = new Panel();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -44,16 +45,15 @@
             tableLayoutPanel1.BackColor = Color.Transparent;
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(btnUltimoPedido, 0, 2);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnEmpezar, 0, 1);
-            tableLayoutPanel1.Location = new Point(96, 485);
+            tableLayoutPanel1.Controls.Add(btnUltimoPedido, 0, 1);
+            tableLayoutPanel1.Controls.Add(btnEmpezar, 0, 0);
+            tableLayoutPanel1.Location = new Point(158, 617);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(450, 263);
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50.0000076F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(331, 124);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // btnUltimoPedido
@@ -62,34 +62,21 @@
             btnUltimoPedido.BackgroundImageLayout = ImageLayout.Zoom;
             btnUltimoPedido.Dock = DockStyle.Fill;
             btnUltimoPedido.FlatAppearance.BorderColor = Color.White;
-            btnUltimoPedido.FlatAppearance.BorderSize = 3;
+            btnUltimoPedido.FlatAppearance.BorderSize = 0;
             btnUltimoPedido.FlatStyle = FlatStyle.Flat;
-            btnUltimoPedido.Font = new Font("Jokerman", 24F, FontStyle.Bold);
+            btnUltimoPedido.Font = new Font("Jokerman", 18F, FontStyle.Bold);
             btnUltimoPedido.ForeColor = Color.White;
-            btnUltimoPedido.Location = new Point(6, 180);
+            btnUltimoPedido.Location = new Point(6, 67);
             btnUltimoPedido.Margin = new Padding(6);
             btnUltimoPedido.Name = "btnUltimoPedido";
-            btnUltimoPedido.Size = new Size(438, 77);
+            btnUltimoPedido.Size = new Size(319, 51);
             btnUltimoPedido.TabIndex = 4;
             btnUltimoPedido.Text = "Pedir lo de ayer";
             btnUltimoPedido.UseVisualStyleBackColor = false;
+            btnUltimoPedido.Visible = false;
             btnUltimoPedido.Click += btnPedidoAyer_Click;
             btnUltimoPedido.MouseEnter += btnUltimoPedido_MouseEnter;
             btnUltimoPedido.MouseLeave += btnUltimoPedido_MouseLeave;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Jokerman", 30F, FontStyle.Bold);
-            label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(444, 87);
-            label1.TabIndex = 3;
-            label1.Text = "'LOS ENLACES'";
-            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnEmpezar
             // 
@@ -97,14 +84,14 @@
             btnEmpezar.BackgroundImageLayout = ImageLayout.Zoom;
             btnEmpezar.Dock = DockStyle.Fill;
             btnEmpezar.FlatAppearance.BorderColor = Color.White;
-            btnEmpezar.FlatAppearance.BorderSize = 3;
+            btnEmpezar.FlatAppearance.BorderSize = 0;
             btnEmpezar.FlatStyle = FlatStyle.Flat;
-            btnEmpezar.Font = new Font("Jokerman", 24F, FontStyle.Bold);
+            btnEmpezar.Font = new Font("Jokerman", 18F, FontStyle.Bold);
             btnEmpezar.ForeColor = Color.White;
-            btnEmpezar.Location = new Point(6, 93);
+            btnEmpezar.Location = new Point(6, 6);
             btnEmpezar.Margin = new Padding(6);
             btnEmpezar.Name = "btnEmpezar";
-            btnEmpezar.Size = new Size(438, 75);
+            btnEmpezar.Size = new Size(319, 49);
             btnEmpezar.TabIndex = 2;
             btnEmpezar.Text = "Empezar";
             btnEmpezar.UseVisualStyleBackColor = false;
@@ -112,63 +99,88 @@
             btnEmpezar.MouseEnter += btnEmpezar_MouseEnter;
             btnEmpezar.MouseLeave += btnEmpezar_MouseLeave;
             // 
-            // tableLayoutPanel2
+            // panel1
             // 
-            tableLayoutPanel2.BackColor = Color.Transparent;
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(labelTitulo1, 0, 0);
-            tableLayoutPanel2.Font = new Font("Jokerman", 19.8000011F, FontStyle.Bold);
-            tableLayoutPanel2.Location = new Point(0, 12);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(625, 212);
-            tableLayoutPanel2.TabIndex = 1;
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(639, 113);
+            panel1.TabIndex = 1;
             // 
-            // labelTitulo1
+            // label3
             // 
-            labelTitulo1.AutoSize = true;
-            labelTitulo1.BackColor = Color.Transparent;
-            labelTitulo1.Dock = DockStyle.Fill;
-            labelTitulo1.Font = new Font("Jokerman", 30F, FontStyle.Bold);
-            labelTitulo1.ForeColor = SystemColors.Window;
-            labelTitulo1.Location = new Point(3, 0);
-            labelTitulo1.Name = "labelTitulo1";
-            labelTitulo1.Size = new Size(619, 212);
-            labelTitulo1.TabIndex = 0;
-            labelTitulo1.Text = "BIENVENIDO A LA HAMBURGUESERÍA ";
-            labelTitulo1.TextAlign = ContentAlignment.TopCenter;
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Black;
+            label3.Font = new Font("Jokerman", 24F, FontStyle.Bold);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(139, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(350, 58);
+            label3.TabIndex = 2;
+            label3.Text = "'LOS ENLACES'";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Jokerman", 18F, FontStyle.Bold);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(314, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(322, 43);
+            label2.TabIndex = 1;
+            label2.Text = "HAMBURGUESERÍA";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Jokerman", 18F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(318, 43);
+            label1.TabIndex = 0;
+            label1.Text = "BIENVENIDO A LA ";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form0
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 170, 1);
+            BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(635, 665);
-            Controls.Add(tableLayoutPanel2);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(639, 753);
+            Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
             Name = "Form0";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            Text = "Hamburguesería 'Los Enlaces'";
             FormClosed += Form0_FormClosed;
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Label labelTitulo1;
         private Button btnEmpezar;
-        private Label label1;
         private Button btnUltimoPedido;
+        private Panel panel1;
+        private Label label1;
+        private Label label3;
+        private Label label2;
     }
 }

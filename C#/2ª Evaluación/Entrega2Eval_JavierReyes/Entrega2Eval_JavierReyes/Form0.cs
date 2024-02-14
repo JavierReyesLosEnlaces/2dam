@@ -62,14 +62,10 @@ namespace Entrega2Eval_JavierReyes
             string jsonFilePath = "facturas.json";
             bool archivoVacio = !File.Exists(jsonFilePath) || new FileInfo(jsonFilePath).Length == 0;
 
-            // HABILITAR O DESHABILITAR EL BOTÓN SEGÚN EL ESTADO DEL ARCHIVO
-            btnUltimoPedido.Visible = !archivoVacio;
-
             // SI EL ARCHIVO NO ESTÁ VACÍO, CAMBIA EL TAMAÑO DEL FORMULARIO
             if (!archivoVacio)
             {
-                this.Width = 657;
-                this.Height = 800;
+                btnUltimoPedido.Visible = true;
             }
         }
 

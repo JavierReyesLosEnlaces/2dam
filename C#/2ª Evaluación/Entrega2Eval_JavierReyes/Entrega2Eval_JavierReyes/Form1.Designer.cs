@@ -971,7 +971,8 @@
             Controls.Add(tlp1);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form";
+            Text = "Hamburguesería 'Los Enlaces'";
+            TopMost = true;
             FormClosed += Form1_FormClosed;
             tlp1.ResumeLayout(false);
             tlp1.PerformLayout();
