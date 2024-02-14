@@ -92,11 +92,11 @@ namespace Entrega2Eval_JavierReyes
             form1.Show();
         }
 
-        private void btnEmpezar_MouseEnter(object sender, EventArgs e) { btnEmpezar.BackColor = System.Drawing.Color.FromArgb(45, 123, 60); }
+        private void btnEmpezar_MouseEnter(object sender, EventArgs e) { btnEmpezar.BackColor = System.Drawing.Color.FromArgb(22, 134, 55); }
 
         private void btnEmpezar_MouseLeave(object sender, EventArgs e) { btnEmpezar.BackColor = System.Drawing.Color.Black; }
 
-        private void btnUltimoPedido_MouseEnter(object sender, EventArgs e) { btnUltimoPedido.BackColor = System.Drawing.Color.FromArgb(45, 123, 60); }
+        private void btnUltimoPedido_MouseEnter(object sender, EventArgs e) { btnUltimoPedido.BackColor = System.Drawing.Color.FromArgb(22, 134, 55); }
 
         private void btnUltimoPedido_MouseLeave(object sender, EventArgs e) { btnUltimoPedido.BackColor = System.Drawing.Color.Black; }
 
