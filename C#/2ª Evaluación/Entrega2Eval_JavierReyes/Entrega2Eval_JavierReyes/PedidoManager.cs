@@ -3,7 +3,6 @@
     public class PedidoManager
     {
         private int ultimoIdPedido;
-
         public PedidoManager()
         {
             // AL INICIARSE, SE INTENTA CARGAR EL ÚLTIMO ID DE PEDIDO DESDE UN ARCHIVO
@@ -22,13 +21,11 @@
                 ultimoIdPedido = 1; // SI EL CONTENIDO DEL ARCHIVO NO ES UN NÚMERO VÁLIDO, SE COMIENZA DESDE 1
             }
         }
-
         public int GenerarNuevoIdPedido()
         {
             // SE INCREMENTA EL ID DEL PEDIDO Y LO DEVUELVE
             return ++ultimoIdPedido;
         }
-
         public void GuardarUltimoIdPedido()
         {
             // SE GUARDA EL ÚLTIMO ID DE PEDIDO EN UN ARCHIVO

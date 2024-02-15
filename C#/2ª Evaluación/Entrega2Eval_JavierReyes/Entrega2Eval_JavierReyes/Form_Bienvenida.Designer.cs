@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Bienvenida));
             tlp2 = new TableLayoutPanel();
             btnEmpezar = new Button();
             btnUltimoPedido = new Button();
@@ -111,7 +112,7 @@
             // 
             panel1.AutoSize = true;
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.BackgroundImage = Properties.Resources.burguer3;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 87);
@@ -141,7 +142,7 @@
             lb1.AutoSize = true;
             lb1.BackColor = Color.Black;
             lb1.Dock = DockStyle.Fill;
-            lb1.Font = new Font("Jokerman", 18F, FontStyle.Bold);
+            lb1.Font = new Font("Jokerman", 15F, FontStyle.Bold);
             lb1.ForeColor = Color.White;
             lb1.Location = new Point(0, 0);
             lb1.Margin = new Padding(0);
