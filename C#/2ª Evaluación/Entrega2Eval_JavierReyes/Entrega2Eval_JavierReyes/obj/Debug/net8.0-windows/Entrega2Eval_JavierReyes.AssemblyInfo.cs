@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Entrega2Eval_JavierReyes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9991e80bafa25dd500b4a99b6e2e87c452a2cdf9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73a94bec47856b813af15e027c32a15214c23dc8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Entrega2Eval_JavierReyes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Entrega2Eval_JavierReyes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="BurgerLibrary">
-      <HintPath>..\..\AdrianAlonso pdf y Libreria\Ejercicios\BurgerLibrary\bin\Debug\BurgerLibrary.dll</HintPath>
+      <HintPath>..\BurgerLibrary\bin\Debug\BurgerLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 
