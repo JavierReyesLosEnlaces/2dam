@@ -6,7 +6,6 @@ C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_Javier
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\BurgerLibrary.dll
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\BurgerLibrary.pdb
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.csproj.AssemblyReference.cache
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form1.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Properties.Resources.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.csproj.GenerateResource.cache
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.GeneratedMSBuildEditorConfig.editorconfig
@@ -26,7 +25,6 @@ C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_Javier
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\burguer.png
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\burguer3.png
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\pexels-polina-tankilevitch-8202845 (1).jpg
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl1.resources
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Entrega2Eval_JavierReyes.exe
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\banner.jpg
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\bin\Debug\net8.0-windows\Resources\banner1.jpg
@@ -56,7 +54,6 @@ C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.pdb
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.genruntimeconfig.cache
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\ref\Entrega2Eval_JavierReyes.dll
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl2.resources
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.csproj.AssemblyReference.cache
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form1.resources
 C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Properties.Resources.resources
@@ -92,7 +89,10 @@ C:\Users\javir\Desktop\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form0.resources
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl2.resources
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl3.resources
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form0.resources
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl3.resources
-C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl4.resources
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl4.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form_Bienvenida.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.Form_Pedido.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl_MenuExtras.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl_MostrarFacturas.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl_QuitamosAlgo.resources
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\Entrega2Eval_JavierReyes\Entrega2Eval_JavierReyes\obj\Debug\net8.0-windows\Entrega2Eval_JavierReyes.UserControl_UltimosDetalles.resources
