@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TallerDeCoches_ProyectoFinal_ReyesÁlvarez")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cace7730d0002a0fe44e886a6cec1e01be08763e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4aa45aea8894b9c73e1b441e4223afc91c0971f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("TallerDeCoches_ProyectoFinal_ReyesÁlvarez")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TallerDeCoches_ProyectoFinal_ReyesÁlvarez")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
