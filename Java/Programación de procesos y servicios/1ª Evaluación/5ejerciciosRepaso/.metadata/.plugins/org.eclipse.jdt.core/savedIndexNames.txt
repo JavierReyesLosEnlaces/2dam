@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\javir\Downloads\5ejerciciosRepaso-20231130T144253Z-001\5ejerciciosRepaso\.metadata\.plugins\org.eclipse.jdt.core
+3011209426.index
+3274760708.index
+1865797976.index
