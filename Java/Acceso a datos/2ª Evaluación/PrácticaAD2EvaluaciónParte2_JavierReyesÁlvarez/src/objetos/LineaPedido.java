@@ -1,30 +1,32 @@
+package objetos;
 
 public class LineaPedido { // articulosPedido
-	private int num_pedido, codigo, cantidad;
+	private String num_pedido, codigo; 
+	private int cantidad;
 
 	public LineaPedido() {
 
 	}
 
-	public LineaPedido(int num_pedido, int codigo, int cantidad) {
+	public LineaPedido(String num_pedido, String codigo, int cantidad) {
 		this.num_pedido = num_pedido;
 		this.codigo = codigo;
 		this.cantidad = cantidad;
 	}
 
-	public int getNum_pedido() {
+	public String getNum_pedido() {
 		return num_pedido;
 	}
 
-	public void setNum_pedido(int num_pedido) {
+	public void setNum_pedido(String num_pedido) {
 		this.num_pedido = num_pedido;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

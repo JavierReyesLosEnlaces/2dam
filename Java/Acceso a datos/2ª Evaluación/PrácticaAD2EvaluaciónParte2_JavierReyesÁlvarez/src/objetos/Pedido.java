@@ -1,31 +1,31 @@
+package objetos;
 
 public class Pedido {
-	private int num_pedido, num_cliente;
-	private String fecha;
+	private String num_pedido, num_cliente, fecha;
 	
 	public Pedido() {
 		
 	}
 	
-	public Pedido(int num_pedido, int num_cliente, String fecha) {
+	public Pedido(String num_pedido, String num_cliente, String fecha) {
 		this.num_pedido = num_pedido;
 		this.num_cliente = num_cliente;
 		this.fecha = fecha;
 	}
 
-	public int getNum_pedido() {
+	public String getNum_pedido() {
 		return num_pedido;
 	}
 
-	public void setNum_pedido(int num_pedido) {
+	public void setNum_pedido(String num_pedido) {
 		this.num_pedido = num_pedido;
 	}
 
-	public int getNum_cliente() {
+	public String getNum_cliente() {
 		return num_cliente;
 	}
 
-	public void setNum_cliente(int num_cliente) {
+	public void setNum_cliente(String num_cliente) {
 		this.num_cliente = num_cliente;
 	}
 
@@ -35,5 +35,5 @@ public class Pedido {
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
-	}	
+	}
 }
