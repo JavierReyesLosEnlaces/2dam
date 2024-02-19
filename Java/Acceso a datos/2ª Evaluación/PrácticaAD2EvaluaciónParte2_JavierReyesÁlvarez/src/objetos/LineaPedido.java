@@ -1,7 +1,7 @@
 package objetos;
 
 public class LineaPedido { // articulosPedido
-	private String num_pedido, codigo; 
+	private String num_pedido, codigo;
 	private int cantidad;
 
 	public LineaPedido() {
@@ -37,4 +37,9 @@ public class LineaPedido { // articulosPedido
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	public String toString() {
+		return "LineaPedido [num_pedido=" + num_pedido + ", codigo=" + codigo + ", cantidad=" + cantidad + "]";
+	}
+
 }

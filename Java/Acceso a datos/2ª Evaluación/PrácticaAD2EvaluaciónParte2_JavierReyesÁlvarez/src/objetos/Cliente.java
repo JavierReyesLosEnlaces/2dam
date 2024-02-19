@@ -2,9 +2,9 @@ package objetos;
 
 public class Cliente {
 	private String num_cliente, nombre, direccion, telefono;
-	
+
 	public Cliente() {
-		
+
 	}
 
 	public Cliente(String num_cliente, String nombre, String direccion, String telefono) {
@@ -44,5 +44,10 @@ public class Cliente {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
+	}
+
+	public String toString() {
+		return "Cliente [num_cliente=" + num_cliente + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono="
+				+ telefono + "]";
 	}
 }

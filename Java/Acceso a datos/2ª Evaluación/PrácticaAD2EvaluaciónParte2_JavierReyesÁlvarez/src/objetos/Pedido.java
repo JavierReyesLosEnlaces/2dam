@@ -2,11 +2,11 @@ package objetos;
 
 public class Pedido {
 	private String num_pedido, num_cliente, fecha;
-	
+
 	public Pedido() {
-		
+
 	}
-	
+
 	public Pedido(String num_pedido, String num_cliente, String fecha) {
 		this.num_pedido = num_pedido;
 		this.num_cliente = num_cliente;
@@ -35,5 +35,9 @@ public class Pedido {
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+
+	public String toString() {
+		return "Pedido [num_pedido=" + num_pedido + ", num_cliente=" + num_cliente + ", fecha=" + fecha + "]";
 	}
 }

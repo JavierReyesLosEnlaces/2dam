@@ -33,32 +33,33 @@ public class Main {
 
 		// BASES DE DATOS
 		String bdPath = "jdbc:sqlite:BDs\\bdDePedidos.db";
-		String odbPath = "BDs\\bdDePedidos2.odb";
+		String odbPath = "BDs\\bdDePedidos.odb";
 		Connection conn = conexionBD(bdPath);
 
 		// MENÚ
 		do {
 			System.out.println("0. Salir");
-			System.out.println("1. Pasar los datos de SQLite a Neodatis");
+			System.out.println("1. Pasar los datos de SQLite a Neodatis y mostrarlos");
 			System.out.println("2. Numero de pedidos recibidos y procesados correctamente");
 			System.out.println("3. Numero de lineas de pedido recibidas");
 			System.out.println("4. Listado de articulos diferentes recibidos (incluir en cuantos pedidos cada articulo)");
 			System.out.println("5. Listado de clientes que han enviado pedidos. (incluir el numero de pedidos)");
 			System.out.println("6. Listado de articulos con las cantidades sumadas de todos los pedidos");
-			// System.out.println("7. Listado de unidades pedidas por pedido (independientemente del código)");
-			// System.out.println("8. Media de artículos por pedido recibidos");
-			
+			System.out.println("7. Listado de unidades pedidas por pedido (independientemente del codigo)");
+			System.out.println("8. Media de articulos por pedido recibidos");
+			System.out.println("9. *Mostrar datos*");
+
 			opcion = teclado.nextInt();
 			switch (opcion) {
 			case 0:
-				System.out.println("Has abandonado el programa");
+				System.out.println("Has abandonado el programa. ");
 				break;
 			case 1:
-				// CREACIÓN E INSERCIÓN DE OBJETOS
 				crearObjetosPedido(conn, listaPedidos);
 				crearObjetosLineaPedido(conn, listaLineasPedido);
 				crearObjetosArticulo(conn, listaArticulos);
 				crearObjetosCliente(conn, listaClientes);
+
 				insertarObjetos(listaLineasPedido, listaPedidos, listaArticulos, listaClientes, odbPath);
 				break;
 			case 2:
@@ -76,8 +77,17 @@ public class Main {
 			case 6:
 				opcion6(odbPath);
 				break;
+			case 7:
+				opcion7(odbPath);
+				break;
+			case 8:
+				opcion8(odbPath);
+				break;
+			case 9:
+				mostrarObjetos(listaLineasPedido, listaPedidos, listaArticulos, listaClientes);
+				break;
 			default:
-				System.out.println("Opcion invalida");
+				System.out.println("Opcion invalida\n");
 				break;
 			}
 
@@ -86,46 +96,66 @@ public class Main {
 		teclado.close();
 	}
 
-	private static void opcion6(String path) {
-		// 6. Listado de artículos con las cantidades sumadas de todos los pedidos
+	/*
+	 * private static void opcion8(String path) { //
+	 * System.out.println("8. Media de artículos por pedido recibidos"); ODB odb =
+	 * ODBFactory.open(path); IValuesQuery valuesQuery = new
+	 * ValuesCriteriaQuery(LineaPedido.class).avg("cantidad"); Values values =
+	 * odb.getValues(valuesQuery);
+	 * 
+	 * double media = 0.00;
+	 * 
+	 * while (values.hasNext()) { ObjectValues objectValues = values.next(); media =
+	 * (Double) objectValues.getByAlias("cantidad"); }
+	 * System.out.println("Media de articulos por pedido recibidos: "+media);
+	 * System.out.print("\n"); odb.close(); }
+	 */
 
+// APARTADOS DEL EJERCICIO
+
+	private static void opcion2(String path) {
 		ODB odb = ODBFactory.open(path);
-		// Seleccionamos cada código
-		IValuesQuery valuesQuery = new ValuesCriteriaQuery(Articulo.class).field("codigo");
-		Values values = odb.getValues(valuesQuery);
-
-		while (values.hasNext()) {
-			ObjectValues objectValues = (ObjectValues) values.next();
-			String codigo = objectValues.getByAlias("codigo").toString();
-			int cantidadTotalArticulo = comprobarCantidadTotalArticulo(codigo, odb);
-			System.out.println("Articulo con codigo de producto: " + codigo + "\n\t--> Cantidad total: "
-					+ cantidadTotalArticulo + "\n");
-		}
+		IValuesQuery valueQuery = new ValuesCriteriaQuery(Pedido.class).count("num_pedido");
+		Values values = odb.getValues(valueQuery);
+		ObjectValues objectValues = values.nextValues();
+		BigInteger count = (BigInteger) objectValues.getByAlias("num_pedido");
+		System.out.println("Numero de pedidos recibidos y procesados correctamente: " + count.intValue() + "\n");
 		odb.close();
-
 	}
 
-	private static int comprobarCantidadTotalArticulo(String codigo, ODB odb) {
-		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class, Where.equal("codigo", codigo))
-				.field("cantidad");
-		Values values = odb.getValues(valuesQuery);
-		int cantidadTotal = 0;
-		while (values.hasNext()) {
-			ObjectValues objectValues = (ObjectValues) values.next();
-			int cantidad = Integer.parseInt(objectValues.getByAlias("cantidad").toString());
-			cantidadTotal += cantidad;
+	private static void opcion3(String path) {
+		ODB odb = ODBFactory.open(path);
+		IValuesQuery valueQuery = new ValuesCriteriaQuery(LineaPedido.class).count("num_pedido");
+		Values values = odb.getValues(valueQuery);
+		ObjectValues objectValues = values.nextValues();
+		BigInteger count = (BigInteger) objectValues.getByAlias("num_pedido");
+		System.out.println("Numero de lineas de pedido recibidas: " + count.intValue() + "\n");
+		odb.close();
+	}
+
+	private static void opcion4(String path) {
+		ODB odb = ODBFactory.open(path);
+		Objects<Articulo> objects = odb.getObjects(Articulo.class);
+		int contador = 1;
+
+		while (objects.hasNext()) {
+			Articulo articuloActual = objects.next();
+			String codigo = articuloActual.getCodigo();
+			int numPedidosPorArticulo = comprobarNumPedidosPorArticulo(codigo, odb);
+			System.out.println("Articulo " + contador + " -> Codigo de producto: " + codigo + ", Se encuentra en "
+					+ numPedidosPorArticulo + " pedido(s)");
+			contador += 1;
 		}
-		return cantidadTotal;
+		System.out.print("\n");
+		odb.close();
 	}
 
 	private static void opcion5(String path) {
-
 		ODB odb = ODBFactory.open(path);
-
 		IValuesQuery valueQuery = new ValuesCriteriaQuery(Pedido.class).field("num_cliente");
 		Values values = odb.getValues(valueQuery);
-
 		int contador = 1;
+
 		while (values.hasNext()) {
 			ObjectValues objectValues = (ObjectValues) values.next();
 			String num_cliente = objectValues.getByAlias("num_cliente").toString();
@@ -137,6 +167,169 @@ public class Main {
 		}
 		System.out.print("\n");
 		odb.close();
+	}
+
+	private static void opcion6(String path) {
+		ODB odb = ODBFactory.open(path);
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(Articulo.class).field("codigo");
+		Values values = odb.getValues(valuesQuery);
+
+		while (values.hasNext()) {
+			ObjectValues objectValues = (ObjectValues) values.next();
+			String codigo = objectValues.getByAlias("codigo").toString();
+			int cantidadTotalArticulo = comprobarCantidadTotalArticulo(codigo, odb);
+			System.out.println("Articulo con codigo de producto: " + codigo + "\n\t--> Cantidad total: "
+					+ cantidadTotalArticulo + "\n");
+		}
+		odb.close();
+	}
+
+	private static void opcion7(String path) {
+		ODB odb = ODBFactory.open(path);
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class).field("num_pedido").groupBy("num_pedido");
+		Values values = odb.getValues(valuesQuery);
+
+		while (values.hasNext()) {
+			ObjectValues objectValues = values.next();
+			String num_pedido = objectValues.getByAlias("num_pedido").toString();
+			int unidadesPorPedido = comprobarUnidadesPorPedido(num_pedido, odb);
+			System.out
+					.println("Numero de pedido: " + num_pedido + ", Unidades pedidas por pedido: " + unidadesPorPedido);
+		}
+		System.out.print("\n");
+		odb.close();
+	}
+
+	private static void opcion8(String path) {
+		ODB odb = ODBFactory.open(path);
+		double media;
+
+		// SE CUENTAN LOS CÓDIGOS DE PRODUCTO POR NÚMERO DE PEDIDO
+		IValuesQuery valuesQuery1 = new ValuesCriteriaQuery(LineaPedido.class).count("codigo").groupBy("num_pedido");
+		double contadorCodigos = 0;
+		Values values1 = odb.getValues(valuesQuery1);
+
+		while (values1.hasNext()) {
+			ObjectValues objectValues1 = values1.next();
+			int numCodigosEnPedido = Integer.parseInt(objectValues1.getByAlias("codigo").toString());
+			contadorCodigos += numCodigosEnPedido;
+		}
+		// System.out.println("Suma numero productos en cada pedido: " +
+		// contadorCodigos);
+
+		// SE CUENTAN EL NÚMERO DE PEDIDOS
+		IValuesQuery valuesQuery2 = new ValuesCriteriaQuery(Pedido.class).count("num_pedido");
+		Values values2 = odb.getValues(valuesQuery2);
+		int contadorPedidos = 0;
+
+		while (values2.hasNext()) {
+			ObjectValues objectValues2 = values2.next();
+			contadorPedidos = Integer.parseInt(objectValues2.getByAlias("num_pedido").toString());
+		}
+		// System.out.println("Num total pedidos: " + contadorPedidos);
+
+		media = contadorCodigos / contadorPedidos;
+		System.out.println("Media de articulos por pedido recibidos: " + media);
+		System.out.print("\n");
+		odb.close();
+
+	}
+
+// COMPROBACIONES DE DATOS EN UN CAMPO CONCRETO
+
+	private static int comprobarCantidadTotalArticulo(String codigo, ODB odb) {
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class, Where.equal("codigo", codigo))
+				.field("cantidad");
+		Values values = odb.getValues(valuesQuery);
+		int cantidadTotal = 0;
+
+		while (values.hasNext()) {
+			ObjectValues objectValues = (ObjectValues) values.next();
+			int cantidad = Integer.parseInt(objectValues.getByAlias("cantidad").toString());
+			cantidadTotal += cantidad;
+		}
+		return cantidadTotal;
+	}
+
+	private static int comprobarUnidadesPorPedido(String num_pedido, ODB odb) {
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class, Where.equal("num_pedido", num_pedido))
+				.field("cantidad");
+		Values values = odb.getValues(valuesQuery);
+		Integer unidades = 0;
+
+		while (values.hasNext()) {
+			ObjectValues objectValues = (ObjectValues) values.next();
+			Integer cantidad = Integer.parseInt(objectValues.getByAlias("cantidad").toString());
+			unidades += cantidad;
+		}
+		return unidades;
+	}
+
+	private static int comprobarNumPedidosPorArticulo(String codigo, ODB odb) {
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class, Where.equal("codigo", codigo))
+				.count("codigo").groupBy("num_pedido");
+		Values values = odb.getValues(valuesQuery);
+		int contador = 0;
+
+		while (values.hasNext()) {
+			values.next();
+			contador++;
+		}
+		return contador;
+	}
+
+	private static ArrayList<String> comprobarNumPedidosPorCliente(String num_cliente, ODB odb) {
+		ArrayList<String> numPedidosAsociados = new ArrayList<>();
+		IValuesQuery valuesQuery = new ValuesCriteriaQuery(Pedido.class, Where.equal("num_cliente", num_cliente))
+				.field("num_pedido");
+		Values values = odb.getValues(valuesQuery);
+
+		while (values.hasNext()) {
+			ObjectValues objectValues = (ObjectValues) values.next();
+			String num_pedido = objectValues.getByAlias("num_pedido").toString();
+			numPedidosAsociados.add(num_pedido);
+		}
+		return numPedidosAsociados;
+	}
+
+// CREACIÓN DE OBJETOS 
+
+	private static void crearObjetosLineaPedido(Connection conn, ArrayList<LineaPedido> listaLineasPedido) {
+		String query = "SELECT * FROM articulosPedido;";
+		Statement stm;
+		ResultSet rs;
+
+		try {
+			stm = conn.createStatement();
+			rs = stm.executeQuery(query);
+			while (rs.next()) {
+				String num_pedido = rs.getString(1);
+				String codigo = rs.getString(2);
+				int cantidad = rs.getInt(3);
+				listaLineasPedido.add(new LineaPedido(num_pedido, codigo, cantidad));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void crearObjetosPedido(Connection conn, ArrayList<Pedido> listaPedidos) {
+		String query = "SELECT * FROM pedidos;";
+		Statement stm;
+		ResultSet rs;
+
+		try {
+			stm = conn.createStatement();
+			rs = stm.executeQuery(query);
+			while (rs.next()) {
+				String num_pedido = rs.getString(1);
+				String num_cliente = rs.getString(2);
+				String fecha = rs.getString(3);
+				listaPedidos.add(new Pedido(num_pedido, num_cliente, fecha));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void crearObjetosCliente(Connection conn, ArrayList<Cliente> listaClientes) {
@@ -181,75 +374,58 @@ public class Main {
 		}
 	}
 
-	private static int comprobarNumPedidosPorArticulo(String codigo, ODB odb) {
-		IValuesQuery valuesQuery = new ValuesCriteriaQuery(LineaPedido.class, Where.equal("codigo", codigo))
-				.count("codigo").groupBy("num_pedido");
+// INSERCIÓN DE OBJETOS
 
-		Values values = odb.getValues(valuesQuery);
-		int contador = 0;
-		while (values.hasNext()) {
-			values.next();
-			contador++;
+	private static void insertarObjetos(ArrayList<LineaPedido> listaLineasPedido, ArrayList<Pedido> listaPedidos,
+			ArrayList<Articulo> listaArticulos, ArrayList<Cliente> listaClientes, String bd) {
+		ODB odb = ODBFactory.open(bd);
+
+		for (LineaPedido lineaPedido : listaLineasPedido) {
+			odb.store(lineaPedido);
 		}
+		System.out.println("[+] Lineas de pedido pasadas a la OBD.");
 
-		return contador;
-	}
-
-	private static ArrayList<String> comprobarNumPedidosPorCliente(String num_cliente, ODB odb) {
-		ArrayList<String> numPedidosAsociados = new ArrayList<>();
-
-		// IValuesQuery valuesQuery = new ValuesCriteriaQuery(Pedido.class,
-		// Where.equal("num_cliente", num_cliente)).field("num_pedido");
-		IValuesQuery valuesQuery = new ValuesCriteriaQuery(Pedido.class, Where.equal("num_cliente", num_cliente))
-				.field("num_pedido");
-		Values values = odb.getValues(valuesQuery);
-
-		while (values.hasNext()) {
-			ObjectValues objectValues = (ObjectValues) values.next();
-			String num_pedido = objectValues.getByAlias("num_pedido").toString();
-			numPedidosAsociados.add(num_pedido);
+		for (Pedido pedido : listaPedidos) {
+			odb.store(pedido);
 		}
-		return numPedidosAsociados;
-	}
+		System.out.println("[+] Pedidos pasados a la OBD.");
 
-	private static void opcion2(String path) {
-		ODB odb = ODBFactory.open(path);
-		IValuesQuery valueQuery = new ValuesCriteriaQuery(Pedido.class).count("num_pedido");
-		Values values = odb.getValues(valueQuery);
-		ObjectValues objectValues = values.nextValues();
-		BigInteger count = (BigInteger) objectValues.getByAlias("num_pedido");
-		System.out.println("Numero de pedidos recibidos y procesados correctamente: " + count.intValue() + "\n");
+		for (Articulo articulo : listaArticulos) {
+			odb.store(articulo);
+		}
+		System.out.println("[+] Articulos pasados a la OBD.");
+
+		for (Cliente cliente : listaClientes) {
+			odb.store(cliente);
+		}
+		System.out.println("[+] Clientes pasados a la OBD.\n");
+
 		odb.close();
 	}
 
-	private static void opcion3(String path) {
-		ODB odb = ODBFactory.open(path);
-		IValuesQuery valueQuery = new ValuesCriteriaQuery(LineaPedido.class).count("num_pedido");
-		Values values = odb.getValues(valueQuery);
-		ObjectValues objectValues = values.nextValues();
-		BigInteger count = (BigInteger) objectValues.getByAlias("num_pedido");
-		System.out.println("Numero de lineas de pedido recibidas: " + count.intValue() + "\n");
-		odb.close();
-	}
+// MOSTRAR OBJETOS
 
-	private static void opcion4(String path) {
-		ODB odb = ODBFactory.open(path);
+	private static void mostrarObjetos(ArrayList<LineaPedido> listaLineasPedido, ArrayList<Pedido> listaPedidos,
+			ArrayList<Articulo> listaArticulos, ArrayList<Cliente> listaClientes) {
 
-		Objects<Articulo> objects = odb.getObjects(Articulo.class);
-		int contador = 1;
-
-		// Se recorre la lista de objetos
-		while (objects.hasNext()) {
-			Articulo articuloActual = objects.next();
-			String codigo = articuloActual.getCodigo();
-			int numPedidosPorArticulo = comprobarNumPedidosPorArticulo(codigo, odb);
-			System.out.println("Articulo " + contador + " -> Codigo de producto: " + codigo + ", Se encuentra en "
-					+ numPedidosPorArticulo + " pedido(s)");
-			contador += 1;
+		for (int i = 0; i < listaLineasPedido.size(); i++) {
+			System.out.println(listaLineasPedido.get(i).toString());
 		}
-		System.out.print("\n");
-		odb.close();
+
+		for (int i = 0; i < listaPedidos.size(); i++) {
+			System.out.println(listaPedidos.get(i).toString());
+		}
+
+		for (int i = 0; i < listaArticulos.size(); i++) {
+			System.out.println(listaArticulos.get(i).toString());
+		}
+
+		for (int i = 0; i < listaClientes.size(); i++) {
+			System.out.println(listaClientes.get(i).toString());
+		}
 	}
+
+// CONEXIÓN A LA BASE DE DATOS SQLITE
 
 	private static Connection conexionBD(String path) {
 		Connection conn = null;
@@ -265,85 +441,4 @@ public class Main {
 		System.out.println("");
 		return conn;
 	}
-
-	private static void crearObjetosLineaPedido(Connection conn, ArrayList<LineaPedido> listaLineasPedido) {
-		String query = "SELECT * FROM articulosPedido;";
-		Statement stm;
-		ResultSet rs;
-
-		try {
-			stm = conn.createStatement();
-			rs = stm.executeQuery(query);
-			while (rs.next()) {
-				String num_pedido = rs.getString(1);
-				String codigo = rs.getString(2);
-				int cantidad = rs.getInt(3);
-				listaLineasPedido.add(new LineaPedido(num_pedido, codigo, cantidad));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private static void crearObjetosPedido(Connection conn, ArrayList<Pedido> listaPedidos) {
-		String query = "SELECT * FROM pedidos;";
-		Statement stm;
-		ResultSet rs;
-
-		try {
-			stm = conn.createStatement();
-			rs = stm.executeQuery(query);
-			while (rs.next()) {
-				String num_pedido = rs.getString(1);
-				String num_cliente = rs.getString(2);
-				String fecha = rs.getString(3);
-				listaPedidos.add(new Pedido(num_pedido, num_cliente, fecha));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private static void insertarObjetos(ArrayList<LineaPedido> listaLineasPedido, ArrayList<Pedido> listaPedidos,
-			ArrayList<Articulo> listaArticulos, ArrayList<Cliente> listaClientes, String bd) {
-		ODB odb = ODBFactory.open(bd);
-
-		// INSERTAR LINEAS DE PEDIDO
-		for (LineaPedido lineaPedido : listaLineasPedido) {
-			odb.store(lineaPedido);
-		}
-		System.out.println("[+] Lineas de pedido pasadas a la OBD.");
-
-		// INSERTAR PEDIDOS
-		for (Pedido pedido : listaPedidos) {
-			odb.store(pedido);
-		}
-		System.out.println("[+] Pedidos pasados a la OBD.");
-
-		// INSERTAR ARTÍCULOS
-		for (Articulo articulo : listaArticulos) {
-			odb.store(articulo);
-		}
-		System.out.println("[+] Articulos pasados a la OBD.");
-
-		// INSERTAR CLIENTES
-		for (Cliente cliente : listaClientes) {
-			odb.store(cliente);
-		}
-		System.out.println("[+] Clientes pasados a la OBD.\n");
-
-		odb.close();
-	}
-
-	/*
-	 * private static void mostrarObjetos(ArrayList<LineaPedido> listaLineasPedido,
-	 * ArrayList<Pedido> listaPedidos) {
-	 * 
-	 * System.out.println("Lineas de pedido: "); for (int i = 0; i <
-	 * listaLineasPedido.size(); i++) {
-	 * System.out.println(listaLineasPedido.get(i).toString()); }
-	 * 
-	 * System.out.println("Pedidos: "); for (int i = 0; i < listaPedidos.size();
-	 * i++) { System.out.println(listaPedidos.get(i).toString()); } }
-	 */
 }
