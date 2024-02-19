@@ -25,7 +25,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                //dataGridView1.DataSource = dt;
 
                 MessageBox.Show("Exito");
 
@@ -91,12 +91,14 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
                 // Indicamos que el comando es un procedimiento almacenado
                 cmd.CommandType = CommandType.StoredProcedure;
-
+                /*
                 string bookTitle = textBox1.Text;
                 string bookAuthor = textBox2.Text;
+                
 
                 cmd.Parameters.Add(new SqlParameter("@bookTitle", bookTitle));
                 cmd.Parameters.Add(new SqlParameter("@bookAuthor", bookAuthor));
+                */
 
                 cmd.ExecuteNonQuery();
                 connection.Close();

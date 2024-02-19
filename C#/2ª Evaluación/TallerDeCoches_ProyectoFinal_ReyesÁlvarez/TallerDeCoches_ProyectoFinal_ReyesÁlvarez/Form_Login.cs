@@ -17,5 +17,50 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form_SignUp fs = new Form_SignUp();
+            fs.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (tb1.Text.Length < 3 || tb2.Text.Length < 5)
+            {
+                MessageBox.Show("Username or password no válido, muy corto");
+
+            }
+            else
+            {
+                // Creacion del directorio que contendrá el fichero con las claves cifradas
+                string dir = tb1.Text;
+                if(!Directory.Exists("data\\"+dir))
+                {
+                    MessageBox.Show("Usuario no registrado");
+                }
+                else
+                {
+                    var sr = new StreamReader("data\\"+dir+"\\data.ls");
+                   
+                    string encusr = sr.ReadLine();
+                    string encpss = sr.ReadLine();
+                    sr.Close();
+
+                    string decusr = AesCryp.Decrypt(encusr);
+                    string decpss = AesCryp.Decrypt(encpss);
+
+                    if(decusr == tb1.Text && decpss == tb2.Text)
+                    {
+                        MessageBox.Show("Bienevenido");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en el password");
+                    }
+                }
+
+            }
+        }
     }
 }
