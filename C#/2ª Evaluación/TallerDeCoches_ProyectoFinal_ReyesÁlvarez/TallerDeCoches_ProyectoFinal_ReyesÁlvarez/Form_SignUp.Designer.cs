@@ -35,6 +35,7 @@
             tlp3 = new TableLayoutPanel();
             panel1 = new Panel();
             tlp5 = new TableLayoutPanel();
+            btn_irLogin = new Button();
             lb2 = new Label();
             tb_usuario = new TextBox();
             btn_crearCuenta = new Button();
@@ -45,7 +46,6 @@
             tb_user = new TextBox();
             tlp0 = new TableLayoutPanel();
             textBox2 = new TextBox();
-            btn_irLogin = new Button();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlp3.SuspendLayout();
@@ -83,6 +83,7 @@
             btn_salir.TabIndex = 0;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
+            btn_salir.Click += btn_salir_Click;
             // 
             // tlp2
             // 
@@ -172,6 +173,18 @@
             tlp5.Size = new Size(160, 295);
             tlp5.TabIndex = 2;
             // 
+            // btn_irLogin
+            // 
+            btn_irLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btn_irLogin.Location = new Point(30, 255);
+            btn_irLogin.Margin = new Padding(30, 10, 30, 10);
+            btn_irLogin.Name = "btn_irLogin";
+            btn_irLogin.Size = new Size(100, 30);
+            btn_irLogin.TabIndex = 5;
+            btn_irLogin.Text = "Ir a login";
+            btn_irLogin.UseVisualStyleBackColor = true;
+            btn_irLogin.Click += btn_irLogin_Click;
+            // 
             // lb2
             // 
             lb2.AutoSize = true;
@@ -203,6 +216,7 @@
             btn_crearCuenta.TabIndex = 3;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
+            btn_crearCuenta.Click += btn_crearCuenta_Click;
             // 
             // lb3
             // 
@@ -287,17 +301,6 @@
             textBox2.Size = new Size(10000, 23);
             textBox2.TabIndex = 1;
             // 
-            // btn_irLogin
-            // 
-            btn_irLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btn_irLogin.Location = new Point(30, 255);
-            btn_irLogin.Margin = new Padding(30, 10, 30, 10);
-            btn_irLogin.Name = "btn_irLogin";
-            btn_irLogin.Size = new Size(100, 30);
-            btn_irLogin.TabIndex = 5;
-            btn_irLogin.Text = "Ir a login";
-            btn_irLogin.UseVisualStyleBackColor = true;
-            // 
             // Form_SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -307,6 +310,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form_SignUp";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             tlp1.ResumeLayout(false);
             tlp2.ResumeLayout(false);

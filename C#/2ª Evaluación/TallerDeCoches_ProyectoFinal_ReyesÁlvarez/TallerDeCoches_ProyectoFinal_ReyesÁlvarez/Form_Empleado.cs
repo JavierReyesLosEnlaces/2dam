@@ -113,5 +113,10 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         {
 
         }
+
+        private void dgv_consultaRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

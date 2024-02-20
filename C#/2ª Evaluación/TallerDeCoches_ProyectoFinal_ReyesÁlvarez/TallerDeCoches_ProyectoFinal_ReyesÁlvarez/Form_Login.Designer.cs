@@ -34,7 +34,7 @@
             tlp2 = new TableLayoutPanel();
             lb1 = new Label();
             tlp3 = new TableLayoutPanel();
-            panel1 = new Panel();
+            panelImagen = new Panel();
             tlp5 = new TableLayoutPanel();
             btn_crearCuenta = new Button();
             lb2 = new Label();
@@ -42,16 +42,10 @@
             btn_entrar = new Button();
             lb3 = new Label();
             tb_contraseña = new TextBox();
-            tlp4 = new TableLayoutPanel();
-            tb_password = new TextBox();
-            tb_user = new TextBox();
-            tlp0 = new TableLayoutPanel();
-            textBox2 = new TextBox();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlp3.SuspendLayout();
             tlp5.SuspendLayout();
-            tlp4.SuspendLayout();
             SuspendLayout();
             // 
             // tlp1
@@ -84,6 +78,7 @@
             btn_salir.TabIndex = 0;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
+            btn_salir.Click += btn_salir_Click;
             // 
             // tlp2
             // 
@@ -124,7 +119,7 @@
             tlp3.ColumnCount = 2;
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tlp3.Controls.Add(panel1, 0, 0);
+            tlp3.Controls.Add(panelImagen, 0, 0);
             tlp3.Controls.Add(tlp5, 1, 0);
             tlp3.Dock = DockStyle.Fill;
             tlp3.Location = new Point(0, 80);
@@ -135,17 +130,17 @@
             tlp3.Size = new Size(800, 375);
             tlp3.TabIndex = 0;
             // 
-            // panel1
+            // panelImagen
             // 
-            panel1.BackColor = Color.White;
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(480, 375);
-            panel1.TabIndex = 1;
+            panelImagen.BackColor = Color.White;
+            panelImagen.BackgroundImage = (Image)resources.GetObject("panelImagen.BackgroundImage");
+            panelImagen.BackgroundImageLayout = ImageLayout.Zoom;
+            panelImagen.Dock = DockStyle.Fill;
+            panelImagen.Location = new Point(0, 0);
+            panelImagen.Margin = new Padding(0);
+            panelImagen.Name = "panelImagen";
+            panelImagen.Size = new Size(480, 375);
+            panelImagen.TabIndex = 1;
             // 
             // tlp5
             // 
@@ -184,6 +179,7 @@
             btn_crearCuenta.TabIndex = 5;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
+            btn_crearCuenta.Click += btn_crear_cuenta_Click;
             // 
             // lb2
             // 
@@ -216,6 +212,7 @@
             btn_entrar.TabIndex = 3;
             btn_entrar.Text = "Entrar";
             btn_entrar.UseVisualStyleBackColor = true;
+            btn_entrar.Click += btn_entrar_Click;
             // 
             // lb3
             // 
@@ -239,67 +236,6 @@
             tb_contraseña.Size = new Size(154, 23);
             tb_contraseña.TabIndex = 2;
             // 
-            // tlp4
-            // 
-            tlp4.ColumnCount = 1;
-            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tlp4.Controls.Add(tb_password, 0, 1);
-            tlp4.Dock = DockStyle.Fill;
-            tlp4.Location = new Point(0, 0);
-            tlp4.Margin = new Padding(100, 0, 100, 0);
-            tlp4.Name = "tlp4";
-            tlp4.RowCount = 2;
-            tlp4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp4.Size = new Size(200, 100);
-            tlp4.TabIndex = 0;
-            // 
-            // tb_password
-            // 
-            tb_password.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tb_password.Location = new Point(18, 20);
-            tb_password.Margin = new Padding(18, 0, 26, 0);
-            tb_password.Name = "tb_password";
-            tb_password.PlaceholderText = "Contraseña";
-            tb_password.Size = new Size(156, 23);
-            tb_password.TabIndex = 0;
-            // 
-            // tb_user
-            // 
-            tb_user.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tb_user.Location = new Point(18, 0);
-            tb_user.Margin = new Padding(18, 0, 26, 0);
-            tb_user.Name = "tb_user";
-            tb_user.PlaceholderText = "Usuario";
-            tb_user.Size = new Size(156, 23);
-            tb_user.TabIndex = 1;
-            // 
-            // tlp0
-            // 
-            tlp0.ColumnCount = 1;
-            tlp0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp0.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tlp0.Dock = DockStyle.Fill;
-            tlp0.Location = new Point(0, 0);
-            tlp0.Margin = new Padding(100, 0, 100, 0);
-            tlp0.Name = "tlp0";
-            tlp0.RowCount = 2;
-            tlp0.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp0.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp0.Size = new Size(200, 100);
-            tlp0.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(18, 0);
-            textBox2.Margin = new Padding(18, 0, 26, 0);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Usuario";
-            textBox2.Size = new Size(10000, 23);
-            textBox2.TabIndex = 1;
-            // 
             // Form_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -309,6 +245,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form_Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             tlp1.ResumeLayout(false);
             tlp2.ResumeLayout(false);
@@ -316,8 +253,6 @@
             tlp3.ResumeLayout(false);
             tlp5.ResumeLayout(false);
             tlp5.PerformLayout();
-            tlp4.ResumeLayout(false);
-            tlp4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -327,13 +262,8 @@
         private Button btn_salir;
         private TableLayoutPanel tlp2;
         private TableLayoutPanel tlp3;
-        private Panel panel1;
+        private Panel panelImagen;
         private Label lb1;
-        private TableLayoutPanel tlp4;
-        private TextBox tb_password;
-        private TextBox tb_user;
-        private TableLayoutPanel tlp0;
-        private TextBox textBox2;
         private Button button3;
         private TableLayoutPanel tlp5;
         private Label lb2;

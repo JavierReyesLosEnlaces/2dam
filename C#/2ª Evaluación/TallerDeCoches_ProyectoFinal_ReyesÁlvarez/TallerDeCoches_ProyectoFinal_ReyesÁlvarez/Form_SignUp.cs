@@ -18,15 +18,16 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_irLogin_Click(object sender, EventArgs e)
         {
-            Form_SignUp fs = new Form_SignUp();
-            fs.Show();
+            Form_Login fl = new Form_Login();
+            fl.Show();
+            this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_crearCuenta_Click(object sender, EventArgs e)
         {
-            if (tb1.Text.Length < 3 || tb_contraseña.Text.Length < 5)
+            if (tb_usuario.Text.Length < 3 || tb_contraseña.Text.Length < 5)
             {
                 MessageBox.Show("Username or password no válido, muy corto");
 
@@ -34,7 +35,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             else
             {
                 // Creacion del directorio que contendrá el fichero con las claves cifradas
-                string dir = tb1.Text;
+                string dir = tb_usuario.Text;
                 if (!Directory.Exists("data\\" + dir))
                 {
                     MessageBox.Show("Usuario no registrado");
@@ -50,7 +51,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     string decusr = AesCryp.Decrypt(encusr);
                     string decpss = AesCryp.Decrypt(encpss);
 
-                    if (decusr == tb1.Text && decpss == tb_contraseña.Text)
+                    if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
                     {
                         MessageBox.Show("Bienevenido");
                     }
@@ -61,6 +62,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 }
 
             }
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
