@@ -26,7 +26,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (tb1.Text.Length < 3 || tb2.Text.Length < 5)
+            if (tb1.Text.Length < 3 || tb_contraseña.Text.Length < 5)
             {
                 MessageBox.Show("Username or password no válido, muy corto");
 
@@ -50,7 +50,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     string decusr = AesCryp.Decrypt(encusr);
                     string decpss = AesCryp.Decrypt(encpss);
 
-                    if(decusr == tb1.Text && decpss == tb2.Text)
+                    if(decusr == tb1.Text && decpss == tb_contraseña.Text)
                     {
                         MessageBox.Show("Bienevenido");
                     }

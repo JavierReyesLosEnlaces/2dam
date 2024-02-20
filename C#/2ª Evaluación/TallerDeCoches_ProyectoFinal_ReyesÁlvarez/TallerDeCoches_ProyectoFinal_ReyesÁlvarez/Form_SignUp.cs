@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,10 +18,15 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             InitializeComponent();
         }
 
-
-        private void btn_registrarse_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            if(tb1.Text.Length < 3 || tb2.Text.Length < 5 )
+            Form_SignUp fs = new Form_SignUp();
+            fs.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (tb1.Text.Length < 3 || tb_contraseña.Text.Length < 5)
             {
                 MessageBox.Show("Username or password no válido, muy corto");
 
@@ -29,20 +35,31 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             {
                 // Creacion del directorio que contendrá el fichero con las claves cifradas
                 string dir = tb1.Text;
-                Directory.CreateDirectory("data\\" + dir);
-                var sw = new StreamWriter("data\\" + dir + "\\data.ls");
+                if (!Directory.Exists("data\\" + dir))
+                {
+                    MessageBox.Show("Usuario no registrado");
+                }
+                else
+                {
+                    var sr = new StreamReader("data\\" + dir + "\\data.ls");
 
-                // Creamos las string de encriptado en nuestra clave aescrypt
-                string encusr = AesCryp.Encrypt(tb1.Text);
-                string encpss = AesCryp.Encrypt(tb2.Text);
+                    string encusr = sr.ReadLine();
+                    string encpss = sr.ReadLine();
+                    sr.Close();
 
-                // Una vez llamadas a los metodos estatics para encriptar
-                sw.WriteLine(encusr);
-                sw.WriteLine(encpss);
-                sw.Close();
+                    string decusr = AesCryp.Decrypt(encusr);
+                    string decpss = AesCryp.Decrypt(encpss);
 
-                MessageBox.Show("Usuario creado correctamente");
-                this.Close();
+                    if (decusr == tb1.Text && decpss == tb_contraseña.Text)
+                    {
+                        MessageBox.Show("Bienevenido");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error en el password");
+                    }
+                }
+
             }
         }
     }
