@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
-    public partial class Form_SignUp : Form
+    public partial class Form_SignUpEmpleado : Form
     {
-        public Form_SignUp()
+        public Form_SignUpEmpleado()
         {
             InitializeComponent();
         }
@@ -38,27 +38,21 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 string dir = tb_usuario.Text;
                 if (!Directory.Exists("data\\" + dir))
                 {
-                    MessageBox.Show("Usuario no registrado");
+                    MessageBox.Show("Usuario no registrado, creando directorio");
+                    // Creación del directorio
+                    Directory.CreateDirectory("data\\" + dir);
+                    string encusr = AesCryp.Encrypt(tb_usuario.Text);
+                    string encpss = AesCryp.Encrypt(tb_contraseña.Text);
+                    var streamwriter = new StreamWriter("data\\" + dir +"\\data.ls");
+                    streamwriter.WriteLine(encusr);
+                    streamwriter.WriteLine(encpss);
+                    streamwriter.Close();
+                    MessageBox.Show("El usuario se ha registrado correctamente");
+
                 }
                 else
                 {
-                    var sr = new StreamReader("data\\" + dir + "\\data.ls");
-
-                    string encusr = sr.ReadLine();
-                    string encpss = sr.ReadLine();
-                    sr.Close();
-
-                    string decusr = AesCryp.Decrypt(encusr);
-                    string decpss = AesCryp.Decrypt(encpss);
-
-                    if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
-                    {
-                        MessageBox.Show("Bienevenido");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error en el password");
-                    }
+                    MessageBox.Show("El usuario ya existe. ");
                 }
 
             }

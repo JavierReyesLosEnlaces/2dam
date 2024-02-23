@@ -1,6 +1,6 @@
 ﻿namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
-    partial class Form_Login
+    partial class Form_SignUpCliente : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             tlp1 = new TableLayoutPanel();
             btn_salir = new Button();
             tlp2 = new TableLayoutPanel();
             lb1 = new Label();
             tlp3 = new TableLayoutPanel();
-            panelImagen = new Panel();
             tlp5 = new TableLayoutPanel();
-            btn_crearCuenta = new Button();
+            btn_irLogin = new Button();
             lb2 = new Label();
             tb_usuario = new TextBox();
-            btn_entrar = new Button();
+            btn_crearCuenta = new Button();
             lb3 = new Label();
             tb_contraseña = new TextBox();
+            panel1 = new Panel();
+            tlp4 = new TableLayoutPanel();
+            tb_password = new TextBox();
+            tb_user = new TextBox();
+            tlp0 = new TableLayoutPanel();
+            textBox2 = new TextBox();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlp3.SuspendLayout();
             tlp5.SuspendLayout();
+            tlp4.SuspendLayout();
             SuspendLayout();
             // 
             // tlp1
@@ -118,8 +123,8 @@
             tlp3.ColumnCount = 2;
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tlp3.Controls.Add(panelImagen, 0, 0);
             tlp3.Controls.Add(tlp5, 1, 0);
+            tlp3.Controls.Add(panel1, 0, 0);
             tlp3.Dock = DockStyle.Fill;
             tlp3.Location = new Point(0, 107);
             tlp3.Margin = new Padding(0);
@@ -129,18 +134,6 @@
             tlp3.Size = new Size(914, 501);
             tlp3.TabIndex = 0;
             // 
-            // panelImagen
-            // 
-            panelImagen.BackColor = Color.White;
-            panelImagen.BackgroundImage = (Image)resources.GetObject("panelImagen.BackgroundImage");
-            panelImagen.BackgroundImageLayout = ImageLayout.Zoom;
-            panelImagen.Dock = DockStyle.Fill;
-            panelImagen.Location = new Point(0, 0);
-            panelImagen.Margin = new Padding(0);
-            panelImagen.Name = "panelImagen";
-            panelImagen.Size = new Size(548, 501);
-            panelImagen.TabIndex = 1;
-            // 
             // tlp5
             // 
             tlp5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -149,14 +142,14 @@
             tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
             tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
             tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
-            tlp5.Controls.Add(btn_crearCuenta, 0, 5);
+            tlp5.Controls.Add(btn_irLogin, 0, 5);
             tlp5.Controls.Add(lb2, 0, 0);
             tlp5.Controls.Add(tb_usuario, 0, 1);
-            tlp5.Controls.Add(btn_entrar, 0, 3);
+            tlp5.Controls.Add(btn_crearCuenta, 0, 3);
             tlp5.Controls.Add(lb3, 0, 4);
             tlp5.Controls.Add(tb_contraseña, 0, 2);
-            tlp5.Location = new Point(639, 53);
-            tlp5.Margin = new Padding(91, 53, 91, 53);
+            tlp5.Location = new Point(628, 53);
+            tlp5.Margin = new Padding(80, 53, 80, 53);
             tlp5.Name = "tlp5";
             tlp5.RowCount = 6;
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
@@ -165,20 +158,20 @@
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tlp5.Size = new Size(184, 395);
+            tlp5.Size = new Size(206, 395);
             tlp5.TabIndex = 2;
             // 
-            // btn_crearCuenta
+            // btn_irLogin
             // 
-            btn_crearCuenta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btn_crearCuenta.Location = new Point(34, 338);
-            btn_crearCuenta.Margin = new Padding(34, 13, 34, 13);
-            btn_crearCuenta.Name = "btn_crearCuenta";
-            btn_crearCuenta.Size = new Size(116, 44);
-            btn_crearCuenta.TabIndex = 5;
-            btn_crearCuenta.Text = "Crear cuenta";
-            btn_crearCuenta.UseVisualStyleBackColor = true;
-            btn_crearCuenta.Click += btn_crear_cuenta_Click;
+            btn_irLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btn_irLogin.Location = new Point(34, 338);
+            btn_irLogin.Margin = new Padding(34, 13, 34, 13);
+            btn_irLogin.Name = "btn_irLogin";
+            btn_irLogin.Size = new Size(138, 44);
+            btn_irLogin.TabIndex = 5;
+            btn_irLogin.Text = "Ir a login";
+            btn_irLogin.UseVisualStyleBackColor = true;
+            btn_irLogin.Click += btn_irLogin_Click;
             // 
             // lb2
             // 
@@ -188,9 +181,9 @@
             lb2.ForeColor = Color.FromArgb(39, 50, 56);
             lb2.Location = new Point(3, 0);
             lb2.Name = "lb2";
-            lb2.Size = new Size(178, 65);
+            lb2.Size = new Size(200, 65);
             lb2.TabIndex = 0;
-            lb2.Text = "Entra a tu cuenta";
+            lb2.Text = "Crea tu cuenta";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tb_usuario
@@ -200,19 +193,19 @@
             tb_usuario.Margin = new Padding(3, 4, 3, 4);
             tb_usuario.Name = "tb_usuario";
             tb_usuario.PlaceholderText = "Usuario";
-            tb_usuario.Size = new Size(178, 27);
+            tb_usuario.Size = new Size(200, 27);
             tb_usuario.TabIndex = 1;
             // 
-            // btn_entrar
+            // btn_crearCuenta
             // 
-            btn_entrar.Location = new Point(34, 208);
-            btn_entrar.Margin = new Padding(34, 13, 34, 13);
-            btn_entrar.Name = "btn_entrar";
-            btn_entrar.Size = new Size(114, 39);
-            btn_entrar.TabIndex = 3;
-            btn_entrar.Text = "Entrar";
-            btn_entrar.UseVisualStyleBackColor = true;
-            btn_entrar.Click += btn_entrar_Click;
+            btn_crearCuenta.Location = new Point(34, 208);
+            btn_crearCuenta.Margin = new Padding(34, 13, 34, 13);
+            btn_crearCuenta.Name = "btn_crearCuenta";
+            btn_crearCuenta.Size = new Size(114, 39);
+            btn_crearCuenta.TabIndex = 3;
+            btn_crearCuenta.Text = "Crear cuenta";
+            btn_crearCuenta.UseVisualStyleBackColor = true;
+            btn_crearCuenta.Click += btn_crearCuenta_Click;
             // 
             // lb3
             // 
@@ -222,9 +215,9 @@
             lb3.ForeColor = Color.FromArgb(39, 50, 56);
             lb3.Location = new Point(3, 260);
             lb3.Name = "lb3";
-            lb3.Size = new Size(178, 65);
+            lb3.Size = new Size(200, 65);
             lb3.TabIndex = 4;
-            lb3.Text = "¿No tienes una cuenta?";
+            lb3.Text = "¿Ya tienes una cuenta?";
             lb3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tb_contraseña
@@ -234,17 +227,89 @@
             tb_contraseña.Margin = new Padding(3, 4, 3, 4);
             tb_contraseña.Name = "tb_contraseña";
             tb_contraseña.PlaceholderText = "Contraseña";
-            tb_contraseña.Size = new Size(178, 27);
+            tb_contraseña.Size = new Size(200, 27);
             tb_contraseña.TabIndex = 2;
             // 
-            // Form_Login
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(548, 501);
+            panel1.TabIndex = 1;
+            // 
+            // tlp4
+            // 
+            tlp4.ColumnCount = 1;
+            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tlp4.Controls.Add(tb_password, 0, 1);
+            tlp4.Dock = DockStyle.Fill;
+            tlp4.Location = new Point(0, 0);
+            tlp4.Margin = new Padding(100, 0, 100, 0);
+            tlp4.Name = "tlp4";
+            tlp4.RowCount = 2;
+            tlp4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp4.Size = new Size(200, 100);
+            tlp4.TabIndex = 0;
+            // 
+            // tb_password
+            // 
+            tb_password.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tb_password.Location = new Point(18, 20);
+            tb_password.Margin = new Padding(18, 0, 26, 0);
+            tb_password.Name = "tb_password";
+            tb_password.PlaceholderText = "Contraseña";
+            tb_password.Size = new Size(156, 27);
+            tb_password.TabIndex = 0;
+            // 
+            // tb_user
+            // 
+            tb_user.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tb_user.Location = new Point(18, 0);
+            tb_user.Margin = new Padding(18, 0, 26, 0);
+            tb_user.Name = "tb_user";
+            tb_user.PlaceholderText = "Usuario";
+            tb_user.Size = new Size(156, 27);
+            tb_user.TabIndex = 1;
+            // 
+            // tlp0
+            // 
+            tlp0.ColumnCount = 1;
+            tlp0.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlp0.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tlp0.Dock = DockStyle.Fill;
+            tlp0.Location = new Point(0, 0);
+            tlp0.Margin = new Padding(100, 0, 100, 0);
+            tlp0.Name = "tlp0";
+            tlp0.RowCount = 2;
+            tlp0.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp0.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp0.Size = new Size(200, 100);
+            tlp0.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox2.Location = new Point(18, 0);
+            textBox2.Margin = new Padding(18, 0, 26, 0);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Usuario";
+            textBox2.Size = new Size(10000, 27);
+            textBox2.TabIndex = 1;
+            // 
+            // Form_SignUpCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 753);
             Controls.Add(tlp1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form_Login";
+            Name = "Form_SignUpCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             tlp1.ResumeLayout(false);
@@ -253,6 +318,8 @@
             tlp3.ResumeLayout(false);
             tlp5.ResumeLayout(false);
             tlp5.PerformLayout();
+            tlp4.ResumeLayout(false);
+            tlp4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -262,15 +329,20 @@
         private Button btn_salir;
         private TableLayoutPanel tlp2;
         private TableLayoutPanel tlp3;
-        private Panel panelImagen;
+        private Panel panel1;
         private Label lb1;
+        private TableLayoutPanel tlp4;
+        private TextBox tb_password;
+        private TextBox tb_user;
+        private TableLayoutPanel tlp0;
+        private TextBox textBox2;
         private Button button3;
         private TableLayoutPanel tlp5;
         private Label lb2;
         private TextBox tb_contraseña;
-        private Button btn_entrar;
-        private Label lb3;
         private Button btn_crearCuenta;
+        private Label lb3;
         private TextBox tb_usuario;
+        private Button btn_irLogin;
     }
 }
