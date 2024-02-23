@@ -4,7 +4,7 @@
     <Compile Update="Form_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form_Login.cs">
+    <Compile Update="Forms Identificación\Clientes\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

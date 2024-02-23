@@ -78,7 +78,6 @@
             btn_salir.TabIndex = 0;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
-            btn_salir.Click += btn_salir_Click;
             // 
             // tlp2
             // 
@@ -179,7 +178,6 @@
             btn_crearCuenta.TabIndex = 5;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
-            btn_crearCuenta.Click += btn_crear_cuenta_Click;
             // 
             // lb2
             // 
@@ -191,7 +189,7 @@
             lb2.Name = "lb2";
             lb2.Size = new Size(154, 49);
             lb2.TabIndex = 0;
-            lb2.Text = "Entra a tu cuenta";
+            lb2.Text = "¡Bienvenid@!";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tb_usuario
@@ -212,7 +210,6 @@
             btn_entrar.TabIndex = 3;
             btn_entrar.Text = "Entrar";
             btn_entrar.UseVisualStyleBackColor = true;
-            btn_entrar.Click += btn_entrar_Click;
             // 
             // lb3
             // 

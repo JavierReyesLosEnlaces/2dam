@@ -20,7 +20,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void btn_crear_cuenta_Click(object sender, EventArgs e)
         {
-            Form_SignUp fs = new Form_SignUp();
+            Form_SignupCliente fs = new Form_SignupCliente();
             fs.Show();
             this.Hide();
         }

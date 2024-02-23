@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
-    public partial class Form_SignUp : Form
+    public partial class Form_SignupCliente : Form
     {
-        public Form_SignUp()
+        public Form_SignupCliente()
         {
             InitializeComponent();
         }
