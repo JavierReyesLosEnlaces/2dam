@@ -11,15 +11,9 @@ using System.Windows.Forms;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.cs
-    public partial class Form_SignupCliente : Form
+    public partial class Form_SignUpCliente : Form
     {
-        public Form_SignupCliente()
-========
-    public partial class Form_SignUpEmpleado : Form
-    {
-        public Form_SignUpEmpleado()
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpEmpleado.cs
+        public Form_SignUpCliente()
         {
             InitializeComponent();
         }
@@ -54,6 +48,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     streamwriter.WriteLine(encpss);
                     streamwriter.Close();
                     MessageBox.Show("El usuario se ha registrado correctamente");
+
+                    // AQUÍ TIENE QUE GUARDARSE LA LÓGICA PARA GUARDAR EL TIPO DE USUARIO QUE SE CREA
 
                 }
                 else

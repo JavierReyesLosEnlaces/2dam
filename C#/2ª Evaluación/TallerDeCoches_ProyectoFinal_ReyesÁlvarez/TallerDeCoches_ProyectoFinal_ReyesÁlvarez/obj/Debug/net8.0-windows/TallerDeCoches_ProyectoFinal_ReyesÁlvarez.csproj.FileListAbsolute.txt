@@ -90,8 +90,6 @@ C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoF
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj.AssemblyReference.cache
-C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form0_Login.resources
-C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form2_Empleado.resources
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.csproj.GenerateResource.cache
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.AssemblyInfoInputs.cache
@@ -110,4 +108,9 @@ C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoF
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form_Empleado.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form_Login.resources
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Properties.Resources.resources
+<<<<<<< HEAD
 C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form_SignupCliente.resources
+=======
+C:\Users\Alumno\Desktop\repositorios\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form_SignUp.resources
+C:\Users\javir\Documents\Github\2dam\C#\2ª Evaluación\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\TallerDeCoches_ProyectoFinal_ReyesÁlvarez\obj\Debug\net8.0-windows\TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Form_SignUp.resources
+>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d

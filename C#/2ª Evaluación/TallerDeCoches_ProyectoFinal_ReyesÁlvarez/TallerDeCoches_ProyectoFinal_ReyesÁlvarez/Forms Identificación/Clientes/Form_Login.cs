@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
@@ -20,7 +11,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void btn_crear_cuenta_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.cs
             Form_SignupCliente fs = new Form_SignupCliente();
+=======
+            Form_SignUpCliente fs = new Form_SignUpCliente();
+>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_Login.cs
             fs.Show();
             this.Hide();
         }
