@@ -19,6 +19,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         public Form_SignupCliente()
         {
             InitializeComponent();
+            InitUI();
+        }
+
+        private void InitUI()
+        {
+            textbox_contraseña.UseSystemPasswordChar = true;
         }
 
         private void btn_irLogin_Click(object sender, EventArgs e)
@@ -89,6 +95,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            textbox_contraseña.UseSystemPasswordChar = !textbox_contraseña.UseSystemPasswordChar;
         }
     }
 }
