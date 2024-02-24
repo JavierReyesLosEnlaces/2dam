@@ -37,28 +37,27 @@
             btn_irLogin = new Button();
             lb2 = new Label();
             btn_crearCuenta = new Button();
-            tb_usuario = new TextBox();
+            textbox_nombreUsuario = new TextBox();
             lb3 = new Label();
-            tb_contraseña = new TextBox();
+            textbox_contraseña = new TextBox();
             tlp6 = new TableLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            lbl_nombre = new Label();
+            lbl_primerApellido = new Label();
+            lbl_segundoApellido = new Label();
+            lbl_dni = new Label();
+            lbl_numeroTelefono = new Label();
+            lbl_correoElectronico = new Label();
+            textbox_nombre = new TextBox();
+            textbox_primerApellido = new TextBox();
+            textbox_segundoApellido = new TextBox();
+            textbox_dni = new TextBox();
+            textbox_numeroTelefono = new TextBox();
+            textbox_correoElectronico = new TextBox();
             tlp4 = new TableLayoutPanel();
             tb_password = new TextBox();
             tb_user = new TextBox();
             tlp0 = new TableLayoutPanel();
             textBox2 = new TextBox();
-            panel1 = new Panel();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlp3.SuspendLayout();
@@ -71,7 +70,7 @@
             // 
             tlp1.ColumnCount = 1;
             tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
+            tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
             tlp1.Controls.Add(btn_salir, 0, 0);
             tlp1.Controls.Add(tlp2, 0, 1);
             tlp1.Dock = DockStyle.Fill;
@@ -81,7 +80,8 @@
             tlp1.RowCount = 2;
             tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 95F));
-            tlp1.Size = new Size(800, 565);
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp1.Size = new Size(914, 753);
             tlp1.TabIndex = 0;
             // 
             // btn_salir
@@ -90,10 +90,9 @@
             btn_salir.BackColor = Color.FromArgb(117, 230, 164);
             btn_salir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_salir.ForeColor = Color.White;
-            btn_salir.Location = new Point(771, 2);
-            btn_salir.Margin = new Padding(3, 2, 3, 2);
+            btn_salir.Location = new Point(881, 3);
             btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(26, 22);
+            btn_salir.Size = new Size(30, 29);
             btn_salir.TabIndex = 0;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
@@ -104,31 +103,31 @@
             tlp2.BackColor = Color.White;
             tlp2.ColumnCount = 1;
             tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
-            tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
+            tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
+            tlp2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
             tlp2.Controls.Add(lb1, 0, 0);
             tlp2.Controls.Add(tlp3, 0, 1);
-            tlp2.Controls.Add(panel1, 0, 2);
             tlp2.Dock = DockStyle.Fill;
-            tlp2.Location = new Point(0, 28);
+            tlp2.Location = new Point(0, 37);
             tlp2.Margin = new Padding(0);
             tlp2.Name = "tlp2";
             tlp2.RowCount = 3;
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-            tlp2.Size = new Size(800, 537);
+            tlp2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp2.Size = new Size(914, 716);
             tlp2.TabIndex = 1;
             // 
             // lb1
             // 
             lb1.AutoSize = true;
             lb1.Dock = DockStyle.Fill;
-            lb1.Font = new Font("Cooper Black", 30F);
+            lb1.Font = new Font("Cooper Black", 25F);
             lb1.ForeColor = Color.FromArgb(39, 50, 56);
             lb1.Location = new Point(3, 0);
             lb1.Name = "lb1";
-            lb1.Size = new Size(794, 80);
+            lb1.Size = new Size(908, 107);
             lb1.TabIndex = 1;
             lb1.Text = "Registro de nuevo cliente";
             lb1.TextAlign = ContentAlignment.MiddleCenter;
@@ -142,12 +141,12 @@
             tlp3.Controls.Add(tlp5, 0, 0);
             tlp3.Controls.Add(tlp6, 1, 0);
             tlp3.Dock = DockStyle.Fill;
-            tlp3.Location = new Point(0, 80);
+            tlp3.Location = new Point(0, 107);
             tlp3.Margin = new Padding(0);
             tlp3.Name = "tlp3";
             tlp3.RowCount = 1;
             tlp3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp3.Size = new Size(800, 375);
+            tlp3.Size = new Size(914, 501);
             tlp3.TabIndex = 0;
             // 
             // tlp5
@@ -155,17 +154,17 @@
             tlp5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlp5.ColumnCount = 1;
             tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
+            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
+            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
             tlp5.Controls.Add(btn_irLogin, 0, 5);
             tlp5.Controls.Add(lb2, 0, 0);
             tlp5.Controls.Add(btn_crearCuenta, 0, 3);
-            tlp5.Controls.Add(tb_usuario, 0, 1);
+            tlp5.Controls.Add(textbox_nombreUsuario, 0, 1);
             tlp5.Controls.Add(lb3, 0, 4);
-            tlp5.Controls.Add(tb_contraseña, 0, 2);
-            tlp5.Location = new Point(40, 20);
-            tlp5.Margin = new Padding(40, 20, 40, 20);
+            tlp5.Controls.Add(textbox_contraseña, 0, 2);
+            tlp5.Location = new Point(46, 27);
+            tlp5.Margin = new Padding(46, 27, 46, 27);
             tlp5.Name = "tlp5";
             tlp5.RowCount = 6;
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
@@ -174,17 +173,17 @@
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp5.Size = new Size(240, 335);
+            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tlp5.Size = new Size(273, 447);
             tlp5.TabIndex = 2;
             // 
             // btn_irLogin
             // 
-            btn_irLogin.Location = new Point(60, 285);
-            btn_irLogin.Margin = new Padding(60, 10, 60, 10);
+            btn_irLogin.Location = new Point(69, 383);
+            btn_irLogin.Margin = new Padding(69, 13, 69, 13);
             btn_irLogin.Name = "btn_irLogin";
-            btn_irLogin.Size = new Size(120, 30);
+            btn_irLogin.Size = new Size(135, 40);
             btn_irLogin.TabIndex = 5;
             btn_irLogin.Text = "Ir a login";
             btn_irLogin.UseVisualStyleBackColor = true;
@@ -194,11 +193,11 @@
             // 
             lb2.AutoSize = true;
             lb2.Dock = DockStyle.Fill;
-            lb2.Font = new Font("Cooper Black", 15F);
+            lb2.Font = new Font("Cooper Black", 12F);
             lb2.ForeColor = Color.FromArgb(39, 50, 56);
             lb2.Location = new Point(3, 0);
             lb2.Name = "lb2";
-            lb2.Size = new Size(234, 55);
+            lb2.Size = new Size(267, 74);
             lb2.TabIndex = 0;
             lb2.Text = "Tus credenciales";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
@@ -206,24 +205,24 @@
             // btn_crearCuenta
             // 
             btn_crearCuenta.Dock = DockStyle.Fill;
-            btn_crearCuenta.Location = new Point(60, 175);
-            btn_crearCuenta.Margin = new Padding(60, 10, 60, 10);
+            btn_crearCuenta.Location = new Point(69, 235);
+            btn_crearCuenta.Margin = new Padding(69, 13, 69, 13);
             btn_crearCuenta.Name = "btn_crearCuenta";
-            btn_crearCuenta.Size = new Size(120, 35);
+            btn_crearCuenta.Size = new Size(135, 48);
             btn_crearCuenta.TabIndex = 3;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
             btn_crearCuenta.Click += btn_crearCuenta_Click;
             // 
-            // tb_usuario
+            // textbox_nombreUsuario
             // 
-            tb_usuario.Dock = DockStyle.Fill;
-            tb_usuario.Location = new Point(30, 55);
-            tb_usuario.Margin = new Padding(30, 0, 30, 0);
-            tb_usuario.Name = "tb_usuario";
-            tb_usuario.PlaceholderText = "Nombre de usuario";
-            tb_usuario.Size = new Size(180, 23);
-            tb_usuario.TabIndex = 1;
+            textbox_nombreUsuario.Dock = DockStyle.Fill;
+            textbox_nombreUsuario.Location = new Point(34, 74);
+            textbox_nombreUsuario.Margin = new Padding(34, 0, 34, 0);
+            textbox_nombreUsuario.Name = "textbox_nombreUsuario";
+            textbox_nombreUsuario.PlaceholderText = "Nombre de usuario";
+            textbox_nombreUsuario.Size = new Size(205, 27);
+            textbox_nombreUsuario.TabIndex = 1;
             // 
             // lb3
             // 
@@ -231,43 +230,43 @@
             lb3.AutoSize = true;
             lb3.Font = new Font("Cooper Black", 10F);
             lb3.ForeColor = Color.FromArgb(39, 50, 56);
-            lb3.Location = new Point(3, 220);
+            lb3.Location = new Point(3, 296);
             lb3.Name = "lb3";
-            lb3.Size = new Size(234, 55);
+            lb3.Size = new Size(267, 74);
             lb3.TabIndex = 4;
             lb3.Text = "¿Ya tienes una cuenta?";
             lb3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tb_contraseña
+            // textbox_contraseña
             // 
-            tb_contraseña.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tb_contraseña.Location = new Point(30, 110);
-            tb_contraseña.Margin = new Padding(30, 0, 30, 0);
-            tb_contraseña.Name = "tb_contraseña";
-            tb_contraseña.PlaceholderText = "Contraseña";
-            tb_contraseña.Size = new Size(180, 23);
-            tb_contraseña.TabIndex = 2;
+            textbox_contraseña.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textbox_contraseña.Location = new Point(34, 148);
+            textbox_contraseña.Margin = new Padding(34, 0, 34, 0);
+            textbox_contraseña.Name = "textbox_contraseña";
+            textbox_contraseña.PlaceholderText = "Contraseña";
+            textbox_contraseña.Size = new Size(205, 27);
+            textbox_contraseña.TabIndex = 2;
             // 
             // tlp6
             // 
             tlp6.ColumnCount = 2;
             tlp6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tlp6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
-            tlp6.Controls.Add(label1, 0, 0);
-            tlp6.Controls.Add(label2, 0, 1);
-            tlp6.Controls.Add(label3, 0, 2);
-            tlp6.Controls.Add(label4, 0, 3);
-            tlp6.Controls.Add(label5, 0, 4);
-            tlp6.Controls.Add(label6, 0, 5);
-            tlp6.Controls.Add(textBox1, 1, 0);
-            tlp6.Controls.Add(textBox3, 1, 1);
-            tlp6.Controls.Add(textBox4, 1, 2);
-            tlp6.Controls.Add(textBox5, 1, 3);
-            tlp6.Controls.Add(textBox6, 1, 4);
-            tlp6.Controls.Add(textBox7, 1, 5);
+            tlp6.Controls.Add(lbl_nombre, 0, 0);
+            tlp6.Controls.Add(lbl_primerApellido, 0, 1);
+            tlp6.Controls.Add(lbl_segundoApellido, 0, 2);
+            tlp6.Controls.Add(lbl_dni, 0, 3);
+            tlp6.Controls.Add(lbl_numeroTelefono, 0, 4);
+            tlp6.Controls.Add(lbl_correoElectronico, 0, 5);
+            tlp6.Controls.Add(textbox_nombre, 1, 0);
+            tlp6.Controls.Add(textbox_primerApellido, 1, 1);
+            tlp6.Controls.Add(textbox_segundoApellido, 1, 2);
+            tlp6.Controls.Add(textbox_dni, 1, 3);
+            tlp6.Controls.Add(textbox_numeroTelefono, 1, 4);
+            tlp6.Controls.Add(textbox_correoElectronico, 1, 5);
             tlp6.Dock = DockStyle.Fill;
-            tlp6.Location = new Point(323, 20);
-            tlp6.Margin = new Padding(3, 20, 3, 20);
+            tlp6.Location = new Point(368, 27);
+            tlp6.Margin = new Padding(3, 27, 3, 27);
             tlp6.Name = "tlp6";
             tlp6.RowCount = 6;
             tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
@@ -276,140 +275,140 @@
             tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.Size = new Size(474, 335);
+            tlp6.Size = new Size(543, 447);
             tlp6.TabIndex = 3;
             // 
-            // label1
+            // lbl_nombre
             // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Cooper Black", 12F);
-            label1.ForeColor = Color.FromArgb(39, 50, 56);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(183, 55);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_nombre.AutoSize = true;
+            lbl_nombre.Dock = DockStyle.Fill;
+            lbl_nombre.Font = new Font("Cooper Black", 12F);
+            lbl_nombre.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_nombre.Location = new Point(3, 0);
+            lbl_nombre.Name = "lbl_nombre";
+            lbl_nombre.Size = new Size(211, 74);
+            lbl_nombre.TabIndex = 0;
+            lbl_nombre.Text = "Nombre";
+            lbl_nombre.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbl_primerApellido
             // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Cooper Black", 12F);
-            label2.ForeColor = Color.FromArgb(39, 50, 56);
-            label2.Location = new Point(3, 55);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 55);
-            label2.TabIndex = 1;
-            label2.Text = "Primer apellido";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_primerApellido.AutoSize = true;
+            lbl_primerApellido.Dock = DockStyle.Fill;
+            lbl_primerApellido.Font = new Font("Cooper Black", 12F);
+            lbl_primerApellido.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_primerApellido.Location = new Point(3, 74);
+            lbl_primerApellido.Name = "lbl_primerApellido";
+            lbl_primerApellido.Size = new Size(211, 74);
+            lbl_primerApellido.TabIndex = 1;
+            lbl_primerApellido.Text = "Primer apellido";
+            lbl_primerApellido.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // lbl_segundoApellido
             // 
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Cooper Black", 12F);
-            label3.ForeColor = Color.FromArgb(39, 50, 56);
-            label3.Location = new Point(3, 110);
-            label3.Name = "label3";
-            label3.Size = new Size(183, 55);
-            label3.TabIndex = 2;
-            label3.Text = "Segundo apellido";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_segundoApellido.AutoSize = true;
+            lbl_segundoApellido.Dock = DockStyle.Fill;
+            lbl_segundoApellido.Font = new Font("Cooper Black", 12F);
+            lbl_segundoApellido.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_segundoApellido.Location = new Point(3, 148);
+            lbl_segundoApellido.Name = "lbl_segundoApellido";
+            lbl_segundoApellido.Size = new Size(211, 74);
+            lbl_segundoApellido.TabIndex = 2;
+            lbl_segundoApellido.Text = "Segundo apellido";
+            lbl_segundoApellido.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbl_dni
             // 
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Cooper Black", 12F);
-            label4.ForeColor = Color.FromArgb(39, 50, 56);
-            label4.Location = new Point(3, 165);
-            label4.Name = "label4";
-            label4.Size = new Size(183, 55);
-            label4.TabIndex = 3;
-            label4.Text = "DNI";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_dni.AutoSize = true;
+            lbl_dni.Dock = DockStyle.Fill;
+            lbl_dni.Font = new Font("Cooper Black", 12F);
+            lbl_dni.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_dni.Location = new Point(3, 222);
+            lbl_dni.Name = "lbl_dni";
+            lbl_dni.Size = new Size(211, 74);
+            lbl_dni.TabIndex = 3;
+            lbl_dni.Text = "DNI";
+            lbl_dni.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lbl_numeroTelefono
             // 
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Cooper Black", 12F);
-            label5.ForeColor = Color.FromArgb(39, 50, 56);
-            label5.Location = new Point(3, 220);
-            label5.Name = "label5";
-            label5.Size = new Size(183, 55);
-            label5.TabIndex = 4;
-            label5.Text = "Número de teléfono";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_numeroTelefono.AutoSize = true;
+            lbl_numeroTelefono.Dock = DockStyle.Fill;
+            lbl_numeroTelefono.Font = new Font("Cooper Black", 12F);
+            lbl_numeroTelefono.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_numeroTelefono.Location = new Point(3, 296);
+            lbl_numeroTelefono.Name = "lbl_numeroTelefono";
+            lbl_numeroTelefono.Size = new Size(211, 74);
+            lbl_numeroTelefono.TabIndex = 4;
+            lbl_numeroTelefono.Text = "Número de teléfono";
+            lbl_numeroTelefono.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lbl_correoElectronico
             // 
-            label6.AutoSize = true;
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Cooper Black", 12F);
-            label6.ForeColor = Color.FromArgb(39, 50, 56);
-            label6.Location = new Point(3, 275);
-            label6.Name = "label6";
-            label6.Size = new Size(183, 60);
-            label6.TabIndex = 5;
-            label6.Text = "Correo electrónico";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_correoElectronico.AutoSize = true;
+            lbl_correoElectronico.Dock = DockStyle.Fill;
+            lbl_correoElectronico.Font = new Font("Cooper Black", 12F);
+            lbl_correoElectronico.ForeColor = Color.FromArgb(39, 50, 56);
+            lbl_correoElectronico.Location = new Point(3, 370);
+            lbl_correoElectronico.Name = "lbl_correoElectronico";
+            lbl_correoElectronico.Size = new Size(211, 77);
+            lbl_correoElectronico.TabIndex = 5;
+            lbl_correoElectronico.Text = "Correo electrónico";
+            lbl_correoElectronico.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textbox_nombre
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(189, 20);
-            textBox1.Margin = new Padding(0, 20, 30, 0);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(255, 23);
-            textBox1.TabIndex = 6;
+            textbox_nombre.Dock = DockStyle.Fill;
+            textbox_nombre.Location = new Point(217, 27);
+            textbox_nombre.Margin = new Padding(0, 27, 34, 0);
+            textbox_nombre.Name = "textbox_nombre";
+            textbox_nombre.Size = new Size(292, 27);
+            textbox_nombre.TabIndex = 6;
             // 
-            // textBox3
+            // textbox_primerApellido
             // 
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(189, 75);
-            textBox3.Margin = new Padding(0, 20, 30, 0);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(255, 23);
-            textBox3.TabIndex = 7;
+            textbox_primerApellido.Dock = DockStyle.Fill;
+            textbox_primerApellido.Location = new Point(217, 101);
+            textbox_primerApellido.Margin = new Padding(0, 27, 34, 0);
+            textbox_primerApellido.Name = "textbox_primerApellido";
+            textbox_primerApellido.Size = new Size(292, 27);
+            textbox_primerApellido.TabIndex = 7;
             // 
-            // textBox4
+            // textbox_segundoApellido
             // 
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(189, 130);
-            textBox4.Margin = new Padding(0, 20, 30, 0);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(255, 23);
-            textBox4.TabIndex = 8;
+            textbox_segundoApellido.Dock = DockStyle.Fill;
+            textbox_segundoApellido.Location = new Point(217, 175);
+            textbox_segundoApellido.Margin = new Padding(0, 27, 34, 0);
+            textbox_segundoApellido.Name = "textbox_segundoApellido";
+            textbox_segundoApellido.Size = new Size(292, 27);
+            textbox_segundoApellido.TabIndex = 8;
             // 
-            // textBox5
+            // textbox_dni
             // 
-            textBox5.Dock = DockStyle.Fill;
-            textBox5.Location = new Point(189, 185);
-            textBox5.Margin = new Padding(0, 20, 30, 0);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(255, 23);
-            textBox5.TabIndex = 9;
+            textbox_dni.Dock = DockStyle.Fill;
+            textbox_dni.Location = new Point(217, 249);
+            textbox_dni.Margin = new Padding(0, 27, 34, 0);
+            textbox_dni.Name = "textbox_dni";
+            textbox_dni.Size = new Size(292, 27);
+            textbox_dni.TabIndex = 9;
             // 
-            // textBox6
+            // textbox_numeroTelefono
             // 
-            textBox6.Dock = DockStyle.Fill;
-            textBox6.Location = new Point(189, 240);
-            textBox6.Margin = new Padding(0, 20, 30, 0);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(255, 23);
-            textBox6.TabIndex = 10;
+            textbox_numeroTelefono.Dock = DockStyle.Fill;
+            textbox_numeroTelefono.Location = new Point(217, 323);
+            textbox_numeroTelefono.Margin = new Padding(0, 27, 34, 0);
+            textbox_numeroTelefono.Name = "textbox_numeroTelefono";
+            textbox_numeroTelefono.Size = new Size(292, 27);
+            textbox_numeroTelefono.TabIndex = 10;
             // 
-            // textBox7
+            // textbox_correoElectronico
             // 
-            textBox7.Dock = DockStyle.Fill;
-            textBox7.Location = new Point(189, 295);
-            textBox7.Margin = new Padding(0, 20, 30, 0);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(255, 23);
-            textBox7.TabIndex = 11;
+            textbox_correoElectronico.Dock = DockStyle.Fill;
+            textbox_correoElectronico.Location = new Point(217, 397);
+            textbox_correoElectronico.Margin = new Padding(0, 27, 34, 0);
+            textbox_correoElectronico.Name = "textbox_correoElectronico";
+            textbox_correoElectronico.Size = new Size(292, 27);
+            textbox_correoElectronico.TabIndex = 11;
             // 
             // tlp4
             // 
@@ -434,7 +433,7 @@
             tb_password.Margin = new Padding(18, 0, 26, 0);
             tb_password.Name = "tb_password";
             tb_password.PlaceholderText = "Contraseña";
-            tb_password.Size = new Size(156, 23);
+            tb_password.Size = new Size(156, 27);
             tb_password.TabIndex = 0;
             // 
             // tb_user
@@ -444,7 +443,7 @@
             tb_user.Margin = new Padding(18, 0, 26, 0);
             tb_user.Name = "tb_user";
             tb_user.PlaceholderText = "Usuario";
-            tb_user.Size = new Size(156, 23);
+            tb_user.Size = new Size(156, 27);
             tb_user.TabIndex = 1;
             // 
             // tlp0
@@ -469,26 +468,16 @@
             textBox2.Margin = new Padding(18, 0, 26, 0);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Usuario";
-            textBox2.Size = new Size(10000, 23);
+            textBox2.Size = new Size(10000, 27);
             textBox2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(39, 50, 56);
-            panel1.Location = new Point(0, 455);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(794, 3);
-            panel1.TabIndex = 2;
             // 
             // Form_SignupCliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 565);
+            ClientSize = new Size(914, 753);
             Controls.Add(tlp1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Form_SignupCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
@@ -519,25 +508,24 @@
         private TextBox textBox2;
         private Button button3;
         private TableLayoutPanel tlp5;
-        private TextBox tb_contraseña;
-        private TextBox tb_usuario;
+        private TextBox textbox_contraseña;
+        private TextBox textbox_nombreUsuario;
         private Label lb2;
         private TableLayoutPanel tlp6;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private Label lbl_nombre;
+        private Label lbl_primerApellido;
+        private Label lbl_segundoApellido;
+        private Label lbl_dni;
+        private Label lbl_numeroTelefono;
+        private Label lbl_correoElectronico;
+        private TextBox textbox_nombre;
+        private TextBox textbox_primerApellido;
+        private TextBox textbox_segundoApellido;
+        private TextBox textbox_dni;
+        private TextBox textbox_numeroTelefono;
+        private TextBox textbox_correoElectronico;
         private Button btn_irLogin;
         private Button btn_crearCuenta;
         private Label lb3;
-        private Panel panel1;
     }
 }

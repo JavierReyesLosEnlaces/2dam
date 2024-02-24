@@ -1,75 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj": {}
+    "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj": {
+    "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj",
-        "projectName": "ClassLibrary1",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj",
+        "projectUniqueName": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj",
         "projectName": "Informe",
-        "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\obj\\",
+        "projectPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\Informe.csproj",
+        "packagesPath": "C:\\Users\\javir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\Informe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\javir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +28,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj": {
-                "projectPath": "C:\\Users\\Alumno\\Desktop\\repositorios\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj"
+              "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj": {
+                "projectPath": "C:\\Users\\javir\\Documents\\Github\\2dam\\C#\\2ª Evaluación\\Informe\\ClassLibrary1\\ClassLibrary1.csproj"
               }
             }
           }
@@ -131,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

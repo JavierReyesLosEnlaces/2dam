@@ -118,5 +118,10 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         {
 
         }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -15,26 +15,23 @@ CREATE TABLE roles (
     id_rol INT PRIMARY KEY,
 	nombre_rol VARCHAR(15),
     permiso_lectura BIT, 
-    permiso_escritura BIT
+    permiso_escritura BIT,
 );
 
 CREATE TABLE usuarios (
-    id_usuario INT PRIMARY KEY,
+    id_usuario INT PRIMARY KEY IDENTITY,
     nombre VARCHAR(30),
     primer_apellido VARCHAR(30),
     segundo_apellido VARCHAR(30),
     dni VARCHAR(9),
-    clave_usuario VARCHAR(30),
-    clave_contraseña VARCHAR(30),
     telefono VARCHAR(12),
-    correo_electronico VARCHAR(30),
+    correo_electronico VARCHAR(50),
     id_rol INT,
     FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
 );
 
 CREATE TABLE clientes (
     id_cliente INT PRIMARY KEY,
-    adeuda BIT,
 	cantidad_adeudada DECIMAL(8,2),
     fecha_registro DATE,
     codigo_postal VARCHAR(5),
@@ -55,8 +52,6 @@ CREATE TABLE talleres (
     id_taller INT PRIMARY KEY,
     direccion VARCHAR(30),
     especializacion VARCHAR(30),
-    encargado INT,
-    FOREIGN KEY(encargado) REFERENCES empleados(id_empleado)
 );
 
 CREATE TABLE coches (
@@ -87,38 +82,24 @@ CREATE TABLE pedidos(
 
 INSERT INTO roles (id_rol, nombre_rol, permiso_lectura, permiso_escritura) VALUES
 (1, 'Administrador', 1, 1),
-(2, 'Usuario', 1, 0);
+(2, 'Cliente', 1, 0);
 
-INSERT INTO usuarios (id_usuario, nombre, primer_apellido, segundo_apellido, dni, clave_usuario, clave_contraseña, telefono, correo_electronico, id_rol) VALUES
-(1, 'Juan', 'García', 'Pérez', '12345678A', 'juangp', 'pass123', '123456789', 'juan@example.com', 1),
-(2, 'María', 'López', 'Martínez', '23456789B', 'marialm', 'abc456', '987654321', 'maria@example.com', 1),
-(3, 'Pedro', 'Martín', 'Sánchez', '34567890C', 'pedroms', 'def789', '456789123', 'pedro@example.com', 1),
-(4, 'Ana', 'Rodríguez', 'Gómez', '45678901D', 'anarg', 'ghi012', '789123456', 'ana@example.com', 1),
-(5, 'Luis', 'Fernández', 'Ruiz', '56789012E', 'luisfr', 'jkl345', '321654987', 'luis@example.com', 1),
-(6, 'Laura', 'González', 'Díaz', '67890123F', 'lauragd', 'mno678', '654987321', 'laura@example.com', 2),
-(7, 'Carlos', 'Pérez', 'Jiménez', '78901234G', 'carlospj', 'pqr901', '987321654', 'carlos@example.com', 2),
-(8, 'Sara', 'Díaz', 'López', '89012345H', 'saradl', 'stu234', '753951852', 'sara@example.com', 2),
-(9, 'Javier', 'Hernández', 'Martínez', '90123456I', 'javierhm', 'vwx567', '159753468', 'javier@example.com', 2),
-(10, 'Elena', 'Álvarez', 'García', '01234567J', 'elenag', 'yz890', '852369741', 'elena@example.com', 2);
+SET IDENTITY_INSERT usuarios ON;
+
+INSERT INTO usuarios (id_usuario, nombre, primer_apellido, segundo_apellido, dni, telefono, correo_electronico, id_rol) VALUES
+(1, 'Javier', 'Reyes', 'Álvarez', '73016362X', '666666666', 'javi.reyes.losenlaces@gmail.com', 1),
+(2, 'Bob', 'Bobito', 'Bobo', '45671234R', '888888888', 'bobito@gmail.com', 2)
+
+INSERT INTO clientes (id_cliente, cantidad_adeudada, fecha_registro, codigo_postal, id_usuario) VALUES
+(1, 500.00, '2023-03-25', '28005', 2);
 
 INSERT INTO empleados (id_empleado, salario_base, salario_extra, fecha_inicio_contrato, id_usuario) VALUES
-(1, 2500.00, 300.00, '2022-01-10', 1),
-(2, 2800.00, 400.00, '2022-02-15', 2),
-(3, 2700.00, 350.00, '2022-03-20', 3),
-(4, 3000.00, 450.00, '2022-04-25', 4),
-(5, 2600.00, 320.00, '2022-05-30', 5);
+(1, 2500.00, 300.00, '2022-01-10', 1);
 
-INSERT INTO clientes (id_cliente, adeuda, cantidad_adeudada, fecha_registro, codigo_postal, id_usuario) VALUES
-(6, 0, 0.00, '2023-01-15', '28001', 1),
-(7, 1, 200.00, '2022-10-20', '28002', 2),
-(8, 0, 0.00, '2023-05-10', '28003', 3),
-(9, 0, 0.00, '2022-08-05', '28004', 4),
-(10, 1, 500.00, '2023-03-25', '28005', 5);
-
-INSERT INTO talleres (id_taller, direccion, especializacion, encargado) VALUES
-(1, 'Calle Mayor, 123', 'Mecánica General', 1),
-(2, 'Avenida del Parque, 45', 'Chapa y Pintura', 2),
-(3, 'Calle Alcalá, 67', 'Electricidad del Automóvil', 3);
+INSERT INTO talleres (id_taller, direccion, especializacion) VALUES
+(1, 'Calle Mayor, 123', 'Mecánica General'),
+(2, 'Avenida del Parque, 45', 'Chapa y Pintura'),
+(3, 'Calle Alcalá, 67', 'Electricidad del Automóvil');
 
 INSERT INTO coches (id_coche, modelo, color, peso) VALUES
 (1, 'Toyota Corolla', 'Azul', 1200.50),
