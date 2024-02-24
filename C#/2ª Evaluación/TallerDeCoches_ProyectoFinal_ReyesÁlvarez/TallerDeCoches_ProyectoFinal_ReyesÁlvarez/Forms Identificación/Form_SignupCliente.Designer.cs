@@ -1,10 +1,6 @@
 ﻿namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
     partial class Form_SignupCliente : Form
-========
-    partial class Form_SignUpCliente : Form
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +39,6 @@
             btn_crearCuenta = new Button();
             textbox_nombreUsuario = new TextBox();
             lb3 = new Label();
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             textbox_contraseña = new TextBox();
             tlp6 = new TableLayoutPanel();
             lbl_nombre = new Label();
@@ -58,26 +53,6 @@
             textbox_dni = new TextBox();
             textbox_numeroTelefono = new TextBox();
             textbox_correoElectronico = new TextBox();
-=======
-            tb_contraseña = new TextBox();
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            tlp6 = new TableLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-========
-            panel1 = new Panel();
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp4 = new TableLayoutPanel();
             tb_password = new TextBox();
             tb_user = new TextBox();
@@ -105,10 +80,7 @@
             tlp1.RowCount = 2;
             tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
             tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 95F));
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             tlp1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-=======
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp1.Size = new Size(914, 753);
             tlp1.TabIndex = 0;
             // 
@@ -143,10 +115,7 @@
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             tlp2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-=======
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp2.Size = new Size(914, 716);
             tlp2.TabIndex = 1;
             // 
@@ -168,14 +137,9 @@
             tlp3.BackColor = Color.FromArgb(117, 230, 164);
             tlp3.ColumnCount = 2;
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tlp3.Controls.Add(tlp5, 0, 0);
             tlp3.Controls.Add(tlp6, 1, 0);
-========
-            tlp3.Controls.Add(tlp5, 1, 0);
-            tlp3.Controls.Add(panel1, 0, 0);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
             tlp3.Dock = DockStyle.Fill;
             tlp3.Location = new Point(0, 107);
             tlp3.Margin = new Padding(0);
@@ -198,20 +162,9 @@
             tlp5.Controls.Add(btn_crearCuenta, 0, 3);
             tlp5.Controls.Add(textbox_nombreUsuario, 0, 1);
             tlp5.Controls.Add(lb3, 0, 4);
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             tlp5.Controls.Add(textbox_contraseña, 0, 2);
             tlp5.Location = new Point(46, 27);
             tlp5.Margin = new Padding(46, 27, 46, 27);
-=======
-            tlp5.Controls.Add(tb_contraseña, 0, 2);
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            tlp5.Location = new Point(40, 20);
-            tlp5.Margin = new Padding(40, 20, 40, 20);
-========
-            tlp5.Location = new Point(628, 53);
-            tlp5.Margin = new Padding(80, 53, 80, 53);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp5.Name = "tlp5";
             tlp5.RowCount = 6;
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
@@ -220,42 +173,17 @@
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
             tlp5.Size = new Size(273, 447);
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp5.Size = new Size(240, 335);
-========
-            tlp5.Size = new Size(206, 395);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             tlp5.TabIndex = 2;
             // 
             // btn_irLogin
             // 
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             btn_irLogin.Location = new Point(69, 383);
             btn_irLogin.Margin = new Padding(69, 13, 69, 13);
             btn_irLogin.Name = "btn_irLogin";
             btn_irLogin.Size = new Size(135, 40);
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            btn_irLogin.Location = new Point(60, 285);
-            btn_irLogin.Margin = new Padding(60, 10, 60, 10);
-            btn_irLogin.Name = "btn_irLogin";
-            btn_irLogin.Size = new Size(120, 30);
-========
-            btn_irLogin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btn_irLogin.Location = new Point(34, 338);
-            btn_irLogin.Margin = new Padding(34, 13, 34, 13);
-            btn_irLogin.Name = "btn_irLogin";
-            btn_irLogin.Size = new Size(138, 44);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             btn_irLogin.TabIndex = 5;
             btn_irLogin.Text = "Ir a login";
             btn_irLogin.UseVisualStyleBackColor = true;
@@ -269,49 +197,18 @@
             lb2.ForeColor = Color.FromArgb(39, 50, 56);
             lb2.Location = new Point(3, 0);
             lb2.Name = "lb2";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             lb2.Size = new Size(267, 74);
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            lb2.Size = new Size(234, 55);
-========
-            lb2.Size = new Size(200, 65);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             lb2.TabIndex = 0;
             lb2.Text = "Tus credenciales";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             // btn_crearCuenta
             // 
             btn_crearCuenta.Dock = DockStyle.Fill;
             btn_crearCuenta.Location = new Point(69, 235);
             btn_crearCuenta.Margin = new Padding(69, 13, 69, 13);
             btn_crearCuenta.Name = "btn_crearCuenta";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             btn_crearCuenta.Size = new Size(135, 48);
-=======
-            btn_crearCuenta.Size = new Size(120, 35);
-========
-            // tb_usuario
-            // 
-            tb_usuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tb_usuario.Location = new Point(3, 69);
-            tb_usuario.Margin = new Padding(3, 4, 3, 4);
-            tb_usuario.Name = "tb_usuario";
-            tb_usuario.PlaceholderText = "Usuario";
-            tb_usuario.Size = new Size(200, 27);
-            tb_usuario.TabIndex = 1;
-            // 
-            // btn_crearCuenta
-            // 
-            btn_crearCuenta.Location = new Point(34, 208);
-            btn_crearCuenta.Margin = new Padding(34, 13, 34, 13);
-            btn_crearCuenta.Name = "btn_crearCuenta";
-            btn_crearCuenta.Size = new Size(114, 39);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             btn_crearCuenta.TabIndex = 3;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
@@ -333,28 +230,15 @@
             lb3.AutoSize = true;
             lb3.Font = new Font("Cooper Black", 10F);
             lb3.ForeColor = Color.FromArgb(39, 50, 56);
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             lb3.Location = new Point(3, 296);
             lb3.Name = "lb3";
             lb3.Size = new Size(267, 74);
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            lb3.Location = new Point(3, 220);
-            lb3.Name = "lb3";
-            lb3.Size = new Size(234, 55);
-========
-            lb3.Location = new Point(3, 260);
-            lb3.Name = "lb3";
-            lb3.Size = new Size(200, 65);
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             lb3.TabIndex = 4;
             lb3.Text = "¿Ya tienes una cuenta?";
             lb3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textbox_contraseña
             // 
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             textbox_contraseña.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textbox_contraseña.Location = new Point(34, 148);
             textbox_contraseña.Margin = new Padding(34, 0, 34, 0);
@@ -362,16 +246,6 @@
             textbox_contraseña.PlaceholderText = "Contraseña";
             textbox_contraseña.Size = new Size(205, 27);
             textbox_contraseña.TabIndex = 2;
-=======
-            tb_contraseña.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            tb_contraseña.Location = new Point(30, 110);
-            tb_contraseña.Margin = new Padding(30, 0, 30, 0);
-            tb_contraseña.Name = "tb_contraseña";
-            tb_contraseña.PlaceholderText = "Contraseña";
-            tb_contraseña.Size = new Size(180, 23);
-            tb_contraseña.TabIndex = 2;
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             // 
             // tlp6
             // 
@@ -529,40 +403,12 @@
             // 
             // textbox_correoElectronico
             // 
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
             textbox_correoElectronico.Dock = DockStyle.Fill;
             textbox_correoElectronico.Location = new Point(217, 397);
             textbox_correoElectronico.Margin = new Padding(0, 27, 34, 0);
             textbox_correoElectronico.Name = "textbox_correoElectronico";
             textbox_correoElectronico.Size = new Size(292, 27);
             textbox_correoElectronico.TabIndex = 11;
-=======
-            textBox7.Dock = DockStyle.Fill;
-            textBox7.Location = new Point(189, 295);
-            textBox7.Margin = new Padding(0, 20, 30, 0);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(255, 23);
-            textBox7.TabIndex = 11;
-========
-            tb_contraseña.Location = new Point(3, 134);
-            tb_contraseña.Margin = new Padding(3, 4, 3, 4);
-            tb_contraseña.Name = "tb_contraseña";
-            tb_contraseña.PlaceholderText = "Contraseña";
-            tb_contraseña.Size = new Size(200, 27);
-            tb_contraseña.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(548, 501);
-            panel1.TabIndex = 1;
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             // 
             // tlp4
             // 
@@ -625,38 +471,14 @@
             textBox2.Size = new Size(10000, 27);
             textBox2.TabIndex = 1;
             // 
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(39, 50, 56);
-            panel1.Location = new Point(0, 455);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(794, 3);
-            panel1.TabIndex = 2;
-            // 
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             // Form_SignupCliente
-========
-            // Form_SignUpCliente
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 753);
             Controls.Add(tlp1);
             FormBorderStyle = FormBorderStyle.None;
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_SignupCliente.Designer.cs
-=======
-<<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
-            Margin = new Padding(3, 2, 3, 2);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_SignupCliente.Designer.cs
             Name = "Form_SignupCliente";
-========
-            Name = "Form_SignUpCliente";
->>>>>>>> fbe046c99b1650432a6ea5cad4cc497aa8e8681d:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Form_SignUpCliente.Designer.cs
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             tlp1.ResumeLayout(false);

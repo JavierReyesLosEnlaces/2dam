@@ -154,14 +154,9 @@
             tlp5.Controls.Add(tb_usuario, 0, 1);
             tlp5.Controls.Add(lb3, 0, 4);
             tlp5.Controls.Add(tb_contraseña, 0, 2);
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             tlp5.Controls.Add(btn_entrar, 0, 3);
             tlp5.Location = new Point(628, 53);
             tlp5.Margin = new Padding(80, 53, 80, 53);
-=======
-            tlp5.Location = new Point(639, 53);
-            tlp5.Margin = new Padding(91, 53, 91, 53);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             tlp5.Name = "tlp5";
             tlp5.RowCount = 6;
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
@@ -170,11 +165,7 @@
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             tlp5.Size = new Size(206, 395);
-=======
-            tlp5.Size = new Size(184, 395);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             tlp5.TabIndex = 2;
             // 
             // btn_crearCuenta
@@ -183,11 +174,7 @@
             btn_crearCuenta.Location = new Point(34, 338);
             btn_crearCuenta.Margin = new Padding(34, 13, 34, 13);
             btn_crearCuenta.Name = "btn_crearCuenta";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             btn_crearCuenta.Size = new Size(138, 44);
-=======
-            btn_crearCuenta.Size = new Size(116, 44);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             btn_crearCuenta.TabIndex = 5;
             btn_crearCuenta.Text = "Crear cuenta";
             btn_crearCuenta.UseVisualStyleBackColor = true;
@@ -201,11 +188,7 @@
             lb2.ForeColor = Color.FromArgb(39, 50, 56);
             lb2.Location = new Point(3, 0);
             lb2.Name = "lb2";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             lb2.Size = new Size(200, 65);
-=======
-            lb2.Size = new Size(178, 65);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             lb2.TabIndex = 0;
             lb2.Text = "¡Bienvenid@!";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
@@ -217,25 +200,9 @@
             tb_usuario.Margin = new Padding(3, 4, 3, 4);
             tb_usuario.Name = "tb_usuario";
             tb_usuario.PlaceholderText = "Usuario";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             tb_usuario.Size = new Size(200, 27);
             tb_usuario.TabIndex = 1;
             // 
-=======
-            tb_usuario.Size = new Size(178, 27);
-            tb_usuario.TabIndex = 1;
-            // 
-            // btn_entrar
-            // 
-            btn_entrar.Location = new Point(34, 208);
-            btn_entrar.Margin = new Padding(34, 13, 34, 13);
-            btn_entrar.Name = "btn_entrar";
-            btn_entrar.Size = new Size(114, 39);
-            btn_entrar.TabIndex = 3;
-            btn_entrar.Text = "Entrar";
-            btn_entrar.UseVisualStyleBackColor = true;
-            // 
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             // lb3
             // 
             lb3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -244,11 +211,7 @@
             lb3.ForeColor = Color.FromArgb(39, 50, 56);
             lb3.Location = new Point(3, 260);
             lb3.Name = "lb3";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             lb3.Size = new Size(200, 65);
-=======
-            lb3.Size = new Size(178, 65);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             lb3.TabIndex = 4;
             lb3.Text = "¿No tienes una cuenta?";
             lb3.TextAlign = ContentAlignment.MiddleCenter;
@@ -260,11 +223,7 @@
             tb_contraseña.Margin = new Padding(3, 4, 3, 4);
             tb_contraseña.Name = "tb_contraseña";
             tb_contraseña.PlaceholderText = "Contraseña";
-<<<<<<< HEAD:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Form_Login.Designer.cs
             tb_contraseña.Size = new Size(200, 27);
-=======
-            tb_contraseña.Size = new Size(178, 27);
->>>>>>> 31f83fea3fe257a51c56a60f65ed7b11466fd409:C#/2ª Evaluación/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/TallerDeCoches_ProyectoFinal_ReyesÁlvarez/Forms Identificación/Clientes/Form_Login.Designer.cs
             tb_contraseña.TabIndex = 2;
             // 
             // btn_entrar
