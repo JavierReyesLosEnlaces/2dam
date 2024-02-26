@@ -1,0 +1,3 @@
+{"IdPedido":1,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400}],"Observaciones":"Ninguna","Total":7.5}
+{"IdPedido":2,"Comanda":[{"Nombre":"BigAdri","Precio":4.5,"Calorias":600},{"Nombre":"Refrigerio 250ml","Precio":3,"Calorias":400}],"Observaciones":"Ninguna","Total":7.5}
+{"IdPedido":3,"Comanda":[{"Nombre":"Croquetas","Precio":9,"Calorias":600},{"Nombre":"Extra(s) del complemento","Precio":2.1,"Calorias":150}],"Observaciones":"ppp\u0060p\u0060p","Total":11.1}

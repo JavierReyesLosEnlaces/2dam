@@ -102,5 +102,10 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
             textbox_contraseña.UseSystemPasswordChar = !textbox_contraseña.UseSystemPasswordChar;
         }
+
+        private void textbox_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
