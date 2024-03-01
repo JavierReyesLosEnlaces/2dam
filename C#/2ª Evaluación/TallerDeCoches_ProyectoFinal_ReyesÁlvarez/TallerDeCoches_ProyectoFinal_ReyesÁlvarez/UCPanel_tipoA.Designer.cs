@@ -30,7 +30,11 @@
         {
             tlp1 = new TableLayoutPanel();
             tlp2 = new TableLayoutPanel();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            tabPage2 = new TabPage();
             tlp1.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
             // 
             // tlp1
@@ -39,6 +43,7 @@
             tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tlp1.Controls.Add(tlp2, 0, 1);
+            tlp1.Controls.Add(tabControl1, 0, 0);
             tlp1.Dock = DockStyle.Fill;
             tlp1.Location = new Point(0, 0);
             tlp1.Margin = new Padding(0);
@@ -64,6 +69,36 @@
             tlp2.Size = new Size(682, 360);
             tlp2.TabIndex = 0;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(3, 3);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(145, 34);
+            tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(137, 6);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(192, 6);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
             // UCPanel_tipoA
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -74,6 +109,7 @@
             Name = "UCPanel_tipoA";
             Size = new Size(682, 400);
             tlp1.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -81,5 +117,8 @@
 
         private TableLayoutPanel tlp1;
         private TableLayoutPanel tlp2;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
     }
 }

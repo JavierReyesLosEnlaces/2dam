@@ -9,7 +9,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
     internal class AesCryp
     {
-        public static string IV = "asdfghjklñzxcvbn"; // 16 caracteres
+        public static string IV = "asdfghjklñzxcvbn";                  // 16 caracteres
         public static string Key = "asdfghjklñzxcvbnasdfghjklñzxcvbn"; // 32 caracteres
 
         //Llamada al servicio de criptografía
