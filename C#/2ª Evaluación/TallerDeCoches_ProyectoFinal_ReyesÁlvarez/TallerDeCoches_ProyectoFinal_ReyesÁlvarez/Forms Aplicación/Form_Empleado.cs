@@ -195,7 +195,27 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void btn_baseDeDatos_Click(object sender, EventArgs e)
         {
-            panel_baseDeDatos.Visible = true;
+            menuBaseDeDatos.Visible = true;
+            menuBaseDeDatos.BringToFront();
+            ucPanel_tipoa_empleados.Visible = true;
+            ucPanel_tipoa_empleados.BringToFront();
+
+
+        }
+
+        private void btn_registrarEmpleado_Click(object sender, EventArgs e)
+        {
+            menuRegistrarEmpleado.Visible = true;
+            menuRegistrarEmpleado.BringToFront();
+            menuBaseDeDatos.Visible = false;
+            menuBaseDeDatos.SendToBack();   
+        }
+
+        private void btn_salirAlLogin_Click(object sender, EventArgs e)
+        {
+            Form_Login fl = new Form_Login();
+            fl.Show();
+            this.Hide();
         }
     }
 }
