@@ -35,18 +35,30 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
                 llenarTextboxes(selectedRow);
+
+                // Desbloquear el panel que contiene los TextBox
+                tlpDatos.Enabled = true;
+                btn_modificarRegistro.Enabled = true;
+                btn_borrarRegistro.Enabled = true;
+
+                // Cambiar el color de fondo de los botones solo si se seleccionó una fila completa
+                if (dataGridView1.SelectedRows.Count > 0 && selectedRow.Selected)
+                {
+                    btn_modificarRegistro.BackColor = Color.FromArgb(255, 192, 128);
+                    btn_borrarRegistro.BackColor = Color.FromArgb(255, 128, 128);
+                }
+                else
+                {
+                    // Cambiar el color de fondo de los botones a gris y deshabilitarlos si no se seleccionó una fila completa
+                    btn_modificarRegistro.BackColor = Color.LightGray;
+                    btn_modificarRegistro.Enabled = false;
+                    btn_borrarRegistro.BackColor = Color.LightGray;
+                    btn_borrarRegistro.Enabled = false;
+                }
             }
-
-            // Desbloquear el panel que contiene los TextBox
-            tlpDatos.Enabled = true;
-            btn_modificarRegistro.Enabled = true;
-            btn_borrarRegistro.Enabled = true;
-
-            // Cambiar el color de fondo de los botones según el estado del panel
-            btn_modificarRegistro.BackColor = tlpDatos.Enabled ? Color.FromArgb(255, 192, 128) : Color.LightGray;
-            btn_borrarRegistro.BackColor = tlpDatos.Enabled ? Color.FromArgb(255, 128, 128) : Color.LightGray;
-
         }
+
+
 
         // VIENES DE UNA CELDA SELECCIONA Y CAMBIAS A OTRA
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

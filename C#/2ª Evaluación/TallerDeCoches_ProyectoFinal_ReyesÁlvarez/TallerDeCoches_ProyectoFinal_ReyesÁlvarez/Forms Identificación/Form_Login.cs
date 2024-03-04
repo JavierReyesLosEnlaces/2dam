@@ -5,6 +5,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
     public partial class Form_Login : Form
     {
+        public static String decusr;
         public Form_Login()
         {
             InitializeComponent();
@@ -61,7 +62,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                             {
                                 MessageBox.Show("Error en el password de cliente");
                             }
+                            // aquí se manda el nombre al Form_Empleado
+                            getNombreUsuario();
                         }
+
+
                     }
                 }
                 else if (!Directory.Exists("data\\clientes\\" + dir) && (Directory.Exists("data\\empleados\\" + dir)))
@@ -74,7 +79,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                             string encusr = sr.ReadLine();
                             string encpss = sr.ReadLine();
 
-                            string decusr = AesCryp.Decrypt(encusr);
+                            decusr = AesCryp.Decrypt(encusr);
                             string decpss = AesCryp.Decrypt(encpss);
 
                             if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
@@ -91,7 +96,14 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         }
                     }
                 }
+
+
             }
+        }
+
+        public string getNombreUsuario()
+        {
+            return decusr;
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

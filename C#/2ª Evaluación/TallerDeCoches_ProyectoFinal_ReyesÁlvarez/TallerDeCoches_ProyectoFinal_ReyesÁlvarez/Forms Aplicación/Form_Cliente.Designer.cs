@@ -33,20 +33,20 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Red;
+            panel1.BackColor = SystemColors.Control;
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 450);
+            panel1.Size = new Size(1140, 1124);
             panel1.TabIndex = 0;
             // 
-            // Form1
+            // Form_Cliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1140, 1124);
             Controls.Add(panel1);
-            Name = "Form1";
+            Name = "Form_Cliente";
             Text = "Form1";
             ResumeLayout(false);
         }

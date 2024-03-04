@@ -7,7 +7,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
     public partial class Form_Empleado : Form
     {
-        // aquí se está referenciando al App.xml 
         string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         public Form_Empleado()
         {
@@ -17,8 +16,19 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void InitUI()
         {
-
             ucPanel_tipoa_empleados.tlpDatos.Enabled = false;
+
+            btn_aceptarPedidoPendiente.BackColor = Color.LightGray;
+            btn_aceptarPedidoPendiente.Enabled = false;
+
+            btn_rechazarPedidoPendiente.BackColor = Color.LightGray;
+            btn_rechazarPedidoPendiente.Enabled = false;
+
+            Form_Login loginForm = new Form_Login();
+            string nombreusuario = loginForm.getNombreUsuario();
+            label_nombreUsuario.Text = nombreusuario;
+            label_bienvenida.Text = "¡Hola " + nombreusuario +"!";
+
 
             // NOMBRE DE LA TABLA
             ucPanel_tipoa_clientes.label_nombreTabla.Text = "Clientes";
@@ -48,19 +58,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_clientes.campoTextbox9.Visible = false;
             ucPanel_tipoa_clientes.campoLabel10.Visible = false;
             ucPanel_tipoa_clientes.campoTextbox10.Visible = false;
-            /*
-            ucPanel_tipoa_clientes.campoLabel4.Text = "Nombre";
-            ucPanel_tipoa_clientes.campoLabel5.Text = "Primer apellido";
-            ucPanel_tipoa_clientes.campoLabel6.Text = "Segundo apellido";
-            ucPanel_tipoa_clientes.campoLabel7.Text = "DNI / NIE";
-            ucPanel_tipoa_clientes.campoLabel8.Text = "Teléfono";
-            ucPanel_tipoa_clientes.campoLabel9.Text = "Correo electrónico";
-            ucPanel_tipoa_clientes.campoLabel10.Text = "id_rol";
-            */
-            // el rol tendrá qie ponerse como id_rol = 2 (cliente)
+
 
             // EMPLEADOS
-
             ucPanel_tipoa_empleados.campoLabel1.Text = "Salario base";
             ucPanel_tipoa_empleados.campoLabel2.Text = "Salario extra";
             ucPanel_tipoa_empleados.campoLabel3.Text = "Fecha inicio contrato";
@@ -77,19 +77,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_empleados.campoTextbox9.Visible = false;
             ucPanel_tipoa_empleados.campoLabel10.Visible = false;
             ucPanel_tipoa_empleados.campoTextbox10.Visible = false;
-
-
-            /*
-            ucPanel_tipoa_empleados.campoLabel4.Text = "nombre";
-            ucPanel_tipoa_empleados.campoLabel5.Text = "primer_apellido";
-            ucPanel_tipoa_empleados.campoLabel6.Text = "segundo_apellido";
-            ucPanel_tipoa_empleados.campoLabel7.Text = "dni";
-            ucPanel_tipoa_empleados.campoLabel8.Text = "telefono";
-            ucPanel_tipoa_empleados.campoLabel9.Text = "Correo electrónico";
-            ucPanel_tipoa_empleados.campoTextbox10.Visible = false;
-            ucPanel_tipoa_empleados.campoLabel10.Visible = false;
-            */
-
 
             //USUARIOS
             ucPanel_tipoa_usuarios.campoLabel1.Text = "Nombre";
@@ -199,6 +186,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_talleres.campoLabel10.Visible = false;
             ucPanel_tipoa_talleres.campoTextbox10.Visible = false;
 
+            initDatagridViews();
+        }
+
+        private void initDatagridViews()
+        {
+
 
             // RELLENAR LOS DATAGRIDVIEWS CON LOS DATOS DE LA BASE DE DATOS
             string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
@@ -220,7 +213,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 //TALLERES
                 "SELECT * FROM talleres",
                 //PEDIDOS PENDIENTES
-                "SELECT * FROM pedidosRevision"};
+                "SELECT pr.id_pedidoRevision, pr.id_pedido, p.importe_bruto, p.tipo_impositivo, p.importe_neto, p.fecha, p.id_servicio \r\nFROM pedidosRevision pr\r\nJOIN pedidos p ON pr.id_pedido = p.id_pedido;\r\n"};
 
             for (int i = 0; i < consultasSql.Length; i++)
             {
@@ -305,86 +298,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
-        /*
-                private void button1_Click_1(object sender, EventArgs e)
-                {
-                    //string sqlQuery = "INSERT INTO clientes(a, b) VALUES(" + textBox1 + ", " + textBox2 + ");";
-                    string sqlQuery = "INSERT INTO Books (tittle," +
-                        " author) VALUES(@param1, @param2);";
-
-
-
-                    try
-                    {
-                        SqlConnection connection = new SqlConnection(connectionString);
-
-                        connection.Open();
-                        SqlCommand cmd = new SqlCommand(sqlQuery, connection);
-
-
-                        var bookTitleParameter = new SqlParameter("param1", System.Data.SqlDbType.VarChar);
-                        bookTitleParameter.Value = textBox1.Text;
-                        cmd.Parameters.Add(bookTitleParameter);
-
-                        var bookAuthorParameter = new SqlParameter("param2", System.Data.SqlDbType.VarChar);
-                        bookAuthorParameter.Value = textBox2.Text;
-                        cmd.Parameters.Add(bookAuthorParameter);
-
-                        cmd.ExecuteNonQuery();
-                        connection.Close();
-                        MessageBox.Show("Exito");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Fallo");
-                        throw;
-                    }
-
-
-                }
-        */
-
-        // AQUÍ VAMOS A LLAMAR AL PROCEDIMIENTO ALMACENADO
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(connectionString);
-
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("SaveBook", connection);
-
-                // Indicamos que el comando es un procedimiento almacenado
-                cmd.CommandType = CommandType.StoredProcedure;
-                /*
-                string bookTitle = textBox1.Text;
-                string bookAuthor = textBox2.Text;
-                
-
-                cmd.Parameters.Add(new SqlParameter("@bookTitle", bookTitle));
-                cmd.Parameters.Add(new SqlParameter("@bookAuthor", bookAuthor));
-                */
-
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Exito");
-
-            }
-            catch (Exception) { }
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_consultaRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -402,8 +315,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_empleados.Visible = true;
             ucPanel_tipoa_empleados.BringToFront();
             menuGestionarPedidos.Visible = false;
-
-
+            initDatagridViews();
         }
 
         private void btn_registrarEmpleado_Click2(object sender, EventArgs e)
@@ -413,6 +325,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             menuBaseDeDatos.Visible = false;
             menuBaseDeDatos.SendToBack();
             menuGestionarPedidos.Visible = false;
+            panelBienvenida.Visible = false;
+            panelBienvenida.SendToBack();
         }
 
         private void btn_salirAlLogin_Click(object sender, EventArgs e)
@@ -422,10 +336,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             this.Hide();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_registrarEmpleado_Click(object sender, EventArgs e)
         {
@@ -522,84 +432,18 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         {
             menuGestionarPedidos.Visible = true;
             menuGestionarPedidos.BringToFront();
-            
+            actualizarPedidosPendientesRevision();
+
         }
 
-        private void ManejarPedidoPendiente(string accion)
+        private void actualizarPedidosPendientesRevision()
         {
             try
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-                string nombreTabla = "pedidosRevision"; // Cambia esto según el nombre de tu tabla
 
-                if (dataGridView_pedidosPendientes.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow selectedRow = dataGridView_pedidosPendientes.SelectedRows[0];
-                    string primaryKeyColumnName = dataGridView_pedidosPendientes.Columns[0].Name; // Nombre de la columna de la clave primaria en el DataGridView
-                    int primaryKeyValue = Convert.ToInt32(selectedRow.Cells[primaryKeyColumnName].Value); // Obtener el valor de la clave primaria
-
-                    // Mostrar cuadro de diálogo de confirmación
-                    DialogResult result = MessageBox.Show($"¿Estás seguro que deseas {accion.ToLower()} este pedido pendiente?", $"Confirmar {accion}", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        // Construir y ejecutar la consulta SQL para actualizar el estado del pedido pendiente
-                        string query = $"UPDATE {nombreTabla} SET estado = '{accion}' WHERE {primaryKeyColumnName} = {primaryKeyValue}";
-                        MessageBox.Show(query.ToString());
-
-                        using (SqlConnection connection = new SqlConnection(connectionString))
-                        {
-                            connection.Open();
-                            using (SqlCommand command = new SqlCommand(query, connection))
-                            {
-                                command.ExecuteNonQuery();
-                            }
-                        }
-
-                        MessageBox.Show($"Pedido pendiente {accion.ToLower()} correctamente.");
-                        ActualizarDataGridView(); // Actualizar el DataGridView después de realizar la acción
-                    }
-                    else
-                    {
-                        MessageBox.Show($"{accion} cancelada.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una fila para realizar esta acción.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al {accion.ToLower()} el pedido pendiente.");
-                //MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btn_aceptarPedidoPendiente_Click(object sender, EventArgs e)
-        {
-            ManejarPedidoPendiente("Aceptar");
-        }
-
-        private void btn_rechazarPedidoPendiente_Click(object sender, EventArgs e)
-        {
-            ManejarPedidoPendiente("Rechazar");
-        }
-
-        private void btn_cancelarPedidoPendiente_Click(object sender, EventArgs e)
-        {
-            ManejarPedidoPendiente("Cancelar");
-        }
-
-        private void ActualizarDataGridView()
-        {
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-                string nombreTabla = "pedidosRevision";
-
-                // Construir la consulta SQL para seleccionar todos los registros de la tabla
-                string query = $"SELECT * FROM {nombreTabla}";
+                // Construir la consulta SQL para seleccionar todos los registros de la tabla pedidosRevision
+                string query = "SELECT pr.id_pedidoRevision, pr.id_pedido, p.importe_bruto, p.tipo_impositivo, p.importe_neto, p.fecha, p.id_servicio \r\nFROM pedidosRevision pr\r\nJOIN pedidos p ON pr.id_pedido = p.id_pedido;\r\n";
 
                 // Crear un DataTable para almacenar los datos de la consulta
                 DataTable dataTable = new DataTable();
@@ -621,6 +465,128 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             catch (Exception ex)
             {
                 MessageBox.Show("Error al actualizar el DataGridView: " + ex.Message);
+            }
+        }
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar si se hizo clic en una celda válida (no en los encabezados)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_pedidosPendientes.Rows[e.RowIndex];
+
+                // Si se hace clic en los encabezados o fuera del área de las celdas, deshabilitar los botones y ponerlos grises
+                btn_aceptarPedidoPendiente.BackColor = Color.LightGray;
+                btn_aceptarPedidoPendiente.Enabled = false;
+                btn_rechazarPedidoPendiente.BackColor = Color.LightGray;
+                btn_rechazarPedidoPendiente.Enabled = false;
+            }
+            else
+            {
+                // Cambiar el color de fondo de los botones al color original y habilitarlos
+                btn_aceptarPedidoPendiente.BackColor = Color.FromArgb(255, 192, 128);
+                btn_aceptarPedidoPendiente.Enabled = true;
+                btn_rechazarPedidoPendiente.BackColor = Color.FromArgb(255, 128, 128);
+                btn_rechazarPedidoPendiente.Enabled = true;
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay al menos una fila seleccionada
+            if (dataGridView_pedidosPendientes.SelectedRows.Count > 0)
+            {
+                // Cambiar el color de fondo de los botones al color original y habilitarlos
+                btn_aceptarPedidoPendiente.BackColor = Color.FromArgb(255, 192, 128);
+                btn_aceptarPedidoPendiente.Enabled = true;
+                btn_rechazarPedidoPendiente.BackColor = Color.FromArgb(255, 128, 128);
+                btn_rechazarPedidoPendiente.Enabled = true;
+            }
+            else
+            {
+                // Si no hay filas seleccionadas, deshabilitar los botones y ponerlos grises
+                btn_aceptarPedidoPendiente.BackColor = Color.LightGray;
+                btn_aceptarPedidoPendiente.Enabled = false;
+                btn_rechazarPedidoPendiente.BackColor = Color.LightGray;
+                btn_rechazarPedidoPendiente.Enabled = false;
+            }
+        }
+
+        private void btn_aceptarPedidoPendiente_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_pedidosPendientes.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Seguro que quieres aceptar el pedido?", "Confirmar Acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    int idPedidoRevision = (int)dataGridView_pedidosPendientes.SelectedRows[0].Cells["id_pedidoRevision"].Value;
+
+                    try
+                    {
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        SqlCommand command = new SqlCommand("DELETE FROM pedidosRevision WHERE id_pedidoRevision = @idPedidoRevision", connection);
+                        command.Parameters.AddWithValue("@idPedidoRevision", idPedidoRevision);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        MessageBox.Show(command.ToString());
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Pedido aceptado correctamente.");
+                            actualizarPedidosPendientesRevision();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo aceptar el pedido.");
+                        }
+
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al aceptar el pedido: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void btn_rechazarPedidoPendiente_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_pedidosPendientes.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Seguro que quieres rechazar el pedido?", "Confirmar Acción", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    int idPedidoRevision = (int)dataGridView_pedidosPendientes.SelectedRows[0].Cells["id_pedidoRevision"].Value;
+
+                    try
+                    {
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        connection.Open();
+
+                        SqlCommand command2 = new SqlCommand("DELETE FROM pedidos WHERE id_pedido = (SELECT id_pedido FROM pedidosRevision WHERE id_pedidoRevision = @idPedidoRevision)", connection);
+                        command2.Parameters.AddWithValue("@idPedidoRevision", idPedidoRevision);
+                        command2.ExecuteNonQuery();
+
+                        SqlCommand command1 = new SqlCommand("DELETE FROM pedidosRevision WHERE id_pedidoRevision = @idPedidoRevision", connection);
+                        command1.Parameters.AddWithValue("@idPedidoRevision", idPedidoRevision);
+                        //int rowsAffected1 = command1.ExecuteNonQuery();
+                        command1.ExecuteNonQuery();
+
+                        MessageBox.Show("Pedido rechazado correctamente.");
+                        actualizarPedidosPendientesRevision();
+
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al rechazar el pedido: " + ex.Message);
+                    }
+                }
             }
         }
     }
