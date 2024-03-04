@@ -1,6 +1,7 @@
 using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using System.Windows.Forms;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
@@ -217,7 +218,10 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 //SERVICIOS
                 "SELECT * FROM servicios",
                 //TALLERES
-                "SELECT * FROM talleres" };
+                "SELECT * FROM talleres",
+                //PEDIDOS PENDIENTES
+                "SELECT * FROM pedidosRevision"};
+
             for (int i = 0; i < consultasSql.Length; i++)
             {
                 DataGridView dgview;
@@ -259,12 +263,13 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         case 7:
                             dgview = ucPanel_tipoa_talleres.dataGridView1;
                             break;
+                        case 8:
+                            dgview = dataGridView_pedidosPendientes;
+                            break;
                     }
 
                     dgview.DataSource = tablaClientes;
                     dgview.ReadOnly = true;
-
-
 
                 }
                 foreach (DataGridViewColumn columna in dgview.Columns)
@@ -396,7 +401,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             menuBaseDeDatos.BringToFront();
             ucPanel_tipoa_empleados.Visible = true;
             ucPanel_tipoa_empleados.BringToFront();
-            tlpIntro.Visible = false;
+            menuGestionarPedidos.Visible = false;
 
 
         }
@@ -407,7 +412,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             menuRegistrarEmpleado.BringToFront();
             menuBaseDeDatos.Visible = false;
             menuBaseDeDatos.SendToBack();
-            tlpIntro.Visible = false;
+            menuGestionarPedidos.Visible = false;
         }
 
         private void btn_salirAlLogin_Click(object sender, EventArgs e)
@@ -513,5 +518,110 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
+        private void btn_gestionarPedidos_Click(object sender, EventArgs e)
+        {
+            menuGestionarPedidos.Visible = true;
+            menuGestionarPedidos.BringToFront();
+            
+        }
+
+        private void ManejarPedidoPendiente(string accion)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+                string nombreTabla = "pedidosRevision"; // Cambia esto según el nombre de tu tabla
+
+                if (dataGridView_pedidosPendientes.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = dataGridView_pedidosPendientes.SelectedRows[0];
+                    string primaryKeyColumnName = dataGridView_pedidosPendientes.Columns[0].Name; // Nombre de la columna de la clave primaria en el DataGridView
+                    int primaryKeyValue = Convert.ToInt32(selectedRow.Cells[primaryKeyColumnName].Value); // Obtener el valor de la clave primaria
+
+                    // Mostrar cuadro de diálogo de confirmación
+                    DialogResult result = MessageBox.Show($"¿Estás seguro que deseas {accion.ToLower()} este pedido pendiente?", $"Confirmar {accion}", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Construir y ejecutar la consulta SQL para actualizar el estado del pedido pendiente
+                        string query = $"UPDATE {nombreTabla} SET estado = '{accion}' WHERE {primaryKeyColumnName} = {primaryKeyValue}";
+                        MessageBox.Show(query.ToString());
+
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                command.ExecuteNonQuery();
+                            }
+                        }
+
+                        MessageBox.Show($"Pedido pendiente {accion.ToLower()} correctamente.");
+                        ActualizarDataGridView(); // Actualizar el DataGridView después de realizar la acción
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{accion} cancelada.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una fila para realizar esta acción.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al {accion.ToLower()} el pedido pendiente.");
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_aceptarPedidoPendiente_Click(object sender, EventArgs e)
+        {
+            ManejarPedidoPendiente("Aceptar");
+        }
+
+        private void btn_rechazarPedidoPendiente_Click(object sender, EventArgs e)
+        {
+            ManejarPedidoPendiente("Rechazar");
+        }
+
+        private void btn_cancelarPedidoPendiente_Click(object sender, EventArgs e)
+        {
+            ManejarPedidoPendiente("Cancelar");
+        }
+
+        private void ActualizarDataGridView()
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+                string nombreTabla = "pedidosRevision";
+
+                // Construir la consulta SQL para seleccionar todos los registros de la tabla
+                string query = $"SELECT * FROM {nombreTabla}";
+
+                // Crear un DataTable para almacenar los datos de la consulta
+                DataTable dataTable = new DataTable();
+
+                // Ejecutar la consulta SQL y llenar el DataTable con los resultados
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataTable);
+                    }
+                }
+
+                // Asignar el DataTable como la fuente de datos del DataGridView
+                dataGridView_pedidosPendientes.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el DataGridView: " + ex.Message);
+            }
+        }
     }
 }

@@ -111,8 +111,13 @@
             ucPanel_tipoa_talleres = new UCPanel_tipoA();
             tabPageRoles = new TabPage();
             ucPanel_tipoa_roles = new UCPanel_tipoA();
-            tlpIntro = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
+            menuGestionarPedidos = new TableLayoutPanel();
+            dataGridView_pedidosPendientes = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btn_aceptarPedidoPendiente = new Button();
+            btn_rechazarPedidoPendiente = new Button();
+            btn_cancelarPedidoPendiente = new Button();
+            label9 = new Label();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             menuRegistrarEmpleado.SuspendLayout();
@@ -134,8 +139,9 @@
             tabPageServicios.SuspendLayout();
             tabPageTalleres.SuspendLayout();
             tabPageRoles.SuspendLayout();
-            tlpIntro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuGestionarPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_pedidosPendientes).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // tlp1
@@ -608,8 +614,9 @@
             btn_gestionarPedidos.Name = "btn_gestionarPedidos";
             btn_gestionarPedidos.Size = new Size(128, 311);
             btn_gestionarPedidos.TabIndex = 4;
-            btn_gestionarPedidos.Text = "GESTIONAR PEDIDOS";
+            btn_gestionarPedidos.Text = "GESTIONAR PEDIDOS PENDIENTES";
             btn_gestionarPedidos.UseVisualStyleBackColor = false;
+            btn_gestionarPedidos.Click += btn_gestionarPedidos_Click;
             // 
             // btn_registrarEmpleado
             // 
@@ -1197,30 +1204,113 @@
             ucPanel_tipoa_roles.Size = new Size(1000, 1039);
             ucPanel_tipoa_roles.TabIndex = 0;
             // 
-            // tlpIntro
+            // menuGestionarPedidos
             // 
-            tlpIntro.ColumnCount = 2;
-            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0F));
-            tlpIntro.Controls.Add(dataGridView1, 0, 0);
-            tlpIntro.Location = new Point(145, 94);
-            tlpIntro.Name = "tlpIntro";
-            tlpIntro.RowCount = 2;
-            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tlpIntro.Size = new Size(1008, 1069);
-            tlpIntro.TabIndex = 3;
+            menuGestionarPedidos.ColumnCount = 1;
+            menuGestionarPedidos.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            menuGestionarPedidos.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            menuGestionarPedidos.Controls.Add(dataGridView_pedidosPendientes, 0, 1);
+            menuGestionarPedidos.Controls.Add(tableLayoutPanel1, 0, 2);
+            menuGestionarPedidos.Controls.Add(label9, 0, 0);
+            menuGestionarPedidos.Location = new Point(145, 94);
+            menuGestionarPedidos.Name = "menuGestionarPedidos";
+            menuGestionarPedidos.RowCount = 3;
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            menuGestionarPedidos.Size = new Size(1008, 1069);
+            menuGestionarPedidos.TabIndex = 3;
             // 
-            // dataGridView1
+            // dataGridView_pedidosPendientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(30, 30);
-            dataGridView1.Margin = new Padding(30);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(948, 581);
-            dataGridView1.TabIndex = 0;
+            dataGridView_pedidosPendientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_pedidosPendientes.Dock = DockStyle.Fill;
+            dataGridView_pedidosPendientes.Location = new Point(30, 156);
+            dataGridView_pedidosPendientes.Margin = new Padding(30, 50, 30, 50);
+            dataGridView_pedidosPendientes.Name = "dataGridView_pedidosPendientes";
+            dataGridView_pedidosPendientes.RowHeadersWidth = 51;
+            dataGridView_pedidosPendientes.Size = new Size(948, 541);
+            dataGridView_pedidosPendientes.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.Controls.Add(btn_aceptarPedidoPendiente, 0, 0);
+            tableLayoutPanel1.Controls.Add(btn_rechazarPedidoPendiente, 1, 0);
+            tableLayoutPanel1.Controls.Add(btn_cancelarPedidoPendiente, 2, 0);
+            tableLayoutPanel1.Dock = DockStyle.Top;
+            tableLayoutPanel1.Location = new Point(30, 747);
+            tableLayoutPanel1.Margin = new Padding(30, 0, 30, 200);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(948, 122);
+            tableLayoutPanel1.TabIndex = 1;
+            // 
+            // btn_aceptarPedidoPendiente
+            // 
+            btn_aceptarPedidoPendiente.BackColor = Color.FromArgb(117, 230, 164);
+            btn_aceptarPedidoPendiente.Dock = DockStyle.Fill;
+            btn_aceptarPedidoPendiente.FlatAppearance.BorderColor = Color.FromArgb(0, 64, 64);
+            btn_aceptarPedidoPendiente.FlatStyle = FlatStyle.Flat;
+            btn_aceptarPedidoPendiente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btn_aceptarPedidoPendiente.ForeColor = Color.FromArgb(0, 64, 64);
+            btn_aceptarPedidoPendiente.Location = new Point(5, 5);
+            btn_aceptarPedidoPendiente.Margin = new Padding(5);
+            btn_aceptarPedidoPendiente.Name = "btn_aceptarPedidoPendiente";
+            btn_aceptarPedidoPendiente.Size = new Size(305, 112);
+            btn_aceptarPedidoPendiente.TabIndex = 0;
+            btn_aceptarPedidoPendiente.Text = "ACEPTAR PEDIDO";
+            btn_aceptarPedidoPendiente.UseVisualStyleBackColor = false;
+            // 
+            // btn_rechazarPedidoPendiente
+            // 
+            btn_rechazarPedidoPendiente.BackColor = Color.FromArgb(255, 128, 128);
+            btn_rechazarPedidoPendiente.Dock = DockStyle.Fill;
+            btn_rechazarPedidoPendiente.FlatAppearance.BorderColor = Color.FromArgb(174, 0, 4);
+            btn_rechazarPedidoPendiente.FlatStyle = FlatStyle.Flat;
+            btn_rechazarPedidoPendiente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btn_rechazarPedidoPendiente.ForeColor = Color.FromArgb(174, 0, 4);
+            btn_rechazarPedidoPendiente.Location = new Point(320, 5);
+            btn_rechazarPedidoPendiente.Margin = new Padding(5);
+            btn_rechazarPedidoPendiente.Name = "btn_rechazarPedidoPendiente";
+            btn_rechazarPedidoPendiente.Size = new Size(305, 112);
+            btn_rechazarPedidoPendiente.TabIndex = 1;
+            btn_rechazarPedidoPendiente.Text = "RECHAZAR PEDIDO";
+            btn_rechazarPedidoPendiente.UseVisualStyleBackColor = false;
+            // 
+            // btn_cancelarPedidoPendiente
+            // 
+            btn_cancelarPedidoPendiente.BackColor = Color.FromArgb(255, 192, 128);
+            btn_cancelarPedidoPendiente.Dock = DockStyle.Fill;
+            btn_cancelarPedidoPendiente.FlatAppearance.BorderColor = Color.FromArgb(164, 88, 19);
+            btn_cancelarPedidoPendiente.FlatStyle = FlatStyle.Flat;
+            btn_cancelarPedidoPendiente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btn_cancelarPedidoPendiente.ForeColor = Color.FromArgb(164, 88, 19);
+            btn_cancelarPedidoPendiente.Location = new Point(635, 5);
+            btn_cancelarPedidoPendiente.Margin = new Padding(5);
+            btn_cancelarPedidoPendiente.Name = "btn_cancelarPedidoPendiente";
+            btn_cancelarPedidoPendiente.Size = new Size(308, 112);
+            btn_cancelarPedidoPendiente.TabIndex = 2;
+            btn_cancelarPedidoPendiente.Text = "CANCELAR";
+            btn_cancelarPedidoPendiente.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Dock = DockStyle.Bottom;
+            label9.Font = new Font("Cooper Black", 25F);
+            label9.ForeColor = Color.FromArgb(39, 50, 56);
+            label9.Location = new Point(3, 57);
+            label9.Name = "label9";
+            label9.Size = new Size(1002, 49);
+            label9.TabIndex = 2;
+            label9.Text = "Gestionar pedidos pendientes";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form_Empleado
             // 
@@ -1228,7 +1318,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1158, 1171);
-            Controls.Add(tlpIntro);
+            Controls.Add(menuGestionarPedidos);
             Controls.Add(menuBaseDeDatos);
             Controls.Add(tlp1);
             FormBorderStyle = FormBorderStyle.None;
@@ -1264,8 +1354,10 @@
             tabPageServicios.ResumeLayout(false);
             tabPageTalleres.ResumeLayout(false);
             tabPageRoles.ResumeLayout(false);
-            tlpIntro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuGestionarPedidos.ResumeLayout(false);
+            menuGestionarPedidos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_pedidosPendientes).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1339,7 +1431,7 @@
         private Label lb_registro_nombreUsuario;
         private Label lb_registro_contraseña;
         private Label label8;
-        public TableLayoutPanel tlpIntro;
+        public TableLayoutPanel menuGestionarPedidos;
         private TabPage tabPageUsuarios;
         private UCPanel_tipoA ucPanel_tipoa_usuarios;
         public TextBox textbox_re_nombre;
@@ -1353,6 +1445,11 @@
         public TextBox textbox_re_fechaInicioContrato;
         public TextBox textbox_re_nombreUsuario;
         public TextBox textbox_re_contraseñaUsuario;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView_pedidosPendientes;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button btn_aceptarPedidoPendiente;
+        private Button btn_rechazarPedidoPendiente;
+        private Button btn_cancelarPedidoPendiente;
+        private Label label9;
     }
 }
