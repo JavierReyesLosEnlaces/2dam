@@ -50,7 +50,6 @@
             campoLabel8 = new Label();
             campoLabel9 = new Label();
             campoLabel10 = new Label();
-            btn_aceptar = new Button();
             campoTextbox1 = new TextBox();
             campoTextbox2 = new TextBox();
             campoTextbox3 = new TextBox();
@@ -122,6 +121,7 @@
             btn_crearRegistro.ForeColor = Color.FromArgb(10, 78, 160);
             btn_crearRegistro.Name = "btn_crearRegistro";
             btn_crearRegistro.UseVisualStyleBackColor = false;
+            btn_crearRegistro.Click += btn_crearRegistro_Click;
             // 
             // btn_modificarRegistro
             // 
@@ -131,7 +131,7 @@
             btn_modificarRegistro.ForeColor = Color.FromArgb(164, 88, 19);
             btn_modificarRegistro.Name = "btn_modificarRegistro";
             btn_modificarRegistro.UseVisualStyleBackColor = false;
-            btn_modificarRegistro.Click += btn_modificarRegistro_Click;
+            btn_modificarRegistro.Click += btn_modificar_Click;
             // 
             // btn_borrarRegistro
             // 
@@ -141,6 +141,7 @@
             btn_borrarRegistro.ForeColor = Color.FromArgb(174, 0, 4);
             btn_borrarRegistro.Name = "btn_borrarRegistro";
             btn_borrarRegistro.UseVisualStyleBackColor = false;
+            btn_borrarRegistro.Click += btn_borrar_Click;
             // 
             // dataGridView1
             // 
@@ -148,7 +149,6 @@
             resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
             dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // tlpDatos
@@ -165,7 +165,6 @@
             tlpDatos.Controls.Add(campoLabel8, 0, 14);
             tlpDatos.Controls.Add(campoLabel9, 0, 16);
             tlpDatos.Controls.Add(campoLabel10, 0, 18);
-            tlpDatos.Controls.Add(btn_aceptar, 0, 20);
             tlpDatos.Controls.Add(campoTextbox1, 0, 1);
             tlpDatos.Controls.Add(campoTextbox2, 0, 3);
             tlpDatos.Controls.Add(campoTextbox3, 0, 5);
@@ -238,16 +237,6 @@
             resources.ApplyResources(campoLabel10, "campoLabel10");
             campoLabel10.BackColor = SystemColors.Control;
             campoLabel10.Name = "campoLabel10";
-            // 
-            // btn_aceptar
-            // 
-            btn_aceptar.BackColor = Color.LightGray;
-            resources.ApplyResources(btn_aceptar, "btn_aceptar");
-            btn_aceptar.FlatAppearance.BorderColor = Color.FromArgb(0, 64, 64);
-            btn_aceptar.ForeColor = Color.FromArgb(0, 64, 64);
-            btn_aceptar.Name = "btn_aceptar";
-            btn_aceptar.UseVisualStyleBackColor = false;
-            btn_aceptar.Click += btn_aceptar_Click;
             // 
             // campoTextbox1
             // 
@@ -376,7 +365,6 @@
         public Label campoLabel8;
         public Label campoLabel9;
         public Label campoLabel10;
-        public Button btn_aceptar;
         public TextBox campoTextbox1;
         public TextBox campoTextbox2;
         public TextBox campoTextbox3;

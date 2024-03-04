@@ -41,18 +41,18 @@
             lb_registro_dniNie = new Label();
             lb_registro_telefono = new Label();
             lb_registro_correo = new Label();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            textBox16 = new TextBox();
-            textBox17 = new TextBox();
-            textBox18 = new TextBox();
+            textbox_re_nombre = new TextBox();
+            textbox_re_primerApellido = new TextBox();
+            textbox_re_segundoApellido = new TextBox();
+            textbox_re_dni = new TextBox();
+            textbox_re_telefono = new TextBox();
+            textbox_re_correo = new TextBox();
             tlp7 = new TableLayoutPanel();
-            textBox19 = new TextBox();
-            textBox20 = new TextBox();
-            textBox21 = new TextBox();
-            textBox22 = new TextBox();
-            textBox23 = new TextBox();
+            textbox_re_salarioBase = new TextBox();
+            textbox_re_salarioExtra = new TextBox();
+            textbox_re_fechaInicioContrato = new TextBox();
+            textbox_re_nombreUsuario = new TextBox();
+            textbox_re_contraseñaUsuario = new TextBox();
             btn_registrarEmpleado_crearEmpleado = new Button();
             lb_registro_salarioBaseç = new Label();
             lb_registro_salarioExtra = new Label();
@@ -99,6 +99,8 @@
             ucPanel_tipoa_empleados = new UCPanel_tipoA();
             tabPageClientes = new TabPage();
             ucPanel_tipoa_clientes = new UCPanel_tipoA();
+            tabPageUsuarios = new TabPage();
+            ucPanel_tipoa_usuarios = new UCPanel_tipoA();
             tabPagePedidos = new TabPage();
             ucPanel_tipoa_pedidos = new UCPanel_tipoA();
             tabPageCoches = new TabPage();
@@ -110,6 +112,7 @@
             tabPageRoles = new TabPage();
             ucPanel_tipoa_roles = new UCPanel_tipoA();
             tlpIntro = new TableLayoutPanel();
+            dataGridView1 = new DataGridView();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             menuRegistrarEmpleado.SuspendLayout();
@@ -125,11 +128,14 @@
             menuBaseDeDatos.SuspendLayout();
             tabPageEmpleados.SuspendLayout();
             tabPageClientes.SuspendLayout();
+            tabPageUsuarios.SuspendLayout();
             tabPagePedidos.SuspendLayout();
             tabPageCoches.SuspendLayout();
             tabPageServicios.SuspendLayout();
             tabPageTalleres.SuspendLayout();
             tabPageRoles.SuspendLayout();
+            tlpIntro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tlp1
@@ -216,12 +222,12 @@
             tlp12.Controls.Add(lb_registro_dniNie, 0, 6);
             tlp12.Controls.Add(lb_registro_telefono, 0, 8);
             tlp12.Controls.Add(lb_registro_correo, 0, 10);
-            tlp12.Controls.Add(textBox13, 0, 1);
-            tlp12.Controls.Add(textBox14, 0, 3);
-            tlp12.Controls.Add(textBox15, 0, 5);
-            tlp12.Controls.Add(textBox16, 0, 7);
-            tlp12.Controls.Add(textBox17, 0, 9);
-            tlp12.Controls.Add(textBox18, 0, 11);
+            tlp12.Controls.Add(textbox_re_nombre, 0, 1);
+            tlp12.Controls.Add(textbox_re_primerApellido, 0, 3);
+            tlp12.Controls.Add(textbox_re_segundoApellido, 0, 5);
+            tlp12.Controls.Add(textbox_re_dni, 0, 7);
+            tlp12.Controls.Add(textbox_re_telefono, 0, 9);
+            tlp12.Controls.Add(textbox_re_correo, 0, 11);
             tlp12.Dock = DockStyle.Fill;
             tlp12.Location = new Point(200, 50);
             tlp12.Margin = new Padding(200, 50, 0, 50);
@@ -320,70 +326,70 @@
             lb_registro_correo.Text = "Correo electrónico";
             lb_registro_correo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox13
+            // textbox_re_nombre
             // 
-            textBox13.Dock = DockStyle.Fill;
-            textBox13.Location = new Point(30, 72);
-            textBox13.Margin = new Padding(30, 0, 30, 0);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(244, 27);
-            textBox13.TabIndex = 6;
+            textbox_re_nombre.Dock = DockStyle.Fill;
+            textbox_re_nombre.Location = new Point(30, 72);
+            textbox_re_nombre.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_nombre.Name = "textbox_re_nombre";
+            textbox_re_nombre.Size = new Size(244, 27);
+            textbox_re_nombre.TabIndex = 6;
             // 
-            // textBox14
+            // textbox_re_primerApellido
             // 
-            textBox14.Dock = DockStyle.Fill;
-            textBox14.Location = new Point(30, 216);
-            textBox14.Margin = new Padding(30, 0, 30, 0);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(244, 27);
-            textBox14.TabIndex = 7;
+            textbox_re_primerApellido.Dock = DockStyle.Fill;
+            textbox_re_primerApellido.Location = new Point(30, 216);
+            textbox_re_primerApellido.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_primerApellido.Name = "textbox_re_primerApellido";
+            textbox_re_primerApellido.Size = new Size(244, 27);
+            textbox_re_primerApellido.TabIndex = 7;
             // 
-            // textBox15
+            // textbox_re_segundoApellido
             // 
-            textBox15.Dock = DockStyle.Fill;
-            textBox15.Location = new Point(30, 360);
-            textBox15.Margin = new Padding(30, 0, 30, 0);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(244, 27);
-            textBox15.TabIndex = 8;
+            textbox_re_segundoApellido.Dock = DockStyle.Fill;
+            textbox_re_segundoApellido.Location = new Point(30, 360);
+            textbox_re_segundoApellido.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_segundoApellido.Name = "textbox_re_segundoApellido";
+            textbox_re_segundoApellido.Size = new Size(244, 27);
+            textbox_re_segundoApellido.TabIndex = 8;
             // 
-            // textBox16
+            // textbox_re_dni
             // 
-            textBox16.Dock = DockStyle.Fill;
-            textBox16.Location = new Point(30, 504);
-            textBox16.Margin = new Padding(30, 0, 30, 0);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(244, 27);
-            textBox16.TabIndex = 9;
+            textbox_re_dni.Dock = DockStyle.Fill;
+            textbox_re_dni.Location = new Point(30, 504);
+            textbox_re_dni.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_dni.Name = "textbox_re_dni";
+            textbox_re_dni.Size = new Size(244, 27);
+            textbox_re_dni.TabIndex = 9;
             // 
-            // textBox17
+            // textbox_re_telefono
             // 
-            textBox17.Dock = DockStyle.Fill;
-            textBox17.Location = new Point(30, 648);
-            textBox17.Margin = new Padding(30, 0, 30, 0);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(244, 27);
-            textBox17.TabIndex = 10;
+            textbox_re_telefono.Dock = DockStyle.Fill;
+            textbox_re_telefono.Location = new Point(30, 648);
+            textbox_re_telefono.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_telefono.Name = "textbox_re_telefono";
+            textbox_re_telefono.Size = new Size(244, 27);
+            textbox_re_telefono.TabIndex = 10;
             // 
-            // textBox18
+            // textbox_re_correo
             // 
-            textBox18.Dock = DockStyle.Fill;
-            textBox18.Location = new Point(30, 792);
-            textBox18.Margin = new Padding(30, 0, 30, 0);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(244, 27);
-            textBox18.TabIndex = 11;
+            textbox_re_correo.Dock = DockStyle.Fill;
+            textbox_re_correo.Location = new Point(30, 792);
+            textbox_re_correo.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_correo.Name = "textbox_re_correo";
+            textbox_re_correo.Size = new Size(244, 27);
+            textbox_re_correo.TabIndex = 11;
             // 
             // tlp7
             // 
             tlp7.BackColor = SystemColors.Control;
             tlp7.ColumnCount = 1;
             tlp7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp7.Controls.Add(textBox19, 0, 1);
-            tlp7.Controls.Add(textBox20, 0, 3);
-            tlp7.Controls.Add(textBox21, 0, 5);
-            tlp7.Controls.Add(textBox22, 0, 7);
-            tlp7.Controls.Add(textBox23, 0, 9);
+            tlp7.Controls.Add(textbox_re_salarioBase, 0, 1);
+            tlp7.Controls.Add(textbox_re_salarioExtra, 0, 3);
+            tlp7.Controls.Add(textbox_re_fechaInicioContrato, 0, 5);
+            tlp7.Controls.Add(textbox_re_nombreUsuario, 0, 7);
+            tlp7.Controls.Add(textbox_re_contraseñaUsuario, 0, 9);
             tlp7.Controls.Add(btn_registrarEmpleado_crearEmpleado, 0, 10);
             tlp7.Controls.Add(lb_registro_salarioBaseç, 0, 0);
             tlp7.Controls.Add(lb_registro_salarioExtra, 0, 2);
@@ -409,50 +415,50 @@
             tlp7.Size = new Size(304, 865);
             tlp7.TabIndex = 1;
             // 
-            // textBox19
+            // textbox_re_salarioBase
             // 
-            textBox19.Dock = DockStyle.Fill;
-            textBox19.Location = new Point(30, 78);
-            textBox19.Margin = new Padding(30, 0, 30, 0);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(244, 27);
-            textBox19.TabIndex = 0;
+            textbox_re_salarioBase.Dock = DockStyle.Fill;
+            textbox_re_salarioBase.Location = new Point(30, 78);
+            textbox_re_salarioBase.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_salarioBase.Name = "textbox_re_salarioBase";
+            textbox_re_salarioBase.Size = new Size(244, 27);
+            textbox_re_salarioBase.TabIndex = 0;
             // 
-            // textBox20
+            // textbox_re_salarioExtra
             // 
-            textBox20.Dock = DockStyle.Fill;
-            textBox20.Location = new Point(30, 234);
-            textBox20.Margin = new Padding(30, 0, 30, 0);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(244, 27);
-            textBox20.TabIndex = 1;
+            textbox_re_salarioExtra.Dock = DockStyle.Fill;
+            textbox_re_salarioExtra.Location = new Point(30, 234);
+            textbox_re_salarioExtra.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_salarioExtra.Name = "textbox_re_salarioExtra";
+            textbox_re_salarioExtra.Size = new Size(244, 27);
+            textbox_re_salarioExtra.TabIndex = 1;
             // 
-            // textBox21
+            // textbox_re_fechaInicioContrato
             // 
-            textBox21.Dock = DockStyle.Fill;
-            textBox21.Location = new Point(30, 390);
-            textBox21.Margin = new Padding(30, 0, 30, 0);
-            textBox21.Name = "textBox21";
-            textBox21.Size = new Size(244, 27);
-            textBox21.TabIndex = 2;
+            textbox_re_fechaInicioContrato.Dock = DockStyle.Fill;
+            textbox_re_fechaInicioContrato.Location = new Point(30, 390);
+            textbox_re_fechaInicioContrato.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_fechaInicioContrato.Name = "textbox_re_fechaInicioContrato";
+            textbox_re_fechaInicioContrato.Size = new Size(244, 27);
+            textbox_re_fechaInicioContrato.TabIndex = 2;
             // 
-            // textBox22
+            // textbox_re_nombreUsuario
             // 
-            textBox22.Dock = DockStyle.Fill;
-            textBox22.Location = new Point(30, 546);
-            textBox22.Margin = new Padding(30, 0, 30, 0);
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(244, 27);
-            textBox22.TabIndex = 3;
+            textbox_re_nombreUsuario.Dock = DockStyle.Fill;
+            textbox_re_nombreUsuario.Location = new Point(30, 546);
+            textbox_re_nombreUsuario.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_nombreUsuario.Name = "textbox_re_nombreUsuario";
+            textbox_re_nombreUsuario.Size = new Size(244, 27);
+            textbox_re_nombreUsuario.TabIndex = 3;
             // 
-            // textBox23
+            // textbox_re_contraseñaUsuario
             // 
-            textBox23.Dock = DockStyle.Fill;
-            textBox23.Location = new Point(30, 702);
-            textBox23.Margin = new Padding(30, 0, 30, 0);
-            textBox23.Name = "textBox23";
-            textBox23.Size = new Size(244, 27);
-            textBox23.TabIndex = 4;
+            textbox_re_contraseñaUsuario.Dock = DockStyle.Fill;
+            textbox_re_contraseñaUsuario.Location = new Point(30, 702);
+            textbox_re_contraseñaUsuario.Margin = new Padding(30, 0, 30, 0);
+            textbox_re_contraseñaUsuario.Name = "textbox_re_contraseñaUsuario";
+            textbox_re_contraseñaUsuario.Size = new Size(244, 27);
+            textbox_re_contraseñaUsuario.TabIndex = 4;
             // 
             // btn_registrarEmpleado_crearEmpleado
             // 
@@ -469,6 +475,7 @@
             btn_registrarEmpleado_crearEmpleado.TabIndex = 5;
             btn_registrarEmpleado_crearEmpleado.Text = "CREAR EMPLEADO";
             btn_registrarEmpleado_crearEmpleado.UseVisualStyleBackColor = false;
+            btn_registrarEmpleado_crearEmpleado.Click += btn_registrarEmpleado_Click;
             // 
             // lb_registro_salarioBaseç
             // 
@@ -619,7 +626,7 @@
             btn_registrarEmpleado.TabIndex = 5;
             btn_registrarEmpleado.Text = "REGISTRAR EMPLEADO";
             btn_registrarEmpleado.UseVisualStyleBackColor = false;
-            btn_registrarEmpleado.Click += btn_registrarEmpleado_Click;
+            btn_registrarEmpleado.Click += btn_registrarEmpleado_Click2;
             // 
             // btn_salirAlLogin
             // 
@@ -1006,6 +1013,7 @@
             menuBaseDeDatos.AllowDrop = true;
             menuBaseDeDatos.Controls.Add(tabPageEmpleados);
             menuBaseDeDatos.Controls.Add(tabPageClientes);
+            menuBaseDeDatos.Controls.Add(tabPageUsuarios);
             menuBaseDeDatos.Controls.Add(tabPagePedidos);
             menuBaseDeDatos.Controls.Add(tabPageCoches);
             menuBaseDeDatos.Controls.Add(tabPageServicios);
@@ -1040,7 +1048,6 @@
             ucPanel_tipoa_empleados.Size = new Size(1000, 1039);
             ucPanel_tipoa_empleados.TabIndex = 0;
             ucPanel_tipoa_empleados.Visible = false;
-            ucPanel_tipoa_empleados.Load += ucPanel_tipoa_empleados_Load;
             // 
             // tabPageClientes
             // 
@@ -1063,6 +1070,27 @@
             ucPanel_tipoa_clientes.Name = "ucPanel_tipoa_clientes";
             ucPanel_tipoa_clientes.Size = new Size(1000, 1039);
             ucPanel_tipoa_clientes.TabIndex = 0;
+            // 
+            // tabPageUsuarios
+            // 
+            tabPageUsuarios.Controls.Add(ucPanel_tipoa_usuarios);
+            tabPageUsuarios.Location = new Point(4, 29);
+            tabPageUsuarios.Name = "tabPageUsuarios";
+            tabPageUsuarios.Size = new Size(1000, 1039);
+            tabPageUsuarios.TabIndex = 7;
+            tabPageUsuarios.Text = "USUARIOS";
+            tabPageUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // ucPanel_tipoa_usuarios
+            // 
+            ucPanel_tipoa_usuarios.AllowDrop = true;
+            ucPanel_tipoa_usuarios.Dock = DockStyle.Fill;
+            ucPanel_tipoa_usuarios.ImeMode = ImeMode.On;
+            ucPanel_tipoa_usuarios.Location = new Point(0, 0);
+            ucPanel_tipoa_usuarios.Margin = new Padding(11, 13, 11, 13);
+            ucPanel_tipoa_usuarios.Name = "ucPanel_tipoa_usuarios";
+            ucPanel_tipoa_usuarios.Size = new Size(1000, 1039);
+            ucPanel_tipoa_usuarios.TabIndex = 0;
             // 
             // tabPagePedidos
             // 
@@ -1172,15 +1200,27 @@
             // tlpIntro
             // 
             tlpIntro.ColumnCount = 2;
-            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.8507462F));
-            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.1492538F));
-            tlpIntro.Location = new Point(145, 92);
+            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpIntro.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 0F));
+            tlpIntro.Controls.Add(dataGridView1, 0, 0);
+            tlpIntro.Location = new Point(145, 94);
             tlpIntro.Name = "tlpIntro";
             tlpIntro.RowCount = 2;
-            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpIntro.Size = new Size(1005, 1074);
+            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tlpIntro.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tlpIntro.Size = new Size(1008, 1069);
             tlpIntro.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(30, 30);
+            dataGridView1.Margin = new Padding(30);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(948, 581);
+            dataGridView1.TabIndex = 0;
             // 
             // Form_Empleado
             // 
@@ -1218,11 +1258,14 @@
             menuBaseDeDatos.ResumeLayout(false);
             tabPageEmpleados.ResumeLayout(false);
             tabPageClientes.ResumeLayout(false);
+            tabPageUsuarios.ResumeLayout(false);
             tabPagePedidos.ResumeLayout(false);
             tabPageCoches.ResumeLayout(false);
             tabPageServicios.ResumeLayout(false);
             tabPageTalleres.ResumeLayout(false);
             tabPageRoles.ResumeLayout(false);
+            tlpIntro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1288,18 +1331,7 @@
         private Label lb_registro_dniNie;
         private Label lb_registro_telefono;
         private Label lb_registro_correo;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
-        private TextBox textBox16;
-        private TextBox textBox17;
-        private TextBox textBox18;
         private TableLayoutPanel tlp7;
-        private TextBox textBox19;
-        private TextBox textBox20;
-        private TextBox textBox21;
-        private TextBox textBox22;
-        private TextBox textBox23;
         private Button btn_registrarEmpleado_crearEmpleado;
         private Label lb_registro_salarioBaseç;
         private Label lb_registro_salarioExtra;
@@ -1308,5 +1340,19 @@
         private Label lb_registro_contraseña;
         private Label label8;
         public TableLayoutPanel tlpIntro;
+        private TabPage tabPageUsuarios;
+        private UCPanel_tipoA ucPanel_tipoa_usuarios;
+        public TextBox textbox_re_nombre;
+        public TextBox textbox_re_primerApellido;
+        public TextBox textbox_re_segundoApellido;
+        public TextBox textbox_re_dni;
+        public TextBox textbox_re_telefono;
+        public TextBox textbox_re_correo;
+        public TextBox textbox_re_salarioBase;
+        public TextBox textbox_re_salarioExtra;
+        public TextBox textbox_re_fechaInicioContrato;
+        public TextBox textbox_re_nombreUsuario;
+        public TextBox textbox_re_contraseñaUsuario;
+        private DataGridView dataGridView1;
     }
 }

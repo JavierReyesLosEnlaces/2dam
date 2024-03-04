@@ -736,42 +736,6 @@
   <data name="&gt;&gt;campoLabel10.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="btn_aceptar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btn_aceptar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="btn_aceptar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
-  </data>
-  <data name="btn_aceptar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 850</value>
-  </data>
-  <data name="btn_aceptar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 10, 20, 20</value>
-  </data>
-  <data name="btn_aceptar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 56</value>
-  </data>
-  <data name="btn_aceptar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btn_aceptar.Text" xml:space="preserve">
-    <value>ACEPTAR</value>
-  </data>
-  <data name="&gt;&gt;btn_aceptar.Name" xml:space="preserve">
-    <value>btn_aceptar</value>
-  </data>
-  <data name="&gt;&gt;btn_aceptar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_aceptar.Parent" xml:space="preserve">
-    <value>tlpDatos</value>
-  </data>
-  <data name="&gt;&gt;btn_aceptar.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="campoTextbox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -797,7 +761,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="campoTextbox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -824,7 +788,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="campoTextbox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -851,7 +815,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox3.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="campoTextbox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -878,7 +842,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox4.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="campoTextbox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -905,7 +869,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox5.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="campoTextbox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -932,7 +896,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox6.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="campoTextbox7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -959,7 +923,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox7.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="campoTextbox8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -986,7 +950,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox8.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="campoTextbox9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1013,7 +977,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox9.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="campoTextbox10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1040,7 +1004,7 @@
     <value>tlpDatos</value>
   </data>
   <data name="&gt;&gt;campoTextbox10.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="tlpDatos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1073,7 +1037,7 @@
     <value>1</value>
   </data>
   <data name="tlpDatos.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="campoLabel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel4" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel6" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel7" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel8" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel9" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel10" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btn_aceptar" Row="20" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox3" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox4" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox5" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox6" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox7" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox8" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox9" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox10" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,4,6042523,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,6042523,Percent,7,9149656" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="campoLabel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel4" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel6" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel7" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel8" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel9" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel10" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox3" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox4" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox5" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox6" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox7" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox8" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox9" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox10" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,4,6042523,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,6042523,Percent,7,9149656" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tlp2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
