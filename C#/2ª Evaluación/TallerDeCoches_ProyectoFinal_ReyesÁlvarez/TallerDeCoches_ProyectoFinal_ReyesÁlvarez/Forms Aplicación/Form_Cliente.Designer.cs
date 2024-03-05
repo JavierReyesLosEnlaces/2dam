@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Cliente));
             panel1 = new Panel();
             tlp1 = new TableLayoutPanel();
             tlp2 = new TableLayoutPanel();
@@ -81,10 +80,6 @@
             button5 = new Button();
             pboxFamilia = new PictureBox();
             btn_salir = new Button();
-            tlp4 = new TableLayoutPanel();
-            tlp5 = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            label_nombreUsuario = new Label();
             panel1.SuspendLayout();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
@@ -98,9 +93,6 @@
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pboxFamilia).BeginInit();
-            tlp4.SuspendLayout();
-            tlp5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -119,18 +111,15 @@
             tlp1.BackColor = Color.FromArgb(117, 230, 164);
             tlp1.ColumnCount = 1;
             tlp1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp1.Controls.Add(tlp2, 0, 2);
+            tlp1.Controls.Add(tlp2, 0, 1);
             tlp1.Controls.Add(btn_salir, 0, 0);
-            tlp1.Controls.Add(tlp4, 0, 1);
             tlp1.Dock = DockStyle.Fill;
             tlp1.Location = new Point(0, 0);
             tlp1.Margin = new Padding(0);
             tlp1.Name = "tlp1";
-            tlp1.RowCount = 3;
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.91120839F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.90053368F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 92.1882553F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp1.RowCount = 2;
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 4F));
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 96F));
             tlp1.Size = new Size(1140, 1124);
             tlp1.TabIndex = 1;
             // 
@@ -144,7 +133,7 @@
             tlp2.Controls.Add(tableLayoutPanel1, 0, 1);
             tlp2.Controls.Add(tlpTarjeta, 0, 3);
             tlp2.Dock = DockStyle.Fill;
-            tlp2.Location = new Point(0, 87);
+            tlp2.Location = new Point(0, 44);
             tlp2.Margin = new Padding(0);
             tlp2.Name = "tlp2";
             tlp2.RowCount = 4;
@@ -152,7 +141,7 @@
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tlp2.Size = new Size(1140, 1037);
+            tlp2.Size = new Size(1140, 1080);
             tlp2.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -168,12 +157,12 @@
             tableLayoutPanel2.Controls.Add(tlp_mantenimiento, 1, 0);
             tableLayoutPanel2.Controls.Add(tlp_lavadoDetallado, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(20, 206);
+            tableLayoutPanel2.Location = new Point(20, 216);
             tableLayoutPanel2.Margin = new Padding(20, 0, 20, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1100, 414);
+            tableLayoutPanel2.Size = new Size(1100, 432);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // tlp_serviciosEspeciales
@@ -199,7 +188,7 @@
             tlp_serviciosEspeciales.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_serviciosEspeciales.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_serviciosEspeciales.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp_serviciosEspeciales.Size = new Size(265, 409);
+            tlp_serviciosEspeciales.Size = new Size(265, 427);
             tlp_serviciosEspeciales.TabIndex = 3;
             // 
             // button24
@@ -214,7 +203,7 @@
             button24.Location = new Point(10, 10);
             button24.Margin = new Padding(10);
             button24.Name = "button24";
-            button24.Size = new Size(245, 48);
+            button24.Size = new Size(245, 51);
             button24.TabIndex = 0;
             button24.Text = "Servicio ITV";
             button24.UseVisualStyleBackColor = false;
@@ -229,10 +218,10 @@
             button25.FlatStyle = FlatStyle.Flat;
             button25.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button25.ForeColor = Color.FromArgb(0, 64, 64);
-            button25.Location = new Point(10, 78);
+            button25.Location = new Point(10, 81);
             button25.Margin = new Padding(10);
             button25.Name = "button25";
-            button25.Size = new Size(245, 48);
+            button25.Size = new Size(245, 51);
             button25.TabIndex = 1;
             button25.Text = "Instalación de GPS";
             button25.UseVisualStyleBackColor = false;
@@ -247,10 +236,10 @@
             button26.FlatStyle = FlatStyle.Flat;
             button26.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button26.ForeColor = Color.FromArgb(0, 64, 64);
-            button26.Location = new Point(10, 146);
+            button26.Location = new Point(10, 152);
             button26.Margin = new Padding(10);
             button26.Name = "button26";
-            button26.Size = new Size(245, 48);
+            button26.Size = new Size(245, 51);
             button26.TabIndex = 2;
             button26.Text = "Diagnóstico de motor";
             button26.UseVisualStyleBackColor = false;
@@ -265,10 +254,10 @@
             button27.FlatStyle = FlatStyle.Flat;
             button27.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button27.ForeColor = Color.FromArgb(0, 64, 64);
-            button27.Location = new Point(10, 214);
+            button27.Location = new Point(10, 223);
             button27.Margin = new Padding(10);
             button27.Name = "button27";
-            button27.Size = new Size(245, 48);
+            button27.Size = new Size(245, 51);
             button27.TabIndex = 3;
             button27.Text = "Reparación de la radio";
             button27.UseVisualStyleBackColor = false;
@@ -283,10 +272,10 @@
             button28.FlatStyle = FlatStyle.Flat;
             button28.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button28.ForeColor = Color.FromArgb(0, 64, 64);
-            button28.Location = new Point(10, 282);
+            button28.Location = new Point(10, 294);
             button28.Margin = new Padding(10);
             button28.Name = "button28";
-            button28.Size = new Size(245, 48);
+            button28.Size = new Size(245, 51);
             button28.TabIndex = 4;
             button28.Text = "Tuning y Personalización";
             button28.UseVisualStyleBackColor = false;
@@ -301,10 +290,10 @@
             button29.FlatStyle = FlatStyle.Flat;
             button29.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button29.ForeColor = Color.FromArgb(0, 64, 64);
-            button29.Location = new Point(10, 350);
+            button29.Location = new Point(10, 365);
             button29.Margin = new Padding(10);
             button29.Name = "button29";
-            button29.Size = new Size(245, 49);
+            button29.Size = new Size(245, 52);
             button29.TabIndex = 5;
             button29.Text = "Instalación de Kit LED";
             button29.UseVisualStyleBackColor = false;
@@ -333,7 +322,7 @@
             tlp_reparacion.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_reparacion.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_reparacion.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp_reparacion.Size = new Size(265, 409);
+            tlp_reparacion.Size = new Size(265, 427);
             tlp_reparacion.TabIndex = 2;
             // 
             // button18
@@ -348,7 +337,7 @@
             button18.Location = new Point(10, 10);
             button18.Margin = new Padding(10);
             button18.Name = "button18";
-            button18.Size = new Size(245, 48);
+            button18.Size = new Size(245, 51);
             button18.TabIndex = 0;
             button18.Text = "Reparación de Frenos";
             button18.UseVisualStyleBackColor = false;
@@ -363,10 +352,10 @@
             button19.FlatStyle = FlatStyle.Flat;
             button19.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button19.ForeColor = Color.FromArgb(0, 64, 64);
-            button19.Location = new Point(10, 78);
+            button19.Location = new Point(10, 81);
             button19.Margin = new Padding(10);
             button19.Name = "button19";
-            button19.Size = new Size(245, 48);
+            button19.Size = new Size(245, 51);
             button19.TabIndex = 1;
             button19.Text = "Reparación de Suspensión";
             button19.UseVisualStyleBackColor = false;
@@ -381,10 +370,10 @@
             button20.FlatStyle = FlatStyle.Flat;
             button20.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button20.ForeColor = Color.FromArgb(0, 64, 64);
-            button20.Location = new Point(10, 146);
+            button20.Location = new Point(10, 152);
             button20.Margin = new Padding(10);
             button20.Name = "button20";
-            button20.Size = new Size(245, 48);
+            button20.Size = new Size(245, 51);
             button20.TabIndex = 2;
             button20.Text = "Reparación de Sistema Eléctrico";
             button20.UseVisualStyleBackColor = false;
@@ -399,10 +388,10 @@
             button21.FlatStyle = FlatStyle.Flat;
             button21.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button21.ForeColor = Color.FromArgb(0, 64, 64);
-            button21.Location = new Point(10, 214);
+            button21.Location = new Point(10, 223);
             button21.Margin = new Padding(10);
             button21.Name = "button21";
-            button21.Size = new Size(245, 48);
+            button21.Size = new Size(245, 51);
             button21.TabIndex = 3;
             button21.Text = "Reparación Dirección Asistida";
             button21.UseVisualStyleBackColor = false;
@@ -417,10 +406,10 @@
             button22.FlatStyle = FlatStyle.Flat;
             button22.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button22.ForeColor = Color.FromArgb(0, 64, 64);
-            button22.Location = new Point(10, 282);
+            button22.Location = new Point(10, 294);
             button22.Margin = new Padding(10);
             button22.Name = "button22";
-            button22.Size = new Size(245, 48);
+            button22.Size = new Size(245, 51);
             button22.TabIndex = 4;
             button22.Text = "Cambio de Correa ";
             button22.UseVisualStyleBackColor = false;
@@ -435,10 +424,10 @@
             button23.FlatStyle = FlatStyle.Flat;
             button23.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button23.ForeColor = Color.FromArgb(0, 64, 64);
-            button23.Location = new Point(10, 350);
+            button23.Location = new Point(10, 365);
             button23.Margin = new Padding(10);
             button23.Name = "button23";
-            button23.Size = new Size(245, 49);
+            button23.Size = new Size(245, 52);
             button23.TabIndex = 5;
             button23.Text = "Reparación de Transmisión";
             button23.UseVisualStyleBackColor = false;
@@ -467,7 +456,7 @@
             tlp_mantenimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_mantenimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_mantenimiento.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp_mantenimiento.Size = new Size(265, 409);
+            tlp_mantenimiento.Size = new Size(265, 427);
             tlp_mantenimiento.TabIndex = 1;
             // 
             // button12
@@ -482,7 +471,7 @@
             button12.Location = new Point(10, 10);
             button12.Margin = new Padding(10);
             button12.Name = "button12";
-            button12.Size = new Size(245, 48);
+            button12.Size = new Size(245, 51);
             button12.TabIndex = 0;
             button12.Text = "Cambio de Aceite y Filtro";
             button12.UseVisualStyleBackColor = false;
@@ -497,10 +486,10 @@
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button13.ForeColor = Color.FromArgb(0, 64, 64);
-            button13.Location = new Point(10, 78);
+            button13.Location = new Point(10, 81);
             button13.Margin = new Padding(10);
             button13.Name = "button13";
-            button13.Size = new Size(245, 48);
+            button13.Size = new Size(245, 51);
             button13.TabIndex = 1;
             button13.Text = "Alineación y Balanceo";
             button13.UseVisualStyleBackColor = false;
@@ -515,10 +504,10 @@
             button14.FlatStyle = FlatStyle.Flat;
             button14.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button14.ForeColor = Color.FromArgb(0, 64, 64);
-            button14.Location = new Point(10, 146);
+            button14.Location = new Point(10, 152);
             button14.Margin = new Padding(10);
             button14.Name = "button14";
-            button14.Size = new Size(245, 48);
+            button14.Size = new Size(245, 51);
             button14.TabIndex = 2;
             button14.Text = "Revisión Completa";
             button14.UseVisualStyleBackColor = false;
@@ -533,10 +522,10 @@
             button15.FlatStyle = FlatStyle.Flat;
             button15.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button15.ForeColor = Color.FromArgb(0, 64, 64);
-            button15.Location = new Point(10, 214);
+            button15.Location = new Point(10, 223);
             button15.Margin = new Padding(10);
             button15.Name = "button15";
-            button15.Size = new Size(245, 48);
+            button15.Size = new Size(245, 51);
             button15.TabIndex = 3;
             button15.Text = "Cambio de Batería";
             button15.UseVisualStyleBackColor = false;
@@ -551,10 +540,10 @@
             button16.FlatStyle = FlatStyle.Flat;
             button16.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button16.ForeColor = Color.FromArgb(0, 64, 64);
-            button16.Location = new Point(10, 282);
+            button16.Location = new Point(10, 294);
             button16.Margin = new Padding(10);
             button16.Name = "button16";
-            button16.Size = new Size(245, 48);
+            button16.Size = new Size(245, 51);
             button16.TabIndex = 4;
             button16.Text = "Cambio de neumáticos";
             button16.UseVisualStyleBackColor = false;
@@ -569,10 +558,10 @@
             button17.FlatStyle = FlatStyle.Flat;
             button17.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button17.ForeColor = Color.FromArgb(0, 64, 64);
-            button17.Location = new Point(10, 350);
+            button17.Location = new Point(10, 365);
             button17.Margin = new Padding(10);
             button17.Name = "button17";
-            button17.Size = new Size(245, 49);
+            button17.Size = new Size(245, 52);
             button17.TabIndex = 5;
             button17.Text = "Cambio de Pastillas de Freno";
             button17.UseVisualStyleBackColor = false;
@@ -601,7 +590,7 @@
             tlp_lavadoDetallado.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_lavadoDetallado.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tlp_lavadoDetallado.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp_lavadoDetallado.Size = new Size(265, 409);
+            tlp_lavadoDetallado.Size = new Size(265, 427);
             tlp_lavadoDetallado.TabIndex = 0;
             // 
             // button6
@@ -616,7 +605,7 @@
             button6.Location = new Point(10, 10);
             button6.Margin = new Padding(10);
             button6.Name = "button6";
-            button6.Size = new Size(245, 48);
+            button6.Size = new Size(245, 51);
             button6.TabIndex = 0;
             button6.Text = "Lavado Exterior";
             button6.UseVisualStyleBackColor = false;
@@ -631,10 +620,10 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button7.ForeColor = Color.FromArgb(0, 64, 64);
-            button7.Location = new Point(10, 78);
+            button7.Location = new Point(10, 81);
             button7.Margin = new Padding(10);
             button7.Name = "button7";
-            button7.Size = new Size(245, 48);
+            button7.Size = new Size(245, 51);
             button7.TabIndex = 1;
             button7.Text = "Lavado de Motor";
             button7.UseVisualStyleBackColor = false;
@@ -649,10 +638,10 @@
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button8.ForeColor = Color.FromArgb(0, 64, 64);
-            button8.Location = new Point(10, 146);
+            button8.Location = new Point(10, 152);
             button8.Margin = new Padding(10);
             button8.Name = "button8";
-            button8.Size = new Size(245, 48);
+            button8.Size = new Size(245, 51);
             button8.TabIndex = 2;
             button8.Text = "Lavado de Llantas";
             button8.UseVisualStyleBackColor = false;
@@ -667,10 +656,10 @@
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button9.ForeColor = Color.FromArgb(0, 64, 64);
-            button9.Location = new Point(10, 214);
+            button9.Location = new Point(10, 223);
             button9.Margin = new Padding(10);
             button9.Name = "button9";
-            button9.Size = new Size(245, 48);
+            button9.Size = new Size(245, 51);
             button9.TabIndex = 3;
             button9.Text = "Limpieza de Tapicería";
             button9.UseVisualStyleBackColor = false;
@@ -685,10 +674,10 @@
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button10.ForeColor = Color.FromArgb(0, 64, 64);
-            button10.Location = new Point(10, 282);
+            button10.Location = new Point(10, 294);
             button10.Margin = new Padding(10);
             button10.Name = "button10";
-            button10.Size = new Size(245, 48);
+            button10.Size = new Size(245, 51);
             button10.TabIndex = 4;
             button10.Text = "Encerado Profundo";
             button10.UseVisualStyleBackColor = false;
@@ -703,10 +692,10 @@
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             button11.ForeColor = Color.FromArgb(0, 64, 64);
-            button11.Location = new Point(10, 350);
+            button11.Location = new Point(10, 365);
             button11.Margin = new Padding(10);
             button11.Name = "button11";
-            button11.Size = new Size(245, 49);
+            button11.Size = new Size(245, 52);
             button11.TabIndex = 5;
             button11.Text = "Pulido de Faros";
             button11.UseVisualStyleBackColor = false;
@@ -720,7 +709,7 @@
             label1.ForeColor = Color.FromArgb(39, 50, 56);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(1134, 103);
+            label1.Size = new Size(1134, 108);
             label1.TabIndex = 0;
             label1.Text = "¿Qué clase de servicio buscas?";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -738,12 +727,12 @@
             tableLayoutPanel1.Controls.Add(button3, 2, 0);
             tableLayoutPanel1.Controls.Add(button4, 3, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(20, 103);
+            tableLayoutPanel1.Location = new Point(20, 108);
             tableLayoutPanel1.Margin = new Padding(20, 0, 20, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1100, 103);
+            tableLayoutPanel1.Size = new Size(1100, 108);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
@@ -758,7 +747,7 @@
             button1.Location = new Point(5, 5);
             button1.Margin = new Padding(5, 5, 5, 0);
             button1.Name = "button1";
-            button1.Size = new Size(265, 98);
+            button1.Size = new Size(265, 103);
             button1.TabIndex = 0;
             button1.Text = "Lavado y Detallado";
             button1.UseVisualStyleBackColor = false;
@@ -776,7 +765,7 @@
             button2.Location = new Point(280, 5);
             button2.Margin = new Padding(5, 5, 5, 0);
             button2.Name = "button2";
-            button2.Size = new Size(265, 98);
+            button2.Size = new Size(265, 103);
             button2.TabIndex = 1;
             button2.Text = "Mantenimiento";
             button2.UseVisualStyleBackColor = false;
@@ -794,7 +783,7 @@
             button3.Location = new Point(555, 5);
             button3.Margin = new Padding(5, 5, 5, 0);
             button3.Name = "button3";
-            button3.Size = new Size(265, 98);
+            button3.Size = new Size(265, 103);
             button3.TabIndex = 2;
             button3.Text = "Reparación";
             button3.UseVisualStyleBackColor = false;
@@ -812,7 +801,7 @@
             button4.Location = new Point(830, 5);
             button4.Margin = new Padding(5, 5, 5, 0);
             button4.Name = "button4";
-            button4.Size = new Size(265, 98);
+            button4.Size = new Size(265, 103);
             button4.TabIndex = 3;
             button4.Text = "Servicios Especiales";
             button4.UseVisualStyleBackColor = false;
@@ -826,12 +815,12 @@
             tlpTarjeta.Controls.Add(tableLayoutPanel7, 1, 0);
             tlpTarjeta.Controls.Add(pboxFamilia, 0, 0);
             tlpTarjeta.Dock = DockStyle.Fill;
-            tlpTarjeta.Location = new Point(25, 650);
+            tlpTarjeta.Location = new Point(25, 678);
             tlpTarjeta.Margin = new Padding(25, 30, 25, 40);
             tlpTarjeta.Name = "tlpTarjeta";
             tlpTarjeta.RowCount = 1;
             tlpTarjeta.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpTarjeta.Size = new Size(1090, 347);
+            tlpTarjeta.Size = new Size(1090, 362);
             tlpTarjeta.TabIndex = 3;
             // 
             // tableLayoutPanel7
@@ -848,7 +837,7 @@
             tableLayoutPanel7.RowCount = 2;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 83.33F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 16.67F));
-            tableLayoutPanel7.Size = new Size(763, 347);
+            tableLayoutPanel7.Size = new Size(763, 362);
             tableLayoutPanel7.TabIndex = 4;
             // 
             // tableLayoutPanel8
@@ -873,7 +862,7 @@
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel8.Size = new Size(763, 289);
+            tableLayoutPanel8.Size = new Size(763, 301);
             tableLayoutPanel8.TabIndex = 0;
             // 
             // label2
@@ -887,7 +876,7 @@
             label2.Location = new Point(0, 0);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(267, 72);
+            label2.Size = new Size(267, 75);
             label2.TabIndex = 0;
             label2.Text = "Servicio";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -900,10 +889,10 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Cooper Black", 11F);
             label3.ForeColor = Color.FromArgb(39, 50, 56);
-            label3.Location = new Point(0, 72);
+            label3.Location = new Point(0, 75);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(267, 72);
+            label3.Size = new Size(267, 75);
             label3.TabIndex = 1;
             label3.Text = "Taller";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -916,10 +905,10 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Cooper Black", 11F);
             label4.ForeColor = Color.FromArgb(39, 50, 56);
-            label4.Location = new Point(0, 144);
+            label4.Location = new Point(0, 150);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(267, 72);
+            label4.Size = new Size(267, 75);
             label4.TabIndex = 2;
             label4.Text = "Importe bruto";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -932,10 +921,10 @@
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Cooper Black", 11F);
             label5.ForeColor = Color.FromArgb(39, 50, 56);
-            label5.Location = new Point(0, 216);
+            label5.Location = new Point(0, 225);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(267, 73);
+            label5.Size = new Size(267, 76);
             label5.TabIndex = 3;
             label5.Text = "Tipo impositivo";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -949,7 +938,7 @@
             label7.Margin = new Padding(0);
             label7.Name = "label7";
             label7.Padding = new Padding(30, 0, 0, 0);
-            label7.Size = new Size(496, 72);
+            label7.Size = new Size(496, 75);
             label7.TabIndex = 5;
             label7.Text = "...";
             label7.TextAlign = ContentAlignment.MiddleLeft;
@@ -959,11 +948,11 @@
             label8.AutoSize = true;
             label8.BackColor = Color.White;
             label8.Dock = DockStyle.Fill;
-            label8.Location = new Point(267, 72);
+            label8.Location = new Point(267, 75);
             label8.Margin = new Padding(0);
             label8.Name = "label8";
             label8.Padding = new Padding(30, 0, 0, 0);
-            label8.Size = new Size(496, 72);
+            label8.Size = new Size(496, 75);
             label8.TabIndex = 6;
             label8.Text = "...";
             label8.TextAlign = ContentAlignment.MiddleLeft;
@@ -974,11 +963,11 @@
             label9.BackColor = Color.White;
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label9.Location = new Point(267, 144);
+            label9.Location = new Point(267, 150);
             label9.Margin = new Padding(0);
             label9.Name = "label9";
             label9.Padding = new Padding(30, 0, 0, 0);
-            label9.Size = new Size(496, 72);
+            label9.Size = new Size(496, 75);
             label9.TabIndex = 7;
             label9.Text = "...";
             label9.TextAlign = ContentAlignment.MiddleLeft;
@@ -988,11 +977,11 @@
             label10.AutoSize = true;
             label10.BackColor = Color.White;
             label10.Dock = DockStyle.Fill;
-            label10.Location = new Point(267, 216);
+            label10.Location = new Point(267, 225);
             label10.Margin = new Padding(0);
             label10.Name = "label10";
             label10.Padding = new Padding(30, 0, 0, 0);
-            label10.Size = new Size(496, 73);
+            label10.Size = new Size(496, 76);
             label10.TabIndex = 8;
             label10.Text = "...";
             label10.TextAlign = ContentAlignment.MiddleLeft;
@@ -1005,10 +994,10 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Cooper Black", 15F);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 289);
+            button5.Location = new Point(0, 301);
             button5.Margin = new Padding(0);
             button5.Name = "button5";
-            button5.Size = new Size(763, 58);
+            button5.Size = new Size(763, 61);
             button5.TabIndex = 1;
             button5.Text = "CONTINUAR";
             button5.UseVisualStyleBackColor = false;
@@ -1021,7 +1010,7 @@
             pboxFamilia.Location = new Point(0, 0);
             pboxFamilia.Margin = new Padding(0);
             pboxFamilia.Name = "pboxFamilia";
-            pboxFamilia.Size = new Size(327, 347);
+            pboxFamilia.Size = new Size(327, 362);
             pboxFamilia.TabIndex = 5;
             pboxFamilia.TabStop = false;
             // 
@@ -1031,76 +1020,13 @@
             btn_salir.BackColor = Color.FromArgb(117, 230, 164);
             btn_salir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_salir.ForeColor = Color.White;
-            btn_salir.Location = new Point(1105, 3);
+            btn_salir.Location = new Point(1100, 3);
             btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(32, 26);
+            btn_salir.Size = new Size(37, 38);
             btn_salir.TabIndex = 1;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
             btn_salir.Click += btn_salir_Click;
-            // 
-            // tlp4
-            // 
-            tlp4.ColumnCount = 3;
-            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlp4.Controls.Add(tlp5, 2, 0);
-            tlp4.Dock = DockStyle.Fill;
-            tlp4.Location = new Point(0, 32);
-            tlp4.Margin = new Padding(0);
-            tlp4.Name = "tlp4";
-            tlp4.RowCount = 1;
-            tlp4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp4.Size = new Size(1140, 55);
-            tlp4.TabIndex = 3;
-            // 
-            // tlp5
-            // 
-            tlp5.BackColor = Color.FromArgb(117, 230, 164);
-            tlp5.BackgroundImageLayout = ImageLayout.Center;
-            tlp5.ColumnCount = 2;
-            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            tlp5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
-            tlp5.Controls.Add(pictureBox1, 0, 0);
-            tlp5.Controls.Add(label_nombreUsuario, 1, 0);
-            tlp5.Dock = DockStyle.Fill;
-            tlp5.Location = new Point(803, 5);
-            tlp5.Margin = new Padding(5);
-            tlp5.Name = "tlp5";
-            tlp5.RowCount = 2;
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 0F));
-            tlp5.Size = new Size(332, 45);
-            tlp5.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(49, 45);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // label_nombreUsuario
-            // 
-            label_nombreUsuario.AutoSize = true;
-            label_nombreUsuario.BackColor = Color.FromArgb(117, 230, 164);
-            label_nombreUsuario.Dock = DockStyle.Fill;
-            label_nombreUsuario.Font = new Font("Segoe UI", 9F);
-            label_nombreUsuario.Location = new Point(49, 0);
-            label_nombreUsuario.Margin = new Padding(0);
-            label_nombreUsuario.Name = "label_nombreUsuario";
-            label_nombreUsuario.Padding = new Padding(10, 0, 0, 0);
-            label_nombreUsuario.Size = new Size(283, 45);
-            label_nombreUsuario.TabIndex = 1;
-            label_nombreUsuario.Text = "Nombre del cliente";
-            label_nombreUsuario.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // Form_Cliente
             // 
@@ -1127,10 +1053,6 @@
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pboxFamilia).EndInit();
-            tlp4.ResumeLayout(false);
-            tlp5.ResumeLayout(false);
-            tlp5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1140,10 +1062,6 @@
         private TableLayoutPanel tlp1;
         private TableLayoutPanel tlp2;
         private Button btn_salir;
-        private TableLayoutPanel tlp4;
-        private TableLayoutPanel tlp5;
-        private PictureBox pictureBox1;
-        private Label label_nombreUsuario;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel1;

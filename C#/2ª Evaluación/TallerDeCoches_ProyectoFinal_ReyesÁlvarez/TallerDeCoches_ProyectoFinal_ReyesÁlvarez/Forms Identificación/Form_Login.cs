@@ -5,7 +5,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
     public partial class Form_Login : Form
     {
-        public static String decusr;
+        public static String decusr, encpss = "", encusr;
         public Form_Login()
         {
             InitializeComponent();
@@ -53,7 +53,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
                             if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
                             {
-                                MessageBox.Show("Bienvenido, cliente");
                                 Form_Cliente fc = new Form_Cliente();
                                 fc.Show();
                                 Hide();
@@ -77,14 +76,13 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         using (StreamReader sr = new StreamReader(filePath))
                         {
                             string encusr = sr.ReadLine();
-                            string encpss = sr.ReadLine();
+                             encpss = sr.ReadLine();
 
                             decusr = AesCryp.Decrypt(encusr);
                             string decpss = AesCryp.Decrypt(encpss);
 
                             if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
                             {
-                                MessageBox.Show("Bienvenido, empleado");
                                 Form_Empleado fe = new Form_Empleado();
                                 fe.Show();
                                 Hide();
@@ -101,14 +99,18 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
-        public string getIdUsuario()
+        public string getEncusr()
         {
-            // HACER UN SELECT DEL ID USUARIO WHERE encusr = nombre_usuario AND encpss = contraseña_usuario
-
-
-            return decusr;
+            return encusr;
         }
 
+        public string getEncPass()
+        {
+            return encpss;
+        }
+
+
+        
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();

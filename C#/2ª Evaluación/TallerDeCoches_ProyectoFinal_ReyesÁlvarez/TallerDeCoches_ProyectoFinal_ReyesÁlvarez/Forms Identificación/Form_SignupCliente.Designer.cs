@@ -59,6 +59,8 @@
             tb_user = new TextBox();
             tlp0 = new TableLayoutPanel();
             textBox2 = new TextBox();
+            label1 = new Label();
+            textbox_codigoPostal = new TextBox();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlp3.SuspendLayout();
@@ -274,27 +276,30 @@
             tlp6.Controls.Add(lbl_nombre, 0, 0);
             tlp6.Controls.Add(lbl_primerApellido, 0, 1);
             tlp6.Controls.Add(lbl_segundoApellido, 0, 2);
-            tlp6.Controls.Add(lbl_dni, 0, 3);
-            tlp6.Controls.Add(lbl_numeroTelefono, 0, 4);
-            tlp6.Controls.Add(lbl_correoElectronico, 0, 5);
+            tlp6.Controls.Add(lbl_dni, 0, 4);
+            tlp6.Controls.Add(lbl_numeroTelefono, 0, 5);
+            tlp6.Controls.Add(lbl_correoElectronico, 0, 6);
             tlp6.Controls.Add(textbox_nombre, 1, 0);
             tlp6.Controls.Add(textbox_primerApellido, 1, 1);
             tlp6.Controls.Add(textbox_segundoApellido, 1, 2);
-            tlp6.Controls.Add(textbox_dni, 1, 3);
-            tlp6.Controls.Add(textbox_numeroTelefono, 1, 4);
-            tlp6.Controls.Add(textbox_correoElectronico, 1, 5);
+            tlp6.Controls.Add(textbox_dni, 1, 4);
+            tlp6.Controls.Add(textbox_numeroTelefono, 1, 5);
+            tlp6.Controls.Add(textbox_correoElectronico, 1, 6);
+            tlp6.Controls.Add(label1, 0, 3);
+            tlp6.Controls.Add(textbox_codigoPostal, 1, 3);
             tlp6.Dock = DockStyle.Fill;
             tlp6.Location = new Point(368, 27);
-            tlp6.Margin = new Padding(3, 27, 3, 27);
+            tlp6.Margin = new Padding(3, 27, 3, 30);
             tlp6.Name = "tlp6";
-            tlp6.RowCount = 6;
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tlp6.Size = new Size(543, 408);
+            tlp6.RowCount = 7;
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tlp6.Size = new Size(543, 405);
             tlp6.TabIndex = 3;
             // 
             // lbl_nombre
@@ -303,9 +308,10 @@
             lbl_nombre.AutoSize = true;
             lbl_nombre.Font = new Font("Cooper Black", 12F);
             lbl_nombre.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_nombre.Location = new Point(3, 0);
+            lbl_nombre.Location = new Point(3, 20);
+            lbl_nombre.Margin = new Padding(3, 20, 3, 0);
             lbl_nombre.Name = "lbl_nombre";
-            lbl_nombre.Size = new Size(211, 68);
+            lbl_nombre.Size = new Size(211, 37);
             lbl_nombre.TabIndex = 0;
             lbl_nombre.Text = "Nombre";
             lbl_nombre.TextAlign = ContentAlignment.MiddleCenter;
@@ -316,9 +322,10 @@
             lbl_primerApellido.AutoSize = true;
             lbl_primerApellido.Font = new Font("Cooper Black", 12F);
             lbl_primerApellido.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_primerApellido.Location = new Point(3, 68);
+            lbl_primerApellido.Location = new Point(3, 77);
+            lbl_primerApellido.Margin = new Padding(3, 20, 3, 0);
             lbl_primerApellido.Name = "lbl_primerApellido";
-            lbl_primerApellido.Size = new Size(211, 68);
+            lbl_primerApellido.Size = new Size(211, 37);
             lbl_primerApellido.TabIndex = 1;
             lbl_primerApellido.Text = "Primer apellido";
             lbl_primerApellido.TextAlign = ContentAlignment.MiddleCenter;
@@ -329,9 +336,10 @@
             lbl_segundoApellido.AutoSize = true;
             lbl_segundoApellido.Font = new Font("Cooper Black", 12F);
             lbl_segundoApellido.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_segundoApellido.Location = new Point(3, 136);
+            lbl_segundoApellido.Location = new Point(3, 134);
+            lbl_segundoApellido.Margin = new Padding(3, 20, 3, 0);
             lbl_segundoApellido.Name = "lbl_segundoApellido";
-            lbl_segundoApellido.Size = new Size(211, 68);
+            lbl_segundoApellido.Size = new Size(211, 37);
             lbl_segundoApellido.TabIndex = 2;
             lbl_segundoApellido.Text = "Segundo apellido";
             lbl_segundoApellido.TextAlign = ContentAlignment.MiddleCenter;
@@ -342,9 +350,10 @@
             lbl_dni.AutoSize = true;
             lbl_dni.Font = new Font("Cooper Black", 12F);
             lbl_dni.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_dni.Location = new Point(3, 204);
+            lbl_dni.Location = new Point(3, 248);
+            lbl_dni.Margin = new Padding(3, 20, 3, 0);
             lbl_dni.Name = "lbl_dni";
-            lbl_dni.Size = new Size(211, 68);
+            lbl_dni.Size = new Size(211, 37);
             lbl_dni.TabIndex = 3;
             lbl_dni.Text = "DNI";
             lbl_dni.TextAlign = ContentAlignment.MiddleCenter;
@@ -355,9 +364,10 @@
             lbl_numeroTelefono.AutoSize = true;
             lbl_numeroTelefono.Font = new Font("Cooper Black", 12F);
             lbl_numeroTelefono.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_numeroTelefono.Location = new Point(3, 272);
+            lbl_numeroTelefono.Location = new Point(3, 305);
+            lbl_numeroTelefono.Margin = new Padding(3, 20, 3, 0);
             lbl_numeroTelefono.Name = "lbl_numeroTelefono";
-            lbl_numeroTelefono.Size = new Size(211, 68);
+            lbl_numeroTelefono.Size = new Size(211, 37);
             lbl_numeroTelefono.TabIndex = 4;
             lbl_numeroTelefono.Text = "Número de teléfono";
             lbl_numeroTelefono.TextAlign = ContentAlignment.MiddleCenter;
@@ -368,9 +378,10 @@
             lbl_correoElectronico.AutoSize = true;
             lbl_correoElectronico.Font = new Font("Cooper Black", 12F);
             lbl_correoElectronico.ForeColor = Color.FromArgb(39, 50, 56);
-            lbl_correoElectronico.Location = new Point(3, 340);
+            lbl_correoElectronico.Location = new Point(3, 362);
+            lbl_correoElectronico.Margin = new Padding(3, 20, 3, 0);
             lbl_correoElectronico.Name = "lbl_correoElectronico";
-            lbl_correoElectronico.Size = new Size(211, 68);
+            lbl_correoElectronico.Size = new Size(211, 43);
             lbl_correoElectronico.TabIndex = 5;
             lbl_correoElectronico.Text = "Correo electrónico";
             lbl_correoElectronico.TextAlign = ContentAlignment.MiddleCenter;
@@ -388,7 +399,7 @@
             // textbox_primerApellido
             // 
             textbox_primerApellido.Dock = DockStyle.Fill;
-            textbox_primerApellido.Location = new Point(217, 95);
+            textbox_primerApellido.Location = new Point(217, 84);
             textbox_primerApellido.Margin = new Padding(0, 27, 34, 0);
             textbox_primerApellido.Name = "textbox_primerApellido";
             textbox_primerApellido.Size = new Size(292, 27);
@@ -397,7 +408,7 @@
             // textbox_segundoApellido
             // 
             textbox_segundoApellido.Dock = DockStyle.Fill;
-            textbox_segundoApellido.Location = new Point(217, 163);
+            textbox_segundoApellido.Location = new Point(217, 141);
             textbox_segundoApellido.Margin = new Padding(0, 27, 34, 0);
             textbox_segundoApellido.Name = "textbox_segundoApellido";
             textbox_segundoApellido.Size = new Size(292, 27);
@@ -406,7 +417,7 @@
             // textbox_dni
             // 
             textbox_dni.Dock = DockStyle.Fill;
-            textbox_dni.Location = new Point(217, 231);
+            textbox_dni.Location = new Point(217, 255);
             textbox_dni.Margin = new Padding(0, 27, 34, 0);
             textbox_dni.Name = "textbox_dni";
             textbox_dni.Size = new Size(292, 27);
@@ -415,7 +426,7 @@
             // textbox_numeroTelefono
             // 
             textbox_numeroTelefono.Dock = DockStyle.Fill;
-            textbox_numeroTelefono.Location = new Point(217, 299);
+            textbox_numeroTelefono.Location = new Point(217, 312);
             textbox_numeroTelefono.Margin = new Padding(0, 27, 34, 0);
             textbox_numeroTelefono.Name = "textbox_numeroTelefono";
             textbox_numeroTelefono.Size = new Size(292, 27);
@@ -424,7 +435,7 @@
             // textbox_correoElectronico
             // 
             textbox_correoElectronico.Dock = DockStyle.Fill;
-            textbox_correoElectronico.Location = new Point(217, 367);
+            textbox_correoElectronico.Location = new Point(217, 369);
             textbox_correoElectronico.Margin = new Padding(0, 27, 34, 0);
             textbox_correoElectronico.Name = "textbox_correoElectronico";
             textbox_correoElectronico.Size = new Size(292, 27);
@@ -491,6 +502,29 @@
             textBox2.Size = new Size(10000, 27);
             textBox2.TabIndex = 1;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Cooper Black", 12F);
+            label1.ForeColor = Color.FromArgb(39, 50, 56);
+            label1.Location = new Point(3, 191);
+            label1.Margin = new Padding(3, 20, 3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(211, 37);
+            label1.TabIndex = 12;
+            label1.Text = "Código postal";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textbox_codigoPostal
+            // 
+            textbox_codigoPostal.Dock = DockStyle.Bottom;
+            textbox_codigoPostal.Location = new Point(217, 201);
+            textbox_codigoPostal.Margin = new Padding(0, 27, 34, 0);
+            textbox_codigoPostal.Name = "textbox_codigoPostal";
+            textbox_codigoPostal.Size = new Size(292, 27);
+            textbox_codigoPostal.TabIndex = 13;
+            // 
             // Form_SignupCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -548,5 +582,7 @@
         private TextBox textbox_dni;
         private TextBox textbox_numeroTelefono;
         private TextBox textbox_correoElectronico;
+        private Label label1;
+        private TextBox textbox_codigoPostal;
     }
 }

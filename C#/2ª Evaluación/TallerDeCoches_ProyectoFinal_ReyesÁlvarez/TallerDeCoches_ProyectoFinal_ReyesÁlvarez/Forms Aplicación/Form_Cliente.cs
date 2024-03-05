@@ -1,28 +1,20 @@
 ﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
 {
 
     public partial class Form_Cliente : Form
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+        public static string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         public static String idServicio;
+        public static int idCliente;
         public Form_Cliente()
         {
             InitializeComponent();
+            Form_Login fl = new Form_Login();
+            CargarDatosCliente(fl.getEncPass());
             InitUI();
         }
 
@@ -154,5 +146,31 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             fcdc.Show();
             Hide();
         }
+
+        public void CargarDatosCliente(string nombre_usuario)
+        {
+            string query = "SELECT c.id_cliente FROM clientes c INNER JOIN usuarios u ON c.id_usuario = u.id_usuario WHERE u.nombre_usuario = @nombreUsuario";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@nombreUsuario", nombre_usuario);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            idCliente = reader.GetInt32(reader.GetOrdinal("id_cliente"));
+                        }
+                    }
+                }
+            }
+            MessageBox.Show(idCliente.ToString());
+        }
+
+
+
     }
 }

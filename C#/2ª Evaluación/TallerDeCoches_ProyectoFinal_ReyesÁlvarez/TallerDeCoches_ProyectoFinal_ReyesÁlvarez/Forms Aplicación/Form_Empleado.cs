@@ -1,7 +1,6 @@
 using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.Data;
-using System.Windows.Forms;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
@@ -25,9 +24,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             btn_rechazarPedidoPendiente.Enabled = false;
 
             Form_Login loginForm = new Form_Login();
-            string nombreusuario = loginForm.getIdUsuario();
-            label_nombreUsuario.Text = nombreusuario;
-            label_bienvenida.Text = "¡Hola " + nombreusuario + "!";
+            String nombreUsuario = conseguirNombre(loginForm.getEncPass());
+            label_nombreUsuario.Text = nombreUsuario;
+
+
+
+            label_bienvenida.Text = "¡Hola " + nombreUsuario + "!";
 
 
             // NOMBRE DE LA TABLA
@@ -188,6 +190,48 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
             initDatagridViews();
         }
+
+        private string conseguirNombre(string encpss)
+        {
+            string nombreUsuario = "";
+
+            string query = "SELECT nombre FROM usuarios WHERE contraseña_usuario = @ContraseñaUsuario";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ContraseñaUsuario", encpss);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                nombreUsuario = reader["nombre"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró ningún usuario con esa contraseña.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción
+                MessageBox.Show("Error al obtener el nombre de usuario: " + ex.Message);
+            }
+
+            return nombreUsuario;
+        }
+
+
+
 
         private void initDatagridViews()
         {
@@ -389,7 +433,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                 command.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
                                 command.Parameters.AddWithValue("@NombreUsuario", encusr);
                                 command.Parameters.AddWithValue("@ContraseñaUsuario", encpss);
-                                command.Parameters.AddWithValue("@Rol", 2); // Id del rol, por ejemplo 2
+                                command.Parameters.AddWithValue("@Rol", 1); // Id del rol 1 = rol de empleado
 
                                 // Ejecutar la inserción del usuario
                                 command.ExecuteNonQuery();
@@ -431,9 +475,20 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         }
 
                         MessageBox.Show("Los datos del empleado se han registrado correctamente");
-                        Form_Login fl = new Form_Login();
-                        fl.Show();
-                        this.Hide();
+
+                        textbox_re_nombre.Text="";
+                        textbox_re_primerApellido.Text = "";
+                       textbox_re_segundoApellido.Text = "";
+                        textbox_re_dni.Text = "";
+                        textbox_re_telefono.Text = "";
+                        textbox_re_correo.Text = "";
+                        textbox_re_salarioBase.Text = "";
+                        textbox_re_salarioExtra.Text = "";
+                        textbox_re_fechaInicioContrato.Text = "";
+                        textbox_re_nombreUsuario.Text = "";
+                        textbox_re_contraseñaUsuario.Text = "";
+
+
                     }
                     catch (Exception ex)
                     {
