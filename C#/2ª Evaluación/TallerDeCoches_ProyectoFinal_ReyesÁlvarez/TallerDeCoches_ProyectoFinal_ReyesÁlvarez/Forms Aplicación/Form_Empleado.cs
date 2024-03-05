@@ -27,7 +27,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             Form_Login loginForm = new Form_Login();
             string nombreusuario = loginForm.getIdUsuario();
             label_nombreUsuario.Text = nombreusuario;
-            label_bienvenida.Text = "¡Hola " + nombreusuario +"!";
+            label_bienvenida.Text = "¡Hola " + nombreusuario + "!";
 
 
             // NOMBRE DE LA TABLA
@@ -336,7 +336,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             this.Hide();
         }
 
-
         private void btn_registrarEmpleado_Click(object sender, EventArgs e)
         {
             if (textbox_re_nombreUsuario.Text.Length < 3 || textbox_re_contraseñaUsuario.Text.Length < 5)
@@ -372,41 +371,61 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
                     // Inserción de datos del formulario de empleado en la base de datos
                     string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-                    string queryInsertEmpleado = @"INSERT INTO empleados (salario_base, salario_extra, fecha_inicio_contrato, id_usuario) 
-                                           VALUES (@SalarioBase, @SalarioExtra, @FechaInicioContrato, @IdUsuario)";
+                    string queryInsertUsuario = @"INSERT INTO usuarios (nombre, primer_apellido, segundo_apellido, dni, telefono, correo_electronico, nombre_usuario, contraseña_usuario, id_rol) 
+                                           VALUES (@Nombre, @PrimerApellido, @SegundoApellido, @DNI, @Telefono, @CorreoElectronico, @NombreUsuario, @ContraseñaUsuario, @Rol)";
 
                     try
                     {
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
                             connection.Open();
-                            using (SqlCommand command = new SqlCommand(queryInsertEmpleado, connection))
+                            using (SqlCommand command = new SqlCommand(queryInsertUsuario, connection))
                             {
-                                command.Parameters.AddWithValue("@SalarioBase", salarioBase);
-                                command.Parameters.AddWithValue("@SalarioExtra", salarioExtra);
-                                command.Parameters.AddWithValue("@FechaInicioContrato", fechaInicioContrato);
+                                command.Parameters.AddWithValue("@Nombre", nombre);
+                                command.Parameters.AddWithValue("@PrimerApellido", primerApellido);
+                                command.Parameters.AddWithValue("@SegundoApellido", segundoApellido);
+                                command.Parameters.AddWithValue("@DNI", dni);
+                                command.Parameters.AddWithValue("@Telefono", telefono);
+                                command.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
+                                command.Parameters.AddWithValue("@NombreUsuario", encusr);
+                                command.Parameters.AddWithValue("@ContraseñaUsuario", encpss);
+                                command.Parameters.AddWithValue("@Rol", 2); // Id del rol, por ejemplo 2
 
-                                // Insertar el usuario en la tabla usuarios
-                                string queryInsertUsuario = @"INSERT INTO usuarios (nombre, primer_apellido, segundo_apellido, dni, telefono, correo_electronico, id_rol) 
-                                                      VALUES (@Nombre, @PrimerApellido, @SegundoApellido, @DNI, @Telefono, @CorreoElectronico, @Rol);
-                                                      SELECT SCOPE_IDENTITY()";
-                                using (SqlCommand commandUsuario = new SqlCommand(queryInsertUsuario, connection))
+                                // Ejecutar la inserción del usuario
+                                command.ExecuteNonQuery();
+                                String idUsuario;
+
+                                string queryGetUserId = "SELECT id_usuario FROM usuarios WHERE nombre_usuario = @NombreUsuario AND contraseña_usuario = @ContraseñaUsuario";
+                                using (SqlCommand getUserIdCommand = new SqlCommand(queryGetUserId, connection))
                                 {
-                                    commandUsuario.Parameters.AddWithValue("@Nombre", nombre);
-                                    commandUsuario.Parameters.AddWithValue("@PrimerApellido", primerApellido);
-                                    commandUsuario.Parameters.AddWithValue("@SegundoApellido", segundoApellido);
-                                    commandUsuario.Parameters.AddWithValue("@DNI", dni);
-                                    commandUsuario.Parameters.AddWithValue("@Telefono", telefono);
-                                    commandUsuario.Parameters.AddWithValue("@CorreoElectronico", correoElectronico);
-                                    commandUsuario.Parameters.AddWithValue("@Rol", 2); // Id del rol, por ejemplo 2
+                                    getUserIdCommand.Parameters.AddWithValue("@NombreUsuario", encusr);
+                                    getUserIdCommand.Parameters.AddWithValue("@ContraseñaUsuario", encpss);
 
-                                    // Obtener el ID del usuario insertado
-                                    int idUsuario = Convert.ToInt32(commandUsuario.ExecuteScalar());
+                                    object result = getUserIdCommand.ExecuteScalar();
 
-                                    // Asignar el ID de usuario al empleado
-                                    command.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                                    if (result != null && result != DBNull.Value)
+                                    {
+                                        idUsuario = Convert.ToInt32(result).ToString();
+                                    }
+                                    else
+                                    {
+                                        throw new Exception("No se pudo obtener el ID del usuario insertado");
+                                    }
+                                }
 
-                                    command.ExecuteNonQuery();
+
+                                // Insertar datos del empleado
+                                string queryInsertEmpleado = @"INSERT INTO empleados (salario_base, salario_extra, fecha_inicio_contrato, id_usuario) 
+                                                       VALUES (@SalarioBase, @SalarioExtra, @FechaInicioContrato, @IdUsuario)";
+                                using (SqlCommand commandEmpleado = new SqlCommand(queryInsertEmpleado, connection))
+                                {
+                                    commandEmpleado.Parameters.AddWithValue("@SalarioBase", salarioBase);
+                                    commandEmpleado.Parameters.AddWithValue("@SalarioExtra", salarioExtra);
+                                    commandEmpleado.Parameters.AddWithValue("@FechaInicioContrato", fechaInicioContrato);
+                                    commandEmpleado.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                                    // Ejecutar la inserción del empleado
+                                    commandEmpleado.ExecuteNonQuery();
                                 }
                             }
                         }
@@ -427,6 +446,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 }
             }
         }
+
 
         private void btn_gestionarPedidos_Click(object sender, EventArgs e)
         {

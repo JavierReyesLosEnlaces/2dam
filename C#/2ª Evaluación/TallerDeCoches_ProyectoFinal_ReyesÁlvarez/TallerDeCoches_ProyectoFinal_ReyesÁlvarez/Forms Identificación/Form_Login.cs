@@ -63,7 +63,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                 MessageBox.Show("Error en el password de cliente");
                             }
                             // aquí se manda el nombre al Form_Empleado
-                            getNombreUsuario();
+                            //getNombreUsuario();
                         }
 
 

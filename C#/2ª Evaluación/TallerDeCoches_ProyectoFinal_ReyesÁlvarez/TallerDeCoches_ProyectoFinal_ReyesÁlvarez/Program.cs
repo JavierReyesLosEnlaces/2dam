@@ -14,8 +14,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Form_Login());
-            //Application.Run(new Form_Empleado());
-            Application.Run(new Form_Cliente());
+            Application.Run(new Form_Empleado());
+           // Application.Run(new Form_Cliente());
         }
     }
 }

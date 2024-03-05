@@ -64,7 +64,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
-                        string query = @"INSERT INTO usuarios (nombre, primer_apellido, segundo_apellido, dni, telefono, correo_electronico, id_rol) VALUES (@Nombre, @PrimerApellido, @SegundoApellido, @DNI, @Telefono, @CorreoElectronico, @Rol)";
+                        string query = @"INSERT INTO usuarios (nombre, primer_apellido, segundo_apellido, dni, telefono, correo_electronico, nombre_usuario, contraseña_usuario, id_rol) VALUES (@Nombre, @PrimerApellido, @SegundoApellido, @DNI, @Telefono, @CorreoElectronico, @Nombre_usuario, @Contraseña_usuario, @Rol)";
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@Nombre", textbox_nombre.Text);
@@ -73,6 +73,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                             command.Parameters.AddWithValue("@DNI", textbox_dni.Text);
                             command.Parameters.AddWithValue("@Telefono", textbox_numeroTelefono.Text);
                             command.Parameters.AddWithValue("@CorreoElectronico", textbox_correoElectronico.Text);
+                            command.Parameters.AddWithValue("@Nombre_usuario", textbox_nombreUsuario.Text);
+                            command.Parameters.AddWithValue("@Contraseña_usuario", textbox_contraseña.Text);
                             command.Parameters.AddWithValue("@Rol", 2);
 
                             command.ExecuteNonQuery();
