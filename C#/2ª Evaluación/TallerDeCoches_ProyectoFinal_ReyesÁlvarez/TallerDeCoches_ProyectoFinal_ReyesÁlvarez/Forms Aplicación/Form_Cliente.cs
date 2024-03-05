@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
     public partial class Form_Cliente : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+        String idServicio;
         public Form_Cliente()
         {
             InitializeComponent();
@@ -88,7 +90,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                 // Obtener el texto del botón pulsado
                 string textoBoton = ((Button)sender).Text;
 
-                string query = @"SELECT s.descripcion AS 'Nombre del Servicio', t.direccion AS 'Dirección del Taller', s.precio AS 'Importe Bruto'
+                string query = @"SELECT s.id_servicio AS 'Id del servicio', s.descripcion AS 'Nombre del Servicio', t.direccion AS 'Dirección del Taller', s.precio AS 'Importe Bruto', s.familia AS 'Familia de servicio'
                          FROM servicios s
                          LEFT JOIN talleres t ON s.id_taller = t.id_taller
                          LEFT JOIN pedidos p ON s.id_servicio = p.id_servicio
@@ -104,15 +106,37 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                         {
                             // Obtener los valores de las columnas de la consulta
                             string nombreServicio = reader["Nombre del Servicio"].ToString();
+                            string familia = reader["Familia de servicio"].ToString();
                             string direccionTaller = reader["Dirección del Taller"].ToString();
                             string importeBruto = reader["Importe Bruto"].ToString();
+                            idServicio = reader["Id del servicio"].ToString();
 
                             // Asignar los valores obtenidos a las etiquetas correspondientes
                             label7.Text = nombreServicio;
                             label8.Text = direccionTaller;
                             label9.Text = importeBruto;
                             label10.Text = "21%";
-                            label11.Text = ((int.Parse(importeBruto)) * 1.21f).ToString();
+
+                            switch (familia)
+                            {
+                                case "Lavado y Detallado":
+                                    pboxFamilia.BackgroundImage = Image.FromFile("img\\lavado.jpg");
+                                    break;
+                                case "Mantenimiento":
+                                    pboxFamilia.BackgroundImage = Image.FromFile("img\\mantenimiento.jpg");
+                                    break;
+                                case "Reparación":
+                                    pboxFamilia.BackgroundImage = Image.FromFile("img\\reparacion.jpg");
+                                    break;
+                                case "Servicios Especiales":
+                                    pboxFamilia.BackgroundImage = Image.FromFile("img\\serviciosespeciales.jpg");
+                                    break;
+                                default:
+                                    // Manejar un caso por defecto si no se encuentra ninguna familia específica
+                                    break;
+                            }
+
+
                         }
                         else
                         {
@@ -123,6 +147,18 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                 }
 
             }
+        }
+
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ID SERVICIO: " + idServicio);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

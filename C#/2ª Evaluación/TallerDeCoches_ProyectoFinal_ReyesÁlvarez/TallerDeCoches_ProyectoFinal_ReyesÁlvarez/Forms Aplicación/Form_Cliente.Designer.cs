@@ -74,12 +74,10 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
-            label11 = new Label();
             button5 = new Button();
             pboxFamilia = new PictureBox();
             btn_salir = new Button();
@@ -863,18 +861,15 @@
             tableLayoutPanel8.Controls.Add(label3, 0, 1);
             tableLayoutPanel8.Controls.Add(label4, 0, 2);
             tableLayoutPanel8.Controls.Add(label5, 0, 3);
-            tableLayoutPanel8.Controls.Add(label6, 0, 4);
             tableLayoutPanel8.Controls.Add(label7, 1, 0);
             tableLayoutPanel8.Controls.Add(label8, 1, 1);
             tableLayoutPanel8.Controls.Add(label9, 1, 2);
             tableLayoutPanel8.Controls.Add(label10, 1, 3);
-            tableLayoutPanel8.Controls.Add(label11, 1, 4);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(0, 0);
             tableLayoutPanel8.Margin = new Padding(0);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 5;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel8.RowCount = 4;
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -946,22 +941,6 @@
             label5.Text = "Tipo impositivo";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(117, 230, 164);
-            label6.CausesValidation = false;
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Cooper Black", 11F);
-            label6.ForeColor = Color.FromArgb(39, 50, 56);
-            label6.Location = new Point(0, 228);
-            label6.Margin = new Padding(0);
-            label6.Name = "label6";
-            label6.Size = new Size(267, 61);
-            label6.TabIndex = 4;
-            label6.Text = "TOTAL:";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -1018,20 +997,6 @@
             label10.TabIndex = 8;
             label10.Text = "...";
             label10.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Dock = DockStyle.Fill;
-            label11.Location = new Point(267, 228);
-            label11.Margin = new Padding(0);
-            label11.Name = "label11";
-            label11.Padding = new Padding(30, 0, 0, 0);
-            label11.Size = new Size(496, 61);
-            label11.TabIndex = 9;
-            label11.Text = "...";
-            label11.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button5
             // 
@@ -1239,12 +1204,10 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label6;
         private Label label7;
         private Label label8;
         private Label label9;
         private Label label10;
-        private Label label11;
         private Button button5;
         private PictureBox pboxFamilia;
     }
