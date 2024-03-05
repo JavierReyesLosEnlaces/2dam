@@ -25,7 +25,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             btn_rechazarPedidoPendiente.Enabled = false;
 
             Form_Login loginForm = new Form_Login();
-            string nombreusuario = loginForm.getNombreUsuario();
+            string nombreusuario = loginForm.getIdUsuario();
             label_nombreUsuario.Text = nombreusuario;
             label_bienvenida.Text = "¡Hola " + nombreusuario +"!";
 

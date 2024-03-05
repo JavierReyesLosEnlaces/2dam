@@ -175,7 +175,7 @@
             btn_crearCuenta.BackColor = Color.FromArgb(223, 248, 229);
             btn_crearCuenta.FlatAppearance.BorderSize = 0;
             btn_crearCuenta.FlatStyle = FlatStyle.Flat;
-            btn_crearCuenta.Font = new Font("Cascadia Mono SemiLight", 10F);
+            btn_crearCuenta.Font = new Font("Segoe UI", 10F);
             btn_crearCuenta.Location = new Point(34, 304);
             btn_crearCuenta.Margin = new Padding(34, 13, 34, 13);
             btn_crearCuenta.Name = "btn_crearCuenta";
@@ -238,7 +238,7 @@
             btn_entrar.FlatAppearance.BorderColor = Color.FromArgb(39, 50, 56);
             btn_entrar.FlatAppearance.BorderSize = 0;
             btn_entrar.FlatStyle = FlatStyle.Flat;
-            btn_entrar.Font = new Font("Cascadia Mono SemiLight", 10F);
+            btn_entrar.Font = new Font("Segoe UI", 10F);
             btn_entrar.Location = new Point(34, 180);
             btn_entrar.Margin = new Padding(34, 13, 34, 13);
             btn_entrar.Name = "btn_entrar";

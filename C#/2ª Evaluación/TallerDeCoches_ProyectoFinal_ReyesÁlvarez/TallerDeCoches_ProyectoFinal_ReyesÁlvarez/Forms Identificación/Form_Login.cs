@@ -101,8 +101,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
-        public string getNombreUsuario()
+        public string getIdUsuario()
         {
+            // HACER UN SELECT DEL ID USUARIO WHERE encusr = nombre_usuario AND encpss = contraseña_usuario
+
+
             return decusr;
         }
 

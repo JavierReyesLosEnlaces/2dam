@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
@@ -18,11 +19,16 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
     public partial class Form_Cliente : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-        String idServicio;
+        public static String idServicio;
         public Form_Cliente()
         {
             InitializeComponent();
             InitUI();
+        }
+
+        public static String getIdServicio()
+        {
+            return idServicio;
         }
 
         private void InitUI()
@@ -38,13 +44,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
         {
             Application.Exit();
         }
-
-        private void timer1_tick(object sender, EventArgs e)
-        {
-            labelHora.Text = DateTime.Now.ToString("dd/MM/yyyy") + " - " + DateTime.Now.ToString("HH:mm:ss");
-        }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -149,16 +148,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             }
         }
 
-
-
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("ID SERVICIO: " + idServicio);
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            Form_Cliente_DatosCoche fcdc = new Form_Cliente_DatosCoche();
+            fcdc.Show();
+            Hide();
         }
     }
 }

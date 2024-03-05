@@ -85,7 +85,6 @@
             tlp5 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label_nombreUsuario = new Label();
-            labelHora = new Label();
             panel1.SuspendLayout();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
@@ -888,7 +887,7 @@
             label2.Location = new Point(0, 0);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(267, 57);
+            label2.Size = new Size(267, 72);
             label2.TabIndex = 0;
             label2.Text = "Servicio";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -901,10 +900,10 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Cooper Black", 11F);
             label3.ForeColor = Color.FromArgb(39, 50, 56);
-            label3.Location = new Point(0, 57);
+            label3.Location = new Point(0, 72);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(267, 57);
+            label3.Size = new Size(267, 72);
             label3.TabIndex = 1;
             label3.Text = "Taller";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -917,10 +916,10 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Cooper Black", 11F);
             label4.ForeColor = Color.FromArgb(39, 50, 56);
-            label4.Location = new Point(0, 114);
+            label4.Location = new Point(0, 144);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(267, 57);
+            label4.Size = new Size(267, 72);
             label4.TabIndex = 2;
             label4.Text = "Importe bruto";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -933,10 +932,10 @@
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Cooper Black", 11F);
             label5.ForeColor = Color.FromArgb(39, 50, 56);
-            label5.Location = new Point(0, 171);
+            label5.Location = new Point(0, 216);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(267, 57);
+            label5.Size = new Size(267, 73);
             label5.TabIndex = 3;
             label5.Text = "Tipo impositivo";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -950,7 +949,7 @@
             label7.Margin = new Padding(0);
             label7.Name = "label7";
             label7.Padding = new Padding(30, 0, 0, 0);
-            label7.Size = new Size(496, 57);
+            label7.Size = new Size(496, 72);
             label7.TabIndex = 5;
             label7.Text = "...";
             label7.TextAlign = ContentAlignment.MiddleLeft;
@@ -960,11 +959,11 @@
             label8.AutoSize = true;
             label8.BackColor = Color.White;
             label8.Dock = DockStyle.Fill;
-            label8.Location = new Point(267, 57);
+            label8.Location = new Point(267, 72);
             label8.Margin = new Padding(0);
             label8.Name = "label8";
             label8.Padding = new Padding(30, 0, 0, 0);
-            label8.Size = new Size(496, 57);
+            label8.Size = new Size(496, 72);
             label8.TabIndex = 6;
             label8.Text = "...";
             label8.TextAlign = ContentAlignment.MiddleLeft;
@@ -975,11 +974,11 @@
             label9.BackColor = Color.White;
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label9.Location = new Point(267, 114);
+            label9.Location = new Point(267, 144);
             label9.Margin = new Padding(0);
             label9.Name = "label9";
             label9.Padding = new Padding(30, 0, 0, 0);
-            label9.Size = new Size(496, 57);
+            label9.Size = new Size(496, 72);
             label9.TabIndex = 7;
             label9.Text = "...";
             label9.TextAlign = ContentAlignment.MiddleLeft;
@@ -989,11 +988,11 @@
             label10.AutoSize = true;
             label10.BackColor = Color.White;
             label10.Dock = DockStyle.Fill;
-            label10.Location = new Point(267, 171);
+            label10.Location = new Point(267, 216);
             label10.Margin = new Padding(0);
             label10.Name = "label10";
             label10.Padding = new Padding(30, 0, 0, 0);
-            label10.Size = new Size(496, 57);
+            label10.Size = new Size(496, 73);
             label10.TabIndex = 8;
             label10.Text = "...";
             label10.TextAlign = ContentAlignment.MiddleLeft;
@@ -1013,6 +1012,7 @@
             button5.TabIndex = 1;
             button5.Text = "CONTINUAR";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click_1;
             // 
             // pboxFamilia
             // 
@@ -1046,7 +1046,6 @@
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tlp4.Controls.Add(tlp5, 2, 0);
-            tlp4.Controls.Add(labelHora, 1, 0);
             tlp4.Dock = DockStyle.Fill;
             tlp4.Location = new Point(0, 32);
             tlp4.Margin = new Padding(0);
@@ -1103,21 +1102,6 @@
             label_nombreUsuario.Text = "Nombre del cliente";
             label_nombreUsuario.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // labelHora
-            // 
-            labelHora.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            labelHora.AutoSize = true;
-            labelHora.BackColor = Color.Navy;
-            labelHora.FlatStyle = FlatStyle.System;
-            labelHora.Font = new Font("Segoe UI", 9F);
-            labelHora.ForeColor = Color.Yellow;
-            labelHora.Location = new Point(541, 20);
-            labelHora.Margin = new Padding(85, 20, 85, 0);
-            labelHora.Name = "labelHora";
-            labelHora.Size = new Size(172, 20);
-            labelHora.TabIndex = 4;
-            labelHora.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Form_Cliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1144,7 +1128,6 @@
             tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pboxFamilia).EndInit();
             tlp4.ResumeLayout(false);
-            tlp4.PerformLayout();
             tlp5.ResumeLayout(false);
             tlp5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -1161,7 +1144,6 @@
         private TableLayoutPanel tlp5;
         private PictureBox pictureBox1;
         private Label label_nombreUsuario;
-        private Label labelHora;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel1;

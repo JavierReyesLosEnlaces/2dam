@@ -179,7 +179,7 @@
             btn_irLogin.Dock = DockStyle.Fill;
             btn_irLogin.FlatAppearance.BorderSize = 0;
             btn_irLogin.FlatStyle = FlatStyle.Flat;
-            btn_irLogin.Font = new Font("Cascadia Mono SemiLight", 10F);
+            btn_irLogin.Font = new Font("Segoe UI", 10F);
             btn_irLogin.Location = new Point(50, 347);
             btn_irLogin.Margin = new Padding(50, 20, 50, 20);
             btn_irLogin.Name = "btn_irLogin";
@@ -208,7 +208,7 @@
             btn_crearCuenta.Dock = DockStyle.Fill;
             btn_crearCuenta.FlatAppearance.BorderSize = 0;
             btn_crearCuenta.FlatStyle = FlatStyle.Flat;
-            btn_crearCuenta.Font = new Font("Cascadia Mono SemiLight", 10F);
+            btn_crearCuenta.Font = new Font("Segoe UI", 10F);
             btn_crearCuenta.Location = new Point(50, 195);
             btn_crearCuenta.Margin = new Padding(50, 20, 50, 20);
             btn_crearCuenta.Name = "btn_crearCuenta";
