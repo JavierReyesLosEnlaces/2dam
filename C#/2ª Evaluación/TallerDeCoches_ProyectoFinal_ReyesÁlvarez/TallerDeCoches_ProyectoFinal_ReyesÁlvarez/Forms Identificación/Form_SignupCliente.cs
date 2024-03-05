@@ -132,8 +132,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
-
-
         private void btn_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -141,18 +139,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
             textbox_contraseña.UseSystemPasswordChar = !textbox_contraseña.UseSystemPasswordChar;
-        }
-
-        private void textbox_nombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

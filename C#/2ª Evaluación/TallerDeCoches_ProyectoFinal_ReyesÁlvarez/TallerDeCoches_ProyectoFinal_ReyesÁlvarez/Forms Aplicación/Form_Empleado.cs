@@ -16,22 +16,22 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         private void InitUI()
         {
             ucPanel_tipoa_empleados.tlpDatos.Enabled = false;
-
             btn_aceptarPedidoPendiente.BackColor = Color.LightGray;
             btn_aceptarPedidoPendiente.Enabled = false;
-
             btn_rechazarPedidoPendiente.BackColor = Color.LightGray;
             btn_rechazarPedidoPendiente.Enabled = false;
 
             Form_Login loginForm = new Form_Login();
-            String nombreUsuario = conseguirNombre(loginForm.getEncPass());
+            String nombreUsuario = conseguirNombre(loginForm.getEncpss());
             label_nombreUsuario.Text = nombreUsuario;
-
-
-
             label_bienvenida.Text = "¡Hola " + nombreUsuario + "!";
 
+            initTextboxesLabels();
+            initDatagridViews();
+        }
 
+        private void initTextboxesLabels()
+        {
             // NOMBRE DE LA TABLA
             ucPanel_tipoa_clientes.label_nombreTabla.Text = "Clientes";
             ucPanel_tipoa_coches.label_nombreTabla.Text = "Coches";
@@ -41,7 +41,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_servicios.label_nombreTabla.Text = "Servicios";
             ucPanel_tipoa_talleres.label_nombreTabla.Text = "Talleres";
             ucPanel_tipoa_usuarios.label_nombreTabla.Text = "Usuarios";
-
 
             // CLIENTES
             ucPanel_tipoa_clientes.campoLabel1.Text = "cantidad_adeudada";
@@ -60,7 +59,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_clientes.campoTextbox9.Visible = false;
             ucPanel_tipoa_clientes.campoLabel10.Visible = false;
             ucPanel_tipoa_clientes.campoTextbox10.Visible = false;
-
 
             // EMPLEADOS
             ucPanel_tipoa_empleados.campoLabel1.Text = "Salario base";
@@ -187,16 +185,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             ucPanel_tipoa_talleres.campoTextbox9.Visible = false;
             ucPanel_tipoa_talleres.campoLabel10.Visible = false;
             ucPanel_tipoa_talleres.campoTextbox10.Visible = false;
-
-            initDatagridViews();
         }
 
         private string conseguirNombre(string encpss)
         {
             string nombreUsuario = "";
-
             string query = "SELECT nombre FROM usuarios WHERE contraseña_usuario = @ContraseñaUsuario";
-
             try
             {
                 using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString))
@@ -230,13 +224,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             return nombreUsuario;
         }
 
-
-
-
         private void initDatagridViews()
         {
-
-
             // RELLENAR LOS DATAGRIDVIEWS CON LOS DATOS DE LA BASE DE DATOS
             string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
             string[] consultasSql = { 
@@ -268,7 +257,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     SqlCommand comando = new SqlCommand(consultasSql[i], conexion);
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable tablaClientes = new DataTable();
-
                     conexion.Open();
                     adaptador.Fill(tablaClientes);
 
@@ -457,7 +445,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                     }
                                 }
 
-
                                 // Insertar datos del empleado
                                 string queryInsertEmpleado = @"INSERT INTO empleados (salario_base, salario_extra, fecha_inicio_contrato, id_usuario) 
                                                        VALUES (@SalarioBase, @SalarioExtra, @FechaInicioContrato, @IdUsuario)";
@@ -475,20 +462,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         }
 
                         MessageBox.Show("Los datos del empleado se han registrado correctamente");
-
-                        textbox_re_nombre.Text="";
-                        textbox_re_primerApellido.Text = "";
-                       textbox_re_segundoApellido.Text = "";
-                        textbox_re_dni.Text = "";
-                        textbox_re_telefono.Text = "";
-                        textbox_re_correo.Text = "";
-                        textbox_re_salarioBase.Text = "";
-                        textbox_re_salarioExtra.Text = "";
-                        textbox_re_fechaInicioContrato.Text = "";
-                        textbox_re_nombreUsuario.Text = "";
-                        textbox_re_contraseñaUsuario.Text = "";
-
-
+                        limpiarTextboxes();
                     }
                     catch (Exception ex)
                     {
@@ -502,13 +476,26 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
+        private void limpiarTextboxes()
+        {
+            textbox_re_nombre.Text = "";
+            textbox_re_primerApellido.Text = "";
+            textbox_re_segundoApellido.Text = "";
+            textbox_re_dni.Text = "";
+            textbox_re_telefono.Text = "";
+            textbox_re_correo.Text = "";
+            textbox_re_salarioBase.Text = "";
+            textbox_re_salarioExtra.Text = "";
+            textbox_re_fechaInicioContrato.Text = "";
+            textbox_re_nombreUsuario.Text = "";
+            textbox_re_contraseñaUsuario.Text = "";
+        }
 
         private void btn_gestionarPedidos_Click(object sender, EventArgs e)
         {
             menuGestionarPedidos.Visible = true;
             menuGestionarPedidos.BringToFront();
             actualizarPedidosPendientesRevision();
-
         }
 
         private void actualizarPedidosPendientesRevision()
@@ -516,14 +503,10 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             try
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-
-                // Construir la consulta SQL para seleccionar todos los registros de la tabla pedidosRevision
                 string query = "SELECT pr.id_pedidoRevision, pr.id_pedido, p.importe_bruto, p.tipo_impositivo, p.importe_neto, p.fecha, p.id_servicio \r\nFROM pedidosRevision pr\r\nJOIN pedidos p ON pr.id_pedido = p.id_pedido;\r\n";
 
-                // Crear un DataTable para almacenar los datos de la consulta
                 DataTable dataTable = new DataTable();
 
-                // Ejecutar la consulta SQL y llenar el DataTable con los resultados
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -542,7 +525,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 MessageBox.Show("Error al actualizar el DataGridView: " + ex.Message);
             }
         }
-
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {

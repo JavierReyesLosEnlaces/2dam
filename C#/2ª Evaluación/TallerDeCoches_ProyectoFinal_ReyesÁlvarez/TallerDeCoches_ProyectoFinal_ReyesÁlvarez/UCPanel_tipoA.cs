@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Configuration;
 using System.Data;
-using System.Text;
 using TextBox = System.Windows.Forms.TextBox;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
@@ -19,13 +18,11 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             tlpDatos.Enabled = true;
             btn_crearRegistro.BackColor = Color.FromArgb(121, 141, 236);
             btn_crearRegistro.Enabled = true;
-
             btn_modificarRegistro.Enabled = false;
             btn_modificarRegistro.BackColor = Color.LightGray;
             btn_borrarRegistro.Enabled = false;
             btn_borrarRegistro.BackColor = Color.LightGray;
         }
-
 
         // SELECCIÓN DE CELDA
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,8 +55,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             }
         }
 
-
-
         // VIENES DE UNA CELDA SELECCIONA Y CAMBIAS A OTRA
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -79,7 +74,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 btn_modificarRegistro.Enabled = false;
                 btn_borrarRegistro.Enabled = false;
                 btn_modificarRegistro.BackColor = Color.LightGray;
-                //btn_crearRegistro.BackColor = Color.LightGray;
                 btn_borrarRegistro.BackColor = Color.LightGray;
             }
         }
@@ -94,10 +88,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 // Iterar sobre todas las celdas en la fila seleccionada, comenzando desde el segundo campo (índice 1)
                 for (int i = 1; i < selectedRow.Cells.Count; i++)
                 {
-                    // Construir el nombre del TextBox
                     string textBoxName = "campoTextbox" + (visibleTextBoxCount + 1);
-
-                    // Buscar el TextBox en el panel por nombre
                     TextBox textBox = tlpDatos.Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
 
                     // Verificar si se encontró el TextBox y si está visible
@@ -108,7 +99,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     }
                     else
                     {
-                        break; // Si no se encuentra el TextBox o no está visible, salir del bucle
+                        break; 
                     }
                 }
             }
@@ -127,17 +118,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 return ""; // Si la celda está vacía, devuelve una cadena vacía
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
         // LOS TRES BOTONES DE ABAJO
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -171,8 +151,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
                     // Eliminar la coma final y agregar la condición WHERE
                     query = query.Remove(query.Length - 2) + $" WHERE {primaryKeyColumnName} = {primaryKeyValue}";
-
-                    // Mostrar cuadro de diálogo de confirmación
                     DialogResult result = MessageBox.Show("¿Estás seguro que deseas actualizar este registro?", "Confirmar Actualización", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
@@ -206,10 +184,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 //MessageBox.Show(ex.Message);
             }
         }
-
-
-
-
 
         private void btn_borrar_Click(object sender, EventArgs e)
         {
@@ -261,7 +235,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 //MessageBox.Show(ex.Message);
             }
         }
-
 
 
         private void btn_crearRegistro_Click(object sender, EventArgs e)
@@ -319,9 +292,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
                         MessageBox.Show("Registro creado correctamente.");
 
-                        // Actualizar el DataGridView
-                        // Aquí deberías recargar los datos desde la base de datos y asignarlos al DataGridView
-                        // Por ejemplo, puedes llamar a un método que actualice la fuente de datos del DataGridView.
                         ActualizarDataGridView();
                     }
                     else
@@ -332,12 +302,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al crear el registro");
-                    //MessageBox.Show(ex.Message);
                 }
             }
         }
-
-
 
         private void ActualizarDataGridView()
         {
@@ -371,6 +338,5 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                 MessageBox.Show("Error al actualizar el DataGridView: " + ex.Message);
             }
         }
-
     }
 }

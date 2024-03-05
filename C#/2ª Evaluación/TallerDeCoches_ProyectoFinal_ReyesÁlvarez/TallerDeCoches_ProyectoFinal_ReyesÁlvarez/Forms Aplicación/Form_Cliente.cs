@@ -4,17 +4,17 @@ using TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
 {
-
     public partial class Form_Cliente : Form
     {
         public static string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
         public static String idServicio;
         public static int idCliente;
+
         public Form_Cliente()
         {
             InitializeComponent();
             Form_Login fl = new Form_Login();
-            CargarDatosCliente(fl.getEncPass());
+            CargarDatosCliente(fl.getEncpss());
             InitUI();
         }
 
@@ -42,7 +42,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             tlp_reparacion.Visible = false;
             tlp_serviciosEspeciales.Visible = false;
             tlp_mantenimiento.Visible = false;
-
             tlp_lavadoDetallado.Visible = true;
         }
 
@@ -51,17 +50,14 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             tlp_lavadoDetallado.Visible = false;
             tlp_reparacion.Visible = false;
             tlp_serviciosEspeciales.Visible = false;
-
             tlp_mantenimiento.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
             tlp_lavadoDetallado.Visible = false;
             tlp_mantenimiento.Visible = false;
             tlp_serviciosEspeciales.Visible = false;
-
             tlp_reparacion.Visible = true;
         }
 
@@ -70,7 +66,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             tlp_lavadoDetallado.Visible = false;
             tlp_mantenimiento.Visible = false;
             tlp_reparacion.Visible = false;
-
             tlp_serviciosEspeciales.Visible = true;
         }
 
@@ -78,9 +73,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
         {
             {
                 tlpTarjeta.Visible = true;
+
                 // Obtener el texto del botón pulsado
                 string textoBoton = ((Button)sender).Text;
-
                 string query = @"SELECT s.id_servicio AS 'Id del servicio', s.descripcion AS 'Nombre del Servicio', t.direccion AS 'Dirección del Taller', s.precio AS 'Importe Bruto', s.familia AS 'Familia de servicio'
                          FROM servicios s
                          LEFT JOIN talleres t ON s.id_taller = t.id_taller
@@ -126,8 +121,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                                     // Manejar un caso por defecto si no se encuentra ninguna familia específica
                                     break;
                             }
-
-
                         }
                         else
                         {
@@ -136,7 +129,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                         }
                     }
                 }
-
             }
         }
 
@@ -169,8 +161,5 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             }
             MessageBox.Show(idCliente.ToString());
         }
-
-
-
     }
 }
