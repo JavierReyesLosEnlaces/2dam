@@ -337,7 +337,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form_Login fl = new Form_Login();
+            fl.Show();
+            Hide();
         }
 
         private void timer1_tick(object sender, EventArgs e)
@@ -657,6 +659,19 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         {
             MessageBox.Show("¡Bienvenido a la Vista de Empleado!\n\nAquí tienes acceso a varias zonas:\n\n1. Base de Datos: Donde puedes manipular los datos existentes, crear nuevos registros, modificar y borrar registros.\n\n2. Gestión de Pendientes: Esta zona te permite manejar las tareas pendientes de forma eficiente.\n\n3. Registrar Nuevo Empleado: En esta sección puedes ingresar los datos de un nuevo empleado para agregarlo al sistema.", "Vista de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Bienvenido al menú de gestionar pedidos.\n\n" +
+                "En este menú se decide si se toman los pedidos de los clientes o no desde la tabla pedidosRevision.\n\n" +
+                "Si aceptas el pedido, el pedido seguirá en la tabla de pedidos y si le das a rechazar, el pedido desaparecerá de la tabla pedidos.\n\n" +
+                "En ambos casos el pedidoRevisión desaparecerá",
+                "Mensaje de Bienvenida",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
         }
     }
 }

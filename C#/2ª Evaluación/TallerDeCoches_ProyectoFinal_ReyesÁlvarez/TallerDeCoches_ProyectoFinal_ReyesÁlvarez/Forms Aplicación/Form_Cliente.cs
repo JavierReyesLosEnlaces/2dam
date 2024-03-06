@@ -65,7 +65,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form_Login fl = new Form_Login();
+            fl.Show();
+            Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

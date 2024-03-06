@@ -11,8 +11,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
         public Form_Cliente_DatosCoche()
         {
             InitializeComponent();
-            InitUI();
-            ;
+            InitUI(); 
         }
 
         private void InitUI()
@@ -22,7 +21,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form_Cliente fc = new Form_Cliente();
+            fc.Show();
+            Hide();
         }
 
         private void CheckCampos()

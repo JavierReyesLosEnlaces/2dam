@@ -67,7 +67,6 @@
             btn_salirAlLogin = new Button();
             btn_salir = new Button();
             tlp4 = new TableLayoutPanel();
-            btn_info = new Button();
             tlp5 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label_nombreUsuario = new Label();
@@ -118,7 +117,10 @@
             btn_aceptarPedidoPendiente = new Button();
             btn_rechazarPedidoPendiente = new Button();
             label9 = new Label();
+            button1 = new Button();
             panelBienvenida = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            btn_info = new Button();
             label_bienvenida = new Label();
             toolTip1 = new ToolTip(components);
             tlp1.SuspendLayout();
@@ -146,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView_pedidosPendientes).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panelBienvenida.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // tlp1
@@ -681,7 +684,6 @@
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlp4.Controls.Add(btn_info, 0, 0);
             tlp4.Controls.Add(tlp5, 2, 0);
             tlp4.Controls.Add(labelHora, 1, 0);
             tlp4.Dock = DockStyle.Fill;
@@ -692,22 +694,6 @@
             tlp4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlp4.Size = new Size(1148, 46);
             tlp4.TabIndex = 3;
-            // 
-            // btn_info
-            // 
-            btn_info.BackColor = Color.FromArgb(223, 248, 229);
-            btn_info.BackgroundImage = (Image)resources.GetObject("btn_info.BackgroundImage");
-            btn_info.BackgroundImageLayout = ImageLayout.Zoom;
-            btn_info.Dock = DockStyle.Right;
-            btn_info.FlatStyle = FlatStyle.Flat;
-            btn_info.ImeMode = ImeMode.NoControl;
-            btn_info.Location = new Point(395, 5);
-            btn_info.Margin = new Padding(300, 5, 15, 5);
-            btn_info.Name = "btn_info";
-            btn_info.Size = new Size(49, 36);
-            btn_info.TabIndex = 6;
-            btn_info.UseVisualStyleBackColor = false;
-            btn_info.Click += btn_info_Click;
             // 
             // tlp5
             // 
@@ -1235,16 +1221,17 @@
             menuGestionarPedidos.BackColor = SystemColors.Control;
             menuGestionarPedidos.ColumnCount = 1;
             menuGestionarPedidos.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            menuGestionarPedidos.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            menuGestionarPedidos.Controls.Add(dataGridView_pedidosPendientes, 0, 1);
-            menuGestionarPedidos.Controls.Add(tableLayoutPanel1, 0, 2);
-            menuGestionarPedidos.Controls.Add(label9, 0, 0);
+            menuGestionarPedidos.Controls.Add(dataGridView_pedidosPendientes, 0, 2);
+            menuGestionarPedidos.Controls.Add(tableLayoutPanel1, 0, 3);
+            menuGestionarPedidos.Controls.Add(label9, 0, 1);
+            menuGestionarPedidos.Controls.Add(button1, 0, 0);
             menuGestionarPedidos.Location = new Point(145, 94);
             menuGestionarPedidos.Name = "menuGestionarPedidos";
-            menuGestionarPedidos.RowCount = 3;
-            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+            menuGestionarPedidos.RowCount = 4;
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 7.27272749F));
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 10.909091F));
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 45.4545441F));
+            menuGestionarPedidos.RowStyles.Add(new RowStyle(SizeType.Percent, 36.363636F));
             menuGestionarPedidos.Size = new Size(1008, 1069);
             menuGestionarPedidos.TabIndex = 3;
             // 
@@ -1252,11 +1239,11 @@
             // 
             dataGridView_pedidosPendientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_pedidosPendientes.Dock = DockStyle.Fill;
-            dataGridView_pedidosPendientes.Location = new Point(30, 156);
+            dataGridView_pedidosPendientes.Location = new Point(30, 243);
             dataGridView_pedidosPendientes.Margin = new Padding(30, 50, 30, 50);
             dataGridView_pedidosPendientes.Name = "dataGridView_pedidosPendientes";
             dataGridView_pedidosPendientes.RowHeadersWidth = 51;
-            dataGridView_pedidosPendientes.Size = new Size(948, 541);
+            dataGridView_pedidosPendientes.Size = new Size(948, 385);
             dataGridView_pedidosPendientes.TabIndex = 0;
             dataGridView_pedidosPendientes.CellClick += dataGridView1_CellClick;
             // 
@@ -1269,12 +1256,12 @@
             tableLayoutPanel1.Controls.Add(btn_aceptarPedidoPendiente, 0, 0);
             tableLayoutPanel1.Controls.Add(btn_rechazarPedidoPendiente, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(100, 747);
+            tableLayoutPanel1.Location = new Point(100, 678);
             tableLayoutPanel1.Margin = new Padding(100, 0, 100, 200);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(808, 122);
+            tableLayoutPanel1.Size = new Size(808, 191);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // btn_aceptarPedidoPendiente
@@ -1288,7 +1275,7 @@
             btn_aceptarPedidoPendiente.Location = new Point(5, 5);
             btn_aceptarPedidoPendiente.Margin = new Padding(5);
             btn_aceptarPedidoPendiente.Name = "btn_aceptarPedidoPendiente";
-            btn_aceptarPedidoPendiente.Size = new Size(394, 112);
+            btn_aceptarPedidoPendiente.Size = new Size(394, 181);
             btn_aceptarPedidoPendiente.TabIndex = 0;
             btn_aceptarPedidoPendiente.Text = "ACEPTAR PEDIDO";
             btn_aceptarPedidoPendiente.UseVisualStyleBackColor = false;
@@ -1305,7 +1292,7 @@
             btn_rechazarPedidoPendiente.Location = new Point(409, 5);
             btn_rechazarPedidoPendiente.Margin = new Padding(5);
             btn_rechazarPedidoPendiente.Name = "btn_rechazarPedidoPendiente";
-            btn_rechazarPedidoPendiente.Size = new Size(394, 112);
+            btn_rechazarPedidoPendiente.Size = new Size(394, 181);
             btn_rechazarPedidoPendiente.TabIndex = 1;
             btn_rechazarPedidoPendiente.Text = "RECHAZAR PEDIDO";
             btn_rechazarPedidoPendiente.UseVisualStyleBackColor = false;
@@ -1317,31 +1304,78 @@
             label9.Dock = DockStyle.Bottom;
             label9.Font = new Font("Cooper Black", 25F);
             label9.ForeColor = Color.FromArgb(39, 50, 56);
-            label9.Location = new Point(3, 57);
+            label9.Location = new Point(3, 144);
             label9.Name = "label9";
             label9.Size = new Size(1002, 49);
             label9.TabIndex = 2;
             label9.Text = "Gestionar pedidos pendientes";
             label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(223, 248, 229);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Dock = DockStyle.Fill;
+            button1.Location = new Point(950, 25);
+            button1.Margin = new Padding(950, 25, 0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(58, 52);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // panelBienvenida
             // 
             panelBienvenida.BackColor = SystemColors.Control;
-            panelBienvenida.Controls.Add(label_bienvenida);
-            panelBienvenida.Location = new Point(145, 94);
+            panelBienvenida.Controls.Add(tableLayoutPanel2);
+            panelBienvenida.Location = new Point(145, 95);
             panelBienvenida.Name = "panelBienvenida";
-            panelBienvenida.Size = new Size(1008, 1069);
+            panelBienvenida.Size = new Size(1008, 1068);
             panelBienvenida.TabIndex = 5;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(btn_info, 0, 1);
+            tableLayoutPanel2.Controls.Add(label_bienvenida, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 95F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
+            tableLayoutPanel2.Size = new Size(1008, 1068);
+            tableLayoutPanel2.TabIndex = 0;
+            // 
+            // btn_info
+            // 
+            btn_info.BackColor = Color.FromArgb(223, 248, 229);
+            btn_info.BackgroundImage = (Image)resources.GetObject("btn_info.BackgroundImage");
+            btn_info.BackgroundImageLayout = ImageLayout.Zoom;
+            btn_info.Dock = DockStyle.Fill;
+            btn_info.FlatStyle = FlatStyle.Flat;
+            btn_info.ImeMode = ImeMode.NoControl;
+            btn_info.Location = new Point(940, 1019);
+            btn_info.Margin = new Padding(940, 5, 15, 5);
+            btn_info.Name = "btn_info";
+            btn_info.Size = new Size(53, 44);
+            btn_info.TabIndex = 6;
+            btn_info.UseVisualStyleBackColor = false;
+            btn_info.Click += btn_info_Click;
             // 
             // label_bienvenida
             // 
+            label_bienvenida.AutoSize = true;
+            label_bienvenida.Dock = DockStyle.Fill;
             label_bienvenida.Font = new Font("Cooper Black", 30F);
             label_bienvenida.ForeColor = Color.FromArgb(39, 50, 56);
-            label_bienvenida.Location = new Point(0, 0);
+            label_bienvenida.Location = new Point(3, 0);
             label_bienvenida.Name = "label_bienvenida";
-            label_bienvenida.Size = new Size(1008, 1069);
-            label_bienvenida.TabIndex = 0;
-            label_bienvenida.Text = "Texto de bienvenida";
+            label_bienvenida.Size = new Size(1002, 1014);
+            label_bienvenida.TabIndex = 7;
+            label_bienvenida.Text = "Bienvenida";
             label_bienvenida.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form_Empleado
@@ -1392,6 +1426,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView_pedidosPendientes).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panelBienvenida.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1485,8 +1521,10 @@
         public Button btn_aceptarPedidoPendiente;
         public Button btn_rechazarPedidoPendiente;
         private Panel panelBienvenida;
-        private Label label_bienvenida;
         private ToolTip toolTip1;
+        private TableLayoutPanel tableLayoutPanel2;
         private Button btn_info;
+        private Label label_bienvenida;
+        private Button button1;
     }
 }
