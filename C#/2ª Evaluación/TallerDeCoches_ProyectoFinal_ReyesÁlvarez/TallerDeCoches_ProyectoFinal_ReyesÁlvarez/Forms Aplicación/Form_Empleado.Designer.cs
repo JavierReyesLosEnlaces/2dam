@@ -119,6 +119,7 @@
             label9 = new Label();
             panelBienvenida = new Panel();
             label_bienvenida = new Label();
+            toolTip1 = new ToolTip(components);
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             menuRegistrarEmpleado.SuspendLayout();
@@ -601,6 +602,7 @@
             btn_baseDeDatos.Size = new Size(128, 311);
             btn_baseDeDatos.TabIndex = 3;
             btn_baseDeDatos.Text = "BASE DE DATOS";
+            toolTip1.SetToolTip(btn_baseDeDatos, "Este es el menú para gestionar las bases de datos");
             btn_baseDeDatos.UseVisualStyleBackColor = false;
             btn_baseDeDatos.Click += btn_baseDeDatos_Click;
             // 
@@ -1464,5 +1466,6 @@
         public Button btn_rechazarPedidoPendiente;
         private Panel panelBienvenida;
         private Label label_bienvenida;
+        private ToolTip toolTip1;
     }
 }

@@ -7,20 +7,24 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
     public partial class Form_Cliente : Form
     {
         public static string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-        public static String idServicio;
+        public static String idservicio;
         public static int idCliente;
+        public static PedidoFinal pedidoFinal = new PedidoFinal();
 
         public Form_Cliente()
         {
             InitializeComponent();
+
             Form_Login fl = new Form_Login();
-            CargarDatosCliente(fl.getEncpss());
+            //CargarDatosCliente(fl.getEncpss());
+
+            label1.Text = "¿Qué servicio estás buscando?";
             InitUI();
         }
 
         public static String getIdServicio()
         {
-            return idServicio;
+            return idservicio;
         }
 
         private void InitUI()
@@ -95,13 +99,19 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
                             string familia = reader["Familia de servicio"].ToString();
                             string direccionTaller = reader["Dirección del Taller"].ToString();
                             string importeBruto = reader["Importe Bruto"].ToString();
-                            idServicio = reader["Id del servicio"].ToString();
+                            idservicio = reader["Id del servicio"].ToString();
+
+                            // Seteas el idServicio del pedidoFinal
+                            pedidoFinal.IdServicio = idservicio;
+                            pedidoFinal.ImporteBruto = decimal.Parse(importeBruto);
+                            pedidoFinal.ImporteNeto = (pedidoFinal.ImporteBruto * 1.21m);
+                            pedidoFinal.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
 
                             // Asignar los valores obtenidos a las etiquetas correspondientes
-                            label7.Text = nombreServicio;
-                            label8.Text = direccionTaller;
-                            label9.Text = importeBruto;
-                            label10.Text = "21%";
+                            labelSE_Servicio.Text = nombreServicio;
+                            labelSE_Taller.Text = direccionTaller;
+                            labelSE_ImporteBruto.Text = importeBruto;
+                            labelSE_TipoImpositivo.Text = "21%";
 
                             switch (familia)
                             {
@@ -134,6 +144,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
 
         private void button5_Click_1(object sender, EventArgs e)
         {
+            
             Form_Cliente_DatosCoche fcdc = new Form_Cliente_DatosCoche();
             fcdc.Show();
             Hide();

@@ -21,6 +21,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             btn_rechazarPedidoPendiente.BackColor = Color.LightGray;
             btn_rechazarPedidoPendiente.Enabled = false;
 
+            // Botón de crear empleados no disponible
+            ucPanel_tipoa_empleados.btn_crearRegistro.Visible = false;
+
             Form_Login loginForm = new Form_Login();
             String nombreUsuario = conseguirNombre(loginForm.getEncpss());
             label_nombreUsuario.Text = nombreUsuario;
@@ -265,7 +268,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     {
                         case 0:
                             dgview = ucPanel_tipoa_clientes.dataGridView1;
-                            ucPanel_tipoa_empleados.btn_crearRegistro.Click += btn_registrarEmpleado_Click2;
                             break;
                         case 1:
                             dgview = ucPanel_tipoa_coches.dataGridView1;
@@ -302,31 +304,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     // Establece el modo de ajuste automático para todas las celdas en la columna
                     columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 }
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            String sqlQuery = "SELECT * FROM Books";
-            try
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connectionString);
-                SqlConnection connection = new SqlConnection(connectionString);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                //dataGridView1.DataSource = dt;
-
-                MessageBox.Show("Exito");
-
-                //llenar el datatable con la info que ha cogido adapter despues de ejecutar la instruccion de la linea 20
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Falló");
-                throw;
             }
         }
 
@@ -528,6 +505,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            
             // Verificar si se hizo clic en una celda válida (no en los encabezados)
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {

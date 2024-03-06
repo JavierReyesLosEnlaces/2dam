@@ -61,9 +61,8 @@
             campoTextbox9 = new TextBox();
             campoTextbox10 = new TextBox();
             tlp7 = new TableLayoutPanel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
             label_nombreTabla = new Label();
+            label1 = new Label();
             imageList1 = new ImageList(components);
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
@@ -292,22 +291,9 @@
             // 
             tlp7.BackColor = Color.FromArgb(117, 230, 164);
             resources.ApplyResources(tlp7, "tlp7");
-            tlp7.Controls.Add(tableLayoutPanel3, 2, 0);
-            tlp7.Controls.Add(tableLayoutPanel2, 1, 0);
             tlp7.Controls.Add(label_nombreTabla, 0, 0);
+            tlp7.Controls.Add(label1, 2, 0);
             tlp7.Name = "tlp7";
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.BackColor = SystemColors.Control;
-            resources.ApplyResources(tableLayoutPanel3, "tableLayoutPanel3");
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.BackColor = SystemColors.Control;
-            resources.ApplyResources(tableLayoutPanel2, "tableLayoutPanel2");
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label_nombreTabla
             // 
@@ -315,6 +301,11 @@
             label_nombreTabla.BackColor = Color.FromArgb(117, 230, 164);
             label_nombreTabla.ForeColor = Color.FromArgb(0, 64, 64);
             label_nombreTabla.Name = "label_nombreTabla";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // imageList1
             // 
@@ -346,8 +337,6 @@
 
         private TableLayoutPanel tlp1;
         private TableLayoutPanel tlp7;
-        private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel2;
         public Label label_nombreTabla;
         private TableLayoutPanel tlp2;
         private TableLayoutPanel tlp3;
@@ -379,5 +368,6 @@
         public Button btn_crearRegistro;
         public Button btn_modificarRegistro;
         public Button btn_borrarRegistro;
+        private Label label1;
     }
 }

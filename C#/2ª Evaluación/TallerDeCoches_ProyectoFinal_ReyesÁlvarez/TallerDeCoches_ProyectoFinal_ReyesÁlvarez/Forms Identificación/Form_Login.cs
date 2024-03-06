@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.Data.SqlClient;
+using System.Configuration;
 using TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación;
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
@@ -6,6 +8,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
     public partial class Form_Login : Form
     {
         public static String decusr, encpss = "", encusr;
+        public static string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+        public static UsuarioLogueado usuarioLogueado;
+
         public Form_Login()
         {
             InitializeComponent();
@@ -26,72 +31,111 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void btn_entrar_Click(object sender, EventArgs e)
         {
+            // Check if username or password is too short
             if (tb_usuario.Text.Length < 3 || tb_contraseña.Text.Length < 5)
             {
-                MessageBox.Show("Username or password no válido, muy corto");
+                MessageBox.Show("Username or password is too short.");
             }
             else
             {
                 string dir = tb_usuario.Text;
 
+                // Check if user directory exists
                 if (!Directory.Exists("data\\clientes\\" + dir) && (!Directory.Exists("data\\empleados\\" + dir)))
                 {
-                    MessageBox.Show("Usuario no registrado");
+                    MessageBox.Show("User not registered.");
                 }
-                else if (Directory.Exists("data\\clientes\\" + dir) && (!Directory.Exists("data\\empleados\\" + dir)))
+                else
                 {
-                    string filePath = "data\\clientes\\" + dir + "\\data.ls";
-                    if (File.Exists(filePath))
+                    // Check if user is a client
+                    if (Directory.Exists("data\\clientes\\" + dir) && (!Directory.Exists("data\\empleados\\" + dir)))
                     {
-                        using (StreamReader sr = new StreamReader(filePath))
+                        string filePath = "data\\clientes\\" + dir + "\\data.ls";
+
+                        // Check if data file exists for the client
+                        if (File.Exists(filePath))
                         {
-                            string encusr = sr.ReadLine();
-                            string encpss = sr.ReadLine();
-
-                            string decusr = AesCryp.Decrypt(encusr);
-                            string decpss = AesCryp.Decrypt(encpss);
-
-                            if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
+                            using (StreamReader sr = new StreamReader(filePath))
                             {
-                                Form_Cliente fc = new Form_Cliente();
-                                fc.Show();
-                                Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error en el password de cliente");
+                                string encusr = sr.ReadLine();
+                                string encpss = sr.ReadLine();
+
+                                string decusr = AesCryp.Decrypt(encusr);
+                                string decpss = AesCryp.Decrypt(encpss);
+
+                                // Check if entered username and password match decrypted values
+                                if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
+                                {
+                                    // Execute SQL query to fetch client ID
+                                    string query = @"SELECT c.id_cliente AS 'Id del cliente'
+                                            FROM clientes c 
+                                            INNER JOIN usuarios u ON c.id_usuario = u.id_usuario
+                                            WHERE u.contraseña_usuario = '" + encpss + "'";
+
+                                    using (SqlConnection connection = new SqlConnection(connectionString))
+                                    {
+                                        connection.Open();
+                                        using (SqlCommand command = new SqlCommand(query, connection))
+                                        {
+                                            SqlDataReader reader = command.ExecuteReader();
+                                            if (reader.Read())
+                                            {
+                                                string idCliente = reader["Id del cliente"].ToString();
+                                                usuarioLogueado = new UsuarioLogueado(int.Parse(idCliente));
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("No data found for the client.");
+                                            }
+                                        }
+                                    }
+
+                                    // Show client form and hide current form
+                                    Form_Cliente fc = new Form_Cliente();
+                                    fc.Show();
+                                    Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Incorrect client password.");
+                                }
                             }
                         }
                     }
-                }
-                else if (!Directory.Exists("data\\clientes\\" + dir) && (Directory.Exists("data\\empleados\\" + dir)))
-                {
-                    string filePath = "data\\empleados\\" + dir + "\\data.ls";
-                    if (File.Exists(filePath))
+                    // Check if user is an employee
+                    else if (!Directory.Exists("data\\clientes\\" + dir) && (Directory.Exists("data\\empleados\\" + dir)))
                     {
-                        using (StreamReader sr = new StreamReader(filePath))
+                        string filePath = "data\\empleados\\" + dir + "\\data.ls";
+                        // Check if data file exists for the employee
+                        if (File.Exists(filePath))
                         {
-                            string encusr = sr.ReadLine();
-                            encpss = sr.ReadLine();
-
-                            decusr = AesCryp.Decrypt(encusr);
-                            string decpss = AesCryp.Decrypt(encpss);
-
-                            if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
+                            using (StreamReader sr = new StreamReader(filePath))
                             {
-                                Form_Empleado fe = new Form_Empleado();
-                                fe.Show();
-                                Hide();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error en el password de empleado");
+                                string encusr = sr.ReadLine();
+                                string encpss = sr.ReadLine();
+
+                                string decusr = AesCryp.Decrypt(encusr);
+                                string decpss = AesCryp.Decrypt(encpss);
+
+                                // Check if entered username and password match decrypted values
+                                if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
+                                {
+                                    // Show employee form and hide current form
+                                    Form_Empleado fe = new Form_Empleado();
+                                    fe.Show();
+                                    Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Incorrect employee password.");
+                                }
                             }
                         }
                     }
                 }
             }
         }
+
 
         public string getEncusr()
         {

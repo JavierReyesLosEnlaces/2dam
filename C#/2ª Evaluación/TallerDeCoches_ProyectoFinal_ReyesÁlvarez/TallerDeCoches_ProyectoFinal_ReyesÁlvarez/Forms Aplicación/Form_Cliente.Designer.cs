@@ -73,10 +73,10 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
+            labelSE_Servicio = new Label();
+            labelSE_Taller = new Label();
+            labelSE_ImporteBruto = new Label();
+            labelSE_TipoImpositivo = new Label();
             button5 = new Button();
             pboxFamilia = new PictureBox();
             btn_salir = new Button();
@@ -849,10 +849,10 @@
             tableLayoutPanel8.Controls.Add(label3, 0, 1);
             tableLayoutPanel8.Controls.Add(label4, 0, 2);
             tableLayoutPanel8.Controls.Add(label5, 0, 3);
-            tableLayoutPanel8.Controls.Add(label7, 1, 0);
-            tableLayoutPanel8.Controls.Add(label8, 1, 1);
-            tableLayoutPanel8.Controls.Add(label9, 1, 2);
-            tableLayoutPanel8.Controls.Add(label10, 1, 3);
+            tableLayoutPanel8.Controls.Add(labelSE_Servicio, 1, 0);
+            tableLayoutPanel8.Controls.Add(labelSE_Taller, 1, 1);
+            tableLayoutPanel8.Controls.Add(labelSE_ImporteBruto, 1, 2);
+            tableLayoutPanel8.Controls.Add(labelSE_TipoImpositivo, 1, 3);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(0, 0);
             tableLayoutPanel8.Margin = new Padding(0);
@@ -929,62 +929,62 @@
             label5.Text = "Tipo impositivo";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // labelSE_Servicio
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.White;
-            label7.Dock = DockStyle.Fill;
-            label7.Location = new Point(267, 0);
-            label7.Margin = new Padding(0);
-            label7.Name = "label7";
-            label7.Padding = new Padding(30, 0, 0, 0);
-            label7.Size = new Size(496, 75);
-            label7.TabIndex = 5;
-            label7.Text = "...";
-            label7.TextAlign = ContentAlignment.MiddleLeft;
+            labelSE_Servicio.AutoSize = true;
+            labelSE_Servicio.BackColor = Color.White;
+            labelSE_Servicio.Dock = DockStyle.Fill;
+            labelSE_Servicio.Location = new Point(267, 0);
+            labelSE_Servicio.Margin = new Padding(0);
+            labelSE_Servicio.Name = "labelSE_Servicio";
+            labelSE_Servicio.Padding = new Padding(30, 0, 0, 0);
+            labelSE_Servicio.Size = new Size(496, 75);
+            labelSE_Servicio.TabIndex = 5;
+            labelSE_Servicio.Text = "...";
+            labelSE_Servicio.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // labelSE_Taller
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.White;
-            label8.Dock = DockStyle.Fill;
-            label8.Location = new Point(267, 75);
-            label8.Margin = new Padding(0);
-            label8.Name = "label8";
-            label8.Padding = new Padding(30, 0, 0, 0);
-            label8.Size = new Size(496, 75);
-            label8.TabIndex = 6;
-            label8.Text = "...";
-            label8.TextAlign = ContentAlignment.MiddleLeft;
+            labelSE_Taller.AutoSize = true;
+            labelSE_Taller.BackColor = Color.White;
+            labelSE_Taller.Dock = DockStyle.Fill;
+            labelSE_Taller.Location = new Point(267, 75);
+            labelSE_Taller.Margin = new Padding(0);
+            labelSE_Taller.Name = "labelSE_Taller";
+            labelSE_Taller.Padding = new Padding(30, 0, 0, 0);
+            labelSE_Taller.Size = new Size(496, 75);
+            labelSE_Taller.TabIndex = 6;
+            labelSE_Taller.Text = "...";
+            labelSE_Taller.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // labelSE_ImporteBruto
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.White;
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label9.Location = new Point(267, 150);
-            label9.Margin = new Padding(0);
-            label9.Name = "label9";
-            label9.Padding = new Padding(30, 0, 0, 0);
-            label9.Size = new Size(496, 75);
-            label9.TabIndex = 7;
-            label9.Text = "...";
-            label9.TextAlign = ContentAlignment.MiddleLeft;
+            labelSE_ImporteBruto.AutoSize = true;
+            labelSE_ImporteBruto.BackColor = Color.White;
+            labelSE_ImporteBruto.Dock = DockStyle.Fill;
+            labelSE_ImporteBruto.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            labelSE_ImporteBruto.Location = new Point(267, 150);
+            labelSE_ImporteBruto.Margin = new Padding(0);
+            labelSE_ImporteBruto.Name = "labelSE_ImporteBruto";
+            labelSE_ImporteBruto.Padding = new Padding(30, 0, 0, 0);
+            labelSE_ImporteBruto.Size = new Size(496, 75);
+            labelSE_ImporteBruto.TabIndex = 7;
+            labelSE_ImporteBruto.Text = "...";
+            labelSE_ImporteBruto.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // labelSE_TipoImpositivo
             // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.White;
-            label10.Dock = DockStyle.Fill;
-            label10.Location = new Point(267, 225);
-            label10.Margin = new Padding(0);
-            label10.Name = "label10";
-            label10.Padding = new Padding(30, 0, 0, 0);
-            label10.Size = new Size(496, 76);
-            label10.TabIndex = 8;
-            label10.Text = "...";
-            label10.TextAlign = ContentAlignment.MiddleLeft;
+            labelSE_TipoImpositivo.AutoSize = true;
+            labelSE_TipoImpositivo.BackColor = Color.White;
+            labelSE_TipoImpositivo.Dock = DockStyle.Fill;
+            labelSE_TipoImpositivo.Location = new Point(267, 225);
+            labelSE_TipoImpositivo.Margin = new Padding(0);
+            labelSE_TipoImpositivo.Name = "labelSE_TipoImpositivo";
+            labelSE_TipoImpositivo.Padding = new Padding(30, 0, 0, 0);
+            labelSE_TipoImpositivo.Size = new Size(496, 76);
+            labelSE_TipoImpositivo.TabIndex = 8;
+            labelSE_TipoImpositivo.Text = "...";
+            labelSE_TipoImpositivo.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // button5
             // 
@@ -1104,10 +1104,10 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
+        private Label labelSE_Servicio;
+        private Label labelSE_Taller;
+        private Label labelSE_ImporteBruto;
+        private Label labelSE_TipoImpositivo;
         private Button button5;
         private PictureBox pboxFamilia;
     }

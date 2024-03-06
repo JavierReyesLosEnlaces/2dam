@@ -160,7 +160,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                             connection.Open();
                             using (SqlCommand command = new SqlCommand(query, connection))
                             {
-                                MessageBox.Show(query.ToString());
                                 command.ExecuteNonQuery();
                             }
                         }
@@ -205,7 +204,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     {
                         // Construir y ejecutar la consulta SQL para eliminar el registro
                         string query = $"DELETE FROM {nombreTabla} WHERE {primaryKeyColumnName} = {primaryKeyValue}";
-                        MessageBox.Show(query.ToString());
 
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
@@ -232,7 +230,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             catch (Exception ex)
             {
                 MessageBox.Show("Error al borrar el registro");
-                //MessageBox.Show(ex.Message);
             }
         }
 

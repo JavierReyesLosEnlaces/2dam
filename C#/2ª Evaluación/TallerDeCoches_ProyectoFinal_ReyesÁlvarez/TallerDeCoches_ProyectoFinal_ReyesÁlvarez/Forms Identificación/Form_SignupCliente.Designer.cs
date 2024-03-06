@@ -394,7 +394,6 @@
             textbox_nombre.Name = "textbox_nombre";
             textbox_nombre.Size = new Size(292, 27);
             textbox_nombre.TabIndex = 6;
-            textbox_nombre.TextChanged += textbox_nombre_TextChanged;
             // 
             // textbox_primerApellido
             // 

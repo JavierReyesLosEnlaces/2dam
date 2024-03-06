@@ -7,10 +7,13 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
     public partial class Form_Cliente_DatosCoche : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+
+        //id servicio =  Form_Cliente.idServicio
         public Form_Cliente_DatosCoche()
         {
             InitializeComponent();
             InitUI();
+            ;
         }
 
         private void InitUI()
@@ -44,17 +47,16 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
 
         private void btn_continuar_Click(object sender, EventArgs e)
         {
-            // Obtener los valores de los TextBoxes
+            // INSERTAR COCHES
             string modelo = textBox_modelo.Text;
             string color = textBox_color.Text;
             string peso = textBox_peso.Text;
 
-            // Consulta SQL para la inserción
-            string query = "INSERT INTO coches (modelo, color, peso) VALUES (@Modelo, @Color, @Peso)";
+            string queryCoche = "INSERT INTO coches (modelo, color, peso) VALUES (@Modelo, @Color, @Peso)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(queryCoche, connection))
                 {
                     // Agregar parámetros para evitar la inyección SQL
                     command.Parameters.AddWithValue("@Modelo", modelo);
@@ -77,7 +79,82 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                 }
             }
 
-            String id_servicio = Form_Cliente.getIdServicio();
+            // CONSEGUIT EL ID DEL ULTIMO COCHE
+
+            string queryUltimoIdCoche = "SELECT MAX(id_coche) FROM coches";
+            int ultimoIdCoche;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(queryUltimoIdCoche, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        // Obtener el último id_coche
+                        ultimoIdCoche = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al obtener el último id_coche: " + ex.Message);
+                        return; // Salir del método si hay un error
+                    }
+                }
+            }
+
+            // INSERTAR PEDIDOS
+            string queryPedido = "INSERT INTO pedidos (importe_bruto, tipo_impositivo, importe_neto, fecha, id_coche, id_servicio)" +
+                " VALUES (@ImporteBruto, @TipoImpositivo, @ImporteNeto, @Fecha, @IdCoche, @IdServicio)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(queryPedido, connection))
+                {
+                    // Agregar parámetros para evitar la inyección SQL
+                    command.Parameters.AddWithValue("@ImporteBruto", Form_Cliente.pedidoFinal.ImporteBruto);
+                    command.Parameters.AddWithValue("@TipoImpositivo", Form_Cliente.pedidoFinal.ImporteNeto);
+                    command.Parameters.AddWithValue("@ImporteNeto", Form_Cliente.pedidoFinal.ImporteNeto);
+                    command.Parameters.AddWithValue("@Fecha", Form_Cliente.pedidoFinal.Fecha);
+                    command.Parameters.AddWithValue("@IdCoche", ultimoIdCoche); // Usar el último id_coche obtenido
+                    command.Parameters.AddWithValue("@IdServicio", Form_Cliente.pedidoFinal.IdServicio);
+
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Registro de pedido insertado correctamente en la base de datos.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al insertar el registro de pedido: " + ex.Message);
+                    }
+                }
+            }
+            /*
+            // INSERTAR PEDIDOS REVISIÓN
+            string queryPedidoRevision = "INSERT INTO pedidosRevision (id_pedido) VALUES (@IdPedido)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(queryPedidoRevision, connection))
+                {
+                    // Agregar parámetros para evitar la inyección SQL
+                    command.Parameters.AddWithValue("@IdPedido", idPedidoInsertado);
+
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Registro de pedido de revisión insertado correctamente en la base de datos.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al insertar el registro de pedido de revisión: " + ex.Message);
+                    }
+                }
+            }
+            */
         }
+
     }
 }

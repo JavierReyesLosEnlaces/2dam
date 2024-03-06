@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tlp1 = new TableLayoutPanel();
             tlp2 = new TableLayoutPanel();
             btn_continuar = new Button();
@@ -47,6 +48,7 @@
             label5 = new Label();
             checkbox_condiciones = new CheckBox();
             btn_salir = new Button();
+            toolTip1 = new ToolTip(components);
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
             tlpTarjeta.SuspendLayout();
@@ -388,5 +390,6 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Label label4;
         private TextBox textBox_peso;
+        private ToolTip toolTip1;
     }
 }
