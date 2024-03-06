@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             tlp1 = new TableLayoutPanel();
             tlp2 = new TableLayoutPanel();
@@ -80,6 +81,7 @@
             button5 = new Button();
             pboxFamilia = new PictureBox();
             btn_salir = new Button();
+            toolTip1 = new ToolTip(components);
             panel1.SuspendLayout();
             tlp1.SuspendLayout();
             tlp2.SuspendLayout();
@@ -750,6 +752,7 @@
             button1.Size = new Size(265, 103);
             button1.TabIndex = 0;
             button1.Text = "Lavado y Detallado";
+            toolTip1.SetToolTip(button1, "Familia de servicios 'Lavado y Detallado'");
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -768,6 +771,7 @@
             button2.Size = new Size(265, 103);
             button2.TabIndex = 1;
             button2.Text = "Mantenimiento";
+            toolTip1.SetToolTip(button2, "Familia de servicios 'Mantenimiento'");
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -786,6 +790,7 @@
             button3.Size = new Size(265, 103);
             button3.TabIndex = 2;
             button3.Text = "Reparación";
+            toolTip1.SetToolTip(button3, "Familia de servicios 'Reparación'");
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
@@ -804,6 +809,7 @@
             button4.Size = new Size(265, 103);
             button4.TabIndex = 3;
             button4.Text = "Servicios Especiales";
+            toolTip1.SetToolTip(button4, "Familia de servicios 'Servicios Especiales'");
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
@@ -880,6 +886,7 @@
             label2.TabIndex = 0;
             label2.Text = "Servicio";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(label2, "Nombre del servicio a contratar");
             // 
             // label3
             // 
@@ -896,6 +903,7 @@
             label3.TabIndex = 1;
             label3.Text = "Taller";
             label3.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(label3, "El servicio tiene lugar en un taller concreto");
             // 
             // label4
             // 
@@ -912,6 +920,7 @@
             label4.TabIndex = 2;
             label4.Text = "Importe bruto";
             label4.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(label4, "Importe bruto, antes de impuestos");
             // 
             // label5
             // 
@@ -928,6 +937,7 @@
             label5.TabIndex = 3;
             label5.Text = "Tipo impositivo";
             label5.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(label5, "Tipo impositivo ampliado");
             // 
             // labelSE_Servicio
             // 
@@ -1110,5 +1120,6 @@
         private Label labelSE_TipoImpositivo;
         private Button button5;
         private PictureBox pboxFamilia;
+        private ToolTip toolTip1;
     }
 }

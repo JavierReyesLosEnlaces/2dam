@@ -67,6 +67,7 @@
             btn_salirAlLogin = new Button();
             btn_salir = new Button();
             tlp4 = new TableLayoutPanel();
+            btn_info = new Button();
             tlp5 = new TableLayoutPanel();
             pictureBox1 = new PictureBox();
             label_nombreUsuario = new Label();
@@ -620,6 +621,7 @@
             btn_gestionarPedidos.Size = new Size(128, 311);
             btn_gestionarPedidos.TabIndex = 4;
             btn_gestionarPedidos.Text = "GESTIONAR PEDIDOS PENDIENTES";
+            toolTip1.SetToolTip(btn_gestionarPedidos, "Este es el menú para aceptar o rechazar pedidos pendientes de revisión");
             btn_gestionarPedidos.UseVisualStyleBackColor = false;
             btn_gestionarPedidos.Click += btn_gestionarPedidos_Click;
             // 
@@ -637,6 +639,7 @@
             btn_registrarEmpleado.Size = new Size(128, 313);
             btn_registrarEmpleado.TabIndex = 5;
             btn_registrarEmpleado.Text = "REGISTRAR EMPLEADO";
+            toolTip1.SetToolTip(btn_registrarEmpleado, "Menú para registrar un nuevo empleado");
             btn_registrarEmpleado.UseVisualStyleBackColor = false;
             btn_registrarEmpleado.Click += btn_registrarEmpleado_Click2;
             // 
@@ -655,6 +658,7 @@
             btn_salirAlLogin.Size = new Size(128, 102);
             btn_salirAlLogin.TabIndex = 6;
             btn_salirAlLogin.Text = "SALIR";
+            toolTip1.SetToolTip(btn_salirAlLogin, "Salir al menú de login");
             btn_salirAlLogin.UseVisualStyleBackColor = false;
             btn_salirAlLogin.Click += btn_salirAlLogin_Click;
             // 
@@ -678,6 +682,7 @@
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tlp4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlp4.Controls.Add(btn_info, 0, 0);
             tlp4.Controls.Add(tlp5, 2, 0);
             tlp4.Controls.Add(labelHora, 1, 0);
             tlp4.Dock = DockStyle.Fill;
@@ -688,6 +693,22 @@
             tlp4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlp4.Size = new Size(1148, 56);
             tlp4.TabIndex = 3;
+            // 
+            // btn_info
+            // 
+            btn_info.BackColor = Color.FromArgb(223, 248, 229);
+            btn_info.BackgroundImage = (Image)resources.GetObject("btn_info.BackgroundImage");
+            btn_info.BackgroundImageLayout = ImageLayout.Zoom;
+            btn_info.Dock = DockStyle.Right;
+            btn_info.FlatStyle = FlatStyle.Flat;
+            btn_info.ImeMode = ImeMode.NoControl;
+            btn_info.Location = new Point(395, 5);
+            btn_info.Margin = new Padding(300, 5, 15, 5);
+            btn_info.Name = "btn_info";
+            btn_info.Size = new Size(49, 46);
+            btn_info.TabIndex = 6;
+            btn_info.UseVisualStyleBackColor = false;
+            btn_info.Click += btn_info_Click;
             // 
             // tlp5
             // 
@@ -735,6 +756,7 @@
             label_nombreUsuario.TabIndex = 1;
             label_nombreUsuario.Text = "Nombre del empleado";
             label_nombreUsuario.TextAlign = ContentAlignment.MiddleLeft;
+            toolTip1.SetToolTip(label_nombreUsuario, "Nombre del empleado");
             // 
             // labelHora
             // 
@@ -1466,5 +1488,6 @@
         private Panel panelBienvenida;
         private Label label_bienvenida;
         private ToolTip toolTip1;
+        private Button btn_info;
     }
 }

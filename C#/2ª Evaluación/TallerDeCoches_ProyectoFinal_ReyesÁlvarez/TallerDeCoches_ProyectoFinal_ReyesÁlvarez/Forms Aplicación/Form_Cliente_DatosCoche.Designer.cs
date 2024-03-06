@@ -209,6 +209,7 @@
             label2.TabIndex = 1;
             label2.Text = "Modelo";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(label2, "Introduce el modelo de tu coche");
             // 
             // textBox_modelo
             // 
@@ -259,6 +260,7 @@
             textBox_color.Name = "textBox_color";
             textBox_color.Size = new Size(522, 27);
             textBox_color.TabIndex = 3;
+            toolTip1.SetToolTip(textBox_color, "Introduce el color de tu coche");
             // 
             // tableLayoutPanel3
             // 
@@ -300,6 +302,7 @@
             textBox_peso.Name = "textBox_peso";
             textBox_peso.Size = new Size(522, 27);
             textBox_peso.TabIndex = 4;
+            toolTip1.SetToolTip(textBox_peso, "Introduce el peso de tu coche");
             // 
             // label5
             // 
@@ -325,6 +328,7 @@
             checkbox_condiciones.Size = new Size(707, 44);
             checkbox_condiciones.TabIndex = 5;
             checkbox_condiciones.Text = "Entiendo las condiciones y acepto";
+            toolTip1.SetToolTip(checkbox_condiciones, "Es necesario aceptar las condiciones");
             checkbox_condiciones.UseVisualStyleBackColor = true;
             checkbox_condiciones.CheckedChanged += checkbox_condiciones_CheckedChanged;
             // 

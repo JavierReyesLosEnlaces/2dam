@@ -502,8 +502,8 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
+
+
             // Verificar si se hizo clic en una celda válida (no en los encabezados)
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -620,6 +620,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     }
                 }
             }
+        }
+
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("¡Bienvenido a la Vista de Empleado!\n\nAquí tienes acceso a varias zonas:\n\n1. Base de Datos: Donde puedes manipular los datos existentes, crear nuevos registros, modificar y borrar registros.\n\n2. Gestión de Pendientes: Esta zona te permite manejar las tareas pendientes de forma eficiente.\n\n3. Registrar Nuevo Empleado: En esta sección puedes ingresar los datos de un nuevo empleado para agregarlo al sistema.", "Vista de Empleado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
