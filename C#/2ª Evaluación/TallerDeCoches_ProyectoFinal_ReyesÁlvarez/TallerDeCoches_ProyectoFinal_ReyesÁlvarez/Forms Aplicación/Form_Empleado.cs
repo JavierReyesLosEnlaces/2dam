@@ -23,14 +23,45 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
             // Botón de crear empleados no disponible
             ucPanel_tipoa_empleados.btn_crearRegistro.Visible = false;
-
-            Form_Login loginForm = new Form_Login();
-            String nombreUsuario = conseguirNombre(loginForm.getEncpss());
+            String nombreUsuario = conseguirNombre();
             label_nombreUsuario.Text = nombreUsuario;
             label_bienvenida.Text = "¡Hola " + nombreUsuario + "!";
 
             initTextboxesLabels();
             initDatagridViews();
+        }
+
+        private String conseguirNombre()
+        {
+            string nombreUsuario = "";
+            string query = "SELECT nombre FROM usuarios WHERE id_usuario = @IdUsuario";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdUsuario", Form_Login.usuarioLogueado.GetIdUsuario());
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                nombreUsuario = reader["nombre"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción
+                MessageBox.Show("Error al obtener el nombre de usuario: " + ex.Message);
+            }
+
+            return nombreUsuario;
         }
 
         private void initTextboxesLabels()

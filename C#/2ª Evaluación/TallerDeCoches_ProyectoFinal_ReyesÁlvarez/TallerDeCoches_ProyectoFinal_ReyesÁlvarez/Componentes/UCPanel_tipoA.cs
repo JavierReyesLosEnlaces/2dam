@@ -1,8 +1,5 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 using Microsoft.Data.SqlClient; // Utiliza Microsoft.Data.SqlClient para acceder a bases de datos SQL Server
 
 namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez

@@ -123,7 +123,7 @@
             // 
             lb1.AutoSize = true;
             lb1.Dock = DockStyle.Fill;
-            lb1.Font = new Font("Cooper Black", 25F);
+            lb1.Font = new Font("Cooper Black", 27F);
             lb1.ForeColor = Color.FromArgb(39, 50, 56);
             lb1.Location = new Point(3, 0);
             lb1.Name = "lb1";

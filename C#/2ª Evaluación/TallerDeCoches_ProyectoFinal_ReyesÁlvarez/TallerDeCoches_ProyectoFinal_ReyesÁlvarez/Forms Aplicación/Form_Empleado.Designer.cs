@@ -161,10 +161,9 @@
             tlp1.Margin = new Padding(0);
             tlp1.Name = "tlp1";
             tlp1.RowCount = 3;
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.91120839F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 4.90053368F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 92.1882553F));
-            tlp1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 4F));
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 4F));
+            tlp1.RowStyles.Add(new RowStyle(SizeType.Percent, 92F));
             tlp1.Size = new Size(1148, 1161);
             tlp1.TabIndex = 0;
             // 
@@ -177,12 +176,12 @@
             tlp2.Controls.Add(menuRegistrarEmpleado, 0, 0);
             tlp2.Controls.Add(tlp3, 0, 0);
             tlp2.Dock = DockStyle.Fill;
-            tlp2.Location = new Point(0, 89);
+            tlp2.Location = new Point(0, 92);
             tlp2.Margin = new Padding(0);
             tlp2.Name = "tlp2";
             tlp2.RowCount = 1;
             tlp2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp2.Size = new Size(1148, 1072);
+            tlp2.Size = new Size(1148, 1069);
             tlp2.TabIndex = 2;
             // 
             // menuRegistrarEmpleado
@@ -200,7 +199,7 @@
             menuRegistrarEmpleado.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             menuRegistrarEmpleado.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
             menuRegistrarEmpleado.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            menuRegistrarEmpleado.Size = new Size(1008, 1072);
+            menuRegistrarEmpleado.Size = new Size(1008, 1069);
             menuRegistrarEmpleado.TabIndex = 2;
             // 
             // tlp10
@@ -212,13 +211,13 @@
             tlp10.Controls.Add(tlp12, 0, 0);
             tlp10.Controls.Add(tlp7, 1, 0);
             tlp10.Dock = DockStyle.Fill;
-            tlp10.Location = new Point(0, 107);
+            tlp10.Location = new Point(0, 106);
             tlp10.Margin = new Padding(0);
             tlp10.Name = "tlp10";
             tlp10.RowCount = 1;
             tlp10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlp10.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp10.Size = new Size(1008, 965);
+            tlp10.Size = new Size(1008, 963);
             tlp10.TabIndex = 0;
             // 
             // tlp12
@@ -256,7 +255,7 @@
             tlp12.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333332F));
             tlp12.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333332F));
             tlp12.RowStyles.Add(new RowStyle(SizeType.Percent, 8.333332F));
-            tlp12.Size = new Size(304, 865);
+            tlp12.Size = new Size(304, 863);
             tlp12.TabIndex = 0;
             // 
             // lb_registro_nombre
@@ -267,7 +266,7 @@
             lb_registro_nombre.ForeColor = Color.FromArgb(39, 50, 56);
             lb_registro_nombre.Location = new Point(3, 0);
             lb_registro_nombre.Name = "lb_registro_nombre";
-            lb_registro_nombre.Size = new Size(298, 72);
+            lb_registro_nombre.Size = new Size(298, 71);
             lb_registro_nombre.TabIndex = 0;
             lb_registro_nombre.Text = "Nombre";
             lb_registro_nombre.TextAlign = ContentAlignment.MiddleCenter;
@@ -278,9 +277,9 @@
             lb_registro_primerApellido.Dock = DockStyle.Fill;
             lb_registro_primerApellido.Font = new Font("Cooper Black", 12F);
             lb_registro_primerApellido.ForeColor = Color.FromArgb(39, 50, 56);
-            lb_registro_primerApellido.Location = new Point(3, 144);
+            lb_registro_primerApellido.Location = new Point(3, 142);
             lb_registro_primerApellido.Name = "lb_registro_primerApellido";
-            lb_registro_primerApellido.Size = new Size(298, 72);
+            lb_registro_primerApellido.Size = new Size(298, 71);
             lb_registro_primerApellido.TabIndex = 1;
             lb_registro_primerApellido.Text = "Primer apellido";
             lb_registro_primerApellido.TextAlign = ContentAlignment.MiddleCenter;
@@ -291,9 +290,9 @@
             lb_registro_segundoApellido.Dock = DockStyle.Fill;
             lb_registro_segundoApellido.Font = new Font("Cooper Black", 12F);
             lb_registro_segundoApellido.ForeColor = Color.FromArgb(39, 50, 56);
-            lb_registro_segundoApellido.Location = new Point(3, 288);
+            lb_registro_segundoApellido.Location = new Point(3, 284);
             lb_registro_segundoApellido.Name = "lb_registro_segundoApellido";
-            lb_registro_segundoApellido.Size = new Size(298, 72);
+            lb_registro_segundoApellido.Size = new Size(298, 71);
             lb_registro_segundoApellido.TabIndex = 2;
             lb_registro_segundoApellido.Text = "Segundo apellido";
             lb_registro_segundoApellido.TextAlign = ContentAlignment.MiddleCenter;
@@ -304,9 +303,9 @@
             lb_registro_dniNie.Dock = DockStyle.Fill;
             lb_registro_dniNie.Font = new Font("Cooper Black", 12F);
             lb_registro_dniNie.ForeColor = Color.FromArgb(39, 50, 56);
-            lb_registro_dniNie.Location = new Point(3, 432);
+            lb_registro_dniNie.Location = new Point(3, 426);
             lb_registro_dniNie.Name = "lb_registro_dniNie";
-            lb_registro_dniNie.Size = new Size(298, 72);
+            lb_registro_dniNie.Size = new Size(298, 71);
             lb_registro_dniNie.TabIndex = 3;
             lb_registro_dniNie.Text = "DNI / NIE";
             lb_registro_dniNie.TextAlign = ContentAlignment.MiddleCenter;
@@ -317,9 +316,9 @@
             lb_registro_telefono.Dock = DockStyle.Fill;
             lb_registro_telefono.Font = new Font("Cooper Black", 12F);
             lb_registro_telefono.ForeColor = Color.FromArgb(39, 50, 56);
-            lb_registro_telefono.Location = new Point(3, 576);
+            lb_registro_telefono.Location = new Point(3, 568);
             lb_registro_telefono.Name = "lb_registro_telefono";
-            lb_registro_telefono.Size = new Size(298, 72);
+            lb_registro_telefono.Size = new Size(298, 71);
             lb_registro_telefono.TabIndex = 4;
             lb_registro_telefono.Text = "Teléfono";
             lb_registro_telefono.TextAlign = ContentAlignment.MiddleCenter;
@@ -330,9 +329,9 @@
             lb_registro_correo.Dock = DockStyle.Fill;
             lb_registro_correo.Font = new Font("Cooper Black", 12F);
             lb_registro_correo.ForeColor = Color.FromArgb(39, 50, 56);
-            lb_registro_correo.Location = new Point(3, 720);
+            lb_registro_correo.Location = new Point(3, 710);
             lb_registro_correo.Name = "lb_registro_correo";
-            lb_registro_correo.Size = new Size(298, 72);
+            lb_registro_correo.Size = new Size(298, 71);
             lb_registro_correo.TabIndex = 5;
             lb_registro_correo.Text = "Correo electrónico";
             lb_registro_correo.TextAlign = ContentAlignment.MiddleCenter;
@@ -340,7 +339,7 @@
             // textbox_re_nombre
             // 
             textbox_re_nombre.Dock = DockStyle.Fill;
-            textbox_re_nombre.Location = new Point(30, 72);
+            textbox_re_nombre.Location = new Point(30, 71);
             textbox_re_nombre.Margin = new Padding(30, 0, 30, 0);
             textbox_re_nombre.Name = "textbox_re_nombre";
             textbox_re_nombre.Size = new Size(244, 27);
@@ -349,7 +348,7 @@
             // textbox_re_primerApellido
             // 
             textbox_re_primerApellido.Dock = DockStyle.Fill;
-            textbox_re_primerApellido.Location = new Point(30, 216);
+            textbox_re_primerApellido.Location = new Point(30, 213);
             textbox_re_primerApellido.Margin = new Padding(30, 0, 30, 0);
             textbox_re_primerApellido.Name = "textbox_re_primerApellido";
             textbox_re_primerApellido.Size = new Size(244, 27);
@@ -358,7 +357,7 @@
             // textbox_re_segundoApellido
             // 
             textbox_re_segundoApellido.Dock = DockStyle.Fill;
-            textbox_re_segundoApellido.Location = new Point(30, 360);
+            textbox_re_segundoApellido.Location = new Point(30, 355);
             textbox_re_segundoApellido.Margin = new Padding(30, 0, 30, 0);
             textbox_re_segundoApellido.Name = "textbox_re_segundoApellido";
             textbox_re_segundoApellido.Size = new Size(244, 27);
@@ -367,7 +366,7 @@
             // textbox_re_dni
             // 
             textbox_re_dni.Dock = DockStyle.Fill;
-            textbox_re_dni.Location = new Point(30, 504);
+            textbox_re_dni.Location = new Point(30, 497);
             textbox_re_dni.Margin = new Padding(30, 0, 30, 0);
             textbox_re_dni.Name = "textbox_re_dni";
             textbox_re_dni.Size = new Size(244, 27);
@@ -376,7 +375,7 @@
             // textbox_re_telefono
             // 
             textbox_re_telefono.Dock = DockStyle.Fill;
-            textbox_re_telefono.Location = new Point(30, 648);
+            textbox_re_telefono.Location = new Point(30, 639);
             textbox_re_telefono.Margin = new Padding(30, 0, 30, 0);
             textbox_re_telefono.Name = "textbox_re_telefono";
             textbox_re_telefono.Size = new Size(244, 27);
@@ -385,7 +384,7 @@
             // textbox_re_correo
             // 
             textbox_re_correo.Dock = DockStyle.Fill;
-            textbox_re_correo.Location = new Point(30, 792);
+            textbox_re_correo.Location = new Point(30, 781);
             textbox_re_correo.Margin = new Padding(30, 0, 30, 0);
             textbox_re_correo.Name = "textbox_re_correo";
             textbox_re_correo.Size = new Size(244, 27);
@@ -423,7 +422,7 @@
             tlp7.RowStyles.Add(new RowStyle(SizeType.Percent, 9.09091F));
             tlp7.RowStyles.Add(new RowStyle(SizeType.Percent, 9.09091F));
             tlp7.RowStyles.Add(new RowStyle(SizeType.Percent, 9.09091F));
-            tlp7.Size = new Size(304, 865);
+            tlp7.Size = new Size(304, 863);
             tlp7.TabIndex = 1;
             // 
             // textbox_re_salarioBase
@@ -482,7 +481,7 @@
             btn_registrarEmpleado_crearEmpleado.Location = new Point(30, 780);
             btn_registrarEmpleado_crearEmpleado.Margin = new Padding(30, 0, 30, 30);
             btn_registrarEmpleado_crearEmpleado.Name = "btn_registrarEmpleado_crearEmpleado";
-            btn_registrarEmpleado_crearEmpleado.Size = new Size(244, 55);
+            btn_registrarEmpleado_crearEmpleado.Size = new Size(244, 53);
             btn_registrarEmpleado_crearEmpleado.TabIndex = 5;
             btn_registrarEmpleado_crearEmpleado.Text = "CREAR EMPLEADO";
             btn_registrarEmpleado_crearEmpleado.UseVisualStyleBackColor = false;
@@ -562,7 +561,7 @@
             label8.Location = new Point(0, 0);
             label8.Margin = new Padding(0);
             label8.Name = "label8";
-            label8.Size = new Size(1008, 107);
+            label8.Size = new Size(1008, 106);
             label8.TabIndex = 1;
             label8.Text = "Registro de un nuevo empleado";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -586,7 +585,7 @@
             tlp3.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tlp3.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tlp3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlp3.Size = new Size(140, 1072);
+            tlp3.Size = new Size(140, 1069);
             tlp3.TabIndex = 0;
             // 
             // btn_baseDeDatos
@@ -597,10 +596,10 @@
             btn_baseDeDatos.FlatStyle = FlatStyle.Flat;
             btn_baseDeDatos.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             btn_baseDeDatos.ForeColor = Color.White;
-            btn_baseDeDatos.Location = new Point(6, 112);
+            btn_baseDeDatos.Location = new Point(6, 111);
             btn_baseDeDatos.Margin = new Padding(6, 5, 6, 5);
             btn_baseDeDatos.Name = "btn_baseDeDatos";
-            btn_baseDeDatos.Size = new Size(128, 311);
+            btn_baseDeDatos.Size = new Size(128, 310);
             btn_baseDeDatos.TabIndex = 3;
             btn_baseDeDatos.Text = "BASE DE DATOS";
             toolTip1.SetToolTip(btn_baseDeDatos, "Este es el menú para gestionar las bases de datos");
@@ -615,10 +614,10 @@
             btn_gestionarPedidos.FlatStyle = FlatStyle.Flat;
             btn_gestionarPedidos.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             btn_gestionarPedidos.ForeColor = Color.White;
-            btn_gestionarPedidos.Location = new Point(6, 433);
+            btn_gestionarPedidos.Location = new Point(6, 431);
             btn_gestionarPedidos.Margin = new Padding(6, 5, 6, 5);
             btn_gestionarPedidos.Name = "btn_gestionarPedidos";
-            btn_gestionarPedidos.Size = new Size(128, 311);
+            btn_gestionarPedidos.Size = new Size(128, 310);
             btn_gestionarPedidos.TabIndex = 4;
             btn_gestionarPedidos.Text = "GESTIONAR PEDIDOS PENDIENTES";
             toolTip1.SetToolTip(btn_gestionarPedidos, "Este es el menú para aceptar o rechazar pedidos pendientes de revisión");
@@ -633,7 +632,7 @@
             btn_registrarEmpleado.FlatStyle = FlatStyle.Flat;
             btn_registrarEmpleado.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
             btn_registrarEmpleado.ForeColor = Color.White;
-            btn_registrarEmpleado.Location = new Point(6, 754);
+            btn_registrarEmpleado.Location = new Point(6, 751);
             btn_registrarEmpleado.Margin = new Padding(6, 5, 6, 5);
             btn_registrarEmpleado.Name = "btn_registrarEmpleado";
             btn_registrarEmpleado.Size = new Size(128, 313);
@@ -655,7 +654,7 @@
             btn_salirAlLogin.Location = new Point(6, 0);
             btn_salirAlLogin.Margin = new Padding(6, 0, 6, 5);
             btn_salirAlLogin.Name = "btn_salirAlLogin";
-            btn_salirAlLogin.Size = new Size(128, 102);
+            btn_salirAlLogin.Size = new Size(128, 101);
             btn_salirAlLogin.TabIndex = 6;
             btn_salirAlLogin.Text = "SALIR";
             toolTip1.SetToolTip(btn_salirAlLogin, "Salir al menú de login");
@@ -668,9 +667,9 @@
             btn_salir.BackColor = Color.FromArgb(117, 230, 164);
             btn_salir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_salir.ForeColor = Color.White;
-            btn_salir.Location = new Point(1113, 3);
+            btn_salir.Location = new Point(1103, 3);
             btn_salir.Name = "btn_salir";
-            btn_salir.Size = new Size(32, 27);
+            btn_salir.Size = new Size(42, 40);
             btn_salir.TabIndex = 1;
             btn_salir.Text = "X";
             btn_salir.UseVisualStyleBackColor = false;
@@ -686,12 +685,12 @@
             tlp4.Controls.Add(tlp5, 2, 0);
             tlp4.Controls.Add(labelHora, 1, 0);
             tlp4.Dock = DockStyle.Fill;
-            tlp4.Location = new Point(0, 33);
+            tlp4.Location = new Point(0, 46);
             tlp4.Margin = new Padding(0);
             tlp4.Name = "tlp4";
             tlp4.RowCount = 1;
             tlp4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp4.Size = new Size(1148, 56);
+            tlp4.Size = new Size(1148, 46);
             tlp4.TabIndex = 3;
             // 
             // btn_info
@@ -705,7 +704,7 @@
             btn_info.Location = new Point(395, 5);
             btn_info.Margin = new Padding(300, 5, 15, 5);
             btn_info.Name = "btn_info";
-            btn_info.Size = new Size(49, 46);
+            btn_info.Size = new Size(49, 36);
             btn_info.TabIndex = 6;
             btn_info.UseVisualStyleBackColor = false;
             btn_info.Click += btn_info_Click;
@@ -726,7 +725,7 @@
             tlp5.RowCount = 2;
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlp5.RowStyles.Add(new RowStyle(SizeType.Percent, 0F));
-            tlp5.Size = new Size(335, 46);
+            tlp5.Size = new Size(335, 36);
             tlp5.TabIndex = 0;
             // 
             // pictureBox1
@@ -738,7 +737,7 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 46);
+            pictureBox1.Size = new Size(50, 36);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -752,7 +751,7 @@
             label_nombreUsuario.Margin = new Padding(0);
             label_nombreUsuario.Name = "label_nombreUsuario";
             label_nombreUsuario.Padding = new Padding(10, 0, 0, 0);
-            label_nombreUsuario.Size = new Size(285, 46);
+            label_nombreUsuario.Size = new Size(285, 36);
             label_nombreUsuario.TabIndex = 1;
             label_nombreUsuario.Text = "Nombre del empleado";
             label_nombreUsuario.TextAlign = ContentAlignment.MiddleLeft;

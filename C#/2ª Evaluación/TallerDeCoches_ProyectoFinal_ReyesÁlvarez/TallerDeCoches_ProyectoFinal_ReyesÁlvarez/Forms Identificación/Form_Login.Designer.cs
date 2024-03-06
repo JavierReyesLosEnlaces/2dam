@@ -106,13 +106,13 @@
             // 
             lb1.AutoSize = true;
             lb1.Dock = DockStyle.Fill;
-            lb1.Font = new Font("Cooper Black", 25F);
+            lb1.Font = new Font("Cooper Black", 27F);
             lb1.ForeColor = Color.FromArgb(39, 50, 56);
             lb1.Location = new Point(3, 0);
             lb1.Name = "lb1";
             lb1.Size = new Size(908, 96);
             lb1.TabIndex = 1;
-            lb1.Text = "Regístrate";
+            lb1.Text = "Bienvenid@ a Talleres Paquito";
             lb1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tlp3
@@ -197,7 +197,7 @@
             lb2.Name = "lb2";
             lb2.Size = new Size(220, 60);
             lb2.TabIndex = 0;
-            lb2.Text = "¡Bienvenid@!";
+            lb2.Text = "Regístrate";
             lb2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tb_usuario

@@ -8,7 +8,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
 
-        //id servicio =  Form_Cliente.idServicio
         public Form_Cliente_DatosCoche()
         {
             InitializeComponent();
@@ -77,8 +76,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                 }
             }
 
-            // CONSEGUIT EL ID DEL ULTIMO COCHE
-
+            // CONSEGUIR EL ID DEL ULTIMO COCHE
             string queryUltimoIdCoche = "SELECT MAX(id_coche) FROM coches";
             int ultimoIdCoche;
 

@@ -19,20 +19,48 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             label1.Text = "¿Qué servicio estás buscando?";
             InitUI();
         }
-        /*
-        public static String getIdServicio()
-        {
-            return idservicio;
-        }
-        */
 
         private void InitUI()
         {
+            label_nombreUsuario2.Text = conseguirNombre();
             tlp_lavadoDetallado.Visible = false;
             tlp_mantenimiento.Visible = false;
             tlp_reparacion.Visible = false;
             tlp_serviciosEspeciales.Visible = false;
             tlpTarjeta.Visible = false;
+        }
+
+        private String conseguirNombre()
+        {
+            string nombreUsuario = "";
+            string query = "SELECT nombre FROM usuarios WHERE id_usuario = @IdUsuario";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdUsuario", Form_Login.usuarioLogueado.GetIdUsuario());
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                nombreUsuario = reader["nombre"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción
+                MessageBox.Show("Error al obtener el nombre de usuario: " + ex.Message);
+            }
+
+            return nombreUsuario;
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

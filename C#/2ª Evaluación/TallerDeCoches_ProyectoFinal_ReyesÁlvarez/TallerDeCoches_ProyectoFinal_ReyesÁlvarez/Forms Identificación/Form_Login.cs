@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System.Configuration;
 using TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación;
 
@@ -7,9 +6,12 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 {
     public partial class Form_Login : Form
     {
+        // Variables para almacenar datos de usuario
         public static String decusr, encpss = "", encusr;
+        // Cadena de conexión a la base de datos
         public static string connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
-        public static UsuarioLogueado usuarioLogueado;
+        // Objeto para almacenar información de usuario logueado
+        public static UsuarioLogueado usuarioLogueado = null;
 
         public Form_Login()
         {
@@ -17,11 +19,13 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             InitUI();
         }
 
+        // Inicialización de la interfaz de usuario
         private void InitUI()
         {
             tb_contraseña.UseSystemPasswordChar = true;
         }
 
+        // Evento de clic en el botón "Crear cuenta"
         private void btn_crear_cuenta_Click(object sender, EventArgs e)
         {
             Form_SignupCliente fs = new Form_SignupCliente();
@@ -29,30 +33,31 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             Hide();
         }
 
+        // Evento de clic en el botón "Entrar"
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            // Check if username or password is too short
+            // Comprobar si el nombre de usuario o la contraseña son demasiado cortos
             if (tb_usuario.Text.Length < 3 || tb_contraseña.Text.Length < 5)
             {
-                MessageBox.Show("Username or password is too short.");
+                MessageBox.Show("El nombre de usuario o la contraseña son demasiado cortos.");
             }
             else
             {
                 string dir = tb_usuario.Text;
 
-                // Check if user directory exists
+                // Comprobar si existe el directorio de usuario
                 if (!Directory.Exists("data\\clientes\\" + dir) && (!Directory.Exists("data\\empleados\\" + dir)))
                 {
-                    MessageBox.Show("User not registered.");
+                    MessageBox.Show("Usuario no registrado.");
                 }
                 else
                 {
-                    // Check if user is a client
+                    // Comprobar si el usuario es un cliente
                     if (Directory.Exists("data\\clientes\\" + dir) && (!Directory.Exists("data\\empleados\\" + dir)))
                     {
                         string filePath = "data\\clientes\\" + dir + "\\data.ls";
 
-                        // Check if data file exists for the client
+                        // Comprobar si existe el archivo de datos para el cliente
                         if (File.Exists(filePath))
                         {
                             using (StreamReader sr = new StreamReader(filePath))
@@ -63,14 +68,14 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                 string decusr = AesCryp.Decrypt(encusr);
                                 string decpss = AesCryp.Decrypt(encpss);
 
-                                // Check if entered username and password match decrypted values
+                                // Comprobar si el nombre de usuario y la contraseña coinciden con los valores desencriptados
                                 if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
                                 {
-                                    // Execute SQL query to fetch client ID
+                                    // Ejecutar consulta SQL para obtener el ID del cliente
                                     string query = @"SELECT c.id_cliente AS 'Id del cliente'
-                                            FROM clientes c 
-                                            INNER JOIN usuarios u ON c.id_usuario = u.id_usuario
-                                            WHERE u.contraseña_usuario = '" + encpss + "'";
+                                        FROM clientes c 
+                                        INNER JOIN usuarios u ON c.id_usuario = u.id_usuario
+                                        WHERE u.contraseña_usuario = '" + encpss + "'";
 
                                     using (SqlConnection connection = new SqlConnection(connectionString))
                                     {
@@ -85,28 +90,28 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                             }
                                             else
                                             {
-                                                MessageBox.Show("No se han encontrado datos del cliente. ");
+                                                MessageBox.Show("No se han encontrado datos del cliente.");
                                             }
                                         }
                                     }
 
-                                    // Show client form and hide current form
+                                    // Mostrar formulario de cliente y ocultar el formulario actual
                                     Form_Cliente fc = new Form_Cliente();
                                     fc.Show();
                                     Hide();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Incorrect client password.");
+                                    MessageBox.Show("Contraseña de cliente incorrecta.");
                                 }
                             }
                         }
                     }
-                    // Check if user is an employee
+                    // Comprobar si el usuario es un empleado
                     else if (!Directory.Exists("data\\clientes\\" + dir) && (Directory.Exists("data\\empleados\\" + dir)))
                     {
                         string filePath = "data\\empleados\\" + dir + "\\data.ls";
-                        // Check if data file exists for the employee
+                        // Comprobar si existe el archivo de datos para el empleado
                         if (File.Exists(filePath))
                         {
                             using (StreamReader sr = new StreamReader(filePath))
@@ -117,17 +122,41 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                 string decusr = AesCryp.Decrypt(encusr);
                                 string decpss = AesCryp.Decrypt(encpss);
 
-                                // Check if entered username and password match decrypted values
+                                // Comprobar si el nombre de usuario y la contraseña coinciden con los valores desencriptados
                                 if (decusr == tb_usuario.Text && decpss == tb_contraseña.Text)
                                 {
-                                    // Show employee form and hide current form
+                                    // Ejecutar consulta SQL para obtener el ID del empleado
+                                    string query = @"SELECT e.id_empleado AS 'Id del empleado'
+                                        FROM empleados e 
+                                        INNER JOIN usuarios u ON e.id_usuario = u.id_usuario
+                                        WHERE u.contraseña_usuario = '" + encpss + "'";
+
+                                    using (SqlConnection connection = new SqlConnection(connectionString))
+                                    {
+                                        connection.Open();
+                                        using (SqlCommand command = new SqlCommand(query, connection))
+                                        {
+                                            SqlDataReader reader = command.ExecuteReader();
+                                            if (reader.Read())
+                                            {
+                                                string idEmpleado = reader["Id del empleado"].ToString();
+                                                usuarioLogueado = new UsuarioLogueado(int.Parse(idEmpleado));
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("No se han encontrado datos del empleado.");
+                                            }
+                                        }
+                                    }
+
+                                    // Mostrar formulario de empleado y ocultar el formulario actual
                                     Form_Empleado fe = new Form_Empleado();
                                     fe.Show();
                                     Hide();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Incorrect employee password.");
+                                    MessageBox.Show("Contraseña de empleado incorrecta.");
                                 }
                             }
                         }
@@ -137,25 +166,16 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
         }
 
 
-        public string getEncusr()
-        {
-            return encusr;
-        }
-
-        public string getEncpss()
-        {
-            return encpss;
-        }
-
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+        // Evento de cambio en el estado del checkbox para mostrar/ocultar contraseña
         private void checkBox_contraseña_CheckedChanged(object sender, EventArgs e)
         {
             tb_contraseña.UseSystemPasswordChar = !tb_contraseña.UseSystemPasswordChar;
         }
 
+        // Evento de clic en el botón "Salir"
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
