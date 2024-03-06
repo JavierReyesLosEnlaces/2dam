@@ -60,6 +60,7 @@
             campoTextbox8 = new TextBox();
             campoTextbox9 = new TextBox();
             campoTextbox10 = new TextBox();
+            button1 = new Button();
             tlp7 = new TableLayoutPanel();
             label_nombreTabla = new Label();
             label1 = new Label();
@@ -174,6 +175,7 @@
             tlpDatos.Controls.Add(campoTextbox8, 0, 15);
             tlpDatos.Controls.Add(campoTextbox9, 0, 17);
             tlpDatos.Controls.Add(campoTextbox10, 0, 19);
+            tlpDatos.Controls.Add(button1, 0, 20);
             tlpDatos.ForeColor = SystemColors.ControlText;
             tlpDatos.Name = "tlpDatos";
             // 
@@ -287,6 +289,18 @@
             resources.ApplyResources(campoTextbox10, "campoTextbox10");
             campoTextbox10.Name = "campoTextbox10";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkCyan;
+            button1.CausesValidation = false;
+            resources.ApplyResources(button1, "button1");
+            button1.FlatAppearance.BorderColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.White;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // tlp7
             // 
             tlp7.BackColor = Color.FromArgb(117, 230, 164);
@@ -369,5 +383,6 @@
         public Button btn_modificarRegistro;
         public Button btn_borrarRegistro;
         private Label label1;
+        private Button button1;
     }
 }

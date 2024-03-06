@@ -608,7 +608,7 @@
             // 
             // btn_gestionarPedidos
             // 
-            btn_gestionarPedidos.BackColor = Color.FromArgb(0, 64, 64);
+            btn_gestionarPedidos.BackColor = Color.FromArgb(117, 230, 164);
             btn_gestionarPedidos.Dock = DockStyle.Fill;
             btn_gestionarPedidos.FlatAppearance.BorderSize = 2;
             btn_gestionarPedidos.FlatStyle = FlatStyle.Flat;
@@ -625,7 +625,7 @@
             // 
             // btn_registrarEmpleado
             // 
-            btn_registrarEmpleado.BackColor = Color.FromArgb(0, 64, 64);
+            btn_registrarEmpleado.BackColor = Color.FromArgb(117, 230, 164);
             btn_registrarEmpleado.Dock = DockStyle.Fill;
             btn_registrarEmpleado.FlatAppearance.BorderSize = 2;
             btn_registrarEmpleado.FlatStyle = FlatStyle.Flat;
@@ -1314,7 +1314,6 @@
             // 
             // label_bienvenida
             // 
-            label_bienvenida.Dock = DockStyle.Fill;
             label_bienvenida.Font = new Font("Cooper Black", 30F);
             label_bienvenida.ForeColor = Color.FromArgb(39, 50, 56);
             label_bienvenida.Location = new Point(0, 0);

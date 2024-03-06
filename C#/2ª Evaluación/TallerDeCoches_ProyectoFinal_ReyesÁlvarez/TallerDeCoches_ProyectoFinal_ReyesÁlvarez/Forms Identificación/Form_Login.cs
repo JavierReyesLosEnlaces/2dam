@@ -85,7 +85,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                                             }
                                             else
                                             {
-                                                MessageBox.Show("No data found for the client.");
+                                                MessageBox.Show("No se han encontrado datos del cliente. ");
                                             }
                                         }
                                     }

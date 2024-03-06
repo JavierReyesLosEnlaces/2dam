@@ -210,10 +210,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                             {
                                 nombreUsuario = reader["nombre"].ToString();
                             }
-                            else
-                            {
-                                MessageBox.Show("No se encontró ningún usuario con esa contraseña.");
-                            }
                         }
                     }
                 }
@@ -226,6 +222,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
 
             return nombreUsuario;
         }
+
 
         private void initDatagridViews()
         {
@@ -568,7 +565,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        MessageBox.Show(command.ToString());
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Pedido aceptado correctamente.");

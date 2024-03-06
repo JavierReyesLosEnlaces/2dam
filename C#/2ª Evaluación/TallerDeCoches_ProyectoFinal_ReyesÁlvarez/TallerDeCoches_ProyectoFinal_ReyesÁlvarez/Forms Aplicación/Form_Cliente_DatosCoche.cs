@@ -68,8 +68,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                         connection.Open();
                         // Ejecutar la consulta
                         command.ExecuteNonQuery();
-                        // Mostrar mensaje de éxito
-                        MessageBox.Show("Registro de coche insertado correctamente en la base de datos.");
                     }
                     catch (Exception ex)
                     {
@@ -122,7 +120,6 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Registro de pedido insertado correctamente en la base de datos.");
                     }
                     catch (Exception ex)
                     {
@@ -130,7 +127,32 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                     }
                 }
             }
-            /*
+
+
+            // CONSEGUIR EL ID_PEDIDO ÚLTIMO
+            string queryUltimoId = "SELECT MAX(id_pedido) FROM pedidos";
+            int idPedidoInsertado;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(queryUltimoId, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        // Obtener el último id_coche
+                        idPedidoInsertado = (int)command.ExecuteScalar();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al obtener el último id_coche: " + ex.Message);
+                        return; // Salir del método si hay un error
+                    }
+                }
+            }
+
+
+
             // INSERTAR PEDIDOS REVISIÓN
             string queryPedidoRevision = "INSERT INTO pedidosRevision (id_pedido) VALUES (@IdPedido)";
 
@@ -145,7 +167,9 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Registro de pedido de revisión insertado correctamente en la base de datos.");
+                        MessageBox.Show("¡Gracias, tu pedido se ha procesado correctamente!");
+                        volverAlLogin();
+
                     }
                     catch (Exception ex)
                     {
@@ -153,8 +177,14 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Aplicación
                     }
                 }
             }
-            */
+            
         }
 
+        private void volverAlLogin()
+        {
+            Form_Login fl = new Form_Login();
+            fl.Show();
+            this.Hide();
+        }
     }
 }

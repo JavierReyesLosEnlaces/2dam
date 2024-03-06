@@ -1006,6 +1006,42 @@
   <data name="&gt;&gt;campoTextbox10.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt, style=Bold</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 855</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 15, 30, 20</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 51</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>REINICIAR CAMPOS</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>tlpDatos</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
   <data name="tlpDatos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1037,7 +1073,7 @@
     <value>1</value>
   </data>
   <data name="tlpDatos.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="campoLabel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel4" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel6" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel7" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel8" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel9" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel10" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox3" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox4" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox5" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox6" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox7" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox8" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox9" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox10" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,4,6042523,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,6042523,Percent,7,9149656" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="campoLabel1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel3" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel4" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel5" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel6" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel7" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel8" Row="14" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel9" Row="16" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoLabel10" Row="18" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox3" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox4" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox5" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox6" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox7" Row="13" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox8" Row="15" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox9" Row="17" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="campoTextbox10" Row="19" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button1" Row="20" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,4,6042523,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,604252,Percent,4,6042523,Percent,7,9149656" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tlp2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

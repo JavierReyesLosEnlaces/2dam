@@ -16,16 +16,15 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez.Forms_Identificación
             InitializeComponent();
 
             Form_Login fl = new Form_Login();
-            //CargarDatosCliente(fl.getEncpss());
-
             label1.Text = "¿Qué servicio estás buscando?";
             InitUI();
         }
-
+        /*
         public static String getIdServicio()
         {
             return idservicio;
         }
+        */
 
         private void InitUI()
         {

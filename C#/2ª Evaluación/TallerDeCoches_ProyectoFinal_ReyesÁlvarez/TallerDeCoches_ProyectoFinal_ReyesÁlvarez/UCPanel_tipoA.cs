@@ -99,7 +99,7 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
                     }
                     else
                     {
-                        break; 
+                        break;
                     }
                 }
             }
@@ -334,6 +334,20 @@ namespace TallerDeCoches_ProyectoFinal_ReyesÁlvarez
             {
                 MessageBox.Show("Error al actualizar el DataGridView: " + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            campoTextbox1.Text = "";
+            campoTextbox2.Text = "";
+            campoTextbox3.Text = "";
+            campoTextbox4.Text = "";
+            campoTextbox5.Text = "";
+            campoTextbox6.Text = "";
+            campoTextbox7.Text = "";
+            campoTextbox8.Text = "";
+            campoTextbox9.Text = "";
+            campoTextbox10.Text = "";
         }
     }
 }
